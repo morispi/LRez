@@ -1,6 +1,6 @@
 # LRez
 
-LRez provides a standalone tool allowing to work with barcodes link-reads such as 10X Genomics data, as well as library allowing to easily use it in other projects.
+LRez provides a standalone tool allowing to work with barcoded linked-reads such as 10X Genomics data, as well as library allowing to easily use it in other projects.
 LRez has different functionalities such as comparing regions pairs or contigs extremities to retrieve their common barcodes and extracting barcodes from given regions
 of a BAM file, as well as indexing and querying both BAM and FASTQ files to quickly retrieve reads or alignments sharing a given barcode or list of barcodes.
 In can thus be used in different applications, such as variant calling or scaffolding.
