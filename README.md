@@ -115,7 +115,7 @@ LRez query fastq allows to query a barcodes index and a fastq file to retrieve a
 Documentation
 --------------
 
-Complete documentation of the different functions is provided in the `.h` files of the `include` and `include/subcommands/` folders. Proper documentation will be provided on this page later.
+Complete documentation of the different functions is provided in the `.h` files of the `include/` and `include/subcommands/` folders. Proper documentation will be provided on this page later.
 
 Notes
 --------------
