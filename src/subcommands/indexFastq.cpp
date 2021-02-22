@@ -56,7 +56,6 @@ void subcommandIndexFastq(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	cerr << "parse argument" << endl;
 	BarcodesIndex barcodesIndex;
 	barcodesIndex = indexBarcodesFromFastq(fastqFile);
 	saveBarcodesIndex(barcodesIndex, output);
