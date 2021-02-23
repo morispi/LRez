@@ -25,7 +25,7 @@ Clone the LRez repository, along with its submodules with:
 Then run the install.sh script:
 
   ```bash
-  make
+  ./install.sh
   ```
 
 The installation script will build dependencies, the binary standalone in the `bin` folder, as well as the library, allowing to use LRez in other projects, in the `lib` folder.
