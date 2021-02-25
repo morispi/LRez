@@ -80,6 +80,8 @@ LRez index bam allows to index the offsets or occurrences positions of the barco
       --output STRING, -o STRING:   File where to store the index
       --offsets, -f:                Index the offsets of the barcodes in the BAM file
       --positions, -p:              Index the (chromosome, begPosition) occurrences positions of the barcodes
+      --primary, -r:                Only index barcodes that appear in a primary alignment (optional, default: false)
+      --quality INT, -q INT:        Only index barcodes that appear in an alignment of quality higher than this number (optional, default: 0)
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
 
 #### Query BAM

@@ -18,9 +18,11 @@ typedef robin_hood::unordered_map<barcode, vector<pair<int32_t, int32_t>>> Barco
 	Index the (chromosome, begPosition) pairs of the barcodes contained in a given BAM file.
 
 	@param reader bamFile BAM file to build the index from
+	@param primary whether to only index primary alignments or not
+	@param quality minimum quality to index an alignment
 	@return the barcode positions index associating barcodes to the set of (chromosome, begPosition) pairs they occur at
 */
-BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile);
+BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality);
 
 /**
 	Save the content of the barcode positions index in a given file.
@@ -43,9 +45,11 @@ BarcodesPositionsIndex loadBarcodesPositionsIndex(string file);
 	Index the offsets of the barcodes contained in a given BAM file.
 
 	@param reader bamFile BAM file to build the index from
+	@param primary whether to only index primary alignments or not
+	@param quality minimum quality to index an alignment
 	@return the barcode index associating barcodes to the set of offsets they occur at
 */
-BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile);
+BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality);
 
 /**
 	Save the content of the barcode index in a given file.

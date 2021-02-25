@@ -1,7 +1,7 @@
 #include "indexManagementBam.h"
 #include "reverseComplement.h"
 
-BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile) {
+BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality) {
 	BamReader reader;
 	if (!reader.Open(bamFile)) {
 		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
@@ -20,7 +20,7 @@ BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile) {
 
 	int64_t pos = reader.FTell();
 	while (reader.GetNextAlignment(al)) {
-		if (al.IsMapped()) {
+		if (al.IsMapped() and (!primary or (primary and al.IsPrimaryAlignment())) and al.MapQuality >= quality) {
 			barcode.clear();
 			// LongRanger
 			if (al.GetTag(BXTAG, bc)) {
@@ -101,7 +101,7 @@ BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 	return index;
 }
 
-BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile) {
+BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality) {
 	BamReader reader;
 	if (!reader.Open(bamFile)) {
 		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
@@ -119,7 +119,7 @@ BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile) {
 	BamRegion r;
 
 	while (reader.GetNextAlignment(al)) {
-		if (al.IsMapped()) {
+		if (al.IsMapped() and (!primary or (primary and al.IsPrimaryAlignment())) and al.MapQuality >= quality) {
 			barcode.clear();
 			// LongRanger
 			if (al.GetTag(BXTAG, bc)) {

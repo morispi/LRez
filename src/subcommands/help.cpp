@@ -67,6 +67,8 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-o, --output\t File where to store the index\n");
 		printf("\t-f, --offsets\t Index the offsets of the barcodes in the BAM file\n");
 		printf("\t-p, --positions\t Index the (chromosome, begPosition) occurrences positions of the barcodes\n");
+		printf("\t-r, --primary\t Only index barcodes that appear in a primary alignment (optional, default: false)\n");
+		printf("\t-q, --quality\t Only index barcodes that appear in an alignment of quality higher than this number (optional, default: 0)\n");
 		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "query bam") {
 		printf("%s\n", VERSION);
