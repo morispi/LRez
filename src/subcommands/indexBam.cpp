@@ -12,6 +12,8 @@ void subcommandIndexBam(int argc, char* argv[]) {
 	string output;
 	bool indexOffsets = false;
 	bool indexPositions = false;
+	bool primary = false;
+	unsigned quality = 0;
 
 	const struct option longopts[] = {
 		{"bam",				required_argument,	0, 'b'},
@@ -19,12 +21,14 @@ void subcommandIndexBam(int argc, char* argv[]) {
 		{"userx",			no_argument,		0, 'u'},
 		{"offsets",			no_argument,		0, 'f'},
 		{"positions",		no_argument,		0, 'p'},
+		{"primary",			no_argument,		0, 'r'},
+		{"quality",			required_argument,	0, 'q'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:o:fpu", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:o:fpurq:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("index bam");
 	}
@@ -45,11 +49,17 @@ void subcommandIndexBam(int argc, char* argv[]) {
 			case 'p':
 				indexPositions = true;
 				break;
+			case 'r':
+				primary = true;
+				break;
+			case 'q':
+				quality = static_cast<uint32_t>(stoul(optarg));
+				break;
 			default:
 				subcommandHelp("index bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:o:fpu", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:o:fpurq:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -73,11 +83,11 @@ void subcommandIndexBam(int argc, char* argv[]) {
 
 	if (indexOffsets) {
 		BarcodesOffsetsIndex barcodesOffsetsIndex;
-		barcodesOffsetsIndex = indexBarcodesOffsetsFromBam(bamFile);
+		barcodesOffsetsIndex = indexBarcodesOffsetsFromBam(bamFile, primary, quality);
 		saveBarcodesOffsetsIndex(barcodesOffsetsIndex, output);
 	} else if (indexPositions) {
 		BarcodesPositionsIndex barcodesPositionsIndex;
-		barcodesPositionsIndex = indexBarcodesPositionsFromBam(bamFile);
+		barcodesPositionsIndex = indexBarcodesPositionsFromBam(bamFile, primary, quality);
 		saveBarcodesPositionsIndex(barcodesPositionsIndex, output);
 	} else {
 		fprintf(stderr, "An unexpected error has occurred. Please try running again.\n");
