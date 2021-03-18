@@ -122,15 +122,15 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 	
 	// Process left extremity of the contig
 	if (rv[id].RefLength < size) {
-		qRegion = contig + ":0-" + contig + ":" + to_string(rv[id].RefLength);
+		qRegion = contig + ":0-" + to_string(rv[id].RefLength);
 	} else {
-		qRegion = contig + ":0-" + contig + ":" + to_string(size);
+		qRegion = contig + ":0-" + to_string(size);
 	}
 	computeCommonBarcodesCounts(counts, BarcodesOffsetsIndex, reader, rv, size, qRegion);
 
 	// Process left extremity of the contig, if it is long enough
 	if (rv[id].RefLength > size) {
-		qRegion = contig + ":" + to_string(rv[id].RefLength - size) + "-" + contig + ":" + to_string(rv[id].RefLength);
+		qRegion = contig + ":" + to_string(rv[id].RefLength - size) + "-" + to_string(rv[id].RefLength);
 		computeCommonBarcodesCounts(counts, BarcodesOffsetsIndex, reader, rv, size, qRegion);
 	}
 

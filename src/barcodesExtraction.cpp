@@ -41,6 +41,7 @@ robin_hood::unordered_set<barcode> extractBarcodesBitsFromRegion_BamReader(BamRe
 		}
 	}
 
+	reader.Rewind();
 	return barcodes;
 }
 
