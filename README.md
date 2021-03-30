@@ -128,7 +128,7 @@ Support for any other platform has not been tested.
 Authors
 --------------
 
-Pierre Morisse, and Fabrice Legeai.
+Pierre Morisse, Claire Lemaitre and Fabrice Legeai.
 
 Reference
 --------------
