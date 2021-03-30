@@ -133,7 +133,7 @@ Pierre Morisse, and Fabrice Legeai.
 Reference
 --------------
 
-Coming soon.
+Pierre Morisse, Claire Lemaitre, Fabrice Legeai. LRez: C++ API and toolkit for analyzing and managing Linked-Reads data. https://arxiv.org/abs/2103.14419
 
 Contact
 --------------
