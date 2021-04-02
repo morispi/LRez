@@ -26,7 +26,7 @@ directories:
 	mkdir -p bin/ lib/
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP)
-	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) gztool/gztool.o $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB)
+	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB)
 
 $(EXEC): $(MAIN) $(LIB)
 	$(CC) -o $(EXEC) $(MAIN) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB)
