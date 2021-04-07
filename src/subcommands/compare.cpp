@@ -99,7 +99,7 @@ void subcommandCompare(int argc, char* argv[]) {
 			out << c.first.first << " " << c.first.second << " " << c.second << endl;
 		}
 		out.close();
-	} else {;
+	} else {
 		for (auto c : commonBarcodes) {
 			cout << c.first.first << " " << c.first.second << " " << c.second << endl;
 		}
