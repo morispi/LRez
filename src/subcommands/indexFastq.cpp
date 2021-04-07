@@ -1,6 +1,7 @@
 #include "subcommands/indexFastq.h"
 #include "subcommands/help.h"
 #include "indexManagementFastq.h"
+#include "gzIndex.h"
 #include <getopt.h>
 #include <chrono>
 
@@ -57,6 +58,32 @@ void subcommandIndexFastq(int argc, char* argv[]) {
 	}
 
 	BarcodesIndex barcodesIndex;
-	barcodesIndex = indexBarcodesFromFastq(fastqFile);
+	if (!gzipped) {
+		barcodesIndex = indexBarcodesFromFastq(fastqFile);
+	} else {
+		barcodesIndex = indexBarcodesFromFastqGz(fastqFile);
+
+		// Build and serialize the gzip index
+		struct access* index;
+		int len = buildGzIndex(fastqFile, SPAN, &index);
+		if (len < 0) {
+		    switch (len) {
+		    case Z_MEM_ERROR:
+		        fprintf(stderr, "zran: out of memory\n");
+				exit(EXIT_FAILURE);
+		    case Z_DATA_ERROR:
+		        fprintf(stderr, "zran: compressed data error in %s\n", fastqFile.c_str());
+		        exit(EXIT_FAILURE);
+		    case Z_ERRNO:
+		        fprintf(stderr, "zran: read error on %s\n", fastqFile.c_str());
+		        exit(EXIT_FAILURE);
+		    default:
+		        fprintf(stderr, "zran: error %d while building index\n", len);
+		        exit(EXIT_FAILURE);
+		    }
+		}
+		serializeGzIndex(index, fastqFile + "i");
+		freeGzIndex(index);
+	}
 	saveBarcodesIndex(barcodesIndex, output);
 }

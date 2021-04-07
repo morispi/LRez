@@ -13,6 +13,7 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 	BarcodesIndex BarcodesIndex;
 	BamReader reader;
 	ofstream out;
+	bool gzipped = false;
 
 	const struct option longopts[] = {
 		{"fastq",			required_argument,	0, 'f'},
@@ -21,12 +22,13 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
 		{"userx",			no_argument,		0, 'u'},
+		{"gzipped",			no_argument,		0, 'g'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "f:i:q:l:o:u", longopts, &index);
+	iarg = getopt_long(argc, argv, "f:i:q:l:o:ug", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query fastq");
 	}
@@ -50,11 +52,14 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 			case 'u':
 				CONSIDER_RX = true;
 				break;
+			case 'g':
+				gzipped = true;
+				break;
 			default:
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "f:i:q:l:o:u", longopts, &index);
+		iarg = getopt_long(argc, argv, "f:i:q:l:o:ug", longopts, &index);
 	}
 
 	if (fastqFile.empty()) {
@@ -77,9 +82,17 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 	BarcodesIndex = loadBarcodesIndex(indexFile);
 	vector<string> reads;
 	if (!query.empty()) {
-		reads = retrieveReadsWithBarcode(fastqFile, BarcodesIndex, query);
+		if (!gzipped) {
+			reads = retrieveReadsWithBarcode(fastqFile, BarcodesIndex, query);
+		} else {
+			reads = retrieveReadsWithBarcode_Gzip(fastqFile, BarcodesIndex, query);
+		}
 	} else {
-		reads = retrieveReadsWithBarcodes(fastqFile, BarcodesIndex, list);
+		if (!gzipped) {
+			reads = retrieveReadsWithBarcodes(fastqFile, BarcodesIndex, list);
+		} else {
+			reads = retrieveReadsWithBarcodes_Gzip(fastqFile, BarcodesIndex, list);
+		}
 	}
 
 	if (!outputFile.empty()) {
