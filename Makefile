@@ -13,7 +13,7 @@ LDFLAGS_LREZ = -llrez -L$(LREZ_LIB) -lboost_iostreams -lz -lm
 
 MAIN = src/main.o
 REVCOMP = src/reverseComplement.o
-SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o
+SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o src/gzIndex.o
 SUBCOMMANDS = src/subcommands/compare.o src/subcommands/extract.o src/subcommands/help.o src/subcommands/indexBam.o src/subcommands/queryBam.o src/subcommands/indexFastq.o src/subcommands/queryFastq.o
 
 EXEC = bin/LRez
