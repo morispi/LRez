@@ -100,6 +100,7 @@ LRez index fastq allows to index the offsets of the barcodes contained in a fast
 
       --fastq STRING, -f STRING:    Fastq file to index
       --output STRING, -o STRING:   File where to store the index
+      --gzip, -g:                   Fastq file is gzipped (optional, default: false)
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
 
 #### Query fastq
@@ -111,6 +112,7 @@ LRez query fastq allows to query a barcodes index and a fastq file to retrieve a
       --query STRING, -q STRING:    Query barcode to search in the fastq file and the index
       --list STRING, -l STRING:     File containing a list of barcodes to search in the fastq file and the index
       --output STRING, -o STRING:   File where to output the extracted reads (optional, default: stdout)
+      --gzip, -g:                   Fastq file is gzipped (optional, default: false)
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
 
 
