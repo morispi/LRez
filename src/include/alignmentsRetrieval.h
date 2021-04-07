@@ -5,16 +5,16 @@
 #include "indexManagementBam.h"
 
 /**
-	Retrieve the alignment starting at the given position and containing the given barcode, if it exists.
+	Retrieve the alignment starting at the given position and containing the given barcode.
 
 	@param alignment pointer to the variable where to store the alignment if it is found
 	@param reader BamReader open on the desired BAM file
 	@param position position at which the alignment must start
 	@param b barcode of interest, in binary representation
-	@return true is an alignment was found, false otherwise
+	@return the alignment of interest
 */
 // TODO : find another way to check wether alignment was found or not
-bool retrieveAlignmentWithBarcode(BamAlignment* alignment, BamReader& reader, int64_t position, barcode b);
+BamAlignment retrieveAlignmentWithBarcode(BamAlignment* alignment, BamReader& reader, int64_t position, barcode b);
 
 
 /**

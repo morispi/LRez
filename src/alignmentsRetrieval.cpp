@@ -5,55 +5,12 @@
 
 using namespace std::chrono;
 
-bool retrieveAlignmentWithBarcode(BamAlignment* alignment, BamReader& reader, int64_t position, barcode b) {
+BamAlignment retrieveAlignmentWithBarcode(BamReader& reader, int64_t position, barcode b) {
 	BamAlignment al;
 	string tag;
-	
-	// reader.GetNextAlignment(al);
-	auto start = high_resolution_clock::now();
-	// vector<BamAlignment> v;
 
 	reader.GetNextAlignment(al);
-	*alignment = al;
-	return true;
-
-	reader.GetNextAlignmentCore(al);
-	while (al.Position < position) {
-		reader.GetNextAlignmentCore(al);
-	}
-	al.BuildCharData();
-
-	auto stop = high_resolution_clock::now();
-	auto duration = duration_cast<milliseconds>(stop - start);
-
-	// LongRanger
-	if (al.GetTag(BXTAG, tag) || al.GetTag(RXTAG, tag)) {
-		if (!al.GetTag(BXTAG, tag) && CONSIDER_RX) {
-			al.GetTag(RXTAG, tag);
-		} else if (!al.GetTag(BXTAG, tag)) {
-			tag.clear();
-		}
-		while (al.Position <= position and (tag.empty() or stringToBarcode(tag.substr(0, BARCODE_SIZE)) != b)) {
-			reader.GetNextAlignment(al);
-			if (!al.GetTag(BXTAG, tag) && CONSIDER_RX) {
-				al.GetTag(RXTAG, tag);
-			} else if (!al.GetTag(BXTAG, tag)) {
-				tag.clear();
-			}
-		}
-	// Other aligners
-	} else {
-		while (al.Position <= position and ((!al.IsReverseStrand() and stringToBarcode(al.QueryBases.substr(0, BARCODE_SIZE)) != b) or (al.IsReverseStrand() and stringToBarcode(rev_comp::run(al.QueryBases).substr(0, BARCODE_SIZE)) != b))) {
-			reader.GetNextAlignment(al);
-		}
-	}
-
-	if (al.Position > position) {
-		return false;
-	}
-
-	*alignment = BamAlignment(al);
-	return true;
+	return al;
 }
 
 vector<BamAlignment> retrieveAlignmentsWithBarcodeBits_BamReader(BamReader& reader, BarcodesOffsetsIndex& BarcodesOffsetsIndex, barcode b) {
@@ -65,9 +22,8 @@ vector<BamAlignment> retrieveAlignmentsWithBarcodeBits_BamReader(BamReader& read
 			fprintf(stderr, "Error while attempting to jump to offset %ld", r);
 			exit(EXIT_FAILURE);
 		}
-		if (retrieveAlignmentWithBarcode(&al, reader, r, b)) {
-			res.push_back(al);
-		}
+		
+		res.push_back(retrieveAlignmentWithBarcode(reader, r, b));
 	}
 
 	return res;
