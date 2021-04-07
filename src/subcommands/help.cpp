@@ -21,7 +21,7 @@ void subcommandHelp(std::string subcommand) {
 	} else if (subcommand == "compare") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
-		printf("LRez compare allows to compute the number of common barcodes between all possibles pairs of a given list of regions, or between a given contig's extremities and all other contigs' extremities");	
+		printf("LRez compare allows to compute the number of common barcodes between all possibles pairs of a given list of regions, or between a given contig's extremities and all other contigs' extremities\n");	
 		printf("\n");
 		
 		printf("USAGE:\n");
@@ -102,6 +102,7 @@ void subcommandHelp(std::string subcommand) {
 		printf("ARGS:\n");
 		printf("\t-f, --fastq\t Fastq file to index\n");
 		printf("\t-o, --output\t File where to store the index\n");
+		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
 		// printf("\t-z, --gzip\t Input file is gzipped (optional, default: false)\n");
 		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "query fastq") {
@@ -121,6 +122,7 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-q, --query\t Query barcode to search in the fastq file and the index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the fastq file and the index\n");
 		printf("\t-o, --output\t File where to output the extracted reads (optional, default: stdout)\n");
+		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
 		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	}
 
