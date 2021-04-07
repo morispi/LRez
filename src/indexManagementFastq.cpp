@@ -1,5 +1,10 @@
 #include "indexManagementFastq.h"
 #include "utils.h"
+#include <fstream>
+#include <iostream>
+#include <boost/iostreams/filtering_streambuf.hpp>
+#include <boost/iostreams/copy.hpp>
+#include <boost/iostreams/filter/gzip.hpp>
 
 string getBXTag(string header) {
 	vector<string> t = splitString(header, "BX:Z:");
@@ -25,7 +30,7 @@ BarcodesIndex indexBarcodesFromFastq(string fastqFile) {
 	ifstream in;
 	in.open(fastqFile);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open barcodes index file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
+		fprintf(stderr, "Unable to open fastq file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
 		exit(EXIT_FAILURE);
 	}
 
@@ -50,6 +55,49 @@ BarcodesIndex indexBarcodesFromFastq(string fastqFile) {
 	}
 
 	in.close();
+	return BarcodesIndex;
+}
+
+BarcodesIndex indexBarcodesFromFastqGz(string fastqFile) {
+	std::ifstream file(fastqFile, std::ios_base::in | std::ios_base::binary);
+	if (!file.is_open()) {
+		fprintf(stderr, "Unable to open fastq file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+
+    boost::iostreams::filtering_streambuf<boost::iostreams::input> inbuf;
+    inbuf.push(boost::iostreams::gzip_decompressor());
+    inbuf.push(file);
+    istream in(&inbuf);
+
+    BarcodesIndex BarcodesIndex;
+	barcode b;
+	string barcode, line;
+
+	// int64_t pos = in.tellg();
+	int64_t pos = 0;
+	int64_t oldPos = 0;
+
+	while (getline(in, line)) {
+		barcode = getBXTag(line);
+		pos += line.length() + 1;
+		if (barcode.empty() and CONSIDER_RX) {
+			barcode = getRXTag(line);
+		}
+		getline(in, line);
+		pos += line.length()  + 1;
+		getline(in, line);
+		pos += line.length()  + 1;
+		getline(in, line);
+		pos += line.length()  + 1;
+		if (!barcode.empty()) {
+			b = stringToBarcode(barcode);
+			BarcodesIndex[b].push_back(oldPos);
+		}
+		oldPos = pos;
+	}
+
+	file.close();
 	return BarcodesIndex;
 }
 
