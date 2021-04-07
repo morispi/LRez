@@ -18,6 +18,15 @@ typedef robin_hood::unordered_map<barcode, vector<int64_t>> BarcodesIndex;
 */
 BarcodesIndex indexBarcodesFromFastq(string fastqFile);
 
+
+/**
+	Index the offsets of the barcodes contained in a given gzipped fastq file.
+
+	@param fastqFile gzipped fastq file to build the index from
+	@return the barcode index associating barcodes to the set of offsets they occur at
+*/
+BarcodesIndex indexBarcodesFromFastqGz(string fastqFile);
+
 /**
 	Save the content of the barcode index in a given file.
 
