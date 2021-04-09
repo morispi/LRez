@@ -12,6 +12,7 @@ Requirements
   - g++, minimum version 5.5.0.
   - CMake, minimum version 2.8.2.
   - zlib, minimum version 1.2.11.
+  - The Boost C++ library (https://www.boost.org/)
   
 Installation
 --------------
