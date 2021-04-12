@@ -9,7 +9,8 @@ LREZ_INC = $(curDir)/src/include/
 LREZ_LIB = $(curDir)/lib/
 
 LDFLAGS_BAMTOOLS = -lbamtools -L$(BAMTOOLS_LIB)
-LDFLAGS_LREZ = -llrez -L$(LREZ_LIB) -lboost_iostreams -lz -lm
+LDFLAGS_LREZ = -llrez -L$(LREZ_LIB)
+LDFLAGS_BOOST_LZ_LM = -lboost_iostreams -lz -lm
 
 MAIN = src/main.o
 REVCOMP = src/reverseComplement.o
@@ -26,7 +27,7 @@ directories:
 	mkdir -p bin/ lib/
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP)
-	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB)
+	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_BOOST_LZ_LM)
 
 $(EXEC): $(MAIN) $(LIB)
 	$(CC) -o $(EXEC) $(MAIN) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB)
