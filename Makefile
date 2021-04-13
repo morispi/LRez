@@ -10,7 +10,7 @@ LREZ_LIB = $(curDir)/lib/
 
 LDFLAGS_BAMTOOLS = -lbamtools -L$(BAMTOOLS_LIB)
 LDFLAGS_LREZ = -llrez -L$(LREZ_LIB)
-LDFLAGS_BOOST_LZ_LM = -lboost_iostreams -lz -lm
+LDFLAGS_BOOST_LZ_LM = -lboost_iostreams -lz -lm -lc
 
 MAIN = src/main.o
 REVCOMP = src/reverseComplement.o
