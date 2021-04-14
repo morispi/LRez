@@ -30,11 +30,11 @@ void subcommandHelp(std::string subcommand) {
 
 		printf("ARGS:\n");
 		printf("\t-b, --bam\t BAM file containing the alignments\n");
-		printf("\t-i, --index\t Barcodes offsets index built with the index subcommand\n");
+		printf("\t-i, --index\t Barcodes offsets index built with the index bam subcommand\n");
 		printf("\t-r, --region\t File containing regions of interest in format chromosome:startPosition-endPosition\n");
 		printf("\t-c, --contig\t Contig of interest\n");
 		printf("\t-s, --size\t Size of contigs' extremities to consider (optional, default: 1000)\n");
-		printf("\t-o, --output\t File where to output the extracted barcodes (optional, default: stdout)\n");
+		printf("\t-o, --output\t File where to output the results (optional, default: stdout)\n");
 		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "extract") {
 		printf("%s\n", VERSION);
@@ -83,7 +83,7 @@ void subcommandHelp(std::string subcommand) {
 
 		printf("ARGS:\n");
 		printf("\t-b, --bam\t BAM file to search\n");
-		printf("\t-i, --index\t Barcodes offsets index, built with the index subcommand. Warning: the index must have been built with the --offsets/-f option\n");
+		printf("\t-i, --index\t Barcodes offsets index, built with the index bam subcommand.\n");
 		printf("\t-q, --query\t Query barcode to search in the BAM / index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the BAM / index\n");
 		printf("\t-o, --output\t File where to output the extracted alignments (optional, default: stdout)\n");
@@ -103,7 +103,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-f, --fastq\t Fastq file to index\n");
 		printf("\t-o, --output\t File where to store the index\n");
 		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
-		// printf("\t-z, --gzip\t Input file is gzipped (optional, default: false)\n");
 		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "query fastq") {
 		printf("%s\n", VERSION);
@@ -118,7 +117,7 @@ void subcommandHelp(std::string subcommand) {
 
 		printf("ARGS:\n");
 		printf("\t-f, --fastq\t Fastq file to search\n");
-		printf("\t-i, --index\t Barcodes index, built with the index subcommand\n");
+		printf("\t-i, --index\t Barcodes index, built with the index fastq subcommand\n");
 		printf("\t-q, --query\t Query barcode to search in the fastq file and the index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the fastq file and the index\n");
 		printf("\t-o, --output\t File where to output the extracted reads (optional, default: stdout)\n");

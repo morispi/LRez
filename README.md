@@ -56,11 +56,11 @@ A description of each subcommand as well as its options is given below.
 LRez compare allows to compute the number of common barcodes between all possibles pairs of a given list of regions, or between a given contig's extremities and all other contigs' extremities.
 
       --bam STRING, -b STRING:      BAM file containing the alignments
-      --index STRING, -i SRING:     Barcodes offsets index built with the index subcommand
+      --index STRING, -i SRING:     Barcodes offsets index built with the index bam subcommand
       --region STRING, -r STRING:   File containing regions of interest in format chromosome:startPosition-endPosition
       --contig STRING, -c:          Contig of interest
       --size INT, -s INT:           Size of contigs' extremities to consider (optional, default: 1000) 
-      --output STRING, -o STRING:   File where to output the extracted barcodes (optional, default: stdout)
+      --output STRING, -o STRING:   File where to output the results (optional, default: stdout)
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
 
 #### Extract
@@ -90,7 +90,7 @@ LRez index bam allows to index the offsets or occurrences positions of the barco
 LRez query bam allows to query a barcodes index and a BAM file to retrieve alignments containing the query barcodes.
 
       --bam STRING, -b STRING:      BAM file to search
-      --index STRING, -i STRING:    Barcodes offsets index, built with the index subcommand. Warning: the index must have been built with the --offsets/-f option
+      --index STRING, -i STRING:    Barcodes offsets index, built with the index bam subcommand.
       --list STRING, -l STRING:     File containing a list of barcodes to search in the BAM / index
       --output STRING, -o STRING:   File where to output the extracted alignments (optional, default: stdout)
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
@@ -109,7 +109,7 @@ LRez index fastq allows to index the offsets of the barcodes contained in a fast
 LRez query fastq allows to query a barcodes index and a fastq file to retrieve alignments containing the query barcodes.
 
       --fastq STRING, -f STRING:    Fastq file to search
-      --index STRING, -i STRING:    Barcodes index, built with the index subcommand
+      --index STRING, -i STRING:    Barcodes index, built with the index fastq subcommand
       --query STRING, -q STRING:    Query barcode to search in the fastq file and the index
       --list STRING, -l STRING:     File containing a list of barcodes to search in the fastq file and the index
       --output STRING, -o STRING:   File where to output the extracted reads (optional, default: stdout)
