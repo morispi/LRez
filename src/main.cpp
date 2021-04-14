@@ -6,7 +6,7 @@
 #include "subcommands/indexFastq.h"
 #include "subcommands/queryFastq.h"
 #include <set>
-#include "string.h"
+#include <string.h>
 
 
 using namespace std;
