@@ -3,7 +3,7 @@
 
 #include <string>
 
-#define VERSION "LRez v.1.0"
+#define VERSION "LRez v.2.0"
 
 using namespace std;
 
