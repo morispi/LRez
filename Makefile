@@ -1,3 +1,11 @@
+OS_NAME := $(shell uname -s | tr A-Z a-z)
+EXEC = bin/LRez
+ifeq ($OS_NAME), Linux)
+        SHLIB_EXT=dylib
+else
+        SHLIB_EXT=so
+endif
+
 curDir = $(shell pwd)
 CC = g++
 CFLAGS  = -Wall -pedantic -O3 -m64 -shared -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 -fPIC
@@ -18,7 +26,7 @@ SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtracti
 SUBCOMMANDS = src/subcommands/compare.o src/subcommands/extract.o src/subcommands/help.o src/subcommands/indexBam.o src/subcommands/queryBam.o src/subcommands/indexFastq.o src/subcommands/queryFastq.o
 
 EXEC = bin/LRez
-LIB = lib/liblrez.so
+LIB = lib/liblrez.${SHLIB_EXT}
 
 all: directories $(LIB) $(EXEC)
 
