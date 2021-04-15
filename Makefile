@@ -1,9 +1,9 @@
 OS_NAME := $(shell uname -s | tr A-Z a-z)
 EXEC = bin/LRez
 ifeq ($OS_NAME), Linux)
-        SHLIB_EXT=dylib
-else
         SHLIB_EXT=so
+else
+        SHLIB_EXT=dylib
 endif
 
 curDir = $(shell pwd)
