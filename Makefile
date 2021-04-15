@@ -1,6 +1,6 @@
 OS_NAME := $(shell uname -s | tr A-Z a-z)
 EXEC = bin/LRez
-ifeq ($OS_NAME), Linux)
+ifeq ($(OS_NAME),linux)
         SHLIB_EXT=so
 else
         SHLIB_EXT=dylib
