@@ -9,6 +9,7 @@
 #include "robin_hood.h"
 #include <sstream>
 
+//TODO: See how to define barcodes
 #define BARCODE_SIZE 16
 #define BXTAG "BX:Z"
 // BX tag is not always there
