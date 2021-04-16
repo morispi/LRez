@@ -49,9 +49,8 @@ $(BAMTOOLS_LIB):
 			-DCMAKE_INSTALL_LIBDIR=lib \
 			-DCMAKE_INSTALL_PREFIX=$(curDir) \
 			.. && \
-		$(MAKE) -C src/api && \
-		cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P src/cmake_install.cmake && \
-		cmake -P src/api/cmake_install.cmake
+		$(MAKE) && \
+		$(MAKE) install
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(BAMTOOLS_LIB) directories
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
