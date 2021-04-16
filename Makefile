@@ -35,10 +35,10 @@ directories:
 	mkdir -p bin/ lib/
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP)
-	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LDFLAGS_BAMTOOLS) -Wl,-R$(BAMTOOLS_LIB) $(LDFLAGS_BOOST_LZ_LM)
+	$(CC) -fPIC -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_BOOST_LZ_LM)
 
 $(EXEC): $(MAIN) $(LIB)
-	$(CC) -o $(EXEC) $(MAIN) $(LDFLAGS_LREZ) -Wl,-R$(LREZ_LIB) $(LDFLAGS_BAMTOOLS) -Wl,-R$(BAMTOOLS_LIB) $(LDFLAGS_BOOST_LZ_LM)
+	$(CC) -o $(EXEC) $(MAIN) $(LDFLAGS_LREZ) -Wl,-rpath,$(LREZ_LIB) $(LDFLAGS_BAMTOOLS) -Wl,-rpath,$(BAMTOOLS_LIB) $(LDFLAGS_BOOST_LZ_LM)
 
 src/%.o: src/%.cpp
 	$(CC) -o $@ -c $< $(CFLAGS) -I$(BAMTOOLS_INC) -I$(LREZ_INC)
