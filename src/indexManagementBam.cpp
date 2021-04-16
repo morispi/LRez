@@ -24,9 +24,9 @@ BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, u
 			barcode.clear();
 			// LongRanger
 			if (al.GetTag(BXTAG, bc)) {
-				barcode = bc.substr(0, BARCODE_SIZE);
+				barcode = splitString(bc, "-1")[0];
 			} else if (CONSIDER_RX and al.GetTag(RXTAG, bc)) {
-				barcode = bc.substr(0, BARCODE_SIZE);
+				barcode = splitString(bc, "-1")[0];
 			// Other aligners
 			} else if (!al.GetTag(BXTAG, bc) and !al.GetTag(RXTAG, bc)) {
 				// Barcode is only contained in first mate, so only index if first mate or unpaired
@@ -61,7 +61,11 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& BarcodesOffsetsIndex, string
 
 	for (auto i : BarcodesOffsetsIndex) {
 		// Write barcode
-		out << i.first << ";";
+		// out << i.first << ";";
+		for (bool b : i.first) {
+			out << b;
+		}
+		out << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -88,7 +92,15 @@ BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 
 	while (getline(in, line)) {
 		v = splitString(line, ";");
-		barcode = stol(v[0]);
+		// barcode = stol(v[0]);
+		barcode.clear();
+		for (char c : v[0]) {
+			if (c == '0') {
+				barcode.push_back(false);
+			} else {
+				barcode.push_back(true);
+			}
+		}
 		w = splitString(v[1], ",");
 		vector<int64_t> regions;
 		for (string ww : w) {
@@ -123,9 +135,9 @@ BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primar
 			barcode.clear();
 			// LongRanger
 			if (al.GetTag(BXTAG, bc)) {
-				barcode = bc.substr(0, BARCODE_SIZE);
+				barcode = splitString(bc, "-1")[0];
 			} else if (CONSIDER_RX and al.GetTag(RXTAG, bc)) {
-				barcode = bc.substr(0, BARCODE_SIZE);
+				barcode = splitString(bc, "-1")[0];
 			// Other aligners
 			} else if (!al.GetTag(BXTAG, bc) and !al.GetTag(RXTAG, bc)) {
 				// Barcode is only contained in first mate, so only index if first mate or unpaired
@@ -159,7 +171,11 @@ void saveBarcodesPositionsIndex(BarcodesPositionsIndex& barcodesPositionsIndex, 
 	for (auto i : barcodesPositionsIndex) {
 		// Write barcode
 		// out << barcodeToString(i.first, BARCODE_SIZE) << ";";
-		out << i.first << ";";
+		// out << i.first << ";";
+		for (bool b : i.first) {
+			out << b;
+		}
+		out << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -187,7 +203,15 @@ BarcodesPositionsIndex loadBarcodesPositionsIndex(string file) {
 	while (getline(in, line)) {
 		v = splitString(line, ";");
 		// barcode = stringToBarcode(v[0]);
-		barcode = stol(v[0]);
+		// barcode = stol(v[0]);
+		barcode.clear();
+		for (char c : v[0]) {
+			if (c == '0') {
+				barcode.push_back(false);
+			} else {
+				barcode.push_back(true);
+			}
+		}
 		w = splitString(v[1], ",");
 		vector<pair<int32_t, int32_t>> positions;
 		for (string ww : w) {

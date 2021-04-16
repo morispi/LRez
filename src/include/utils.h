@@ -22,7 +22,7 @@
 using namespace std;
 using namespace BamTools;
 
-typedef uint32_t barcode;
+typedef vector<bool> barcode;
 
 extern bool CONSIDER_RX;
 

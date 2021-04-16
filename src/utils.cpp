@@ -3,32 +3,38 @@
 bool CONSIDER_RX = false;
 
 barcode stringToBarcode(const string& str) {
-	barcode res(0);
-	for(uint i(0);i<str.size();i++){
-		res<<=2;
-		switch (str[i]){
-			case 'A':res+=0;break;
-			case 'C':res+=1;break;
-			case 'G':res+=2;break;
-			default:res+=3;break;
-		}
-	}
-	return res;
+    vector<bool> res;
+    for(uint i(0);i<str.size();i++){
+        switch (str[i]){
+            case 'A':res.push_back(false);res.push_back(false);break;
+            case 'C':res.push_back(false);res.push_back(true);break;
+            case 'G':res.push_back(true);res.push_back(false);break;
+            default:res.push_back(true);res.push_back(true);break;
+        }
+    }
+  return res;
 }
 
 string barcodeToString(barcode b) {
-	string result;
-	for(uint32_t i(0); i < BARCODE_SIZE; ++i){
-		switch(b%4){
-			case 0:  result.push_back('A');break;
-			case 1:  result.push_back('C');break;
-			case 2:  result.push_back('G');break;
-			case 3:  result.push_back('T');break;
-		}
-		b>>=2;
-	}
-	reverse(result.begin(),result.end());
-	return result;
+    string str(b.size()/2, 'N');
+    uint j = 0;
+    for (uint i(0);i<b.size();i+=2) {
+        if (b[i]) {
+            if(b[i+1]){
+                str[j] = 'T';
+            } else {
+                str[j] = 'G';
+            }
+        } else {
+            if (b[i+1]) {
+                str[j] = 'C';
+            } else {
+                str[j] = 'A';
+            }
+        }
+        j++;
+    }
+    return str;
 }
 
 vector<string> splitString(string s, string delimiter) {
