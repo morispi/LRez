@@ -15,7 +15,7 @@ LIBDIR = $(PREFIX)/lib
 
 CXX ?= g++
 CXXFLAGS += -Wall -pedantic -O3 -m64 -std=c++11 -fPIC
-LDFLAGS += -L$(curDir)/lib -Wl,-rpath,$(LIBDIR) -Wl,--whole-archive -lpthread -Wl,--no-whole-archive
+LDFLAGS += -L$(curDir)/lib -Wl,-rpath,$(LIBDIR)
 
 BAMTOOLS_LIB_PREFIX = lrez_
 BAMTOOLS_LIB = lib/lib$(BAMTOOLS_LIB_PREFIX)bamtools$(SHLIB_EXT)
