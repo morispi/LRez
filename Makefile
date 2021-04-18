@@ -69,8 +69,8 @@ install: $(EXEC) $(LIB)
 	mkdir -p $(DESTDIR)$(BINDIR)
 	mkdir -p $(DESTDIR)$(LIBDIR)
 	cp -a $(EXEC) $(DESTDIR)$(BINDIR)/
-	cp -a $(LIB)* $(DESTDIR)$(LIBDIR)/
-	cp -a $(BAMTOOLS_LIB)* $(DESTDIR)$(LIBDIR)/
+	cp -a $(LIB:$(SHLIB_EXT)=*$(SHLIB_EXT)*) $(DESTDIR)$(LIBDIR)/
+	cp -a $(BAMTOOLS_LIB:$(SHLIB_EXT)=*$(SHLIB_EXT)*) $(DESTDIR)$(LIBDIR)/
 
 clean:
 	rm src/*.o src/subcommands/*.o $(EXEC) $(LIB)
