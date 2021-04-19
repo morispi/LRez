@@ -2,39 +2,51 @@
 
 bool CONSIDER_RX = false;
 
-barcode stringToBarcode(const string& str) {
-    vector<bool> res;
-    for(uint i(0);i<str.size();i++){
-        switch (str[i]){
-            case 'A':res.push_back(false);res.push_back(false);break;
-            case 'C':res.push_back(false);res.push_back(true);break;
-            case 'G':res.push_back(true);res.push_back(false);break;
-            default:res.push_back(true);res.push_back(true);break;
+bool onlyContainsNucleotides(string barcode) {
+    for (char c : barcode) {
+        if (c != 'A' and c != 'a' and c != 'C' and c != 'c' and c != 'G' and c != 'g' and c != 'T' and c != 't') {
+            return false;
         }
     }
-  return res;
+
+    return true;
+}
+
+barcode stringToBarcode(const string& str) {
+    return str;
+    // vector<bool> res;
+    // for(uint i(0);i<str.size();i++){
+    //     switch (str[i]){
+    //         case 'A':res.push_back(false);res.push_back(false);break;
+    //         case 'C':res.push_back(false);res.push_back(true);break;
+    //         case 'G':res.push_back(true);res.push_back(false);break;
+    //         default:res.push_back(true);res.push_back(true);break;
+    //     }
+    // }
+  // return res;
 }
 
 string barcodeToString(barcode b) {
-    string str(b.size()/2, 'N');
-    uint j = 0;
-    for (uint i(0);i<b.size();i+=2) {
-        if (b[i]) {
-            if(b[i+1]){
-                str[j] = 'T';
-            } else {
-                str[j] = 'G';
-            }
-        } else {
-            if (b[i+1]) {
-                str[j] = 'C';
-            } else {
-                str[j] = 'A';
-            }
-        }
-        j++;
-    }
-    return str;
+    return b;
+    // string str(b.size()/2, 'N');
+    // uint j = 0;
+    // for (uint i(0);i<b.size();i+=2) {
+    //     if (b[i]) {
+    //         if(b[i+1]){
+    //             str[j] = 'T';
+    //         } else {
+    //             str[j] = 'G';
+    //         }
+    //     } else {
+    //         if (b[i+1]) {
+    //             str[j] = 'C';
+    //         } else {
+    //             str[j] = 'A';
+    //         }
+    //     }
+    //     j++;
+    // }
+    // return str;
 }
 
 vector<string> splitString(string s, string delimiter) {

@@ -8,9 +8,14 @@
 
 string getBXTag(string header) {
 	vector<string> t = splitString(header, "BX:Z:");
+	cerr << t[1] << endl;
+	t = splitString(t[1], "\t");
+	cerr << t[0] << endl;
+	t = splitString(t[0], " ");
+	cerr << t[0] << endl;
 
-	if (t.size() > 1 and t[1].length() != 0) {
-		return splitString(t[1], "-1")[0];
+	if (t.size() == 1 and t[0].length() != 0) {
+		return splitString(t[0], "-1")[0];
 	} else {
 		return "";
 	}
@@ -18,9 +23,11 @@ string getBXTag(string header) {
 
 string getRXTag(string header) {
 	vector<string> t = splitString(header, "RX:Z:");
+	t = splitString(t[1], "\t");
+	t = splitString(t[0], " ");
 
-	if (t.size() > 1 and t[1].length() != 0) {
-		return splitString(t[1], "-1")[0];
+	if (t.size() == 1 and t[0].length() != 0) {
+		return splitString(t[0], "-1")[0];
 	} else {
 		return "";
 	}
@@ -114,10 +121,11 @@ void saveBarcodesIndex(BarcodesIndex& BarcodesIndex, string file) {
 		// Write barcode
 		// out << barcodeToString(i.first, BARCODE_SIZE) << ";";
 		// out << i.first << ";";
-		for (bool b : i.first) {
-			out << b;
-		}
-		out << ";";
+		// for (bool b : i.first) {
+		// 	out << b;
+		// }
+		// out << ";";
+		out << i.first << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -146,14 +154,15 @@ BarcodesIndex loadBarcodesIndex(string file) {
 		v = splitString(line, ";");
 		// barcode = stringToBarcode(v[0]);
 		// barcode = stol(v[0]);
-		barcode.clear();
-		for (char c : v[0]) {
-			if (c == '0') {
-				barcode.push_back(false);
-			} else {
-				barcode.push_back(true);
-			}
-		}
+		// barcode.clear();
+		// for (char c : v[0]) {
+		// 	if (c == '0') {
+		// 		barcode.push_back(false);
+		// 	} else {
+		// 		barcode.push_back(true);
+		// 	}
+		// }
+		barcode = v[0];
 		w = splitString(v[1], ",");
 		vector<int64_t> regions;
 		for (string ww : w) {

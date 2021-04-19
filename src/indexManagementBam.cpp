@@ -62,10 +62,11 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& BarcodesOffsetsIndex, string
 	for (auto i : BarcodesOffsetsIndex) {
 		// Write barcode
 		// out << i.first << ";";
-		for (bool b : i.first) {
-			out << b;
-		}
-		out << ";";
+		// for (bool b : i.first) {
+		// 	out << b;
+		// }
+		// out << ";";
+		out << i.first << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -75,7 +76,7 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& BarcodesOffsetsIndex, string
 	}
 
 	out.close();
-}
+} 
 
 BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 	ifstream in;
@@ -92,15 +93,16 @@ BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 
 	while (getline(in, line)) {
 		v = splitString(line, ";");
+		barcode = v[0];
 		// barcode = stol(v[0]);
-		barcode.clear();
-		for (char c : v[0]) {
-			if (c == '0') {
-				barcode.push_back(false);
-			} else {
-				barcode.push_back(true);
-			}
-		}
+		// barcode.clear();
+		// for (char c : v[0]) {
+		// 	if (c == '0') {
+		// 		barcode.push_back(false);
+		// 	} else {
+		// 		barcode.push_back(true);
+		// 	}
+		// }
 		w = splitString(v[1], ",");
 		vector<int64_t> regions;
 		for (string ww : w) {
@@ -172,10 +174,11 @@ void saveBarcodesPositionsIndex(BarcodesPositionsIndex& barcodesPositionsIndex, 
 		// Write barcode
 		// out << barcodeToString(i.first, BARCODE_SIZE) << ";";
 		// out << i.first << ";";
-		for (bool b : i.first) {
-			out << b;
-		}
-		out << ";";
+		// for (bool b : i.first) {
+		// 	out << b;
+		// }
+		// out << ";";
+		out << i.first << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -204,14 +207,15 @@ BarcodesPositionsIndex loadBarcodesPositionsIndex(string file) {
 		v = splitString(line, ";");
 		// barcode = stringToBarcode(v[0]);
 		// barcode = stol(v[0]);
-		barcode.clear();
-		for (char c : v[0]) {
-			if (c == '0') {
-				barcode.push_back(false);
-			} else {
-				barcode.push_back(true);
-			}
-		}
+		// barcode.clear();
+		// for (char c : v[0]) {
+		// 	if (c == '0') {
+		// 		barcode.push_back(false);
+		// 	} else {
+		// 		barcode.push_back(true);
+		// 	}
+		// }
+		barcode = v[0];
 		w = splitString(v[1], ",");
 		vector<pair<int32_t, int32_t>> positions;
 		for (string ww : w) {

@@ -22,15 +22,24 @@
 using namespace std;
 using namespace BamTools;
 
-typedef vector<bool> barcode;
+typedef string barcode;
 
 extern bool CONSIDER_RX;
+
+/**
+	Verify if a barcode is only made up of nucleotides.
+
+	@param the barcode to analyse, in string representation
+	@return true if the barcode only contains nucleotides, false otherwise
+*/
+bool onlyContainsNucleotides(string barcode);
 
 
 /**
 	Translate a string to a barcode.
 
 	@param str string to convert
+	@return the barcode in binary representation
 */
 barcode stringToBarcode(const string& str);
 
@@ -38,6 +47,7 @@ barcode stringToBarcode(const string& str);
 	Translate a barcode to a string.
 
 	@param b barcode to convert
+	@return the barcode in string representation
 */
 string barcodeToString(barcode b);
 
