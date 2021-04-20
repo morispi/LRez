@@ -1,0 +1,100 @@
+.TH "includoc/indexManagementFastq.h" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includoc/indexManagementFastq.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include 'robin_hood\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef robin_hood::unordered_map< \fBbarcode\fP, vector< int64_t > > \fBBarcodesIndex\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBindexBarcodesFromFastq\fP (string fastqFile)"
+.br
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBindexBarcodesFromFastqGz\fP (string fastqFile)"
+.br
+.ti -1c
+.RI "void \fBsaveBarcodesIndex\fP (\fBBarcodesIndex\fP &index, string file)"
+.br
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBloadBarcodesIndex\fP (string file)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef robin_hood::unordered_map<\fBbarcode\fP, vector<int64_t> > \fBBarcodesIndex\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBBarcodesIndex\fP indexBarcodesFromFastq (string fastqFile)"
+Index the offsets of the barcodes contained in a given fastq file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfastqFile\fP fastq file to build the index from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index associating barcodes to the set of offsets they occur at 
+.RE
+.PP
+
+.SS "\fBBarcodesIndex\fP indexBarcodesFromFastqGz (string fastqFile)"
+Index the offsets of the barcodes contained in a given gzipped fastq file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfastqFile\fP gzipped fastq file to build the index from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index associating barcodes to the set of offsets they occur at 
+.RE
+.PP
+
+.SS "\fBBarcodesIndex\fP loadBarcodesIndex (string file)"
+Load the barcode index stored in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP file where the barcode index is stored 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index filled with the data contained in the file 
+.RE
+.PP
+
+.SS "void saveBarcodesIndex (\fBBarcodesIndex\fP & index, string file)"
+Save the content of the barcode index in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP barcode offsets index to save 
+.br
+\fIfile\fP file where to store the index 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

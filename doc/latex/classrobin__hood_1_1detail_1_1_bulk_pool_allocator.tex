@@ -1,0 +1,169 @@
+\hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{}\doxysection{robin\+\_\+hood\+::detail\+::Bulk\+Pool\+Allocator$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ Class Template Reference}
+\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+
+
+{\ttfamily \#include $<$robin\+\_\+hood.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6e80635d45b4f146f3b8df9703659508}{Bulk\+Pool\+Allocator}} () noexcept=default
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6065f77105ffa5296132f5422444d4a6}{Bulk\+Pool\+Allocator}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \&\mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(o)) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aabb8a20e6aedfa5fc0b804614dc1aeb4}{Bulk\+Pool\+Allocator}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \&\&o) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a4f19c9026d162d30ca72b1c7514f4c3e}{operator=}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \&\&o) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aa5cddd961b14caea546d5106611f5292}{operator=}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} \&\mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(o)) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a1118f823c38058aaf294af744fcd2d4a}{$\sim$\+Bulk\+Pool\+Allocator}} () noexcept
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3be5ce9a695a275d6da227a6e8af9cab}{reset}} () noexcept
+\item 
+T $\ast$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a04c68ede32ff3c37d33dbd9f4eccdb09}{allocate}} ()
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a41fb702a7bc3ee48662bf5bf84403e3e}{deallocate}} (T $\ast$obj) noexcept
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_af4517bb6622d5f5ffb0cf610b692e984}{add\+Or\+Free}} (void $\ast$ptr, const size\+\_\+t num\+Bytes) noexcept
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3187c8e2688ba62b246a7f8c27a9c891}{swap}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&other) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$\newline
+class robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$}
+
+
+
+Definition at line 367 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6e80635d45b4f146f3b8df9703659508}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6e80635d45b4f146f3b8df9703659508}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!BulkPoolAllocator@{BulkPoolAllocator}}
+\index{BulkPoolAllocator@{BulkPoolAllocator}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{BulkPoolAllocator()}{BulkPoolAllocator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6065f77105ffa5296132f5422444d4a6}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a6065f77105ffa5296132f5422444d4a6}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!BulkPoolAllocator@{BulkPoolAllocator}}
+\index{BulkPoolAllocator@{BulkPoolAllocator}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{BulkPoolAllocator()}{BulkPoolAllocator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&}]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 372 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aabb8a20e6aedfa5fc0b804614dc1aeb4}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aabb8a20e6aedfa5fc0b804614dc1aeb4}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!BulkPoolAllocator@{BulkPoolAllocator}}
+\index{BulkPoolAllocator@{BulkPoolAllocator}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{BulkPoolAllocator()}{BulkPoolAllocator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&\&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 376 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a1118f823c38058aaf294af744fcd2d4a}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a1118f823c38058aaf294af744fcd2d4a}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!````~BulkPoolAllocator@{$\sim$BulkPoolAllocator}}
+\index{````~BulkPoolAllocator@{$\sim$BulkPoolAllocator}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$BulkPoolAllocator()}{~BulkPoolAllocator()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::$\sim$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 399 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_af4517bb6622d5f5ffb0cf610b692e984}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_af4517bb6622d5f5ffb0cf610b692e984}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!addOrFree@{addOrFree}}
+\index{addOrFree@{addOrFree}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{addOrFree()}{addOrFree()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::add\+Or\+Free (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{const size\+\_\+t}]{num\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 438 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a04c68ede32ff3c37d33dbd9f4eccdb09}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a04c68ede32ff3c37d33dbd9f4eccdb09}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+T$\ast$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::allocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 416 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a41fb702a7bc3ee48662bf5bf84403e3e}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a41fb702a7bc3ee48662bf5bf84403e3e}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::deallocate (\begin{DoxyParamCaption}\item[{T $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 430 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a4f19c9026d162d30ca72b1c7514f4c3e}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a4f19c9026d162d30ca72b1c7514f4c3e}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}\& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&\&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 383 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aa5cddd961b14caea546d5106611f5292}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_aa5cddd961b14caea546d5106611f5292}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}\& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&}]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 394 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3be5ce9a695a275d6da227a6e8af9cab}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3be5ce9a695a275d6da227a6e8af9cab}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!reset@{reset}}
+\index{reset@{reset}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 404 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3187c8e2688ba62b246a7f8c27a9c891}\label{classrobin__hood_1_1detail_1_1_bulk_pool_allocator_a3187c8e2688ba62b246a7f8c27a9c891}} 
+\index{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}!swap@{swap}}
+\index{swap@{swap}!robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$@{robin\_hood::detail::BulkPoolAllocator$<$ T, MinNumAllocs, MaxNumAllocs $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t Min\+Num\+Allocs = 4, size\+\_\+t Max\+Num\+Allocs = 256$>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 448 of file robin\+\_\+hood.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{robin__hood_8h}{robin\+\_\+hood.\+h}}\end{DoxyCompactItemize}

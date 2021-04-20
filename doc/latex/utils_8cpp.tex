@@ -1,0 +1,165 @@
+\hypertarget{utils_8cpp}{}\doxysection{src/utils.cpp File Reference}
+\label{utils_8cpp}\index{src/utils.cpp@{src/utils.cpp}}
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utils_8cpp_a862aaf73322e397e38ac9ebb6ec5f72e}{only\+Contains\+Nucleotides}} (string \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}})
+\item 
+\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} \mbox{\hyperlink{utils_8cpp_a34f469e4f9489ee6c39cbe755b08f572}{string\+To\+Barcode}} (const string \&str)
+\item 
+string \mbox{\hyperlink{utils_8cpp_a77e2d17e7d8036180bd6773cf64a6148}{barcode\+To\+String}} (\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} b)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{utils_8cpp_ae6a96271f011e701d6adb92c82bc247f}{split\+String}} (string s, string delimiter)
+\item 
+Bam\+Region \mbox{\hyperlink{utils_8cpp_a89579e58839713d54ee6eeed19f9017f}{string\+To\+Bam\+Region}} (Bam\+Reader \&reader, string s)
+\item 
+string \mbox{\hyperlink{utils_8cpp_a1cd3b2d441081670ab24f2ca0a34a248}{convert\+To\+Sam}} (const Bam\+Alignment \&a, Ref\+Vector m\+\_\+references)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utils_8cpp_a7f869f4b333a9d6acaf72553973418c1}{C\+O\+N\+S\+I\+D\+E\+R\+\_\+\+RX}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8cpp_a77e2d17e7d8036180bd6773cf64a6148}\label{utils_8cpp_a77e2d17e7d8036180bd6773cf64a6148}} 
+\index{utils.cpp@{utils.cpp}!barcodeToString@{barcodeToString}}
+\index{barcodeToString@{barcodeToString}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{barcodeToString()}{barcodeToString()}}
+{\footnotesize\ttfamily string barcode\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}]{b }\end{DoxyParamCaption})}
+
+Translate a barcode to a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & barcode to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode in string representation 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file utils.\+cpp.
+
+\mbox{\Hypertarget{utils_8cpp_a1cd3b2d441081670ab24f2ca0a34a248}\label{utils_8cpp_a1cd3b2d441081670ab24f2ca0a34a248}} 
+\index{utils.cpp@{utils.cpp}!convertToSam@{convertToSam}}
+\index{convertToSam@{convertToSam}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{convertToSam()}{convertToSam()}}
+{\footnotesize\ttfamily string convert\+To\+Sam (\begin{DoxyParamCaption}\item[{const Bam\+Alignment \&}]{a,  }\item[{Ref\+Vector}]{m\+\_\+references }\end{DoxyParamCaption})}
+
+Translate a Bam\+Alignment to a S\+A\+M-\/like string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Bam\+Alignment to translate \\
+\hline
+{\em m\+\_\+references} & vector containing the information (name and length) about reference sequences \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a S\+A\+M-\/like string summarizing the information of a 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file utils.\+cpp.
+
+\mbox{\Hypertarget{utils_8cpp_a862aaf73322e397e38ac9ebb6ec5f72e}\label{utils_8cpp_a862aaf73322e397e38ac9ebb6ec5f72e}} 
+\index{utils.cpp@{utils.cpp}!onlyContainsNucleotides@{onlyContainsNucleotides}}
+\index{onlyContainsNucleotides@{onlyContainsNucleotides}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{onlyContainsNucleotides()}{onlyContainsNucleotides()}}
+{\footnotesize\ttfamily bool only\+Contains\+Nucleotides (\begin{DoxyParamCaption}\item[{string}]{barcode }\end{DoxyParamCaption})}
+
+Verify if a barcode is only made up of nucleotides.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & barcode to analyse, in string representation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the barcode only contains nucleotides, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 5 of file utils.\+cpp.
+
+\mbox{\Hypertarget{utils_8cpp_ae6a96271f011e701d6adb92c82bc247f}\label{utils_8cpp_ae6a96271f011e701d6adb92c82bc247f}} 
+\index{utils.cpp@{utils.cpp}!splitString@{splitString}}
+\index{splitString@{splitString}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{splitString()}{splitString()}}
+{\footnotesize\ttfamily vector$<$string$>$ split\+String (\begin{DoxyParamCaption}\item[{string}]{s,  }\item[{string}]{delimiter }\end{DoxyParamCaption})}
+
+Split a string according to a delimiter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to split \\
+\hline
+{\em delimiter} & delimiter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the splits of the string 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file utils.\+cpp.
+
+\mbox{\Hypertarget{utils_8cpp_a89579e58839713d54ee6eeed19f9017f}\label{utils_8cpp_a89579e58839713d54ee6eeed19f9017f}} 
+\index{utils.cpp@{utils.cpp}!stringToBamRegion@{stringToBamRegion}}
+\index{stringToBamRegion@{stringToBamRegion}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{stringToBamRegion()}{stringToBamRegion()}}
+{\footnotesize\ttfamily Bam\+Region string\+To\+Bam\+Region (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{string}]{s }\end{DoxyParamCaption})}
+
+Translate a string to a Bam\+Region.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em s} & string to translate, formatted as chromosome\+:start\+Position-\/end\+Position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Bam\+Region coressponding to the string s 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file utils.\+cpp.
+
+\mbox{\Hypertarget{utils_8cpp_a34f469e4f9489ee6c39cbe755b08f572}\label{utils_8cpp_a34f469e4f9489ee6c39cbe755b08f572}} 
+\index{utils.cpp@{utils.cpp}!stringToBarcode@{stringToBarcode}}
+\index{stringToBarcode@{stringToBarcode}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{stringToBarcode()}{stringToBarcode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} string\+To\+Barcode (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+Translate a string to a barcode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode in binary representation 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file utils.\+cpp.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{utils_8cpp_a7f869f4b333a9d6acaf72553973418c1}\label{utils_8cpp_a7f869f4b333a9d6acaf72553973418c1}} 
+\index{utils.cpp@{utils.cpp}!CONSIDER\_RX@{CONSIDER\_RX}}
+\index{CONSIDER\_RX@{CONSIDER\_RX}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{CONSIDER\_RX}{CONSIDER\_RX}}
+{\footnotesize\ttfamily bool C\+O\+N\+S\+I\+D\+E\+R\+\_\+\+RX = false}
+
+
+
+Definition at line 3 of file utils.\+cpp.
+

@@ -1,0 +1,59 @@
+\hypertarget{class_bam_tools_1_1_bam_index}{}\doxysection{Bam\+Tools\+::Bam\+Index Class Reference}
+\label{class_bam_tools_1_1_bam_index}\index{BamTools::BamIndex@{BamTools::BamIndex}}
+
+
+Provides methods for generating \& loading B\+AM index files.  
+
+
+
+
+{\ttfamily \#include $<$Bam\+Index.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a3bd9db935c5805ab8dea473c2819058a}\label{class_bam_tools_1_1_bam_index_a3bd9db935c5805ab8dea473c2819058a}} 
+enum {\bfseries Index\+Type} \{ {\bfseries B\+A\+M\+T\+O\+O\+LS} = 0, 
+{\bfseries S\+T\+A\+N\+D\+A\+RD}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_add9e57706ae2057b0e2ee39c5953c073}\label{class_bam_tools_1_1_bam_index_add9e57706ae2057b0e2ee39c5953c073}} 
+{\bfseries Bam\+Index} (Internal\+::\+Bam\+Reader\+Private $\ast$reader)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a42e1d9f37d5ca297c6c61d7eb9873ef6}\label{class_bam_tools_1_1_bam_index_a42e1d9f37d5ca297c6c61d7eb9873ef6}} 
+virtual bool {\bfseries Create} ()=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a40c90cff613c5c631848555b8ac2f0ac}\label{class_bam_tools_1_1_bam_index_a40c90cff613c5c631848555b8ac2f0ac}} 
+std\+::string {\bfseries Get\+Error\+String} ()
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a740ee112ab35ce85927b86bee4156002}\label{class_bam_tools_1_1_bam_index_a740ee112ab35ce85927b86bee4156002}} 
+virtual bool {\bfseries Has\+Alignments} (const int \&reference\+ID) const =0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a29066c364a1a54624ad881a3e223d757}\label{class_bam_tools_1_1_bam_index_a29066c364a1a54624ad881a3e223d757}} 
+virtual bool {\bfseries Jump} (const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Tools\+::\+Bam\+Region}} \&region, bool $\ast$has\+Alignments\+In\+Region)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_a36978a4af7e367907ced31cc6d61a33a}\label{class_bam_tools_1_1_bam_index_a36978a4af7e367907ced31cc6d61a33a}} 
+virtual bool {\bfseries Load} (const std\+::string \&filename)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_index_afa72b248457ef147a4f7ef46aab9eaf8}\label{class_bam_tools_1_1_bam_index_afa72b248457ef147a4f7ef46aab9eaf8}} 
+virtual Bam\+Index\+::\+Index\+Type {\bfseries Type} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides methods for generating \& loading B\+AM index files. 
+
+This class straddles the line between public A\+PI and internal implementation detail. Most client code should never have to use this class directly.
+
+It is exposed to the public A\+PI to allow advanced users to implement their own custom indexing schemes. 
+
+Definition at line 34 of file Bam\+Index.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/Bam\+Index.\+h\end{DoxyCompactItemize}

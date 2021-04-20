@@ -1,0 +1,148 @@
+\hypertarget{index_management_bam_8h}{}\doxysection{includoc/index\+Management\+Bam.h File Reference}
+\label{index_management_bam_8h}\index{includoc/indexManagementBam.h@{includoc/indexManagementBam.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}robin\+\_\+hood.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api/\+Bam\+Aux.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef robin\+\_\+hood\+::unordered\+\_\+map$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$ int64\+\_\+t $>$ $>$ \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}
+\item 
+typedef robin\+\_\+hood\+::unordered\+\_\+map$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$ pair$<$ int32\+\_\+t, int32\+\_\+t $>$ $>$ $>$ \mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} \mbox{\hyperlink{index_management_bam_8h_a34546ccadd5f2d778f3ff5cd57ee81ee}{index\+Barcodes\+Positions\+From\+Bam}} (string bam\+File, bool primary, unsigned quality)
+\item 
+void \mbox{\hyperlink{index_management_bam_8h_a387016834fe8eb14fbdaa7ec408a07e1}{save\+Barcodes\+Positions\+Index}} (\mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} \&index, string file)
+\item 
+\mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} \mbox{\hyperlink{index_management_bam_8h_a1633b99a3d3da4a8ce7afade54b39967}{load\+Barcodes\+Positions\+Index}} (string file)
+\item 
+\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \mbox{\hyperlink{index_management_bam_8h_a705f58cf76488887fabcbed11b22b3c7}{index\+Barcodes\+Offsets\+From\+Bam}} (string bam\+File, bool primary, unsigned quality)
+\item 
+void \mbox{\hyperlink{index_management_bam_8h_a01881f6529ec8478f607a4ffa8b0e58f}{save\+Barcodes\+Offsets\+Index}} (\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&index, string file)
+\item 
+\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \mbox{\hyperlink{index_management_bam_8h_a70c22a640153db058f6b861a02d96510}{load\+Barcodes\+Offsets\+Index}} (string file)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}\label{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!BarcodesOffsetsIndex@{BarcodesOffsetsIndex}}
+\index{BarcodesOffsetsIndex@{BarcodesOffsetsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{BarcodesOffsetsIndex}{BarcodesOffsetsIndex}}
+{\footnotesize\ttfamily typedef robin\+\_\+hood\+::unordered\+\_\+map$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$int64\+\_\+t$>$ $>$ \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}}
+
+\mbox{\Hypertarget{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}\label{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!BarcodesPositionsIndex@{BarcodesPositionsIndex}}
+\index{BarcodesPositionsIndex@{BarcodesPositionsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{BarcodesPositionsIndex}{BarcodesPositionsIndex}}
+{\footnotesize\ttfamily typedef robin\+\_\+hood\+::unordered\+\_\+map$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$pair$<$int32\+\_\+t, int32\+\_\+t$>$ $>$ $>$ \mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{index_management_bam_8h_a705f58cf76488887fabcbed11b22b3c7}\label{index_management_bam_8h_a705f58cf76488887fabcbed11b22b3c7}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!indexBarcodesOffsetsFromBam@{indexBarcodesOffsetsFromBam}}
+\index{indexBarcodesOffsetsFromBam@{indexBarcodesOffsetsFromBam}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{indexBarcodesOffsetsFromBam()}{indexBarcodesOffsetsFromBam()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} index\+Barcodes\+Offsets\+From\+Bam (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{bool}]{primary,  }\item[{unsigned}]{quality }\end{DoxyParamCaption})}
+
+Index the offsets of the barcodes contained in a given B\+AM file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & bam\+File B\+AM file to build the index from \\
+\hline
+{\em primary} & whether to only index primary alignments or not \\
+\hline
+{\em quality} & minimum quality to index an alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode index associating barcodes to the set of offsets they occur at 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_bam_8h_a34546ccadd5f2d778f3ff5cd57ee81ee}\label{index_management_bam_8h_a34546ccadd5f2d778f3ff5cd57ee81ee}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!indexBarcodesPositionsFromBam@{indexBarcodesPositionsFromBam}}
+\index{indexBarcodesPositionsFromBam@{indexBarcodesPositionsFromBam}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{indexBarcodesPositionsFromBam()}{indexBarcodesPositionsFromBam()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} index\+Barcodes\+Positions\+From\+Bam (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{bool}]{primary,  }\item[{unsigned}]{quality }\end{DoxyParamCaption})}
+
+Index the (chromosome, beg\+Position) pairs of the barcodes contained in a given B\+AM file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & bam\+File B\+AM file to build the index from \\
+\hline
+{\em primary} & whether to only index primary alignments or not \\
+\hline
+{\em quality} & minimum quality to index an alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode positions index associating barcodes to the set of (chromosome, beg\+Position) pairs they occur at 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_bam_8h_a70c22a640153db058f6b861a02d96510}\label{index_management_bam_8h_a70c22a640153db058f6b861a02d96510}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!loadBarcodesOffsetsIndex@{loadBarcodesOffsetsIndex}}
+\index{loadBarcodesOffsetsIndex@{loadBarcodesOffsetsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{loadBarcodesOffsetsIndex()}{loadBarcodesOffsetsIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} load\+Barcodes\+Offsets\+Index (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})}
+
+Load the barcode index stored in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & file where the barcode offsets index is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode offsets index filled with the data contained in the file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_bam_8h_a1633b99a3d3da4a8ce7afade54b39967}\label{index_management_bam_8h_a1633b99a3d3da4a8ce7afade54b39967}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!loadBarcodesPositionsIndex@{loadBarcodesPositionsIndex}}
+\index{loadBarcodesPositionsIndex@{loadBarcodesPositionsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{loadBarcodesPositionsIndex()}{loadBarcodesPositionsIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} load\+Barcodes\+Positions\+Index (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})}
+
+Load the barcode positions index stored in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & file where the barcode positions index is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode positions index filled with the data contained in the file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_bam_8h_a01881f6529ec8478f607a4ffa8b0e58f}\label{index_management_bam_8h_a01881f6529ec8478f607a4ffa8b0e58f}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!saveBarcodesOffsetsIndex@{saveBarcodesOffsetsIndex}}
+\index{saveBarcodesOffsetsIndex@{saveBarcodesOffsetsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{saveBarcodesOffsetsIndex()}{saveBarcodesOffsetsIndex()}}
+{\footnotesize\ttfamily void save\+Barcodes\+Offsets\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{index,  }\item[{string}]{file }\end{DoxyParamCaption})}
+
+Save the content of the barcode index in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Barcodes\+Offsets\+Index} & barcode offsets index to save \\
+\hline
+{\em file} & file where to store the index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{index_management_bam_8h_a387016834fe8eb14fbdaa7ec408a07e1}\label{index_management_bam_8h_a387016834fe8eb14fbdaa7ec408a07e1}} 
+\index{indexManagementBam.h@{indexManagementBam.h}!saveBarcodesPositionsIndex@{saveBarcodesPositionsIndex}}
+\index{saveBarcodesPositionsIndex@{saveBarcodesPositionsIndex}!indexManagementBam.h@{indexManagementBam.h}}
+\doxysubsubsection{\texorpdfstring{saveBarcodesPositionsIndex()}{saveBarcodesPositionsIndex()}}
+{\footnotesize\ttfamily void save\+Barcodes\+Positions\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{index_management_bam_8h_ac4f21460b7974d9414e597138bd9c1b6}{Barcodes\+Positions\+Index}} \&}]{index,  }\item[{string}]{file }\end{DoxyParamCaption})}
+
+Save the content of the barcode positions index in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Barcodes\+Positions\+Index} & barcode positions index to save \\
+\hline
+{\em file} & file where to store the index \\
+\hline
+\end{DoxyParams}

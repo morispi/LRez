@@ -1,0 +1,114 @@
+\hypertarget{namespacerobin__hood_1_1detail}{}\doxysection{robin\+\_\+hood\+::detail Namespace Reference}
+\label{namespacerobin__hood_1_1detail}\index{robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1detail_1_1swappable}{swappable}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{Bulk\+Pool\+Allocator}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1has__is__transparent}{has\+\_\+is\+\_\+transparent}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1has__is__transparent_3_01_t_00_01typename_01_t_1_1is__transparent_01_4}{has\+\_\+is\+\_\+transparent$<$ T, typename T\+::is\+\_\+transparent $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1identity__hash}{identity\+\_\+hash}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator}{Node\+Allocator}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01false_01_4}{Node\+Allocator$<$ T, Min\+Size, Max\+Size, false $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01true_01_4}{Node\+Allocator$<$ T, Min\+Size, Max\+Size, true $>$}}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_hash}{Wrap\+Hash}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_key_equal}{Wrap\+Key\+Equal}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_add4951e1929f04990a9662fe8d0944d2}{rotr}} (T x, unsigned k)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a0fece11d849a769dc3577f4d89c5100f}{reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning}} (void $\ast$ptr) noexcept
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a447aa069a721bf7a8a2d05e11719604c}{reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning}} (void const $\ast$ptr) noexcept
+\item 
+{\footnotesize template$<$typename E , typename... Args$>$ }\\void \mbox{\hyperlink{namespacerobin__hood_1_1detail_a20f08961b2ccd143db9ca5dc5d21d016}{do\+Throw}} (Args \&\&... \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(args))
+\item 
+{\footnotesize template$<$typename E , typename T , typename... Args$>$ }\\T $\ast$ \mbox{\hyperlink{namespacerobin__hood_1_1detail_af43428ad1d3980565f52ac6b599619de}{assert\+Not\+Null}} (T $\ast$t, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a1fec4e0dc29e5012571013d9c515a5c3}{unaligned\+\_\+load}} (void const $\ast$ptr) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_af43428ad1d3980565f52ac6b599619de}\label{namespacerobin__hood_1_1detail_af43428ad1d3980565f52ac6b599619de}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!assertNotNull@{assertNotNull}}
+\index{assertNotNull@{assertNotNull}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{assertNotNull()}{assertNotNull()}}
+{\footnotesize\ttfamily template$<$typename E , typename T , typename... Args$>$ \\
+T$\ast$ robin\+\_\+hood\+::detail\+::assert\+Not\+Null (\begin{DoxyParamCaption}\item[{T $\ast$}]{t,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 347 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_a20f08961b2ccd143db9ca5dc5d21d016}\label{namespacerobin__hood_1_1detail_a20f08961b2ccd143db9ca5dc5d21d016}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!doThrow@{doThrow}}
+\index{doThrow@{doThrow}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{doThrow()}{doThrow()}}
+{\footnotesize\ttfamily template$<$typename E , typename... Args$>$ \\
+void robin\+\_\+hood\+::detail\+::do\+Throw (\begin{DoxyParamCaption}\item[{Args \&\&... }]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDargs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 341 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_a0fece11d849a769dc3577f4d89c5100f}\label{namespacerobin__hood_1_1detail_a0fece11d849a769dc3577f4d89c5100f}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!reinterpret\_cast\_no\_cast\_align\_warning@{reinterpret\_cast\_no\_cast\_align\_warning}}
+\index{reinterpret\_cast\_no\_cast\_align\_warning@{reinterpret\_cast\_no\_cast\_align\_warning}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{reinterpret\_cast\_no\_cast\_align\_warning()}{reinterpret\_cast\_no\_cast\_align\_warning()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T robin\+\_\+hood\+::detail\+::reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 322 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_a447aa069a721bf7a8a2d05e11719604c}\label{namespacerobin__hood_1_1detail_a447aa069a721bf7a8a2d05e11719604c}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!reinterpret\_cast\_no\_cast\_align\_warning@{reinterpret\_cast\_no\_cast\_align\_warning}}
+\index{reinterpret\_cast\_no\_cast\_align\_warning@{reinterpret\_cast\_no\_cast\_align\_warning}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{reinterpret\_cast\_no\_cast\_align\_warning()}{reinterpret\_cast\_no\_cast\_align\_warning()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T robin\+\_\+hood\+::detail\+::reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning (\begin{DoxyParamCaption}\item[{void const $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 327 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_add4951e1929f04990a9662fe8d0944d2}\label{namespacerobin__hood_1_1detail_add4951e1929f04990a9662fe8d0944d2}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!rotr@{rotr}}
+\index{rotr@{rotr}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{rotr()}{rotr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T robin\+\_\+hood\+::detail\+::rotr (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{unsigned}]{k }\end{DoxyParamCaption})}
+
+
+
+Definition at line 314 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1detail_a1fec4e0dc29e5012571013d9c515a5c3}\label{namespacerobin__hood_1_1detail_a1fec4e0dc29e5012571013d9c515a5c3}} 
+\index{robin\_hood::detail@{robin\_hood::detail}!unaligned\_load@{unaligned\_load}}
+\index{unaligned\_load@{unaligned\_load}!robin\_hood::detail@{robin\_hood::detail}}
+\doxysubsubsection{\texorpdfstring{unaligned\_load()}{unaligned\_load()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T robin\+\_\+hood\+::detail\+::unaligned\+\_\+load (\begin{DoxyParamCaption}\item[{void const $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 355 of file robin\+\_\+hood.\+h.
+
