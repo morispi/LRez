@@ -1,0 +1,96 @@
+\hypertarget{index_management_fastq_8h}{}\doxysection{includoc/index\+Management\+Fastq.h File Reference}
+\label{index_management_fastq_8h}\index{includoc/indexManagementFastq.h@{includoc/indexManagementFastq.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}robin\+\_\+hood.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef robin\+\_\+hood\+::unordered\+\_\+map$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$ int64\+\_\+t $>$ $>$ \mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} \mbox{\hyperlink{index_management_fastq_8h_af00f52b2e09b8ed681408b0914f9b157}{index\+Barcodes\+From\+Fastq}} (string fastq\+File)
+\item 
+\mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} \mbox{\hyperlink{index_management_fastq_8h_ae7ac3e5bf60d4317815b9b7048d0de64}{index\+Barcodes\+From\+Fastq\+Gz}} (string fastq\+File)
+\item 
+void \mbox{\hyperlink{index_management_fastq_8h_a89e172c556e90e191ffbd5e44e63b85c}{save\+Barcodes\+Index}} (\mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} \&index, string file)
+\item 
+\mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} \mbox{\hyperlink{index_management_fastq_8h_ae8289e454127654cd59f02dc89d045b6}{load\+Barcodes\+Index}} (string file)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}\label{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}} 
+\index{indexManagementFastq.h@{indexManagementFastq.h}!BarcodesIndex@{BarcodesIndex}}
+\index{BarcodesIndex@{BarcodesIndex}!indexManagementFastq.h@{indexManagementFastq.h}}
+\doxysubsubsection{\texorpdfstring{BarcodesIndex}{BarcodesIndex}}
+{\footnotesize\ttfamily typedef robin\+\_\+hood\+::unordered\+\_\+map$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}, vector$<$int64\+\_\+t$>$ $>$ \mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{index_management_fastq_8h_af00f52b2e09b8ed681408b0914f9b157}\label{index_management_fastq_8h_af00f52b2e09b8ed681408b0914f9b157}} 
+\index{indexManagementFastq.h@{indexManagementFastq.h}!indexBarcodesFromFastq@{indexBarcodesFromFastq}}
+\index{indexBarcodesFromFastq@{indexBarcodesFromFastq}!indexManagementFastq.h@{indexManagementFastq.h}}
+\doxysubsubsection{\texorpdfstring{indexBarcodesFromFastq()}{indexBarcodesFromFastq()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} index\+Barcodes\+From\+Fastq (\begin{DoxyParamCaption}\item[{string}]{fastq\+File }\end{DoxyParamCaption})}
+
+Index the offsets of the barcodes contained in a given fastq file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fastq\+File} & fastq file to build the index from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode index associating barcodes to the set of offsets they occur at 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_fastq_8h_ae7ac3e5bf60d4317815b9b7048d0de64}\label{index_management_fastq_8h_ae7ac3e5bf60d4317815b9b7048d0de64}} 
+\index{indexManagementFastq.h@{indexManagementFastq.h}!indexBarcodesFromFastqGz@{indexBarcodesFromFastqGz}}
+\index{indexBarcodesFromFastqGz@{indexBarcodesFromFastqGz}!indexManagementFastq.h@{indexManagementFastq.h}}
+\doxysubsubsection{\texorpdfstring{indexBarcodesFromFastqGz()}{indexBarcodesFromFastqGz()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} index\+Barcodes\+From\+Fastq\+Gz (\begin{DoxyParamCaption}\item[{string}]{fastq\+File }\end{DoxyParamCaption})}
+
+Index the offsets of the barcodes contained in a given gzipped fastq file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fastq\+File} & gzipped fastq file to build the index from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode index associating barcodes to the set of offsets they occur at 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_fastq_8h_ae8289e454127654cd59f02dc89d045b6}\label{index_management_fastq_8h_ae8289e454127654cd59f02dc89d045b6}} 
+\index{indexManagementFastq.h@{indexManagementFastq.h}!loadBarcodesIndex@{loadBarcodesIndex}}
+\index{loadBarcodesIndex@{loadBarcodesIndex}!indexManagementFastq.h@{indexManagementFastq.h}}
+\doxysubsubsection{\texorpdfstring{loadBarcodesIndex()}{loadBarcodesIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} load\+Barcodes\+Index (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})}
+
+Load the barcode index stored in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & file where the barcode index is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode index filled with the data contained in the file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{index_management_fastq_8h_a89e172c556e90e191ffbd5e44e63b85c}\label{index_management_fastq_8h_a89e172c556e90e191ffbd5e44e63b85c}} 
+\index{indexManagementFastq.h@{indexManagementFastq.h}!saveBarcodesIndex@{saveBarcodesIndex}}
+\index{saveBarcodesIndex@{saveBarcodesIndex}!indexManagementFastq.h@{indexManagementFastq.h}}
+\doxysubsubsection{\texorpdfstring{saveBarcodesIndex()}{saveBarcodesIndex()}}
+{\footnotesize\ttfamily void save\+Barcodes\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{index_management_fastq_8h_a480a946ba38728216e3c2dc9e05046b4}{Barcodes\+Index}} \&}]{index,  }\item[{string}]{file }\end{DoxyParamCaption})}
+
+Save the content of the barcode index in a given file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & barcode offsets index to save \\
+\hline
+{\em file} & file where to store the index \\
+\hline
+\end{DoxyParams}

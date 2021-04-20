@@ -1,0 +1,204 @@
+\hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort}{}\doxysection{Bam\+Tools\+::Algorithms\+::Sort Struct Reference}
+\label{struct_bam_tools_1_1_algorithms_1_1_sort}\index{BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}}
+
+
+Provides classes \& methods related to sorting Bam\+Alignments.  
+
+
+
+
+{\ttfamily \#include $<$Sort.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_name}{By\+Name}}
+\begin{DoxyCompactList}\small\item\em Function object for comparing alignments by name. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position}{By\+Position}}
+\begin{DoxyCompactList}\small\item\em Function object for comparing alignments by position. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag}{By\+Tag}}
+\begin{DoxyCompactList}\small\item\em Function object for comparing alignments by tag value. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_unsorted}{Unsorted}}
+\begin{DoxyCompactList}\small\item\em Placeholder function object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}\label{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}} 
+enum \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}{Order}} \{ {\bfseries Ascending\+Order} = 0, 
+{\bfseries Descending\+Order}
+ \}
+\begin{DoxyCompactList}\small\item\em Provides explicit values for specifying desired sort ordering. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_acbf54033cc24c89e0e090e0437b53bca}\label{struct_bam_tools_1_1_algorithms_1_1_sort_acbf54033cc24c89e0e090e0437b53bca}} 
+typedef std\+::binary\+\_\+function$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}, \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}, bool $>$ \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_acbf54033cc24c89e0e090e0437b53bca}{Alignment\+Sort\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for our sorting function objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_ab169d91a6e3b158b69b8ee7d9db38a3f}\label{struct_bam_tools_1_1_algorithms_1_1_sort_ab169d91a6e3b158b69b8ee7d9db38a3f}} 
+{\footnotesize template$<$typename Elem\+Type $>$ }\\static bool {\bfseries sort\+\_\+helper} (const \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}{Sort\+::\+Order}} \&order, const Elem\+Type \&lhs, const Elem\+Type \&rhs)
+\item 
+{\footnotesize template$<$typename Compare $>$ }\\static void \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_a978c463fbbacae4a0369f8681f7b00d2}{Sort\+Alignments}} (std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \&data, const Compare \&comp=Compare())
+\item 
+{\footnotesize template$<$typename Compare $>$ }\\static std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_a9b8bd9b54fbc591462d46a502d8489d1}{Sort\+Alignments}} (const std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \&input, const Compare \&comp=Compare())
+\item 
+{\footnotesize template$<$typename Compare $>$ }\\static std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_aa564c7366c033d59d81d7a58d0fb6e05}{Get\+Sorted\+Region}} (\mbox{\hyperlink{class_bam_tools_1_1_bam_reader}{Bam\+Reader}} \&reader, const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} \&region, const Compare \&comp=Compare())
+\item 
+{\footnotesize template$<$typename Compare $>$ }\\static std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_acaaab81442cd152a6460af9ffd8244d2}{Get\+Sorted\+Region}} (\mbox{\hyperlink{class_bam_tools_1_1_bam_multi_reader}{Bam\+Multi\+Reader}} \&reader, const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} \&region, const Compare \&comp=Compare())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides classes \& methods related to sorting Bam\+Alignments. 
+
+Definition at line 30 of file Sort.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_acaaab81442cd152a6460af9ffd8244d2}\label{struct_bam_tools_1_1_algorithms_1_1_sort_acaaab81442cd152a6460af9ffd8244d2}} 
+\index{BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}!GetSortedRegion@{GetSortedRegion}}
+\index{GetSortedRegion@{GetSortedRegion}!BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}}
+\doxysubsubsection{\texorpdfstring{GetSortedRegion()}{GetSortedRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Compare $>$ \\
+static std\+::vector$<$\mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}$>$ Bam\+Tools\+::\+Algorithms\+::\+Sort\+::\+Get\+Sorted\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bam_tools_1_1_bam_multi_reader}{Bam\+Multi\+Reader}} \&}]{reader,  }\item[{const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} \&}]{region,  }\item[{const Compare \&}]{comp = {\ttfamily Compare()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Reads a region of alignments from position-\/sorted B\+AM files, then sorts by the provided compare function
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{BamMultiReader reader;}
+\DoxyCodeLine{\textcolor{comment}{// open BAM files \& index files}}
+\DoxyCodeLine{}
+\DoxyCodeLine{BamRegion region;}
+\DoxyCodeLine{\textcolor{comment}{// define a region of interest (i.e. a exon or some other feature)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// get all alignments covering that region, sorted by read group name}}
+\DoxyCodeLine{std::vector<BamAlignments> a;}
+\DoxyCodeLine{a = \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_aa564c7366c033d59d81d7a58d0fb6e05}{Sort::GetSortedRegion}}(reader, region, Sort::ByTag<std::string>(\textcolor{stringliteral}{"RG"}));}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reader} & \mbox{\hyperlink{class_bam_tools_1_1_bam_multi_reader}{Bam\+Multi\+Reader}} opened on desired B\+AM files \\
+\hline
+\mbox{\texttt{ in}}  & {\em region} & desired region-\/of-\/interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp} & comparison function object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sorted vector of the region\textquotesingle{}s alignments 
+\end{DoxyReturn}
+
+
+Definition at line 339 of file Sort.\+h.
+
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_aa564c7366c033d59d81d7a58d0fb6e05}\label{struct_bam_tools_1_1_algorithms_1_1_sort_aa564c7366c033d59d81d7a58d0fb6e05}} 
+\index{BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}!GetSortedRegion@{GetSortedRegion}}
+\index{GetSortedRegion@{GetSortedRegion}!BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}}
+\doxysubsubsection{\texorpdfstring{GetSortedRegion()}{GetSortedRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Compare $>$ \\
+static std\+::vector$<$\mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}$>$ Bam\+Tools\+::\+Algorithms\+::\+Sort\+::\+Get\+Sorted\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bam_tools_1_1_bam_reader}{Bam\+Reader}} \&}]{reader,  }\item[{const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} \&}]{region,  }\item[{const Compare \&}]{comp = {\ttfamily Compare()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Reads a region of alignments from a position-\/sorted B\+AM file, then sorts by the provided compare function
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{BamReader reader;}
+\DoxyCodeLine{\textcolor{comment}{// open BAM file \& index file}}
+\DoxyCodeLine{}
+\DoxyCodeLine{BamRegion region;}
+\DoxyCodeLine{\textcolor{comment}{// define a region of interest (i.e. a exon or some other feature)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// get all alignments covering that region, sorted by read group name}}
+\DoxyCodeLine{std::vector<BamAlignments> a;}
+\DoxyCodeLine{a = \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_aa564c7366c033d59d81d7a58d0fb6e05}{Sort::GetSortedRegion}}(reader, region, Sort::ByTag<std::string>(\textcolor{stringliteral}{"RG"}));}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reader} & \mbox{\hyperlink{class_bam_tools_1_1_bam_reader}{Bam\+Reader}} opened on desired B\+AM file \\
+\hline
+\mbox{\texttt{ in}}  & {\em region} & desired region-\/of-\/interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp} & comparison function object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sorted vector of the region\textquotesingle{}s alignments 
+\end{DoxyReturn}
+
+
+Definition at line 300 of file Sort.\+h.
+
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_a9b8bd9b54fbc591462d46a502d8489d1}\label{struct_bam_tools_1_1_algorithms_1_1_sort_a9b8bd9b54fbc591462d46a502d8489d1}} 
+\index{BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}!SortAlignments@{SortAlignments}}
+\index{SortAlignments@{SortAlignments}!BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}}
+\doxysubsubsection{\texorpdfstring{SortAlignments()}{SortAlignments()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Compare $>$ \\
+static std\+::vector$<$\mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}$>$ Bam\+Tools\+::\+Algorithms\+::\+Sort\+::\+Sort\+Alignments (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \&}]{input,  }\item[{const Compare \&}]{comp = {\ttfamily Compare()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns a sorted copy of the input alignments, using the provided compare function.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<BamAlignemnt> a;}
+\DoxyCodeLine{\textcolor{comment}{// populate data}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// get a copy of our original data, sorted by edit distance (descending order)}}
+\DoxyCodeLine{std::vector<BamAligment> sortedData;}
+\DoxyCodeLine{sortedData = \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_a978c463fbbacae4a0369f8681f7b00d2}{Sort::SortAlignments}}(a, Sort::ByTag<int>(\textcolor{stringliteral}{"NM"}, Sort::DescendingOrder));}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input} & vector of alignments to be sorted \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp} & comparison function object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sorted copy of the input data 
+\end{DoxyReturn}
+
+
+Definition at line 271 of file Sort.\+h.
+
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_a978c463fbbacae4a0369f8681f7b00d2}\label{struct_bam_tools_1_1_algorithms_1_1_sort_a978c463fbbacae4a0369f8681f7b00d2}} 
+\index{BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}!SortAlignments@{SortAlignments}}
+\index{SortAlignments@{SortAlignments}!BamTools::Algorithms::Sort@{BamTools::Algorithms::Sort}}
+\doxysubsubsection{\texorpdfstring{SortAlignments()}{SortAlignments()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Compare $>$ \\
+static void Bam\+Tools\+::\+Algorithms\+::\+Sort\+::\+Sort\+Alignments (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ \&}]{data,  }\item[{const Compare \&}]{comp = {\ttfamily Compare()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sorts a std\+::vector of alignments (in-\/place), using the provided compare function.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<BamAlignemnt> a;}
+\DoxyCodeLine{\textcolor{comment}{// populate data}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// sort our alignment list by edit distance}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_a978c463fbbacae4a0369f8681f7b00d2}{Sort::SortAlignments}}(a, Sort::ByTag<int>(\textcolor{stringliteral}{"NM"}));}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & vector of alignments to be sorted \\
+\hline
+\mbox{\texttt{ in}}  & {\em comp} & comparison function object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file Sort.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/algorithms/Sort.\+h\end{DoxyCompactItemize}

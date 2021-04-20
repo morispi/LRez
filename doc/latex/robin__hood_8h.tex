@@ -1,0 +1,532 @@
+\hypertarget{robin__hood_8h}{}\doxysection{src/include/robin\+\_\+hood.h File Reference}
+\label{robin__hood_8h}\index{src/include/robin\_hood.h@{src/include/robin\_hood.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1alignment__of}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::alignment\+\_\+of$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1integer__sequence}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::integer\+\_\+sequence$<$ T, Ints $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, Begin, End, bool $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_1_1_int_seq_combiner}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, Begin, End, bool $>$\+::\+Int\+Seq\+Combiner$<$ class, class $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_1_1_int_seq_combi33ef6a3dff719931d18d63456a795256}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, Begin, End, bool $>$\+::\+Int\+Seq\+Combiner$<$ integer\+\_\+sequence$<$ T\+Value, Inds0... $>$, integer\+\_\+sequence$<$ T\+Value, Inds1... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_3_01_t_00_01_begin_00_01_begin_00_01false_01_4}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, Begin, Begin, false $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_3_01_t_00_01_begin_00_01_end_00_01true_01_4}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, Begin, End, true $>$}}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_bulk_pool_allocator}{robin\+\_\+hood\+::detail\+::\+Bulk\+Pool\+Allocator$<$ T, Min\+Num\+Allocs, Max\+Num\+Allocs $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator}{robin\+\_\+hood\+::detail\+::\+Node\+Allocator$<$ T, Min\+Size, Max\+Size, Is\+Flat $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01true_01_4}{robin\+\_\+hood\+::detail\+::\+Node\+Allocator$<$ T, Min\+Size, Max\+Size, true $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01false_01_4}{robin\+\_\+hood\+::detail\+::\+Node\+Allocator$<$ T, Min\+Size, Max\+Size, false $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1identity__hash}{robin\+\_\+hood\+::detail\+::identity\+\_\+hash$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1swappable_1_1nothrow}{robin\+\_\+hood\+::detail\+::swappable\+::nothrow$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{robin\+\_\+hood\+::is\+\_\+transparent\+\_\+tag}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair$<$ T1, T2 $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash}{robin\+\_\+hood\+::hash$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash_3_01std_1_1string_01_4}{robin\+\_\+hood\+::hash$<$ std\+::string $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash_3_01_t_01_5_01_4}{robin\+\_\+hood\+::hash$<$ T $\ast$ $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1has__is__transparent}{robin\+\_\+hood\+::detail\+::has\+\_\+is\+\_\+transparent$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1has__is__transparent_3_01_t_00_01typename_01_t_1_1is__transparent_01_4}{robin\+\_\+hood\+::detail\+::has\+\_\+is\+\_\+transparent$<$ T, typename T\+::is\+\_\+transparent $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_hash}{robin\+\_\+hood\+::detail\+::\+Wrap\+Hash$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_key_equal}{robin\+\_\+hood\+::detail\+::\+Wrap\+Key\+Equal$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood}{robin\+\_\+hood}}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+TD}}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail__}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::detail\+\_\+}}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1detail}{robin\+\_\+hood\+::detail}}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1detail_1_1swappable}{robin\+\_\+hood\+::detail\+::swappable}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a7b62e5579362b2de5d74bb560a4297ce}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}}~3
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a2cf29036510586a8e88ed64cca907fdc}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}}~7
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_adf6bb871a3c4c01739e570c21dddfc03}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+P\+A\+T\+CH}}~0
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_afad371a2dbaa2cb890f2a81b8e980559}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+L\+OG}}(x)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ab23be55fc543da07b4858b4ff1ec069b}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+T\+R\+A\+CE}}(x)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a68caa515fd8bfc0cf0b47f229dc6ac22}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+NT}}(x)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(x)~R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\#\#x()
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(identifier)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a962b220918b59e8ff59eddc797c36471}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+B\+I\+T\+N\+E\+SS}}()~32
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_abf1571a3f14aa082159102d888ae9c3e}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}()~(\+\_\+\+\_\+\+B\+Y\+T\+E\+\_\+\+O\+R\+D\+E\+R\+\_\+\+\_\+ == \+\_\+\+\_\+\+O\+R\+D\+E\+R\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+A\+N\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a2653203699b813d4a2b95d35b1761378}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN}}()~(\+\_\+\+\_\+\+B\+Y\+T\+E\+\_\+\+O\+R\+D\+E\+R\+\_\+\+\_\+ == \+\_\+\+\_\+\+O\+R\+D\+E\+R\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+A\+N\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ae81dbab2134602cdd5fbb2661b0ace67}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+N\+O\+I\+N\+L\+I\+NE}}()~\+\_\+\+\_\+attribute\+\_\+\+\_\+((noinline))
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_acb7ff75a1f5ae67e81f4e4749ea125af}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+H\+A\+S\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}}()~0
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a97c4e65a91aa210138f70724664236f6}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+TZ}}()~\+\_\+\+\_\+builtin\+\_\+ctzl
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a6c4a83bb768283aabdddc4dade16f5c4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+LZ}}()~\+\_\+\+\_\+builtin\+\_\+clzl
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a62019cea9e3c88c1710ca26dd21b5c10}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+O\+ES}}(x)~((x) ? \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(C\+LZ)(x) \+: \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(B\+I\+T\+N\+E\+SS))
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a58d1181c5a7abd6628232c2a06623355}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+N\+T\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+Z\+E\+R\+O\+ES}}(x)~((x) ? \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(C\+TZ)(x) \+: \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(B\+I\+T\+N\+E\+SS))
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_aeed0a618f017e128a5d8654754f792db}{\+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute}}(x)~0
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a5f774ce42daf57604969eeb680e6ab7c}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+F\+A\+L\+L\+T\+H\+R\+O\+U\+GH}}()
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_aecfff38747002fe4cdb3e14086b04648}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+L\+I\+K\+E\+LY}}(condition)~\+\_\+\+\_\+builtin\+\_\+expect(condition, 1)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_aecb93cdcc3aeca77d0b4b76513c5f7c0}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+L\+I\+K\+E\+LY}}(condition)~\+\_\+\+\_\+builtin\+\_\+expect(condition, 0)
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a410999b92e76cd60207f9a8cec21444e}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+I\+S\+\_\+\+T\+R\+I\+V\+I\+A\+L\+L\+Y\+\_\+\+C\+O\+P\+Y\+A\+B\+LE}}(...)~std\+::is\+\_\+trivially\+\_\+copyable$<$\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+$>$\+::value
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ace1c5643f9c7fb81e2cb8bfd456cc8d5}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+XX}}()~\+\_\+\+\_\+cplusplus
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a6171663d5accc29bd88f5d67d9db6fe7}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X98}}()~199711L
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a1e5fe0b19950a6f8d7e040c483402f8b}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X11}}()~201103L
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a1cbf701a761b95b9bf1319f46ab9a0a6}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X14}}()~201402L
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a259a3f8175e109c30239ca0e5a662a58}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X17}}()~201703L
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_a77d2d92b1a98087897b21244dc4ece02}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+N\+O\+D\+I\+S\+C\+A\+RD}}()
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ace74689c30fc024369f2ca4461a8df5a}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+H\+A\+S\+\_\+\+C\+R\+C32}}()~0
+\item 
+\#define \mbox{\hyperlink{robin__hood_8h_ab7f3b46cd4581d1021e7cce8e3d47d1d}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}}(T)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t... Inds$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_ad79958c91646c10e491239d566585fea}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::index\+\_\+sequence}} = integer\+\_\+sequence$<$ std\+::size\+\_\+t, Inds... $>$
+\item 
+{\footnotesize template$<$class T , T N$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::make\+\_\+integer\+\_\+sequence}} = typename detail\+\_\+\+::\+Int\+Seq\+Impl$<$ T, 0, N,(N -\/ 0)==1 $>$\+::T\+Result
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::make\+\_\+index\+\_\+sequence}} = make\+\_\+integer\+\_\+sequence$<$ std\+::size\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$class... T$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a3a3ba91d75757b070db6b27a85bbad1e}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::index\+\_\+sequence\+\_\+for}} = make\+\_\+index\+\_\+sequence$<$ sizeof...(T)$>$
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a20afd1ea1998a2159eefa6cff3b03e8e}{robin\+\_\+hood\+::unordered\+\_\+flat\+\_\+map}} = detail\+::\+Table$<$ true, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a2e2271031a2b264cc9d03efbd341480d}{robin\+\_\+hood\+::unordered\+\_\+node\+\_\+map}} = detail\+::\+Table$<$ false, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a4a18aa3f4d6a9d2590779cd0d954dbb6}{robin\+\_\+hood\+::unordered\+\_\+map}} = detail\+::\+Table$<$ sizeof(\mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$)$<$=sizeof(size\+\_\+t) $\ast$6 \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$ $>$\+::value \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$ $>$\+::value, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_aac4395339dbabb838c8d5fc27baa96e6}{robin\+\_\+hood\+::unordered\+\_\+flat\+\_\+set}} = detail\+::\+Table$<$ true, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a35ac3809f46870e89ce60ed13602961b}{robin\+\_\+hood\+::unordered\+\_\+node\+\_\+set}} = detail\+::\+Table$<$ false, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_abf796922444376d6bca38c81bfe18fdc}{robin\+\_\+hood\+::unordered\+\_\+set}} = detail\+::\+Table$<$ sizeof(Key)$<$=sizeof(size\+\_\+t) $\ast$6 \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ Key $>$\+::value \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ Key $>$\+::value, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_add4951e1929f04990a9662fe8d0944d2}{robin\+\_\+hood\+::detail\+::rotr}} (T x, unsigned k)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a0fece11d849a769dc3577f4d89c5100f}{robin\+\_\+hood\+::detail\+::reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning}} (void $\ast$ptr) noexcept
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a447aa069a721bf7a8a2d05e11719604c}{robin\+\_\+hood\+::detail\+::reinterpret\+\_\+cast\+\_\+no\+\_\+cast\+\_\+align\+\_\+warning}} (void const $\ast$ptr) noexcept
+\item 
+{\footnotesize template$<$typename E , typename... Args$>$ }\\void \mbox{\hyperlink{namespacerobin__hood_1_1detail_a20f08961b2ccd143db9ca5dc5d21d016}{robin\+\_\+hood\+::detail\+::do\+Throw}} (Args \&\&... \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(args))
+\item 
+{\footnotesize template$<$typename E , typename T , typename... Args$>$ }\\T $\ast$ \mbox{\hyperlink{namespacerobin__hood_1_1detail_af43428ad1d3980565f52ac6b599619de}{robin\+\_\+hood\+::detail\+::assert\+Not\+Null}} (T $\ast$t, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacerobin__hood_1_1detail_a1fec4e0dc29e5012571013d9c515a5c3}{robin\+\_\+hood\+::detail\+::unaligned\+\_\+load}} (void const $\ast$ptr) noexcept
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\void \mbox{\hyperlink{namespacerobin__hood_a84aa76f1199fa2a1022690fecb833c18}{robin\+\_\+hood\+::swap}} (pair$<$ A, B $>$ \&a, pair$<$ A, B $>$ \&b) noexcept(noexcept(std\+::declval$<$ pair$<$ A, B $>$ \& $>$().swap(std\+::declval$<$ pair$<$ A, B $>$ \& $>$())))
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a2a78a42d33eb1c473d3cbbe09573f208}{robin\+\_\+hood\+::operator==}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a71133eeee48508b3a42b8657dbc84432}{robin\+\_\+hood\+::operator!=}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a8a682f778bdb014574df48e4d9285209}{robin\+\_\+hood\+::operator$<$}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y) noexcept(noexcept(std\+::declval$<$ A const \& $>$()$<$ std\+::declval$<$ A const \& $>$()) \&\&noexcept(std\+::declval$<$ B const \& $>$()$<$ std\+::declval$<$ B const \& $>$()))
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a51d08a153ffa0da2444d339b66c88d16}{robin\+\_\+hood\+::operator$>$}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a38aa473383984a1038f2aacedaea97dd}{robin\+\_\+hood\+::operator$<$=}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a9907a58febe26021d47242e87a5e7d34}{robin\+\_\+hood\+::operator$>$=}} (pair$<$ A, B $>$ const \&x, pair$<$ A, B $>$ const \&y)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespacerobin__hood_a9143ab7145837bb8f82e2c697081317e}{robin\+\_\+hood\+::hash\+\_\+int}} (uint64\+\_\+t obj) noexcept
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a8698e90b9403f4fd340999f4b2ad9772}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (bool)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a55a6e2f34e9f0cf7de1741440d5ed16d}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a08a44bce1957585b712d2d04c51c1e82}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (signed char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a1012235ee515c95e56041f52373c28d5}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aeaf2be4b8f979016641ca3dcdb25cde0}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char16\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a0efe84247846fd5f49c1a1bc06867166}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char32\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a089bbc6d1848fa1c2e14156f380aef4f}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (wchar\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a95fdaeb5854a81468e5d4882da0f1b84}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (short)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a593e70c7f7b80ede6e5c7395cc1044c5}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned short)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aec7788bbffc4b1a550123b1492ab22e4}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (int)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a349c07840aec9e57835659a893c79e29}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned int)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aa4c9e5e8451cb45f5b0ebfba3c2c609b}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a86d83182e8f3d868037cc267a2e74795}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (long long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a638e3cf50f3ab4de3b0ff1848358c738}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a435e7e694fca7935f6425844b4eb7bc9}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned long long)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{robin__hood_8h_aeed0a618f017e128a5d8654754f792db}\label{robin__hood_8h_aeed0a618f017e128a5d8654754f792db}} 
+\index{robin\_hood.h@{robin\_hood.h}!\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}}
+\index{\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{\_\_has\_cpp\_attribute}{\_\_has\_cpp\_attribute}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~0}
+
+
+
+Definition at line 175 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}\label{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD}{ROBIN\_HOOD}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+OD(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\#\#x()}
+
+
+
+Definition at line 92 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a68caa515fd8bfc0cf0b47f229dc6ac22}\label{robin__hood_8h_a68caa515fd8bfc0cf0b47f229dc6ac22}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_COUNT@{ROBIN\_HOOD\_COUNT}}
+\index{ROBIN\_HOOD\_COUNT@{ROBIN\_HOOD\_COUNT}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_COUNT}{ROBIN\_HOOD\_COUNT}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+NT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a62019cea9e3c88c1710ca26dd21b5c10}\label{robin__hood_8h_a62019cea9e3c88c1710ca26dd21b5c10}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES@{ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES}}
+\index{ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES@{ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES}{ROBIN\_HOOD\_COUNT\_LEADING\_ZEROES}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+N\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+O\+ES(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) ? \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(C\+LZ)(x) \+: \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(B\+I\+T\+N\+E\+SS))}
+
+
+
+Definition at line 169 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a58d1181c5a7abd6628232c2a06623355}\label{robin__hood_8h_a58d1181c5a7abd6628232c2a06623355}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES@{ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES}}
+\index{ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES@{ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES}{ROBIN\_HOOD\_COUNT\_TRAILING\_ZEROES}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+C\+O\+U\+N\+T\+\_\+\+T\+R\+A\+I\+L\+I\+N\+G\+\_\+\+Z\+E\+R\+O\+ES(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) ? \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(C\+TZ)(x) \+: \mbox{\hyperlink{robin__hood_8h_ae8a78125c6831e406ef688c14a7d23e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}}(B\+I\+T\+N\+E\+SS))}
+
+
+
+Definition at line 170 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ab7f3b46cd4581d1021e7cce8e3d47d1d}\label{robin__hood_8h_ab7f3b46cd4581d1021e7cce8e3d47d1d}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT}{ROBIN\_HOOD\_HASH\_INT}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{template} <>                                          \(\backslash\)}
+\DoxyCodeLine{    struct hash<T> \{                                     \(\backslash\)}
+\DoxyCodeLine{        size\_t operator()(T obj) \textcolor{keyword}{const} noexcept \{        \(\backslash\)}
+\DoxyCodeLine{            return \mbox{\hyperlink{namespacerobin__hood_a9143ab7145837bb8f82e2c697081317e}{hash\_int}}(\textcolor{keyword}{static\_cast<}uint64\_t\textcolor{keyword}{>}(obj)); \(\backslash\)}
+\DoxyCodeLine{        \}                                                \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line 795 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a410999b92e76cd60207f9a8cec21444e}\label{robin__hood_8h_a410999b92e76cd60207f9a8cec21444e}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE@{ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE}}
+\index{ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE@{ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE}{ROBIN\_HOOD\_IS\_TRIVIALLY\_COPYABLE}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+I\+S\+\_\+\+T\+R\+I\+V\+I\+A\+L\+L\+Y\+\_\+\+C\+O\+P\+Y\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~std\+::is\+\_\+trivially\+\_\+copyable$<$\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+$>$\+::value}
+
+
+
+Definition at line 199 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_aecfff38747002fe4cdb3e14086b04648}\label{robin__hood_8h_aecfff38747002fe4cdb3e14086b04648}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_LIKELY@{ROBIN\_HOOD\_LIKELY}}
+\index{ROBIN\_HOOD\_LIKELY@{ROBIN\_HOOD\_LIKELY}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_LIKELY}{ROBIN\_HOOD\_LIKELY}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+L\+I\+K\+E\+LY(\begin{DoxyParamCaption}\item[{}]{condition }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+expect(condition, 1)}
+
+
+
+Definition at line 190 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_afad371a2dbaa2cb890f2a81b8e980559}\label{robin__hood_8h_afad371a2dbaa2cb890f2a81b8e980559}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_LOG@{ROBIN\_HOOD\_LOG}}
+\index{ROBIN\_HOOD\_LOG@{ROBIN\_HOOD\_LOG}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_LOG}{ROBIN\_HOOD\_LOG}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+L\+OG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a2653203699b813d4a2b95d35b1761378}\label{robin__hood_8h_a2653203699b813d4a2b95d35b1761378}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BIG\_ENDIAN}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\+\_\+\+\_\+\+B\+Y\+T\+E\+\_\+\+O\+R\+D\+E\+R\+\_\+\+\_\+ == \+\_\+\+\_\+\+O\+R\+D\+E\+R\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+A\+N\+\_\+\+\_\+)}
+
+
+
+Definition at line 113 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a962b220918b59e8ff59eddc797c36471}\label{robin__hood_8h_a962b220918b59e8ff59eddc797c36471}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_BITNESS}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+B\+I\+T\+N\+E\+SS(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~32}
+
+
+
+Definition at line 99 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a6c4a83bb768283aabdddc4dade16f5c4}\label{robin__hood_8h_a6c4a83bb768283aabdddc4dade16f5c4}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CLZ}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+LZ(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+clzl}
+
+
+
+Definition at line 164 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a97c4e65a91aa210138f70724664236f6}\label{robin__hood_8h_a97c4e65a91aa210138f70724664236f6}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CTZ}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+TZ(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+ctzl}
+
+
+
+Definition at line 163 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ace1c5643f9c7fb81e2cb8bfd456cc8d5}\label{robin__hood_8h_ace1c5643f9c7fb81e2cb8bfd456cc8d5}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+XX(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+cplusplus}
+
+
+
+Definition at line 203 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a1e5fe0b19950a6f8d7e040c483402f8b}\label{robin__hood_8h_a1e5fe0b19950a6f8d7e040c483402f8b}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX11}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X11(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~201103L}
+
+
+
+Definition at line 205 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a1cbf701a761b95b9bf1319f46ab9a0a6}\label{robin__hood_8h_a1cbf701a761b95b9bf1319f46ab9a0a6}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX14}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X14(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~201402L}
+
+
+
+Definition at line 206 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a259a3f8175e109c30239ca0e5a662a58}\label{robin__hood_8h_a259a3f8175e109c30239ca0e5a662a58}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX17}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X17(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~201703L}
+
+
+
+Definition at line 207 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a6171663d5accc29bd88f5d67d9db6fe7}\label{robin__hood_8h_a6171663d5accc29bd88f5d67d9db6fe7}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_CXX98}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+C\+X\+X98(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~199711L}
+
+
+
+Definition at line 204 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a5f774ce42daf57604969eeb680e6ab7c}\label{robin__hood_8h_a5f774ce42daf57604969eeb680e6ab7c}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_FALLTHROUGH}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+F\+A\+L\+L\+T\+H\+R\+O\+U\+GH(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 182 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ace74689c30fc024369f2ca4461a8df5a}\label{robin__hood_8h_ace74689c30fc024369f2ca4461a8df5a}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_CRC32}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+H\+A\+S\+\_\+\+C\+R\+C32(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~0}
+
+
+
+Definition at line 232 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_acb7ff75a1f5ae67e81f4e4749ea125af}\label{robin__hood_8h_acb7ff75a1f5ae67e81f4e4749ea125af}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_HAS\_EXCEPTIONS}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+H\+A\+S\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~0}
+
+
+
+Definition at line 125 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_abf1571a3f14aa082159102d888ae9c3e}\label{robin__hood_8h_abf1571a3f14aa082159102d888ae9c3e}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_LITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\+\_\+\+\_\+\+B\+Y\+T\+E\+\_\+\+O\+R\+D\+E\+R\+\_\+\+\_\+ == \+\_\+\+\_\+\+O\+R\+D\+E\+R\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+A\+N\+\_\+\+\_\+)}
+
+
+
+Definition at line 111 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a77d2d92b1a98087897b21244dc4ece02}\label{robin__hood_8h_a77d2d92b1a98087897b21244dc4ece02}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NODISCARD}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+N\+O\+D\+I\+S\+C\+A\+RD(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 212 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ae81dbab2134602cdd5fbb2661b0ace67}\label{robin__hood_8h_ae81dbab2134602cdd5fbb2661b0ace67}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE}}
+\index{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE@{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE}{ROBIN\_HOOD\_PRIVATE\_DEFINITION\_NOINLINE}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N\+\_\+\+N\+O\+I\+N\+L\+I\+NE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+attribute\+\_\+\+\_\+((noinline))}
+
+
+
+Definition at line 120 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_ab23be55fc543da07b4858b4ff1ec069b}\label{robin__hood_8h_ab23be55fc543da07b4858b4ff1ec069b}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_TRACE@{ROBIN\_HOOD\_TRACE}}
+\index{ROBIN\_HOOD\_TRACE@{ROBIN\_HOOD\_TRACE}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_TRACE}{ROBIN\_HOOD\_TRACE}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+T\+R\+A\+CE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_aecb93cdcc3aeca77d0b4b76513c5f7c0}\label{robin__hood_8h_aecb93cdcc3aeca77d0b4b76513c5f7c0}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_UNLIKELY@{ROBIN\_HOOD\_UNLIKELY}}
+\index{ROBIN\_HOOD\_UNLIKELY@{ROBIN\_HOOD\_UNLIKELY}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_UNLIKELY}{ROBIN\_HOOD\_UNLIKELY}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+L\+I\+K\+E\+LY(\begin{DoxyParamCaption}\item[{}]{condition }\end{DoxyParamCaption})~\+\_\+\+\_\+builtin\+\_\+expect(condition, 0)}
+
+
+
+Definition at line 191 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}\label{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_UNUSED@{ROBIN\_HOOD\_UNUSED}}
+\index{ROBIN\_HOOD\_UNUSED@{ROBIN\_HOOD\_UNUSED}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_UNUSED}{ROBIN\_HOOD\_UNUSED}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED(\begin{DoxyParamCaption}\item[{}]{identifier }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a7b62e5579362b2de5d74bb560a4297ce}\label{robin__hood_8h_a7b62e5579362b2de5d74bb560a4297ce}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_VERSION\_MAJOR@{ROBIN\_HOOD\_VERSION\_MAJOR}}
+\index{ROBIN\_HOOD\_VERSION\_MAJOR@{ROBIN\_HOOD\_VERSION\_MAJOR}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_VERSION\_MAJOR}{ROBIN\_HOOD\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR~3}
+
+
+
+Definition at line 38 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_a2cf29036510586a8e88ed64cca907fdc}\label{robin__hood_8h_a2cf29036510586a8e88ed64cca907fdc}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_VERSION\_MINOR@{ROBIN\_HOOD\_VERSION\_MINOR}}
+\index{ROBIN\_HOOD\_VERSION\_MINOR@{ROBIN\_HOOD\_VERSION\_MINOR}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_VERSION\_MINOR}{ROBIN\_HOOD\_VERSION\_MINOR}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR~7}
+
+
+
+Definition at line 39 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{robin__hood_8h_adf6bb871a3c4c01739e570c21dddfc03}\label{robin__hood_8h_adf6bb871a3c4c01739e570c21dddfc03}} 
+\index{robin\_hood.h@{robin\_hood.h}!ROBIN\_HOOD\_VERSION\_PATCH@{ROBIN\_HOOD\_VERSION\_PATCH}}
+\index{ROBIN\_HOOD\_VERSION\_PATCH@{ROBIN\_HOOD\_VERSION\_PATCH}!robin\_hood.h@{robin\_hood.h}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_VERSION\_PATCH}{ROBIN\_HOOD\_VERSION\_PATCH}}
+{\footnotesize\ttfamily \#define R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+P\+A\+T\+CH~0}
+
+
+
+Definition at line 40 of file robin\+\_\+hood.\+h.
+

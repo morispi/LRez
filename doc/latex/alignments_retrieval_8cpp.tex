@@ -1,0 +1,179 @@
+\hypertarget{alignments_retrieval_8cpp}{}\doxysection{src/alignments\+Retrieval.cpp File Reference}
+\label{alignments_retrieval_8cpp}\index{src/alignmentsRetrieval.cpp@{src/alignmentsRetrieval.cpp}}
+{\ttfamily \#include \char`\"{}alignments\+Retrieval.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reverse\+Complement.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Bam\+Alignment \mbox{\hyperlink{alignments_retrieval_8cpp_a2ebe1df5c58ea3475066f4c1a24e4510}{retrieve\+Alignment\+With\+Barcode}} (Bam\+Reader \&reader, int64\+\_\+t position, \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} b)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_a18de1edd511cbe727c6e9b336eaf4ec3}{retrieve\+Alignments\+With\+Barcode\+Bits\+\_\+\+Bam\+Reader}} (Bam\+Reader \&reader, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} b)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_a09227c1fc79f7b1b2a227007b615a5dc}{retrieve\+Alignments\+With\+Barcode\+\_\+\+Bam\+Reader}} (Bam\+Reader \&reader, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, string bc)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_a6d153922e4f6bb60e751b26d858bbf08}{retrieve\+Alignments\+With\+Barcode\+Bits}} (string bam\+File, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} bc)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_a0d0cf37cec8414b29e2ad6bc142df3ce}{retrieve\+Alignments\+With\+Barcode}} (string bam\+File, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, string bc)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_ade6d8ab301171346a84397320f2a18fd}{retrieve\+Alignments\+With\+Barcodes\+\_\+\+Bam\+Reader}} (Bam\+Reader \&reader, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, string barcodes\+List)
+\item 
+vector$<$ Bam\+Alignment $>$ \mbox{\hyperlink{alignments_retrieval_8cpp_a528d7731794c241d0862b8efc42c9494}{retrieve\+Alignments\+With\+Barcodes}} (string bam\+File, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, string barcodes\+List)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a0d0cf37cec8414b29e2ad6bc142df3ce}\label{alignments_retrieval_8cpp_a0d0cf37cec8414b29e2ad6bc142df3ce}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcode@{retrieveAlignmentsWithBarcode}}
+\index{retrieveAlignmentsWithBarcode@{retrieveAlignmentsWithBarcode}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcode()}{retrieveAlignmentsWithBarcode()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcode (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{string}]{bc }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a given barcode, in a given B\+AM file. A barcode index of the B\+AM must be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & B\+AM file to extract alignments from \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em bc} & barcode of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments sharing the barcode of interest 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a09227c1fc79f7b1b2a227007b615a5dc}\label{alignments_retrieval_8cpp_a09227c1fc79f7b1b2a227007b615a5dc}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcode\_BamReader@{retrieveAlignmentsWithBarcode\_BamReader}}
+\index{retrieveAlignmentsWithBarcode\_BamReader@{retrieveAlignmentsWithBarcode\_BamReader}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcode\_BamReader()}{retrieveAlignmentsWithBarcode\_BamReader()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcode\+\_\+\+Bam\+Reader (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{string}]{bc }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a given barcode, in a given B\+AM file. A barcode index of the B\+AM must be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em bc} & barcode of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments sharing the barcode of interest 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a6d153922e4f6bb60e751b26d858bbf08}\label{alignments_retrieval_8cpp_a6d153922e4f6bb60e751b26d858bbf08}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcodeBits@{retrieveAlignmentsWithBarcodeBits}}
+\index{retrieveAlignmentsWithBarcodeBits@{retrieveAlignmentsWithBarcodeBits}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcodeBits()}{retrieveAlignmentsWithBarcodeBits()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcode\+Bits (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}]{bc }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a given barcode, in a given B\+AM file. A barcode index of the B\+AM must be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & B\+AM file to extract alignments from \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em bc} & barcode of interest, in binary representation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments sharing the barcode of interest 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a18de1edd511cbe727c6e9b336eaf4ec3}\label{alignments_retrieval_8cpp_a18de1edd511cbe727c6e9b336eaf4ec3}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcodeBits\_BamReader@{retrieveAlignmentsWithBarcodeBits\_BamReader}}
+\index{retrieveAlignmentsWithBarcodeBits\_BamReader@{retrieveAlignmentsWithBarcodeBits\_BamReader}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcodeBits\_BamReader()}{retrieveAlignmentsWithBarcodeBits\_BamReader()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcode\+Bits\+\_\+\+Bam\+Reader (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}]{b }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a given barcode, in a given B\+AM file. A barcode index of the B\+AM must be available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em b} & barcode of interest, in binary representation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments sharing the barcode of interest 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a528d7731794c241d0862b8efc42c9494}\label{alignments_retrieval_8cpp_a528d7731794c241d0862b8efc42c9494}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcodes@{retrieveAlignmentsWithBarcodes}}
+\index{retrieveAlignmentsWithBarcodes@{retrieveAlignmentsWithBarcodes}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcodes()}{retrieveAlignmentsWithBarcodes()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcodes (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{string}]{barcodes\+List }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a barcode appearing in the list of a given file
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & B\+AM file to extract alignments from \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em barcodes\+List} & file containing the list of barcodes of interest, with one barcode per line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments with the barcodes of interest 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_ade6d8ab301171346a84397320f2a18fd}\label{alignments_retrieval_8cpp_ade6d8ab301171346a84397320f2a18fd}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentsWithBarcodes\_BamReader@{retrieveAlignmentsWithBarcodes\_BamReader}}
+\index{retrieveAlignmentsWithBarcodes\_BamReader@{retrieveAlignmentsWithBarcodes\_BamReader}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentsWithBarcodes\_BamReader()}{retrieveAlignmentsWithBarcodes\_BamReader()}}
+{\footnotesize\ttfamily vector$<$Bam\+Alignment$>$ retrieve\+Alignments\+With\+Barcodes\+\_\+\+Bam\+Reader (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{string}]{barcodes\+List }\end{DoxyParamCaption})}
+
+Retrieve all the alignments that share a barcode appearing in the list of a given file
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & stream open on the B\+AM fastq file \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode offsets index of the B\+AM file \\
+\hline
+{\em barcodes\+List} & file containing the list of barcodes of interest, with one barcode per line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all the alignments with the barcodes of interest 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file alignments\+Retrieval.\+cpp.
+
+\mbox{\Hypertarget{alignments_retrieval_8cpp_a2ebe1df5c58ea3475066f4c1a24e4510}\label{alignments_retrieval_8cpp_a2ebe1df5c58ea3475066f4c1a24e4510}} 
+\index{alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}!retrieveAlignmentWithBarcode@{retrieveAlignmentWithBarcode}}
+\index{retrieveAlignmentWithBarcode@{retrieveAlignmentWithBarcode}!alignmentsRetrieval.cpp@{alignmentsRetrieval.cpp}}
+\doxysubsubsection{\texorpdfstring{retrieveAlignmentWithBarcode()}{retrieveAlignmentWithBarcode()}}
+{\footnotesize\ttfamily Bam\+Alignment retrieve\+Alignment\+With\+Barcode (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{int64\+\_\+t}]{position,  }\item[{\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file alignments\+Retrieval.\+cpp.
+

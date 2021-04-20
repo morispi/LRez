@@ -1,0 +1,72 @@
+\hypertarget{class_bam_tools_1_1_i_bam_i_o_device}{}\doxysection{Bam\+Tools\+::I\+Bam\+I\+O\+Device Class Reference}
+\label{class_bam_tools_1_1_i_bam_i_o_device}\index{BamTools::IBamIODevice@{BamTools::IBamIODevice}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a97309e79d2a827f02b748ebbfbe0363f}\label{class_bam_tools_1_1_i_bam_i_o_device_a97309e79d2a827f02b748ebbfbe0363f}} 
+enum {\bfseries Open\+Mode} \{ {\bfseries Not\+Open} = 0x0000, 
+{\bfseries Read\+Only} = 0x0001, 
+{\bfseries Write\+Only} = 0x0002, 
+{\bfseries Read\+Write} = Read\+Only $\vert$ Write\+Only
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a6202a21fea89c6f927d81de21e20acda}\label{class_bam_tools_1_1_i_bam_i_o_device_a6202a21fea89c6f927d81de21e20acda}} 
+virtual void {\bfseries Close} ()=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_aa33f18fced73844986ac5b98ca8f7407}\label{class_bam_tools_1_1_i_bam_i_o_device_aa33f18fced73844986ac5b98ca8f7407}} 
+virtual bool {\bfseries Is\+Random\+Access} () const =0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_af996bf97ed4e3c4b56f3f6e33b64c709}\label{class_bam_tools_1_1_i_bam_i_o_device_af996bf97ed4e3c4b56f3f6e33b64c709}} 
+virtual bool {\bfseries Open} (const Open\+Mode mode)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a3fec4cbdac6bf00c04a5bde69d030e3f}\label{class_bam_tools_1_1_i_bam_i_o_device_a3fec4cbdac6bf00c04a5bde69d030e3f}} 
+virtual int64\+\_\+t {\bfseries Read} (char $\ast$data, const unsigned int num\+Bytes)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_aa9bf00d026dceb9c30f2dca641c4af73}\label{class_bam_tools_1_1_i_bam_i_o_device_aa9bf00d026dceb9c30f2dca641c4af73}} 
+virtual bool {\bfseries Seek} (const int64\+\_\+t \&position, const int origin=S\+E\+E\+K\+\_\+\+S\+ET)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a09fc6dd77fa2098ab694f72831809830}\label{class_bam_tools_1_1_i_bam_i_o_device_a09fc6dd77fa2098ab694f72831809830}} 
+virtual int64\+\_\+t {\bfseries Tell} () const =0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a19468b4cad78ac2f9c29a9d5d4b7d6d4}\label{class_bam_tools_1_1_i_bam_i_o_device_a19468b4cad78ac2f9c29a9d5d4b7d6d4}} 
+virtual int64\+\_\+t {\bfseries Write} (const char $\ast$data, const unsigned int num\+Bytes)=0
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_ab280f84c9903dc8a74e172342d9bae78}\label{class_bam_tools_1_1_i_bam_i_o_device_ab280f84c9903dc8a74e172342d9bae78}} 
+virtual std\+::string {\bfseries Get\+Error\+String} ()
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a63d7fd95d962de9ce10c8734e84f3490}\label{class_bam_tools_1_1_i_bam_i_o_device_a63d7fd95d962de9ce10c8734e84f3490}} 
+virtual bool {\bfseries Is\+Open} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a1ab79d9d8035a14a38a2a7b206b89b26}\label{class_bam_tools_1_1_i_bam_i_o_device_a1ab79d9d8035a14a38a2a7b206b89b26}} 
+virtual Open\+Mode {\bfseries Mode} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a445988198f0856a3b2c49fcc1b21aa75}\label{class_bam_tools_1_1_i_bam_i_o_device_a445988198f0856a3b2c49fcc1b21aa75}} 
+void {\bfseries Set\+Error\+String} (const std\+::string \&where, const std\+::string \&what)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a56e09712e67ebbaf6e203fa13182bef4}\label{class_bam_tools_1_1_i_bam_i_o_device_a56e09712e67ebbaf6e203fa13182bef4}} 
+Open\+Mode {\bfseries m\+\_\+mode}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_i_bam_i_o_device_a27212a1126cc9f0134539cb5e1288c0b}\label{class_bam_tools_1_1_i_bam_i_o_device_a27212a1126cc9f0134539cb5e1288c0b}} 
+std\+::string {\bfseries m\+\_\+error\+String}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 27 of file I\+Bam\+I\+O\+Device.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/I\+Bam\+I\+O\+Device.\+h\end{DoxyCompactItemize}

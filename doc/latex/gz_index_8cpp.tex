@@ -1,0 +1,235 @@
+\hypertarget{gz_index_8cpp}{}\doxysection{src/gz\+Index.cpp File Reference}
+\label{gz_index_8cpp}\index{src/gzIndex.cpp@{src/gzIndex.cpp}}
+{\ttfamily \#include \char`\"{}gz\+Index.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gz_index_8cpp_ab49917269d91ff445d8a03954e11b3de}{serialize\+Gz\+Index}} (struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, string output\+File)
+\item 
+struct \mbox{\hyperlink{structaccess}{access}} $\ast$ \mbox{\hyperlink{gz_index_8cpp_a490ef441c6abb4969f9929b46b962b8d}{deserialize\+Gz\+Index}} (struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, string input\+File)
+\item 
+void \mbox{\hyperlink{gz_index_8cpp_aa64647364464e6a1aaf4e85c2d3c122c}{print\+Access}} (struct \mbox{\hyperlink{structaccess}{access}} $\ast$index)
+\item 
+struct \mbox{\hyperlink{structaccess}{access}} $\ast$ \mbox{\hyperlink{gz_index_8cpp_a8d6541a377da0ef2d8bccf00693732ab}{addpoint}} (struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, int bits, off\+\_\+t in, off\+\_\+t out, unsigned left, unsigned char $\ast$window)
+\item 
+int \mbox{\hyperlink{gz_index_8cpp_a46c7774320278b9bf264652c62c6882e}{build\+Gz\+Index\+\_\+\+Stream}} (F\+I\+LE $\ast$in, off\+\_\+t span, struct \mbox{\hyperlink{structaccess}{access}} $\ast$$\ast$built)
+\item 
+int \mbox{\hyperlink{gz_index_8cpp_a5a9f2c5429a74e8975e1a9d050835399}{build\+Gz\+Index}} (string gz\+File, off\+\_\+t span, struct \mbox{\hyperlink{structaccess}{access}} $\ast$$\ast$built)
+\item 
+int \mbox{\hyperlink{gz_index_8cpp_a77170f4028df63a577f1559815a72641}{extract\+\_\+\+Stream}} (F\+I\+LE $\ast$in, struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, off\+\_\+t offset, unsigned char $\ast$buf, int len)
+\item 
+int \mbox{\hyperlink{gz_index_8cpp_aeaa30c4cca1c1e524d15a4f62ba86ef1}{extract}} (string gz\+File, struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, off\+\_\+t offset, unsigned char $\ast$buf, int len)
+\item 
+void \mbox{\hyperlink{gz_index_8cpp_a8de004d9175398ffcb4dc436adcbb401}{free\+Gz\+Index}} (struct \mbox{\hyperlink{structaccess}{access}} $\ast$index)
+\item 
+string \mbox{\hyperlink{gz_index_8cpp_adce8a161d359d1a0a6d95d577c1c4b2d}{extract\+Fastq\+Read\+From\+Offset}} (F\+I\+LE $\ast$in, struct \mbox{\hyperlink{structaccess}{access}} $\ast$index, off\+\_\+t offset)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gz_index_8cpp_a8d6541a377da0ef2d8bccf00693732ab}\label{gz_index_8cpp_a8d6541a377da0ef2d8bccf00693732ab}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!addpoint@{addpoint}}
+\index{addpoint@{addpoint}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{addpoint()}{addpoint()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structaccess}{access}}$\ast$ addpoint (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{int}]{bits,  }\item[{off\+\_\+t}]{in,  }\item[{off\+\_\+t}]{out,  }\item[{unsigned}]{left,  }\item[{unsigned char $\ast$}]{window }\end{DoxyParamCaption})}
+
+
+
+Definition at line 194 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_a5a9f2c5429a74e8975e1a9d050835399}\label{gz_index_8cpp_a5a9f2c5429a74e8975e1a9d050835399}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!buildGzIndex@{buildGzIndex}}
+\index{buildGzIndex@{buildGzIndex}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{buildGzIndex()}{buildGzIndex()}}
+{\footnotesize\ttfamily int build\+Gz\+Index (\begin{DoxyParamCaption}\item[{string}]{,  }\item[{off\+\_\+t}]{span,  }\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$$\ast$}]{built }\end{DoxyParamCaption})}
+
+Index a given gzip file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gz\+File} & gzip file to build the index for \\
+\hline
+{\em span} & build access points every span bits of uncompressed output \\
+\hline
+{\em built} & structure where to store the index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of access points on success ($>$=1), Z\+\_\+\+M\+E\+M\+\_\+\+E\+R\+R\+OR for out of memory, Z\+\_\+\+D\+A\+T\+A\+\_\+\+E\+R\+R\+OR for an error in the input file, or Z\+\_\+\+E\+R\+R\+NO for a file read error. On success, $\ast$built points to the resulting index. 
+\end{DoxyReturn}
+
+
+Definition at line 344 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_a46c7774320278b9bf264652c62c6882e}\label{gz_index_8cpp_a46c7774320278b9bf264652c62c6882e}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!buildGzIndex\_Stream@{buildGzIndex\_Stream}}
+\index{buildGzIndex\_Stream@{buildGzIndex\_Stream}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{buildGzIndex\_Stream()}{buildGzIndex\_Stream()}}
+{\footnotesize\ttfamily int build\+Gz\+Index\+\_\+\+Stream (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{in,  }\item[{off\+\_\+t}]{span,  }\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$$\ast$}]{built }\end{DoxyParamCaption})}
+
+Index a given gzip file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+LE} & open on the desired gzip file to build the index for \\
+\hline
+{\em span} & build access points every span bits of uncompressed output \\
+\hline
+{\em built} & structure where to store the index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of access points on success ($>$=1), Z\+\_\+\+M\+E\+M\+\_\+\+E\+R\+R\+OR for out of memory, Z\+\_\+\+D\+A\+T\+A\+\_\+\+E\+R\+R\+OR for an error in the input file, or Z\+\_\+\+E\+R\+R\+NO for a file read error. On success, $\ast$built points to the resulting index. 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_a490ef441c6abb4969f9929b46b962b8d}\label{gz_index_8cpp_a490ef441c6abb4969f9929b46b962b8d}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!deserializeGzIndex@{deserializeGzIndex}}
+\index{deserializeGzIndex@{deserializeGzIndex}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{deserializeGzIndex()}{deserializeGzIndex()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structaccess}{access}}$\ast$ deserialize\+Gz\+Index (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{string}]{input\+File }\end{DoxyParamCaption})}
+
+Deserialize a gzip index from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index to fill \\
+\hline
+{\em input\+File} & file where the index is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index populated with the contents of the file 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_aeaa30c4cca1c1e524d15a4f62ba86ef1}\label{gz_index_8cpp_aeaa30c4cca1c1e524d15a4f62ba86ef1}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!extract@{extract}}
+\index{extract@{extract}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{extract()}{extract()}}
+{\footnotesize\ttfamily int extract (\begin{DoxyParamCaption}\item[{string}]{gz\+File,  }\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{off\+\_\+t}]{offset,  }\item[{unsigned char $\ast$}]{buf,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+Extract data starting from a given offset off the uncompressed file, using the index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gz\+File} & gzip to extract data from \\
+\hline
+{\em index} & the index of the gzip file \\
+\hline
+{\em offset} & offset to start extracting data from \\
+\hline
+{\em buf} & buffer where to store the extracted data \\
+\hline
+{\em len} & number of bytes to extract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes read or negative for error (Z\+\_\+\+D\+A\+T\+A\+\_\+\+E\+R\+R\+OR or Z\+\_\+\+M\+E\+M\+\_\+\+E\+R\+R\+OR) 
+\end{DoxyReturn}
+
+
+Definition at line 467 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_a77170f4028df63a577f1559815a72641}\label{gz_index_8cpp_a77170f4028df63a577f1559815a72641}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!extract\_Stream@{extract\_Stream}}
+\index{extract\_Stream@{extract\_Stream}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{extract\_Stream()}{extract\_Stream()}}
+{\footnotesize\ttfamily int extract\+\_\+\+Stream (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{in,  }\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{off\+\_\+t}]{offset,  }\item[{unsigned char $\ast$}]{buf,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+Extract data starting from a given offset off the uncompressed file, using the index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & F\+I\+LE open on the desired gzip file \\
+\hline
+{\em index} & the index of the gzip file \\
+\hline
+{\em offset} & offset to start extracting data from \\
+\hline
+{\em buf} & buffer where to store the extracted data \\
+\hline
+{\em len} & number of bytes to extract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes read or negative for error (Z\+\_\+\+D\+A\+T\+A\+\_\+\+E\+R\+R\+OR or Z\+\_\+\+M\+E\+M\+\_\+\+E\+R\+R\+OR) 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_adce8a161d359d1a0a6d95d577c1c4b2d}\label{gz_index_8cpp_adce8a161d359d1a0a6d95d577c1c4b2d}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!extractFastqReadFromOffset@{extractFastqReadFromOffset}}
+\index{extractFastqReadFromOffset@{extractFastqReadFromOffset}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{extractFastqReadFromOffset()}{extractFastqReadFromOffset()}}
+{\footnotesize\ttfamily string extract\+Fastq\+Read\+From\+Offset (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{in,  }\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{off\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+Extract the fastq format read at the specified offset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & F\+I\+LE open on the desired gzip file \\
+\hline
+{\em index} & the index of the gzip file \\
+\hline
+{\em offset} & offset off the read to extract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extracted read in fastq format 
+\end{DoxyReturn}
+
+
+Definition at line 489 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_a8de004d9175398ffcb4dc436adcbb401}\label{gz_index_8cpp_a8de004d9175398ffcb4dc436adcbb401}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!freeGzIndex@{freeGzIndex}}
+\index{freeGzIndex@{freeGzIndex}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{freeGzIndex()}{freeGzIndex()}}
+{\footnotesize\ttfamily void free\+Gz\+Index (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index }\end{DoxyParamCaption})}
+
+Deallocate an index built by build\+\_\+index()
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index to deallocate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 481 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_aa64647364464e6a1aaf4e85c2d3c122c}\label{gz_index_8cpp_aa64647364464e6a1aaf4e85c2d3c122c}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!printAccess@{printAccess}}
+\index{printAccess@{printAccess}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{printAccess()}{printAccess()}}
+{\footnotesize\ttfamily void print\+Access (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 147 of file gz\+Index.\+cpp.
+
+\mbox{\Hypertarget{gz_index_8cpp_ab49917269d91ff445d8a03954e11b3de}\label{gz_index_8cpp_ab49917269d91ff445d8a03954e11b3de}} 
+\index{gzIndex.cpp@{gzIndex.cpp}!serializeGzIndex@{serializeGzIndex}}
+\index{serializeGzIndex@{serializeGzIndex}!gzIndex.cpp@{gzIndex.cpp}}
+\doxysubsubsection{\texorpdfstring{serializeGzIndex()}{serializeGzIndex()}}
+{\footnotesize\ttfamily void serialize\+Gz\+Index (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structaccess}{access}} $\ast$}]{index,  }\item[{string}]{output\+File }\end{DoxyParamCaption})}
+
+Serialize the gzip index into a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index to serialize \\
+\hline
+{\em output\+File} & file where to store the index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file gz\+Index.\+cpp.
+

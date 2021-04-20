@@ -1,0 +1,897 @@
+\hypertarget{classrobin__hood_1_1detail_1_1_table}{}\doxysection{robin\+\_\+hood\+::detail\+::Table$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ Class Template Reference}
+\label{classrobin__hood_1_1detail_1_1_table}\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+
+
+{\ttfamily \#include $<$robin\+\_\+hood.\+h$>$}
+
+
+
+Inherits \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_hash}{robin\+\_\+hood\+::detail\+::\+Wrap\+Hash$<$ Hash $>$}}, \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_wrap_key_equal}{robin\+\_\+hood\+::detail\+::\+Wrap\+Key\+Equal$<$ Key\+Equal $>$}}, and \mbox{\hyperlink{structrobin__hood_1_1detail_1_1_node_allocator}{robin\+\_\+hood\+::detail\+::\+Node\+Allocator$<$ std\+::conditional$<$ std\+::is\+\_\+void$<$ T $>$\+::value, Key, robin\+\_\+hood\+::pair$<$ std\+::conditional$<$ Is\+Flat, Key, Key const $>$\+::type, T $>$ $>$\+::type, 4, 16384, Is\+Flat $>$}}.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} = Key
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}{mapped\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} = typename std\+::conditional$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_af0a05809764dcc1f5601019d9a1f7905}{is\+\_\+set}}, Key, \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ typename std\+::conditional$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_acbc8a6be27e6b6acb68601cc9b43374e}{is\+\_\+flat}}, Key, Key const  $>$\+::type, T $>$ $>$\+::type
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} = size\+\_\+t
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}{hasher}} = Hash
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}{key\+\_\+equal}} = Key\+Equal
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad933544cfb52d2729a6a6f200e59b666}{Self}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}{mapped\+\_\+type}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}{hasher}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}{key\+\_\+equal}} $>$
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} = Iter$<$ false $>$
+\item 
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} = Iter$<$ true $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_acfb5dd7d54beae549e375d05ec01e2da}{Table}} (size\+\_\+t \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(bucket\+\_\+count)=0, const Hash \&h=Hash\{\}, const Key\+Equal \&equal=Key\+Equal\{\}) noexcept(noexcept(Hash(h)) \&\&noexcept(Key\+Equal(equal)))
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a367b27209a9e61ec825ab1c0fb6a7225}{Table}} (Iter first, Iter last, size\+\_\+t \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(bucket\+\_\+count)=0, const Hash \&h=Hash\{\}, const Key\+Equal \&equal=Key\+Equal\{\})
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_af2c227765ba6707e003ce5f46f57f3a1}{Table}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} $>$ initlist, size\+\_\+t \mbox{\hyperlink{robin__hood_8h_a6399383994de7b3a999f5f61a87cb527}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+ED}}(bucket\+\_\+count)=0, const Hash \&h=Hash\{\}, const Key\+Equal \&equal=Key\+Equal\{\})
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a4bd8bf8273183d4657def8a5efae42f9}{Table}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&\&o) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_adccf7c9573573c92794471275ee764a1}{operator=}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&\&o) noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aeb88d60adc8d4bed347fa4e3daa98531}{Table}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&o)
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a6dfa81768d98c8dfd23e50e716632801}{operator=}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} const \&o)
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a35659bfc4c799a774d5c2e60f2b19dff}{swap}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&o)
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a63f44cedc183bf0e0c51c1ef0343897a}{clear}} ()
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a9f58ad180fed399cee94426c8fc1099d}{$\sim$\+Table}} ()
+\item 
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a4b063819c28f1800f35e6ef0033a334a}{operator==}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&other) const
+\item 
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a70c3d7f130f32a133aa7cd90034a6e35}{operator!=}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} \&other) const
+\item 
+{\footnotesize template$<$typename Q  = mapped\+\_\+type$>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$ Q $>$\+::value, Q \& $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad844ebcf70743e94a39eb75f69876533}{operator\mbox{[}$\,$\mbox{]}}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$typename Q  = mapped\+\_\+type$>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$ Q $>$\+::value, Q \& $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_adc1927a4d896dd259ef031aaa8fb2575}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&\&key)
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_afaf52ac516fda1480f9fe83af37dbc1d}{insert}} (Iter first, Iter last)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\std\+::pair$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool $>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a1a6364cae0784d401af7cec792f69b2d}{emplace}} (Args \&\&... args)
+\item 
+std\+::pair$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool $>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a4686cb83428318f86560bb2d40cc1811}{insert}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} \&keyval)
+\item 
+std\+::pair$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool $>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a3614f574e1f1d567028cf7032681c020}{insert}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} \&\&keyval)
+\item 
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a98a73a7b295dc5cb50304068fbd811bd}{count}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ }\\std\+::enable\+\_\+if$<$ Self\+\_\+\+::is\+\_\+transparent, size\+\_\+t $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_afb32389eb41a797c91f5cb1319ed6fc0}{count}} (const Other\+Key \&key) const
+\item 
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a79fdf3ba7034cb3eb36bbda40ec2d3c7}{contains}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ }\\std\+::enable\+\_\+if$<$ Self\+\_\+\+::is\+\_\+transparent, bool $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a595fe17eb846e867e89bd8deaf78a9e8}{contains}} (const Other\+Key \&key) const
+\item 
+{\footnotesize template$<$typename Q  = mapped\+\_\+type$>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$ Q $>$\+::value, Q \& $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0d466b8ba45024362193eac9a75ac58d}{at}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} const \&key)
+\item 
+{\footnotesize template$<$typename Q  = mapped\+\_\+type$>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$ Q $>$\+::value, Q const  \& $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a9c0147f0e06d0eadf94bca6dcf921ad2}{at}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} const \&key) const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a751521706e7da7240a271f9833116892}{find}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key) const
+\item 
+{\footnotesize template$<$typename Other\+Key $>$ }\\\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_adf60460a9051e969a3284fa14bd3c74a}{find}} (const Other\+Key \&key, \mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{is\+\_\+transparent\+\_\+tag}}) const
+\item 
+{\footnotesize template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ }\\std\+::enable\+\_\+if$<$ Self\+\_\+\+::is\+\_\+transparent, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_adf3c7c0450e96a9bdad483e4ae02ae14}{find}} (const Other\+Key \&key) const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0316a19c00f4502bea3158bf7b610c49}{find}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key)
+\item 
+{\footnotesize template$<$typename Other\+Key $>$ }\\\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7c095537d9ce4bc041cab7a21caf3c3f}{find}} (const Other\+Key \&key, \mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{is\+\_\+transparent\+\_\+tag}})
+\item 
+{\footnotesize template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ }\\std\+::enable\+\_\+if$<$ Self\+\_\+\+::is\+\_\+transparent, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} $>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa8d29c8d5499bff58299341d7b9af9c9}{find}} (const Other\+Key \&key)
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_add7d28059e51e869700275a52f10f792}{begin}} ()
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a9177e8678fba060701f8f14cfc79addb}{begin}} () const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a9b30089c2562da0e517af454139d12ed}{cbegin}} () const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7617a36eda977a6a088a25e69e42b53f}{end}} ()
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a362e4bdcd6170fea20823e988aac353d}{end}} () const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0bdce506f7cf81f095ab6ee9d31caa78}{cend}} () const
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0539538ef39c9c19c00253a705890919}{erase}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} pos)
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_af2f4e3e5aa89a5807d2f772f29ccd42c}{erase}} (\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} pos)
+\item 
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a84476a4555d16f32431d3c7bf30ad6e4}{erase}} (const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&key)
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0038ca0e91a80ac87330d7ce4ec9b3c4}{rehash}} (size\+\_\+t c)
+\item 
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a6c2d436df6800ac290cc26da5961a331}{reserve}} (size\+\_\+t c)
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa181b46b39e30eed42fa5efa3938909b}{size}} () const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_abe7368300bb9911dc370cfab2204b091}{max\+\_\+size}} () const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a634a4835bd928f2ae474b9d4c11dbfae}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}} (N\+O\+D\+I\+S\+C\+A\+RD) bool empty() const noexcept
+\item 
+float \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aadf30acd1126007598469f9f251854b3}{max\+\_\+load\+\_\+factor}} () const noexcept
+\item 
+float \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aab67bd7d78e3d520175471b18537e53d}{load\+\_\+factor}} () const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ab57f691567c67c78db7af1a46353ba55}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}} (N\+O\+D\+I\+S\+C\+A\+RD) size\+\_\+t mask() const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a3a3da8028bb22366a69ef29646833473}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}} (N\+O\+D\+I\+S\+C\+A\+RD) size\+\_\+t calc\+Max\+Num\+Elements\+Allowed(size\+\_\+t max\+Elements) const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a68ff7b9d2b41b77f1865470e652e3c2b}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}} (N\+O\+D\+I\+S\+C\+A\+RD) size\+\_\+t calc\+Num\+Bytes\+Info(size\+\_\+t num\+Elements) const noexcept
+\item 
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa208de708a56c35b077807c0d6302d22}{calc\+Num\+Elements\+With\+Buffer}} (size\+\_\+t num\+Elements) const noexcept
+\item 
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ab2dab1133a8ea888d9a40a09f243bd8b}{R\+O\+B\+I\+N\+\_\+\+H\+O\+OD}} (N\+O\+D\+I\+S\+C\+A\+RD) size\+\_\+t calc\+Num\+Bytes\+Total(size\+\_\+t num\+Elements) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_acbc8a6be27e6b6acb68601cc9b43374e}{is\+\_\+flat}} = Is\+Flat
+\item 
+static constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0c2d258850afd0923b137fef79235bd6}{is\+\_\+map}} = !std\+::is\+\_\+void$<$T$>$\+::value
+\item 
+static constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_af0a05809764dcc1f5601019d9a1f7905}{is\+\_\+set}} = !\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0c2d258850afd0923b137fef79235bd6}{is\+\_\+map}}
+\item 
+static constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aefd4c2c18703cec7e07d846fae64e2a9}{is\+\_\+transparent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key, typename T, typename Hash, typename Key\+Equal$>$\newline
+class robin\+\_\+hood\+::detail\+::\+Table$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$}
+
+
+
+Definition at line 879 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}\label{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} =  Iter$<$true$>$}
+
+
+
+Definition at line 1446 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}\label{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!hasher@{hasher}}
+\index{hasher@{hasher}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{hasher}{hasher}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}{hasher}} =  Hash}
+
+
+
+Definition at line 900 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}\label{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} =  Iter$<$false$>$}
+
+
+
+Definition at line 1445 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}\label{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!key\_equal@{key\_equal}}
+\index{key\_equal@{key\_equal}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{key\_equal}{key\_equal}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}{key\+\_\+equal}} =  Key\+Equal}
+
+
+
+Definition at line 901 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}\label{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!key\_type@{key\_type}}
+\index{key\_type@{key\_type}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{key\_type}{key\_type}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} =  Key}
+
+
+
+Definition at line 894 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}\label{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!mapped\_type@{mapped\_type}}
+\index{mapped\_type@{mapped\_type}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{mapped\_type}{mapped\_type}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}{mapped\+\_\+type}} =  T}
+
+
+
+Definition at line 895 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_ad933544cfb52d2729a6a6f200e59b666}\label{classrobin__hood_1_1detail_1_1_table_ad933544cfb52d2729a6a6f200e59b666}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Self@{Self}}
+\index{Self@{Self}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Self}{Self}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad933544cfb52d2729a6a6f200e59b666}{Self}} =  \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$Is\+Flat, Max\+Load\+Factor100, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_ad57e98927ed028ee462aeaa6352f435e}{mapped\+\_\+type}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a13180b774f5da55e353d0343dbeb8c86}{hasher}}, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aa68503d58c08320ebfe5cf78185cc575}{key\+\_\+equal}}$>$}
+
+
+
+Definition at line 902 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}\label{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} =  size\+\_\+t}
+
+
+
+Definition at line 899 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}\label{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+using \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} =  typename std\+::conditional$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_af0a05809764dcc1f5601019d9a1f7905}{is\+\_\+set}}, Key, \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$typename std\+::conditional$<$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_acbc8a6be27e6b6acb68601cc9b43374e}{is\+\_\+flat}}, Key, Key const$>$\+::type, T$>$ $>$\+::type}
+
+
+
+Definition at line 898 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_acfb5dd7d54beae549e375d05ec01e2da}\label{classrobin__hood_1_1detail_1_1_table_acfb5dd7d54beae549e375d05ec01e2da}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Table@{Table}}
+\index{Table@{Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}\item[{size\+\_\+t }]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDbucket\+\_\+count = {\ttfamily 0},  }\item[{const Hash \&}]{h = {\ttfamily Hash\{\}},  }\item[{const Key\+Equal \&}]{equal = {\ttfamily KeyEqual\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1453 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a367b27209a9e61ec825ab1c0fb6a7225}\label{classrobin__hood_1_1detail_1_1_table_a367b27209a9e61ec825ab1c0fb6a7225}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Table@{Table}}
+\index{Table@{Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Iter $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}\item[{Iter}]{first,  }\item[{Iter}]{last,  }\item[{size\+\_\+t }]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDbucket\+\_\+count = {\ttfamily 0},  }\item[{const Hash \&}]{h = {\ttfamily Hash\{\}},  }\item[{const Key\+Equal \&}]{equal = {\ttfamily KeyEqual\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1462 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_af2c227765ba6707e003ce5f46f57f3a1}\label{classrobin__hood_1_1detail_1_1_table_af2c227765ba6707e003ce5f46f57f3a1}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Table@{Table}}
+\index{Table@{Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} $>$}]{initlist,  }\item[{size\+\_\+t }]{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+U\+N\+U\+S\+EDbucket\+\_\+count = {\ttfamily 0},  }\item[{const Hash \&}]{h = {\ttfamily Hash\{\}},  }\item[{const Key\+Equal \&}]{equal = {\ttfamily KeyEqual\{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1470 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a4bd8bf8273183d4657def8a5efae42f9}\label{classrobin__hood_1_1detail_1_1_table_a4bd8bf8273183d4657def8a5efae42f9}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Table@{Table}}
+\index{Table@{Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&\&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1479 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aeb88d60adc8d4bed347fa4e3daa98531}\label{classrobin__hood_1_1detail_1_1_table_aeb88d60adc8d4bed347fa4e3daa98531}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!Table@{Table}}
+\index{Table@{Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1524 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a9f58ad180fed399cee94426c8fc1099d}\label{classrobin__hood_1_1detail_1_1_table_a9f58ad180fed399cee94426c8fc1099d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!````~Table@{$\sim$Table}}
+\index{````~Table@{$\sim$Table}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Table()}{~Table()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::$\sim$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1636 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0d466b8ba45024362193eac9a75ac58d}\label{classrobin__hood_1_1detail_1_1_table_a0d466b8ba45024362193eac9a75ac58d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!at@{at}}
+\index{at@{at}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Q  = mapped\+\_\+type$>$ \\
+std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$Q$>$\+::value, Q\&$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} const \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1738 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a9c0147f0e06d0eadf94bca6dcf921ad2}\label{classrobin__hood_1_1detail_1_1_table_a9c0147f0e06d0eadf94bca6dcf921ad2}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!at@{at}}
+\index{at@{at}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Q  = mapped\+\_\+type$>$ \\
+std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$Q$>$\+::value, Q const\&$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} const \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1751 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_add7d28059e51e869700275a52f10f792}\label{classrobin__hood_1_1detail_1_1_table_add7d28059e51e869700275a52f10f792}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!begin@{begin}}
+\index{begin@{begin}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1802 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a9177e8678fba060701f8f14cfc79addb}\label{classrobin__hood_1_1detail_1_1_table_a9177e8678fba060701f8f14cfc79addb}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!begin@{begin}}
+\index{begin@{begin}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1809 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aa208de708a56c35b077807c0d6302d22}\label{classrobin__hood_1_1detail_1_1_table_aa208de708a56c35b077807c0d6302d22}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!calcNumElementsWithBuffer@{calcNumElementsWithBuffer}}
+\index{calcNumElementsWithBuffer@{calcNumElementsWithBuffer}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{calcNumElementsWithBuffer()}{calcNumElementsWithBuffer()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::calc\+Num\+Elements\+With\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Elements }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1950 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a9b30089c2562da0e517af454139d12ed}\label{classrobin__hood_1_1detail_1_1_table_a9b30089c2562da0e517af454139d12ed}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1813 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0bdce506f7cf81f095ab6ee9d31caa78}\label{classrobin__hood_1_1detail_1_1_table_a0bdce506f7cf81f095ab6ee9d31caa78}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!cend@{cend}}
+\index{cend@{cend}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1831 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a63f44cedc183bf0e0c51c1ef0343897a}\label{classrobin__hood_1_1detail_1_1_table_a63f44cedc183bf0e0c51c1ef0343897a}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!clear@{clear}}
+\index{clear@{clear}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1615 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a79fdf3ba7034cb3eb36bbda40ec2d3c7}\label{classrobin__hood_1_1detail_1_1_table_a79fdf3ba7034cb3eb36bbda40ec2d3c7}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!contains@{contains}}
+\index{contains@{contains}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1724 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a595fe17eb846e867e89bd8deaf78a9e8}\label{classrobin__hood_1_1detail_1_1_table_a595fe17eb846e867e89bd8deaf78a9e8}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!contains@{contains}}
+\index{contains@{contains}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ \\
+std\+::enable\+\_\+if$<$Self\+\_\+\+::is\+\_\+transparent, bool$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::contains (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1730 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a98a73a7b295dc5cb50304068fbd811bd}\label{classrobin__hood_1_1detail_1_1_table_a98a73a7b295dc5cb50304068fbd811bd}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!count@{count}}
+\index{count@{count}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::count (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1704 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_afb32389eb41a797c91f5cb1319ed6fc0}\label{classrobin__hood_1_1detail_1_1_table_afb32389eb41a797c91f5cb1319ed6fc0}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!count@{count}}
+\index{count@{count}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ \\
+std\+::enable\+\_\+if$<$Self\+\_\+\+::is\+\_\+transparent, size\+\_\+t$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::count (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1715 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a1a6364cae0784d401af7cec792f69b2d}\label{classrobin__hood_1_1detail_1_1_table_a1a6364cae0784d401af7cec792f69b2d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename... Args$>$ \\
+std\+::pair$<$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool$>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::emplace (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1682 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a7617a36eda977a6a088a25e69e42b53f}\label{classrobin__hood_1_1detail_1_1_table_a7617a36eda977a6a088a25e69e42b53f}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!end@{end}}
+\index{end@{end}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1821 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a362e4bdcd6170fea20823e988aac353d}\label{classrobin__hood_1_1detail_1_1_table_a362e4bdcd6170fea20823e988aac353d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!end@{end}}
+\index{end@{end}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1827 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a84476a4555d16f32431d3c7bf30ad6e4}\label{classrobin__hood_1_1detail_1_1_table_a84476a4555d16f32431d3c7bf30ad6e4}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!erase@{erase}}
+\index{erase@{erase}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+size\+\_\+t \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::erase (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1861 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0539538ef39c9c19c00253a705890919}\label{classrobin__hood_1_1detail_1_1_table_a0539538ef39c9c19c00253a705890919}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!erase@{erase}}
+\index{erase@{erase}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1836 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_af2f4e3e5aa89a5807d2f772f29ccd42c}\label{classrobin__hood_1_1detail_1_1_table_af2f4e3e5aa89a5807d2f772f29ccd42c}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!erase@{erase}}
+\index{erase@{erase}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1844 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0316a19c00f4502bea3158bf7b610c49}\label{classrobin__hood_1_1detail_1_1_table_a0316a19c00f4502bea3158bf7b610c49}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1782 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a751521706e7da7240a271f9833116892}\label{classrobin__hood_1_1detail_1_1_table_a751521706e7da7240a271f9833116892}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1760 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aa8d29c8d5499bff58299341d7b9af9c9}\label{classrobin__hood_1_1detail_1_1_table_aa8d29c8d5499bff58299341d7b9af9c9}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ \\
+std\+::enable\+\_\+if$<$Self\+\_\+\+::is\+\_\+transparent, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1796 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_adf3c7c0450e96a9bdad483e4ae02ae14}\label{classrobin__hood_1_1detail_1_1_table_adf3c7c0450e96a9bdad483e4ae02ae14}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key , typename Self\+\_\+  = Self$>$ \\
+std\+::enable\+\_\+if$<$Self\+\_\+\+::is\+\_\+transparent, \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}}$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1776 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a7c095537d9ce4bc041cab7a21caf3c3f}\label{classrobin__hood_1_1detail_1_1_table_a7c095537d9ce4bc041cab7a21caf3c3f}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{is\+\_\+transparent\+\_\+tag}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1789 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_adf60460a9051e969a3284fa14bd3c74a}\label{classrobin__hood_1_1detail_1_1_table_adf60460a9051e969a3284fa14bd3c74a}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!find@{find}}
+\index{find@{find}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Other\+Key $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a2876c055bf6f25ab7e2a14b3075bd7ec}{const\+\_\+iterator}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::find (\begin{DoxyParamCaption}\item[{const Other\+Key \&}]{key,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{is\+\_\+transparent\+\_\+tag}}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1767 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a4686cb83428318f86560bb2d40cc1811}\label{classrobin__hood_1_1detail_1_1_table_a4686cb83428318f86560bb2d40cc1811}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!insert@{insert}}
+\index{insert@{insert}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+std\+::pair$<$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool$>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} \&}]{keyval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1694 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_afaf52ac516fda1480f9fe83af37dbc1d}\label{classrobin__hood_1_1detail_1_1_table_afaf52ac516fda1480f9fe83af37dbc1d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!insert@{insert}}
+\index{insert@{insert}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Iter $>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::insert (\begin{DoxyParamCaption}\item[{Iter}]{first,  }\item[{Iter}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1674 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a3614f574e1f1d567028cf7032681c020}\label{classrobin__hood_1_1detail_1_1_table_a3614f574e1f1d567028cf7032681c020}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!insert@{insert}}
+\index{insert@{insert}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+std\+::pair$<$\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a46c9f030f2bfd8e463660db58d3a0f14}{iterator}}, bool$>$ \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_aaa96e437f425b19604f49d654d54d7ce}{value\+\_\+type}} \&\&}]{keyval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1699 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aab67bd7d78e3d520175471b18537e53d}\label{classrobin__hood_1_1detail_1_1_table_aab67bd7d78e3d520175471b18537e53d}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!load\_factor@{load\_factor}}
+\index{load\_factor@{load\_factor}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{load\_factor()}{load\_factor()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+float \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::load\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1924 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aadf30acd1126007598469f9f251854b3}\label{classrobin__hood_1_1detail_1_1_table_aadf30acd1126007598469f9f251854b3}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!max\_load\_factor@{max\_load\_factor}}
+\index{max\_load\_factor@{max\_load\_factor}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{max\_load\_factor()}{max\_load\_factor()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+float \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::max\+\_\+load\+\_\+factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1918 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_abe7368300bb9911dc370cfab2204b091}\label{classrobin__hood_1_1detail_1_1_table_abe7368300bb9911dc370cfab2204b091}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{max\_size()}{max\_size()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::max\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1908 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a70c3d7f130f32a133aa7cd90034a6e35}\label{classrobin__hood_1_1detail_1_1_table_a70c3d7f130f32a133aa7cd90034a6e35}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1656 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_adccf7c9573573c92794471275ee764a1}\label{classrobin__hood_1_1detail_1_1_table_adccf7c9573573c92794471275ee764a1}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}\& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&\&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1497 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a6dfa81768d98c8dfd23e50e716632801}\label{classrobin__hood_1_1detail_1_1_table_a6dfa81768d98c8dfd23e50e716632801}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}\& \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ const \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1550 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a4b063819c28f1800f35e6ef0033a334a}\label{classrobin__hood_1_1detail_1_1_table_a4b063819c28f1800f35e6ef0033a334a}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1642 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_ad844ebcf70743e94a39eb75f69876533}\label{classrobin__hood_1_1detail_1_1_table_ad844ebcf70743e94a39eb75f69876533}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Q  = mapped\+\_\+type$>$ \\
+std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$Q$>$\+::value, Q\&$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1662 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_adc1927a4d896dd259ef031aaa8fb2575}\label{classrobin__hood_1_1detail_1_1_table_adc1927a4d896dd259ef031aaa8fb2575}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+template$<$typename Q  = mapped\+\_\+type$>$ \\
+std\+::enable\+\_\+if$<$!std\+::is\+\_\+void$<$Q$>$\+::value, Q\&$>$\+::type \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a71358990733e9f0af7d2a2cb82f883d4}{key\+\_\+type}} \&\&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1668 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0038ca0e91a80ac87330d7ce4ec9b3c4}\label{classrobin__hood_1_1detail_1_1_table_a0038ca0e91a80ac87330d7ce4ec9b3c4}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!rehash@{rehash}}
+\index{rehash@{rehash}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{rehash()}{rehash()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::rehash (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1883 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a6c2d436df6800ac290cc26da5961a331}\label{classrobin__hood_1_1detail_1_1_table_a6c2d436df6800ac290cc26da5961a331}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1889 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a634a4835bd928f2ae474b9d4c11dbfae}\label{classrobin__hood_1_1detail_1_1_table_a634a4835bd928f2ae474b9d4c11dbfae}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD()}{ROBIN\_HOOD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+OD (\begin{DoxyParamCaption}\item[{N\+O\+D\+I\+S\+C\+A\+RD}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1913 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a3a3da8028bb22366a69ef29646833473}\label{classrobin__hood_1_1detail_1_1_table_a3a3da8028bb22366a69ef29646833473}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD()}{ROBIN\_HOOD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+OD (\begin{DoxyParamCaption}\item[{N\+O\+D\+I\+S\+C\+A\+RD}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1934 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a68ff7b9d2b41b77f1865470e652e3c2b}\label{classrobin__hood_1_1detail_1_1_table_a68ff7b9d2b41b77f1865470e652e3c2b}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD()}{ROBIN\_HOOD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+OD (\begin{DoxyParamCaption}\item[{N\+O\+D\+I\+S\+C\+A\+RD}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1943 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_ab2dab1133a8ea888d9a40a09f243bd8b}\label{classrobin__hood_1_1detail_1_1_table_ab2dab1133a8ea888d9a40a09f243bd8b}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD()}{ROBIN\_HOOD()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+OD (\begin{DoxyParamCaption}\item[{N\+O\+D\+I\+S\+C\+A\+RD}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1956 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_ab57f691567c67c78db7af1a46353ba55}\label{classrobin__hood_1_1detail_1_1_table_ab57f691567c67c78db7af1a46353ba55}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!ROBIN\_HOOD@{ROBIN\_HOOD}}
+\index{ROBIN\_HOOD@{ROBIN\_HOOD}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD()}{ROBIN\_HOOD()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+OD (\begin{DoxyParamCaption}\item[{N\+O\+D\+I\+S\+C\+A\+RD}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1929 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aa181b46b39e30eed42fa5efa3938909b}\label{classrobin__hood_1_1detail_1_1_table_aa181b46b39e30eed42fa5efa3938909b}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!size@{size}}
+\index{size@{size}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a7f1df95c74de5245e0dff74db3c7cfce}{size\+\_\+type}} \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 1903 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a35659bfc4c799a774d5c2e60f2b19dff}\label{classrobin__hood_1_1detail_1_1_table_a35659bfc4c799a774d5c2e60f2b19dff}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!swap@{swap}}
+\index{swap@{swap}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+void \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$ \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1608 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_acbc8a6be27e6b6acb68601cc9b43374e}\label{classrobin__hood_1_1detail_1_1_table_acbc8a6be27e6b6acb68601cc9b43374e}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!is\_flat@{is\_flat}}
+\index{is\_flat@{is\_flat}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{is\_flat}{is\_flat}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::is\+\_\+flat = Is\+Flat\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 888 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_a0c2d258850afd0923b137fef79235bd6}\label{classrobin__hood_1_1detail_1_1_table_a0c2d258850afd0923b137fef79235bd6}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!is\_map@{is\_map}}
+\index{is\_map@{is\_map}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{is\_map}{is\_map}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::is\+\_\+map = !std\+::is\+\_\+void$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 889 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_af0a05809764dcc1f5601019d9a1f7905}\label{classrobin__hood_1_1detail_1_1_table_af0a05809764dcc1f5601019d9a1f7905}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!is\_set@{is\_set}}
+\index{is\_set@{is\_set}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{is\_set}{is\_set}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::is\+\_\+set = !\mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table_a0c2d258850afd0923b137fef79235bd6}{is\+\_\+map}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 890 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{classrobin__hood_1_1detail_1_1_table_aefd4c2c18703cec7e07d846fae64e2a9}\label{classrobin__hood_1_1detail_1_1_table_aefd4c2c18703cec7e07d846fae64e2a9}} 
+\index{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}!is\_transparent@{is\_transparent}}
+\index{is\_transparent@{is\_transparent}!robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$@{robin\_hood::detail::Table$<$ IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual $>$}}
+\doxysubsubsection{\texorpdfstring{is\_transparent}{is\_transparent}}
+{\footnotesize\ttfamily template$<$bool Is\+Flat, size\+\_\+t Max\+Load\+Factor100, typename Key , typename T , typename Hash , typename Key\+Equal $>$ \\
+constexpr bool \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{robin\+\_\+hood\+::detail\+::\+Table}}$<$ Is\+Flat, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$\+::is\+\_\+transparent\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{        has\_is\_transparent<Hash>::value \&\& has\_is\_transparent<KeyEqual>::value}
+
+\end{DoxyCode}
+
+
+Definition at line 891 of file robin\+\_\+hood.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{robin__hood_8h}{robin\+\_\+hood.\+h}}\end{DoxyCompactItemize}
