@@ -1,0 +1,72 @@
+\hypertarget{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d}{}\doxysection{robin\+\_\+hood\+::R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+TD Namespace Reference}
+\label{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d}\index{robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail__}{detail\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1alignment__of}{alignment\+\_\+of}}
+\item 
+class \mbox{\hyperlink{classrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1integer__sequence}{integer\+\_\+sequence}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t... Inds$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_ad79958c91646c10e491239d566585fea}{index\+\_\+sequence}} = \mbox{\hyperlink{classrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1integer__sequence}{integer\+\_\+sequence}}$<$ std\+::size\+\_\+t, Inds... $>$
+\item 
+{\footnotesize template$<$class T , T N$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}{make\+\_\+integer\+\_\+sequence}} = typename \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl}{detail\+\_\+\+::\+Int\+Seq\+Impl}}$<$ T, 0, N,(N -\/ 0)==1 $>$\+::T\+Result
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}{make\+\_\+index\+\_\+sequence}} = \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}{make\+\_\+integer\+\_\+sequence}}$<$ std\+::size\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$class... T$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a3a3ba91d75757b070db6b27a85bbad1e}{index\+\_\+sequence\+\_\+for}} = \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}{make\+\_\+index\+\_\+sequence}}$<$ sizeof...(T)$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_ad79958c91646c10e491239d566585fea}\label{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_ad79958c91646c10e491239d566585fea}} 
+\index{robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}!index\_sequence@{index\_sequence}}
+\index{index\_sequence@{index\_sequence}!robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}}
+\doxysubsubsection{\texorpdfstring{index\_sequence}{index\_sequence}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t... Inds$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_ad79958c91646c10e491239d566585fea}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::index\+\_\+sequence}} = typedef \mbox{\hyperlink{classrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1integer__sequence}{integer\+\_\+sequence}}$<$std\+::size\+\_\+t, Inds...$>$}
+
+
+
+Definition at line 257 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a3a3ba91d75757b070db6b27a85bbad1e}\label{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a3a3ba91d75757b070db6b27a85bbad1e}} 
+\index{robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}!index\_sequence\_for@{index\_sequence\_for}}
+\index{index\_sequence\_for@{index\_sequence\_for}!robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}}
+\doxysubsubsection{\texorpdfstring{index\_sequence\_for}{index\_sequence\_for}}
+{\footnotesize\ttfamily template$<$class... T$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a3a3ba91d75757b070db6b27a85bbad1e}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::index\+\_\+sequence\+\_\+for}} = typedef \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}{make\+\_\+index\+\_\+sequence}}$<$sizeof...(T)$>$}
+
+
+
+Definition at line 305 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}\label{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}} 
+\index{robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}!make\_index\_sequence@{make\_index\_sequence}}
+\index{make\_index\_sequence@{make\_index\_sequence}!robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}}
+\doxysubsubsection{\texorpdfstring{make\_index\_sequence}{make\_index\_sequence}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a8d1fbcb04a33c06ade536eede095976a}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::make\+\_\+index\+\_\+sequence}} = typedef \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}{make\+\_\+integer\+\_\+sequence}}$<$std\+::size\+\_\+t, N$>$}
+
+
+
+Definition at line 302 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}\label{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}} 
+\index{robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}!make\_integer\_sequence@{make\_integer\_sequence}}
+\index{make\_integer\_sequence@{make\_integer\_sequence}!robin\_hood::ROBIN\_HOOD\_STD@{robin\_hood::ROBIN\_HOOD\_STD}}
+\doxysubsubsection{\texorpdfstring{make\_integer\_sequence}{make\_integer\_sequence}}
+{\footnotesize\ttfamily template$<$class T , T N$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_a204e9a44dc0bd7384ba568422dda846e}{robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+T\+D\+::make\+\_\+integer\+\_\+sequence}} = typedef typename \mbox{\hyperlink{structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl}{detail\+\_\+\+::\+Int\+Seq\+Impl}}$<$T, 0, N, (N -\/ 0) == 1$>$\+::T\+Result}
+
+
+
+Definition at line 299 of file robin\+\_\+hood.\+h.
+

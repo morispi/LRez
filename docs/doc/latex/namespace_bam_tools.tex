@@ -1,0 +1,354 @@
+\hypertarget{namespace_bam_tools}{}\doxysection{Bam\+Tools Namespace Reference}
+\label{namespace_bam_tools}\index{BamTools@{BamTools}}
+
+
+Contains all \mbox{\hyperlink{namespace_bam_tools}{Bam\+Tools}} classes \& methods.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_bam_tools_1_1_algorithms}{Algorithms}}
+\begin{DoxyCompactList}\small\item\em Provides convenient classes \& methods for working with B\+AM data. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespace_bam_tools_1_1_constants}{Constants}}
+\begin{DoxyCompactList}\small\item\em Provides basic constants for handling B\+AM files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_bam_index}{Bam\+Index}}
+\begin{DoxyCompactList}\small\item\em Provides methods for generating \& loading B\+AM index files. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_bam_multi_reader}{Bam\+Multi\+Reader}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_bam_reader}{Bam\+Reader}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}}
+\begin{DoxyCompactList}\small\item\em Represents a sequential genomic region. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_bam_writer}{Bam\+Writer}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_cigar_op}{Cigar\+Op}}
+\begin{DoxyCompactList}\small\item\em Represents a C\+I\+G\+AR alignment operation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_custom_header_tag}{Custom\+Header\+Tag}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_i_bam_i_o_device}{I\+Bam\+I\+O\+Device}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_raii_buffer}{Raii\+Buffer}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_ref_data}{Ref\+Data}}
+\begin{DoxyCompactList}\small\item\em Represents a reference sequence entry. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_sam_header}{Sam\+Header}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_sam_program}{Sam\+Program}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_sam_program_chain}{Sam\+Program\+Chain}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_sam_read_group}{Sam\+Read\+Group}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_sam_read_group_dictionary}{Sam\+Read\+Group\+Dictionary}}
+\item 
+struct \mbox{\hyperlink{struct_bam_tools_1_1_sam_sequence}{Sam\+Sequence}}
+\item 
+class \mbox{\hyperlink{class_bam_tools_1_1_sam_sequence_dictionary}{Sam\+Sequence\+Dictionary}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a5ec8c1bc89a0c5979696a4a124fcbaeb}\label{namespace_bam_tools_a5ec8c1bc89a0c5979696a4a124fcbaeb}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} $>$ {\bfseries Bam\+Alignment\+Vector}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}\label{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{struct_bam_tools_1_1_ref_data}{Ref\+Data}} $>$ \mbox{\hyperlink{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}{Ref\+Vector}}
+\begin{DoxyCompactList}\small\item\em convenience typedef for vector of \mbox{\hyperlink{struct_bam_tools_1_1_ref_data}{Ref\+Data}} entries \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a493a4923ef031f18420dd522987aa849}\label{namespace_bam_tools_a493a4923ef031f18420dd522987aa849}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{struct_bam_tools_1_1_sam_program}{Sam\+Program}} $>$ {\bfseries Sam\+Program\+Container}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a4f05bf39c3fa968ad9ceebfac3bfcd26}\label{namespace_bam_tools_a4f05bf39c3fa968ad9ceebfac3bfcd26}} 
+typedef Sam\+Program\+Container\+::iterator {\bfseries Sam\+Program\+Iterator}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a65243649ecb469540f711d6849eebbbc}\label{namespace_bam_tools_a65243649ecb469540f711d6849eebbbc}} 
+typedef Sam\+Program\+Container\+::const\+\_\+iterator {\bfseries Sam\+Program\+Const\+Iterator}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a65d72324945d02c05115772904745e92}\label{namespace_bam_tools_a65d72324945d02c05115772904745e92}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{struct_bam_tools_1_1_sam_read_group}{Sam\+Read\+Group}} $>$ {\bfseries Sam\+Read\+Group\+Container}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_aa01a6a0367d3a90968ae9065ecf5bb2a}\label{namespace_bam_tools_aa01a6a0367d3a90968ae9065ecf5bb2a}} 
+typedef Sam\+Read\+Group\+Container\+::iterator {\bfseries Sam\+Read\+Group\+Iterator}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a13213686975a6efa187f21595507724e}\label{namespace_bam_tools_a13213686975a6efa187f21595507724e}} 
+typedef Sam\+Read\+Group\+Container\+::const\+\_\+iterator {\bfseries Sam\+Read\+Group\+Const\+Iterator}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a709fdcc93b89f83752ff5d7b7ca06c16}\label{namespace_bam_tools_a709fdcc93b89f83752ff5d7b7ca06c16}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{struct_bam_tools_1_1_sam_sequence}{Sam\+Sequence}} $>$ {\bfseries Sam\+Sequence\+Container}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a80bfb49ef575b0fc7b9b4fa111f47308}\label{namespace_bam_tools_a80bfb49ef575b0fc7b9b4fa111f47308}} 
+typedef Sam\+Sequence\+Container\+::iterator {\bfseries Sam\+Sequence\+Iterator}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a6a7821c6bf43e5e9b3ea2b2216554360}\label{namespace_bam_tools_a6a7821c6bf43e5e9b3ea2b2216554360}} 
+typedef Sam\+Sequence\+Container\+::const\+\_\+iterator {\bfseries Sam\+Sequence\+Const\+Iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_ac9a7f11b4033e3f29183dce30e29b7da}\label{namespace_bam_tools_ac9a7f11b4033e3f29183dce30e29b7da}} 
+template$<$$>$ bool {\bfseries Bam\+Alignment\+::\+Add\+Tag$<$ std\+::string $>$} (const std\+::string \&tag, const std\+::string \&type, const std\+::string \&value)
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a8b6c0f9db6f33bd8213304ce47a7e857}\label{namespace_bam_tools_a8b6c0f9db6f33bd8213304ce47a7e857}} 
+template$<$$>$ bool {\bfseries Bam\+Alignment\+::\+Get\+Tag$<$ std\+::string $>$} (const std\+::string \&tag, std\+::string \&destination) const
+\item 
+\mbox{\Hypertarget{namespace_bam_tools_a5c866cd2fe41ae6ae22be9d544abcdeb}\label{namespace_bam_tools_a5c866cd2fe41ae6ae22be9d544abcdeb}} 
+bool \mbox{\hyperlink{namespace_bam_tools_a5c866cd2fe41ae6ae22be9d544abcdeb}{File\+Exists}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em returns true if the file exists \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_abebe62e0746f698db30b1681ef27b64a}\label{namespace_bam_tools_abebe62e0746f698db30b1681ef27b64a}} 
+void \mbox{\hyperlink{namespace_bam_tools_abebe62e0746f698db30b1681ef27b64a}{Swap\+Endian\+\_\+16}} (uint16\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of unsigned 16-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_af8c7d17bddec46961e82dc5bfd009c55}\label{namespace_bam_tools_af8c7d17bddec46961e82dc5bfd009c55}} 
+void \mbox{\hyperlink{namespace_bam_tools_af8c7d17bddec46961e82dc5bfd009c55}{Swap\+Endian\+\_\+16}} (int16\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of signed 16-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a320480630cac81dd4818bbb379468b94}\label{namespace_bam_tools_a320480630cac81dd4818bbb379468b94}} 
+void \mbox{\hyperlink{namespace_bam_tools_a320480630cac81dd4818bbb379468b94}{Swap\+Endian\+\_\+32}} (uint32\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of unsigned 32-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a79bfc085656a840d548e81443cbe110a}\label{namespace_bam_tools_a79bfc085656a840d548e81443cbe110a}} 
+void \mbox{\hyperlink{namespace_bam_tools_a79bfc085656a840d548e81443cbe110a}{Swap\+Endian\+\_\+32}} (int32\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of signed 32-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_aca95615fe69f82f5b0a8c8e3ef81f76c}\label{namespace_bam_tools_aca95615fe69f82f5b0a8c8e3ef81f76c}} 
+void \mbox{\hyperlink{namespace_bam_tools_aca95615fe69f82f5b0a8c8e3ef81f76c}{Swap\+Endian\+\_\+64}} (uint64\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of unsigned 64-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a9ff814335b08775504f458b77d65e2ce}\label{namespace_bam_tools_a9ff814335b08775504f458b77d65e2ce}} 
+void \mbox{\hyperlink{namespace_bam_tools_a9ff814335b08775504f458b77d65e2ce}{Swap\+Endian\+\_\+64}} (int64\+\_\+t \&x)
+\begin{DoxyCompactList}\small\item\em swaps endianness of signed 64-\/bit integer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a30ca8d29f22f7a1298279a44fa058a89}\label{namespace_bam_tools_a30ca8d29f22f7a1298279a44fa058a89}} 
+void \mbox{\hyperlink{namespace_bam_tools_a30ca8d29f22f7a1298279a44fa058a89}{Swap\+Endian\+\_\+16p}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em swaps endianness of the next 2 bytes in a buffer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a050d8622d5683412459129f5cdfc0510}\label{namespace_bam_tools_a050d8622d5683412459129f5cdfc0510}} 
+void \mbox{\hyperlink{namespace_bam_tools_a050d8622d5683412459129f5cdfc0510}{Swap\+Endian\+\_\+32p}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em swaps endianness of the next 4 bytes in a buffer, in place \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a98cbc5937c70207a63fa2efdb35f06ab}\label{namespace_bam_tools_a98cbc5937c70207a63fa2efdb35f06ab}} 
+void \mbox{\hyperlink{namespace_bam_tools_a98cbc5937c70207a63fa2efdb35f06ab}{Swap\+Endian\+\_\+64p}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em swaps endianness of the next 8 bytes in a buffer, in place \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_bam_tools_a4ea6004c8f8cc0c747b120807390fc7c}{System\+Is\+Big\+Endian}} ()
+\begin{DoxyCompactList}\small\item\em checks host architecture\textquotesingle{}s byte order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_bam_tools_a53750928dd60a51f81fd89c050f1fc27}{Pack\+Unsigned\+Int}} (char $\ast$buffer, unsigned int value)
+\begin{DoxyCompactList}\small\item\em stores unsigned integer value in a byte buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_bam_tools_ae312a004460f1d311050aee20948fe30}{Pack\+Unsigned\+Short}} (char $\ast$buffer, unsigned short value)
+\begin{DoxyCompactList}\small\item\em stores unsigned short integer value in a byte buffer \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespace_bam_tools_ae8ff80b95685561a3f64390e99a13eb6}{Unpack\+Double}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads a double value from byte buffer \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespace_bam_tools_ab48c404191e8d4b994234ac28f61fd62}{Unpack\+Float}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads a float value from byte buffer \end{DoxyCompactList}\item 
+signed int \mbox{\hyperlink{namespace_bam_tools_a22411da6d7641153e91878d0d406cf2e}{Unpack\+Signed\+Int}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads a signed integer value from byte buffer \end{DoxyCompactList}\item 
+signed short \mbox{\hyperlink{namespace_bam_tools_a45b0b642522cd5daa01b5975b1c0b0fb}{Unpack\+Signed\+Short}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads a signed short integer value from byte buffer \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{namespace_bam_tools_a301bcd05554045ea18fe358225566ff2}{Unpack\+Unsigned\+Int}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads an unsigned integer value from byte buffer \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{namespace_bam_tools_aa8dccd65248544654a8cee1dc521c2d2}{Unpack\+Unsigned\+Short}} (const char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em reads an unsigned short integer value from byte buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_ada5374e28a46d3d386a7d3e22af41574}\label{namespace_bam_tools_ada5374e28a46d3d386a7d3e22af41574}} 
+bool \mbox{\hyperlink{namespace_bam_tools_ada5374e28a46d3d386a7d3e22af41574}{operator==}} (const \mbox{\hyperlink{struct_bam_tools_1_1_sam_program}{Sam\+Program}} \&lhs, const \mbox{\hyperlink{struct_bam_tools_1_1_sam_program}{Sam\+Program}} \&rhs)
+\begin{DoxyCompactList}\small\item\em tests equality by comparing program I\+Ds \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a42811321651bf17b4b3bbcd6913b6c08}\label{namespace_bam_tools_a42811321651bf17b4b3bbcd6913b6c08}} 
+bool \mbox{\hyperlink{namespace_bam_tools_a42811321651bf17b4b3bbcd6913b6c08}{operator==}} (const \mbox{\hyperlink{struct_bam_tools_1_1_sam_read_group}{Sam\+Read\+Group}} \&lhs, const \mbox{\hyperlink{struct_bam_tools_1_1_sam_read_group}{Sam\+Read\+Group}} \&rhs)
+\begin{DoxyCompactList}\small\item\em tests equality by comparing read group I\+Ds \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_bam_tools_a5c61673680fe1e8d1bc876e380ac5780}\label{namespace_bam_tools_a5c61673680fe1e8d1bc876e380ac5780}} 
+bool \mbox{\hyperlink{namespace_bam_tools_a5c61673680fe1e8d1bc876e380ac5780}{operator==}} (const \mbox{\hyperlink{struct_bam_tools_1_1_sam_sequence}{Sam\+Sequence}} \&lhs, const \mbox{\hyperlink{struct_bam_tools_1_1_sam_sequence}{Sam\+Sequence}} \&rhs)
+\begin{DoxyCompactList}\small\item\em tests equality by comparing sequence names, lengths, \& checksums (if available) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains all \mbox{\hyperlink{namespace_bam_tools}{Bam\+Tools}} classes \& methods. 
+
+The \mbox{\hyperlink{namespace_bam_tools}{Bam\+Tools}} A\+PI contained in this namespace contains classes and methods for reading, writing, and manipulating B\+AM alignment files. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_bam_tools_a53750928dd60a51f81fd89c050f1fc27}\label{namespace_bam_tools_a53750928dd60a51f81fd89c050f1fc27}} 
+\index{BamTools@{BamTools}!PackUnsignedInt@{PackUnsignedInt}}
+\index{PackUnsignedInt@{PackUnsignedInt}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{PackUnsignedInt()}{PackUnsignedInt()}}
+{\footnotesize\ttfamily void Bam\+Tools\+::\+Pack\+Unsigned\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{unsigned int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+stores unsigned integer value in a byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em buffer} & destination buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & value to \textquotesingle{}pack\textquotesingle{} in buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 259 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_ae312a004460f1d311050aee20948fe30}\label{namespace_bam_tools_ae312a004460f1d311050aee20948fe30}} 
+\index{BamTools@{BamTools}!PackUnsignedShort@{PackUnsignedShort}}
+\index{PackUnsignedShort@{PackUnsignedShort}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{PackUnsignedShort()}{PackUnsignedShort()}}
+{\footnotesize\ttfamily void Bam\+Tools\+::\+Pack\+Unsigned\+Short (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{unsigned short}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+stores unsigned short integer value in a byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em buffer} & destination buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & value to \textquotesingle{}pack\textquotesingle{} in buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_a4ea6004c8f8cc0c747b120807390fc7c}\label{namespace_bam_tools_a4ea6004c8f8cc0c747b120807390fc7c}} 
+\index{BamTools@{BamTools}!SystemIsBigEndian@{SystemIsBigEndian}}
+\index{SystemIsBigEndian@{SystemIsBigEndian}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{SystemIsBigEndian()}{SystemIsBigEndian()}}
+{\footnotesize\ttfamily bool Bam\+Tools\+::\+System\+Is\+Big\+Endian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks host architecture\textquotesingle{}s byte order 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if system uses big-\/endian ordering 
+\end{DoxyReturn}
+
+
+Definition at line 247 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_ae8ff80b95685561a3f64390e99a13eb6}\label{namespace_bam_tools_ae8ff80b95685561a3f64390e99a13eb6}} 
+\index{BamTools@{BamTools}!UnpackDouble@{UnpackDouble}}
+\index{UnpackDouble@{UnpackDouble}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackDouble()}{UnpackDouble()}}
+{\footnotesize\ttfamily double Bam\+Tools\+::\+Unpack\+Double (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads a double value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (double) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 285 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_ab48c404191e8d4b994234ac28f61fd62}\label{namespace_bam_tools_ab48c404191e8d4b994234ac28f61fd62}} 
+\index{BamTools@{BamTools}!UnpackFloat@{UnpackFloat}}
+\index{UnpackFloat@{UnpackFloat}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackFloat()}{UnpackFloat()}}
+{\footnotesize\ttfamily double Bam\+Tools\+::\+Unpack\+Float (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads a float value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (float) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_a22411da6d7641153e91878d0d406cf2e}\label{namespace_bam_tools_a22411da6d7641153e91878d0d406cf2e}} 
+\index{BamTools@{BamTools}!UnpackSignedInt@{UnpackSignedInt}}
+\index{UnpackSignedInt@{UnpackSignedInt}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackSignedInt()}{UnpackSignedInt()}}
+{\footnotesize\ttfamily signed int Bam\+Tools\+::\+Unpack\+Signed\+Int (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads a signed integer value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (signed int) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 311 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_a45b0b642522cd5daa01b5975b1c0b0fb}\label{namespace_bam_tools_a45b0b642522cd5daa01b5975b1c0b0fb}} 
+\index{BamTools@{BamTools}!UnpackSignedShort@{UnpackSignedShort}}
+\index{UnpackSignedShort@{UnpackSignedShort}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackSignedShort()}{UnpackSignedShort()}}
+{\footnotesize\ttfamily signed short Bam\+Tools\+::\+Unpack\+Signed\+Short (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads a signed short integer value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (signed short) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 324 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_a301bcd05554045ea18fe358225566ff2}\label{namespace_bam_tools_a301bcd05554045ea18fe358225566ff2}} 
+\index{BamTools@{BamTools}!UnpackUnsignedInt@{UnpackUnsignedInt}}
+\index{UnpackUnsignedInt@{UnpackUnsignedInt}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackUnsignedInt()}{UnpackUnsignedInt()}}
+{\footnotesize\ttfamily unsigned int Bam\+Tools\+::\+Unpack\+Unsigned\+Int (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads an unsigned integer value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (unsigned int) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Bam\+Aux.\+h.
+
+\mbox{\Hypertarget{namespace_bam_tools_aa8dccd65248544654a8cee1dc521c2d2}\label{namespace_bam_tools_aa8dccd65248544654a8cee1dc521c2d2}} 
+\index{BamTools@{BamTools}!UnpackUnsignedShort@{UnpackUnsignedShort}}
+\index{UnpackUnsignedShort@{UnpackUnsignedShort}!BamTools@{BamTools}}
+\doxysubsubsection{\texorpdfstring{UnpackUnsignedShort()}{UnpackUnsignedShort()}}
+{\footnotesize\ttfamily unsigned short Bam\+Tools\+::\+Unpack\+Unsigned\+Short (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+reads an unsigned short integer value from byte buffer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & source byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (unsigned short) value read from the buffer 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file Bam\+Aux.\+h.
+

@@ -1,0 +1,138 @@
+.TH "src/indexManagementBam.cpp" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/indexManagementBam.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'indexManagementBam\&.h'\fP
+.br
+\fC#include 'reverseComplement\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBarcodesOffsetsIndex\fP \fBindexBarcodesOffsetsFromBam\fP (string bamFile, bool primary, unsigned quality)"
+.br
+.ti -1c
+.RI "void \fBsaveBarcodesOffsetsIndex\fP (\fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, string file)"
+.br
+.ti -1c
+.RI "\fBBarcodesOffsetsIndex\fP \fBloadBarcodesOffsetsIndex\fP (string file)"
+.br
+.ti -1c
+.RI "\fBBarcodesPositionsIndex\fP \fBindexBarcodesPositionsFromBam\fP (string bamFile, bool primary, unsigned quality)"
+.br
+.ti -1c
+.RI "void \fBsaveBarcodesPositionsIndex\fP (\fBBarcodesPositionsIndex\fP &barcodesPositionsIndex, string file)"
+.br
+.ti -1c
+.RI "\fBBarcodesPositionsIndex\fP \fBloadBarcodesPositionsIndex\fP (string file)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBBarcodesOffsetsIndex\fP indexBarcodesOffsetsFromBam (string bamFile, bool primary, unsigned quality)"
+Index the offsets of the barcodes contained in a given BAM file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIreader\fP bamFile BAM file to build the index from 
+.br
+\fIprimary\fP whether to only index primary alignments or not 
+.br
+\fIquality\fP minimum quality to index an alignment 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index associating barcodes to the set of offsets they occur at 
+.RE
+.PP
+
+.PP
+Definition at line 4 of file indexManagementBam\&.cpp\&.
+.SS "\fBBarcodesPositionsIndex\fP indexBarcodesPositionsFromBam (string bamFile, bool primary, unsigned quality)"
+Index the (chromosome, begPosition) pairs of the barcodes contained in a given BAM file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIreader\fP bamFile BAM file to build the index from 
+.br
+\fIprimary\fP whether to only index primary alignments or not 
+.br
+\fIquality\fP minimum quality to index an alignment 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode positions index associating barcodes to the set of (chromosome, begPosition) pairs they occur at 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file indexManagementBam\&.cpp\&.
+.SS "\fBBarcodesOffsetsIndex\fP loadBarcodesOffsetsIndex (string file)"
+Load the barcode index stored in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP file where the barcode offsets index is stored 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode offsets index filled with the data contained in the file 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file indexManagementBam\&.cpp\&.
+.SS "\fBBarcodesPositionsIndex\fP loadBarcodesPositionsIndex (string file)"
+Load the barcode positions index stored in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP file where the barcode positions index is stored 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode positions index filled with the data contained in the file 
+.RE
+.PP
+
+.PP
+Definition at line 193 of file indexManagementBam\&.cpp\&.
+.SS "void saveBarcodesOffsetsIndex (\fBBarcodesOffsetsIndex\fP & index, string file)"
+Save the content of the barcode index in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIBarcodesOffsetsIndex\fP barcode offsets index to save 
+.br
+\fIfile\fP file where to store the index 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file indexManagementBam\&.cpp\&.
+.SS "void saveBarcodesPositionsIndex (\fBBarcodesPositionsIndex\fP & index, string file)"
+Save the content of the barcode positions index in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIBarcodesPositionsIndex\fP barcode positions index to save 
+.br
+\fIfile\fP file where to store the index 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file indexManagementBam\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

@@ -1,0 +1,126 @@
+\hypertarget{barcodes_extraction_8h}{}\doxysection{includoc/barcodes\+Extraction.h File Reference}
+\label{barcodes_extraction_8h}\index{includoc/barcodesExtraction.h@{includoc/barcodesExtraction.h}}
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robin\+\_\+hood.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$ \mbox{\hyperlink{barcodes_extraction_8h_a37e5c83de991a3c5d54c8c307682fc86}{extract\+Barcodes\+Bits\+From\+Region\+\_\+\+Bam\+Reader}} (Bam\+Reader \&reader, string region)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ string $>$ \mbox{\hyperlink{barcodes_extraction_8h_abf803ad92f153726b62267d92619c10b}{extract\+Barcodes\+Seqs\+From\+Region\+\_\+\+Bam\+Reader}} (Bam\+Reader \&reader, string region)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$ \mbox{\hyperlink{barcodes_extraction_8h_a0fa13aef12ffb192b73e3c7b21c1c85e}{extract\+Barcodes\+Bits\+From\+Region}} (string bam\+File, string region)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ string $>$ \mbox{\hyperlink{barcodes_extraction_8h_ab67b001840dc2ce47fd6f61cc5ecdb6e}{extract\+Barcodes\+Seqs\+From\+Region}} (string bam\+File, string region)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$ \mbox{\hyperlink{barcodes_extraction_8h_aaa0e3cd057a94a410637ee26009306e2}{extract\+Barcodes\+Bits\+From\+B\+AM}} (string bam\+File)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+set$<$ string $>$ \mbox{\hyperlink{barcodes_extraction_8h_a3f13b940526692ef90a9f681b1f67960}{extract\+Barcodes\+Seqs\+From\+B\+AM}} (string bam\+File)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{barcodes_extraction_8h_aaa0e3cd057a94a410637ee26009306e2}\label{barcodes_extraction_8h_aaa0e3cd057a94a410637ee26009306e2}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesBitsFromBAM@{extractBarcodesBitsFromBAM}}
+\index{extractBarcodesBitsFromBAM@{extractBarcodesBitsFromBAM}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesBitsFromBAM()}{extractBarcodesBitsFromBAM()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}$>$ extract\+Barcodes\+Bits\+From\+B\+AM (\begin{DoxyParamCaption}\item[{string}]{bam\+File }\end{DoxyParamCaption})}
+
+Extract all the barcodes of a given B\+AM file, in binary representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & bam\+File B\+AM file to extract barcodes from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the B\+AM file, in binary representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_extraction_8h_a0fa13aef12ffb192b73e3c7b21c1c85e}\label{barcodes_extraction_8h_a0fa13aef12ffb192b73e3c7b21c1c85e}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesBitsFromRegion@{extractBarcodesBitsFromRegion}}
+\index{extractBarcodesBitsFromRegion@{extractBarcodesBitsFromRegion}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesBitsFromRegion()}{extractBarcodesBitsFromRegion()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}$>$ extract\+Barcodes\+Bits\+From\+Region (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{string}]{region }\end{DoxyParamCaption})}
+
+Extract the barcodes of a given region, in binary representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & bam\+File B\+AM file to extract barcodes from \\
+\hline
+{\em region} & region of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the region, in binary representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_extraction_8h_a37e5c83de991a3c5d54c8c307682fc86}\label{barcodes_extraction_8h_a37e5c83de991a3c5d54c8c307682fc86}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesBitsFromRegion\_BamReader@{extractBarcodesBitsFromRegion\_BamReader}}
+\index{extractBarcodesBitsFromRegion\_BamReader@{extractBarcodesBitsFromRegion\_BamReader}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesBitsFromRegion\_BamReader()}{extractBarcodesBitsFromRegion\_BamReader()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}$>$ extract\+Barcodes\+Bits\+From\+Region\+\_\+\+Bam\+Reader (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{string}]{region }\end{DoxyParamCaption})}
+
+Extract the barcodes of a given region, in binary representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em region} & region of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the region 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_extraction_8h_a3f13b940526692ef90a9f681b1f67960}\label{barcodes_extraction_8h_a3f13b940526692ef90a9f681b1f67960}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesSeqsFromBAM@{extractBarcodesSeqsFromBAM}}
+\index{extractBarcodesSeqsFromBAM@{extractBarcodesSeqsFromBAM}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesSeqsFromBAM()}{extractBarcodesSeqsFromBAM()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$string$>$ extract\+Barcodes\+Seqs\+From\+B\+AM (\begin{DoxyParamCaption}\item[{string}]{bam\+File }\end{DoxyParamCaption})}
+
+Extract all the barcodes of a given B\+AM file, in string representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & bam\+File B\+AM file to extract barcodes from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the B\+AM file, in string representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_extraction_8h_ab67b001840dc2ce47fd6f61cc5ecdb6e}\label{barcodes_extraction_8h_ab67b001840dc2ce47fd6f61cc5ecdb6e}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesSeqsFromRegion@{extractBarcodesSeqsFromRegion}}
+\index{extractBarcodesSeqsFromRegion@{extractBarcodesSeqsFromRegion}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesSeqsFromRegion()}{extractBarcodesSeqsFromRegion()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$string$>$ extract\+Barcodes\+Seqs\+From\+Region (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{string}]{region }\end{DoxyParamCaption})}
+
+Extract the barcodes of a given region, in string representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & bam\+File B\+AM file to extract barcodes from \\
+\hline
+{\em region} & region of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the region, in binary string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_extraction_8h_abf803ad92f153726b62267d92619c10b}\label{barcodes_extraction_8h_abf803ad92f153726b62267d92619c10b}} 
+\index{barcodesExtraction.h@{barcodesExtraction.h}!extractBarcodesSeqsFromRegion\_BamReader@{extractBarcodesSeqsFromRegion\_BamReader}}
+\index{extractBarcodesSeqsFromRegion\_BamReader@{extractBarcodesSeqsFromRegion\_BamReader}!barcodesExtraction.h@{barcodesExtraction.h}}
+\doxysubsubsection{\texorpdfstring{extractBarcodesSeqsFromRegion\_BamReader()}{extractBarcodesSeqsFromRegion\_BamReader()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+set$<$string$>$ extract\+Barcodes\+Seqs\+From\+Region\+\_\+\+Bam\+Reader (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{string}]{region }\end{DoxyParamCaption})}
+
+Extract the barcodes of a given region, in string representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em region} & region of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the barcodes present in the region 
+\end{DoxyReturn}

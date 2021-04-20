@@ -1,0 +1,98 @@
+\hypertarget{class_bam_tools_1_1_bam_multi_reader}{}\doxysection{Bam\+Tools\+::Bam\+Multi\+Reader Class Reference}
+\label{class_bam_tools_1_1_bam_multi_reader}\index{BamTools::BamMultiReader@{BamTools::BamMultiReader}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_abf4e4909508f19cc4f733a48aa7d1ed2}\label{class_bam_tools_1_1_bam_multi_reader_abf4e4909508f19cc4f733a48aa7d1ed2}} 
+enum {\bfseries Merge\+Order} \{ {\bfseries Round\+Robin\+Merge} = 0, 
+{\bfseries Merge\+By\+Coordinate}, 
+{\bfseries Merge\+By\+Name}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ae5c6f9b825280b2aafd88d593c8d7815}\label{class_bam_tools_1_1_bam_multi_reader_ae5c6f9b825280b2aafd88d593c8d7815}} 
+bool {\bfseries Close} ()
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a73ad9dbee22b7ecaff4d5bd2a11a8065}\label{class_bam_tools_1_1_bam_multi_reader_a73ad9dbee22b7ecaff4d5bd2a11a8065}} 
+bool {\bfseries Close\+File} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ac0fd1b824a77584fb65709de57507e82}\label{class_bam_tools_1_1_bam_multi_reader_ac0fd1b824a77584fb65709de57507e82}} 
+const std\+::vector$<$ std\+::string $>$ {\bfseries Filenames} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a09003c47306b9f08093fcc1d0a80aa44}\label{class_bam_tools_1_1_bam_multi_reader_a09003c47306b9f08093fcc1d0a80aa44}} 
+Bam\+Multi\+Reader\+::\+Merge\+Order {\bfseries Get\+Merge\+Order} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a6b90273624fcbdd2442a91ffb06283f3}\label{class_bam_tools_1_1_bam_multi_reader_a6b90273624fcbdd2442a91ffb06283f3}} 
+bool {\bfseries Has\+Open\+Readers} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_af98f8f54f996347e9a4725d1d1bfb859}\label{class_bam_tools_1_1_bam_multi_reader_af98f8f54f996347e9a4725d1d1bfb859}} 
+bool {\bfseries Jump} (int ref\+ID, int position=0)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a58007151e1b96c126b727958fbc65bb7}\label{class_bam_tools_1_1_bam_multi_reader_a58007151e1b96c126b727958fbc65bb7}} 
+bool {\bfseries Open} (const std\+::vector$<$ std\+::string $>$ \&filenames)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ae8311eb3b2bd361cba54b486ae566855}\label{class_bam_tools_1_1_bam_multi_reader_ae8311eb3b2bd361cba54b486ae566855}} 
+bool {\bfseries Open\+File} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a9cb61087ff0b14cc383df9bf617b79e3}\label{class_bam_tools_1_1_bam_multi_reader_a9cb61087ff0b14cc383df9bf617b79e3}} 
+bool {\bfseries Rewind} ()
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_afa70c8c43f2ae6240cd355390f7fde59}\label{class_bam_tools_1_1_bam_multi_reader_afa70c8c43f2ae6240cd355390f7fde59}} 
+bool {\bfseries Set\+Explicit\+Merge\+Order} (Bam\+Multi\+Reader\+::\+Merge\+Order order)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ab50e72837706fe1ad89d4abb4066d017}\label{class_bam_tools_1_1_bam_multi_reader_ab50e72837706fe1ad89d4abb4066d017}} 
+bool {\bfseries Set\+Region} (const \mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} \&region)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a8c6ae279af024a548bc1c8b89fdd284b}\label{class_bam_tools_1_1_bam_multi_reader_a8c6ae279af024a548bc1c8b89fdd284b}} 
+bool {\bfseries Set\+Region} (const int \&left\+Ref\+ID, const int \&left\+Position, const int \&right\+Ref\+ID, const int \&right\+Position)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_afa82a724e25677579d421e6419e1fbe8}\label{class_bam_tools_1_1_bam_multi_reader_afa82a724e25677579d421e6419e1fbe8}} 
+bool {\bfseries Get\+Next\+Alignment} (\mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} \&alignment)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a8a5e26fa015fd78181267f412b5a7242}\label{class_bam_tools_1_1_bam_multi_reader_a8a5e26fa015fd78181267f412b5a7242}} 
+bool {\bfseries Get\+Next\+Alignment\+Core} (\mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} \&alignment)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a4c10b089633f29e42722fe5468e122af}\label{class_bam_tools_1_1_bam_multi_reader_a4c10b089633f29e42722fe5468e122af}} 
+\mbox{\hyperlink{struct_bam_tools_1_1_sam_header}{Sam\+Header}} {\bfseries Get\+Header} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ac396b5c1ad51286995af11e962a4002f}\label{class_bam_tools_1_1_bam_multi_reader_ac396b5c1ad51286995af11e962a4002f}} 
+std\+::string {\bfseries Get\+Header\+Text} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_aa95edf4381c669e7e34d25cfb5d17e10}\label{class_bam_tools_1_1_bam_multi_reader_aa95edf4381c669e7e34d25cfb5d17e10}} 
+int {\bfseries Get\+Reference\+Count} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a64e0526039d4591484bc2609381f2b41}\label{class_bam_tools_1_1_bam_multi_reader_a64e0526039d4591484bc2609381f2b41}} 
+const \mbox{\hyperlink{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}{Bam\+Tools\+::\+Ref\+Vector}} {\bfseries Get\+Reference\+Data} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_ad8bf44691f392e0ffd8333bb7e009c57}\label{class_bam_tools_1_1_bam_multi_reader_ad8bf44691f392e0ffd8333bb7e009c57}} 
+int {\bfseries Get\+Reference\+ID} (const std\+::string \&ref\+Name) const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a211c320d402dea48cbfeed4b2121d43c}\label{class_bam_tools_1_1_bam_multi_reader_a211c320d402dea48cbfeed4b2121d43c}} 
+bool {\bfseries Create\+Indexes} (const Bam\+Index\+::\+Index\+Type \&type=Bam\+Index\+::\+S\+T\+A\+N\+D\+A\+RD)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a01745eb7e80414485730aa26d16b96b7}\label{class_bam_tools_1_1_bam_multi_reader_a01745eb7e80414485730aa26d16b96b7}} 
+bool {\bfseries Has\+Indexes} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a5b766e3d13992218c3a572fd61dd2b6a}\label{class_bam_tools_1_1_bam_multi_reader_a5b766e3d13992218c3a572fd61dd2b6a}} 
+bool {\bfseries Locate\+Indexes} (const Bam\+Index\+::\+Index\+Type \&preferred\+Type=Bam\+Index\+::\+S\+T\+A\+N\+D\+A\+RD)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a7f0fc87a9fd285051b0aeac32583de2a}\label{class_bam_tools_1_1_bam_multi_reader_a7f0fc87a9fd285051b0aeac32583de2a}} 
+bool {\bfseries Open\+Indexes} (const std\+::vector$<$ std\+::string $>$ \&index\+Filenames)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_multi_reader_a7504a3c9453fe01b4e42cffe081c9f99}\label{class_bam_tools_1_1_bam_multi_reader_a7504a3c9453fe01b4e42cffe081c9f99}} 
+std\+::string {\bfseries Get\+Error\+String} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 26 of file Bam\+Multi\+Reader.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/Bam\+Multi\+Reader.\+h\end{DoxyCompactItemize}
