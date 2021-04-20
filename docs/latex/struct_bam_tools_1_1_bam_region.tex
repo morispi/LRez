@@ -1,0 +1,63 @@
+\hypertarget{struct_bam_tools_1_1_bam_region}{}\doxysection{Bam\+Tools\+::Bam\+Region Struct Reference}
+\label{struct_bam_tools_1_1_bam_region}\index{BamTools::BamRegion@{BamTools::BamRegion}}
+
+
+Represents a sequential genomic region.  
+
+
+
+
+{\ttfamily \#include $<$Bam\+Aux.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a5b7922dee81342a9b073e9ad3561ce37}\label{struct_bam_tools_1_1_bam_region_a5b7922dee81342a9b073e9ad3561ce37}} 
+\mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a5b7922dee81342a9b073e9ad3561ce37}{Bam\+Region}} (const int \&left\+ID=-\/1, const int \&left\+Pos=-\/1, const int \&right\+ID=-\/1, const int \&right\+Pos=-\/1)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_aa88f4e90c16f9844f4a648c583dd9427}\label{struct_bam_tools_1_1_bam_region_aa88f4e90c16f9844f4a648c583dd9427}} 
+void \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_aa88f4e90c16f9844f4a648c583dd9427}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears region boundaries. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_ace35694e140bd9f4de222c36e822540f}\label{struct_bam_tools_1_1_bam_region_ace35694e140bd9f4de222c36e822540f}} 
+bool \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_ace35694e140bd9f4de222c36e822540f}{is\+Left\+Bound\+Specified}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if region has a left boundary. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a9fdbcdfa188eea67b7b134b9cffc627e}\label{struct_bam_tools_1_1_bam_region_a9fdbcdfa188eea67b7b134b9cffc627e}} 
+bool \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a9fdbcdfa188eea67b7b134b9cffc627e}{is\+Null}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if region boundaries are not defined. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_ad4727d052b8a065b1fcaef6e32100f00}\label{struct_bam_tools_1_1_bam_region_ad4727d052b8a065b1fcaef6e32100f00}} 
+bool \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_ad4727d052b8a065b1fcaef6e32100f00}{is\+Right\+Bound\+Specified}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if region has a right boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a34bfcf995c20986e3a7442974cba137c}\label{struct_bam_tools_1_1_bam_region_a34bfcf995c20986e3a7442974cba137c}} 
+int \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a34bfcf995c20986e3a7442974cba137c}{Left\+Ref\+ID}}
+\begin{DoxyCompactList}\small\item\em reference ID for region\textquotesingle{}s left boundary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a8c84513d817b590b74b64399acc178e5}\label{struct_bam_tools_1_1_bam_region_a8c84513d817b590b74b64399acc178e5}} 
+int \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a8c84513d817b590b74b64399acc178e5}{Left\+Position}}
+\begin{DoxyCompactList}\small\item\em position for region\textquotesingle{}s left boundary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a1e11c35bce33870dc0c65019bfe886b1}\label{struct_bam_tools_1_1_bam_region_a1e11c35bce33870dc0c65019bfe886b1}} 
+int \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a1e11c35bce33870dc0c65019bfe886b1}{Right\+Ref\+ID}}
+\begin{DoxyCompactList}\small\item\em reference ID for region\textquotesingle{}s right boundary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_bam_region_a71ce3b72e5e6f74022e21055a3dd3d93}\label{struct_bam_tools_1_1_bam_region_a71ce3b72e5e6f74022e21055a3dd3d93}} 
+int \mbox{\hyperlink{struct_bam_tools_1_1_bam_region_a71ce3b72e5e6f74022e21055a3dd3d93}{Right\+Position}}
+\begin{DoxyCompactList}\small\item\em position for region\textquotesingle{}s right boundary \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a sequential genomic region. 
+
+Allowed to span multiple (sequential) references.
+
+\begin{DoxyWarning}{Warning}
+\mbox{\hyperlink{struct_bam_tools_1_1_bam_region}{Bam\+Region}} now represents a zero-\/based, H\+A\+L\+F-\/\+O\+P\+EN interval. In previous versions of \mbox{\hyperlink{namespace_bam_tools}{Bam\+Tools}} (0.\+x \& 1.\+x) all intervals were treated as zero-\/based, C\+L\+O\+S\+ED. 
+\end{DoxyWarning}
+
+
+Definition at line 89 of file Bam\+Aux.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/\mbox{\hyperlink{_bam_aux_8h}{Bam\+Aux.\+h}}\end{DoxyCompactItemize}

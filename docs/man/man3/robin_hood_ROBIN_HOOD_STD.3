@@ -1,0 +1,62 @@
+.TH "robin_hood::ROBIN_HOOD_STD" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+robin_hood::ROBIN_HOOD_STD
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdetail_\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBalignment_of\fP"
+.br
+.ti -1c
+.RI "class \fBinteger_sequence\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<std::size_t\&.\&.\&. Inds> using \fBindex_sequence\fP = \fBinteger_sequence\fP< std::size_t, Inds\&.\&.\&. >"
+.br
+.ti -1c
+.RI "template<class T , T N> using \fBmake_integer_sequence\fP = typename \fBdetail_::IntSeqImpl\fP< T, 0, N,(N \- 0)==1 >::TResult"
+.br
+.ti -1c
+.RI "template<std::size_t N> using \fBmake_index_sequence\fP = \fBmake_integer_sequence\fP< std::size_t, N >"
+.br
+.ti -1c
+.RI "template<class\&.\&.\&. T> using \fBindex_sequence_for\fP = \fBmake_index_sequence\fP< sizeof\&.\&.\&.(T)>"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "template<std::size_t\&.\&.\&. Inds> using \fBrobin_hood::ROBIN_HOOD_STD::index_sequence\fP = typedef \fBinteger_sequence\fP<std::size_t, Inds\&.\&.\&.>"
+
+.PP
+Definition at line 257 of file robin_hood\&.h\&.
+.SS "template<class\&.\&.\&. T> using \fBrobin_hood::ROBIN_HOOD_STD::index_sequence_for\fP = typedef \fBmake_index_sequence\fP<sizeof\&.\&.\&.(T)>"
+
+.PP
+Definition at line 305 of file robin_hood\&.h\&.
+.SS "template<std::size_t N> using \fBrobin_hood::ROBIN_HOOD_STD::make_index_sequence\fP = typedef \fBmake_integer_sequence\fP<std::size_t, N>"
+
+.PP
+Definition at line 302 of file robin_hood\&.h\&.
+.SS "template<class T , T N> using \fBrobin_hood::ROBIN_HOOD_STD::make_integer_sequence\fP = typedef typename \fBdetail_::IntSeqImpl\fP<T, 0, N, (N \- 0) == 1>::TResult"
+
+.PP
+Definition at line 299 of file robin_hood\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

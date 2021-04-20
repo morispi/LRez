@@ -1,0 +1,122 @@
+\hypertarget{barcodes_comparison_8h}{}\doxysection{includoc/barcodes\+Comparison.h File Reference}
+\label{barcodes_comparison_8h}\index{includoc/barcodesComparison.h@{includoc/barcodesComparison.h}}
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}index\+Management\+Bam.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{barcodes_comparison_8h_acc2545f311a0ddf9799fc869664eff82}{count\+Common\+Barcodes}} (robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$ barcodes1, robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$ barcodes2)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+map$<$ pair$<$ string, string $>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}} $>$ \mbox{\hyperlink{barcodes_comparison_8h_aeef21c6a232d7c03ec8d15b5d40d9e46}{compute\+Pairwise\+Common\+Barcounts}} (robin\+\_\+hood\+::unordered\+\_\+map$<$ string, robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$$>$ regions\+Barcodes)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+map$<$ pair$<$ string, string $>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}} $>$ \mbox{\hyperlink{barcodes_comparison_8h_abd3631e4f70fe3b062de13ac83f23844}{compare\+Regions}} (string bam\+File, string regions)
+\item 
+void \mbox{\hyperlink{barcodes_comparison_8h_a9fb451672fe2c0976d39faf8a15f03ee}{compute\+Common\+Barcodes\+Counts}} (robin\+\_\+hood\+::unordered\+\_\+map$<$ pair$<$ string, string $>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}} $>$ \&counts, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, Bam\+Reader \&reader, const Ref\+Vector \&rv, int size, string \&q\+Region)
+\item 
+robin\+\_\+hood\+::unordered\+\_\+map$<$ pair$<$ string, string $>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}} $>$ \mbox{\hyperlink{barcodes_comparison_8h_a97cc22b8281359966203008671a64668}{compare\+Contig}} (string bam\+File, \mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}}, string contig, int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{barcodes_comparison_8h_a97cc22b8281359966203008671a64668}\label{barcodes_comparison_8h_a97cc22b8281359966203008671a64668}} 
+\index{barcodesComparison.h@{barcodesComparison.h}!compareContig@{compareContig}}
+\index{compareContig@{compareContig}!barcodesComparison.h@{barcodesComparison.h}}
+\doxysubsubsection{\texorpdfstring{compareContig()}{compareContig()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+map$<$pair$<$string, string$>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}}$>$ compare\+Contig (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{string}]{contig,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Compare the barcodes of a given contig\textquotesingle{}s extremities to the barcodes of other contigs\textquotesingle{} extremities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bam\+File} & B\+AM file to compare contigs\textquotesingle{} extremities barcodes from \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode index associating barcodes to the set of Bam\+Region they appear in \\
+\hline
+{\em contig} & name of the contig of interest \\
+\hline
+{\em size} & size of the contigs extremities to consider \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a map associating pairs of contigs\textquotesingle{} extremities to their number of common barcodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_comparison_8h_abd3631e4f70fe3b062de13ac83f23844}\label{barcodes_comparison_8h_abd3631e4f70fe3b062de13ac83f23844}} 
+\index{barcodesComparison.h@{barcodesComparison.h}!compareRegions@{compareRegions}}
+\index{compareRegions@{compareRegions}!barcodesComparison.h@{barcodesComparison.h}}
+\doxysubsubsection{\texorpdfstring{compareRegions()}{compareRegions()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+map$<$pair$<$string, string$>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}}$>$ compare\+Regions (\begin{DoxyParamCaption}\item[{string}]{bam\+File,  }\item[{string}]{regions }\end{DoxyParamCaption})}
+
+Compute the number of barcodes that are shared between all possible pair of regions contained in a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & bam\+File B\+AM file to compute common barcodes from \\
+\hline
+{\em regions} & file containing a list of regions formatted as chromosome\+:start\+Position-\/end\+Position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a map associating all possible pairs of regions to their number of common barcodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_comparison_8h_a9fb451672fe2c0976d39faf8a15f03ee}\label{barcodes_comparison_8h_a9fb451672fe2c0976d39faf8a15f03ee}} 
+\index{barcodesComparison.h@{barcodesComparison.h}!computeCommonBarcodesCounts@{computeCommonBarcodesCounts}}
+\index{computeCommonBarcodesCounts@{computeCommonBarcodesCounts}!barcodesComparison.h@{barcodesComparison.h}}
+\doxysubsubsection{\texorpdfstring{computeCommonBarcodesCounts()}{computeCommonBarcodesCounts()}}
+{\footnotesize\ttfamily void compute\+Common\+Barcodes\+Counts (\begin{DoxyParamCaption}\item[{robin\+\_\+hood\+::unordered\+\_\+map$<$ pair$<$ string, string $>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}} $>$ \&}]{counts,  }\item[{\mbox{\hyperlink{index_management_bam_8h_a1c56dd269f15d27ac14f1a7a76acd89a}{Barcodes\+Offsets\+Index}} \&}]{Barcodes\+Offsets\+Index,  }\item[{Bam\+Reader \&}]{reader,  }\item[{const Ref\+Vector \&}]{rv,  }\item[{int}]{size,  }\item[{string \&}]{q\+Region }\end{DoxyParamCaption})}
+
+Compute the number of barcodes that are shared between a given contig\textquotesingle{}s extremity and other contigs\textquotesingle{} extremities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em counts} & map associating pairs of contigs\textquotesingle{} extremities to their number of common barcodes \\
+\hline
+{\em Barcodes\+Offsets\+Index} & barcode index associating barcodes to the set of Bam\+Region they appear in \\
+\hline
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em rv} & vector containing the information (name and length) about reference sequences \\
+\hline
+{\em size} & size of the contigs extremities to consider \\
+\hline
+{\em q\+Region} & region of the contig extremity of interest \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{barcodes_comparison_8h_aeef21c6a232d7c03ec8d15b5d40d9e46}\label{barcodes_comparison_8h_aeef21c6a232d7c03ec8d15b5d40d9e46}} 
+\index{barcodesComparison.h@{barcodesComparison.h}!computePairwiseCommonBarcounts@{computePairwiseCommonBarcounts}}
+\index{computePairwiseCommonBarcounts@{computePairwiseCommonBarcounts}!barcodesComparison.h@{barcodesComparison.h}}
+\doxysubsubsection{\texorpdfstring{computePairwiseCommonBarcounts()}{computePairwiseCommonBarcounts()}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::unordered\+\_\+map$<$pair$<$string, string$>$, unsigned, \mbox{\hyperlink{structhash_pairs}{hash\+Pairs}}$>$ compute\+Pairwise\+Common\+Barcounts (\begin{DoxyParamCaption}\item[{robin\+\_\+hood\+::unordered\+\_\+map$<$ string, robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$$>$}]{regions\+Barcodes }\end{DoxyParamCaption})}
+
+Compute the number of barcodes that are shared between all possible pair of regions contained in a map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em regions\+Barcodes} & map associating every region of interest to its set of barcodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a map associating all possible pairs of regions to their number of common barcodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{barcodes_comparison_8h_acc2545f311a0ddf9799fc869664eff82}\label{barcodes_comparison_8h_acc2545f311a0ddf9799fc869664eff82}} 
+\index{barcodesComparison.h@{barcodesComparison.h}!countCommonBarcodes@{countCommonBarcodes}}
+\index{countCommonBarcodes@{countCommonBarcodes}!barcodesComparison.h@{barcodesComparison.h}}
+\doxysubsubsection{\texorpdfstring{countCommonBarcodes()}{countCommonBarcodes()}}
+{\footnotesize\ttfamily unsigned count\+Common\+Barcodes (\begin{DoxyParamCaption}\item[{robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$}]{barcodes1,  }\item[{robin\+\_\+hood\+::unordered\+\_\+set$<$ \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} $>$}]{barcodes2 }\end{DoxyParamCaption})}
+
+Count the number of common barcodes between two sets of barcodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em barcodes1} & first set of barcodes \\
+\hline
+{\em barcodes2} & second set of barcodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of common barcodes between the two sets 
+\end{DoxyReturn}

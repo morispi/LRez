@@ -1,0 +1,57 @@
+\hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position}{}\doxysection{Bam\+Tools\+::Algorithms\+::Sort\+::By\+Position Struct Reference}
+\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position}\index{BamTools::Algorithms::Sort::ByPosition@{BamTools::Algorithms::Sort::ByPosition}}
+
+
+Function object for comparing alignments by position.  
+
+
+
+
+{\ttfamily \#include $<$Sort.\+h$>$}
+
+
+
+Inherits Alignment\+Sort\+Base.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_abad8e7fe87b39ed1d06eea4ef8fb3ac4}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_abad8e7fe87b39ed1d06eea4ef8fb3ac4}} 
+{\bfseries By\+Position} (const \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}{Sort\+::\+Order}} \&order=Sort\+::\+Ascending\+Order)
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_aa0b8837bde6794da6255c1c2b98e6edd}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_aa0b8837bde6794da6255c1c2b98e6edd}} 
+bool {\bfseries operator()} (const \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Tools\+::\+Bam\+Alignment}} \&lhs, const \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Tools\+::\+Bam\+Alignment}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_a3977aa2c2c54ad0e7b1dce6840ac15d0}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_position_a3977aa2c2c54ad0e7b1dce6840ac15d0}} 
+static bool {\bfseries Uses\+Char\+Data} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Function object for comparing alignments by position. 
+
+Default sort order is Sort\+::\+Ascending\+Order.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<BamAlignment> a;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// sort by position, in ascending order (the following two lines are equivalent):}}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByPosition() );}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByPosition(Sort::AscendingOrder) );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// OR sort in descending order}}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByPosition(Sort::DescendingOrder) );}
+\end{DoxyCode}
+ 
+
+Definition at line 123 of file Sort.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/algorithms/Sort.\+h\end{DoxyCompactItemize}

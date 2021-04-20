@@ -1,0 +1,119 @@
+.TH "src/indexManagementFastq.cpp" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/indexManagementFastq.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'indexManagementFastq\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <boost/iostreams/filtering_streambuf\&.hpp>\fP
+.br
+\fC#include <boost/iostreams/copy\&.hpp>\fP
+.br
+\fC#include <boost/iostreams/filter/gzip\&.hpp>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "string \fBgetBXTag\fP (string header)"
+.br
+.ti -1c
+.RI "string \fBgetRXTag\fP (string header)"
+.br
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBindexBarcodesFromFastq\fP (string fastqFile)"
+.br
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBindexBarcodesFromFastqGz\fP (string fastqFile)"
+.br
+.ti -1c
+.RI "void \fBsaveBarcodesIndex\fP (\fBBarcodesIndex\fP &\fBBarcodesIndex\fP, string file)"
+.br
+.ti -1c
+.RI "\fBBarcodesIndex\fP \fBloadBarcodesIndex\fP (string file)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "string getBXTag (string header)"
+
+.PP
+Definition at line 9 of file indexManagementFastq\&.cpp\&.
+.SS "string getRXTag (string header)"
+
+.PP
+Definition at line 21 of file indexManagementFastq\&.cpp\&.
+.SS "\fBBarcodesIndex\fP indexBarcodesFromFastq (string fastqFile)"
+Index the offsets of the barcodes contained in a given fastq file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfastqFile\fP fastq file to build the index from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index associating barcodes to the set of offsets they occur at 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file indexManagementFastq\&.cpp\&.
+.SS "\fBBarcodesIndex\fP indexBarcodesFromFastqGz (string fastqFile)"
+Index the offsets of the barcodes contained in a given gzipped fastq file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfastqFile\fP gzipped fastq file to build the index from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index associating barcodes to the set of offsets they occur at 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file indexManagementFastq\&.cpp\&.
+.SS "\fBBarcodesIndex\fP loadBarcodesIndex (string file)"
+Load the barcode index stored in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP file where the barcode index is stored 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode index filled with the data contained in the file 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file indexManagementFastq\&.cpp\&.
+.SS "void saveBarcodesIndex (\fBBarcodesIndex\fP & index, string file)"
+Save the content of the barcode index in a given file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP barcode offsets index to save 
+.br
+\fIfile\fP file where to store the index 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file indexManagementFastq\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

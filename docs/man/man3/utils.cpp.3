@@ -1,0 +1,153 @@
+.TH "src/utils.cpp" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/utils.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'utils\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBonlyContainsNucleotides\fP (string \fBbarcode\fP)"
+.br
+.ti -1c
+.RI "\fBbarcode\fP \fBstringToBarcode\fP (const string &str)"
+.br
+.ti -1c
+.RI "string \fBbarcodeToString\fP (\fBbarcode\fP b)"
+.br
+.ti -1c
+.RI "vector< string > \fBsplitString\fP (string s, string delimiter)"
+.br
+.ti -1c
+.RI "BamRegion \fBstringToBamRegion\fP (BamReader &reader, string s)"
+.br
+.ti -1c
+.RI "string \fBconvertToSam\fP (const BamAlignment &a, RefVector m_references)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCONSIDER_RX\fP = false"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "string barcodeToString (\fBbarcode\fP b)"
+Translate a barcode to a string\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIb\fP barcode to convert 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode in string representation 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file utils\&.cpp\&.
+.SS "string convertToSam (const BamAlignment & a, RefVector m_references)"
+Translate a BamAlignment to a SAM-like string\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP BamAlignment to translate 
+.br
+\fIm_references\fP vector containing the information (name and length) about reference sequences 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a SAM-like string summarizing the information of a 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file utils\&.cpp\&.
+.SS "bool onlyContainsNucleotides (string barcode)"
+Verify if a barcode is only made up of nucleotides\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIthe\fP barcode to analyse, in string representation 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the barcode only contains nucleotides, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file utils\&.cpp\&.
+.SS "vector<string> splitString (string s, string delimiter)"
+Split a string according to a delimiter\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP string to split 
+.br
+\fIdelimiter\fP delimiter 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing the splits of the string 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file utils\&.cpp\&.
+.SS "BamRegion stringToBamRegion (BamReader & reader, string s)"
+Translate a string to a BamRegion\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIreader\fP BamReader open on the desired BAM file 
+.br
+\fIs\fP string to translate, formatted as chromosome:startPosition-endPosition 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the BamRegion coressponding to the string s 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file utils\&.cpp\&.
+.SS "\fBbarcode\fP stringToBarcode (const string & str)"
+Translate a string to a barcode\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP string to convert 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the barcode in binary representation 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file utils\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "bool CONSIDER_RX = false"
+
+.PP
+Definition at line 3 of file utils\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

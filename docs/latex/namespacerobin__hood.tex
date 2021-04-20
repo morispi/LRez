@@ -1,0 +1,335 @@
+\hypertarget{namespacerobin__hood}{}\doxysection{robin\+\_\+hood Namespace Reference}
+\label{namespacerobin__hood}\index{robin\_hood@{robin\_hood}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1detail}{detail}}
+\item 
+ \mbox{\hyperlink{namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+S\+TD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash}{hash}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash_3_01std_1_1string_01_4}{hash$<$ std\+::string $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1hash_3_01_t_01_5_01_4}{hash$<$ T $\ast$ $>$}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1is__transparent__tag}{is\+\_\+transparent\+\_\+tag}}
+\item 
+struct \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a20afd1ea1998a2159eefa6cff3b03e8e}{unordered\+\_\+flat\+\_\+map}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ true, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a2e2271031a2b264cc9d03efbd341480d}{unordered\+\_\+node\+\_\+map}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ false, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a4a18aa3f4d6a9d2590779cd0d954dbb6}{unordered\+\_\+map}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ sizeof(\mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$)$<$=sizeof(size\+\_\+t) $\ast$6 \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$ $>$\+::value \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$ Key, T $>$ $>$\+::value, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_aac4395339dbabb838c8d5fc27baa96e6}{unordered\+\_\+flat\+\_\+set}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ true, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_a35ac3809f46870e89ce60ed13602961b}{unordered\+\_\+node\+\_\+set}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ false, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\item 
+{\footnotesize template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ }\\using \mbox{\hyperlink{namespacerobin__hood_abf796922444376d6bca38c81bfe18fdc}{unordered\+\_\+set}} = \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$ sizeof(Key)$<$=sizeof(size\+\_\+t) $\ast$6 \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$ Key $>$\+::value \&\&std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$ Key $>$\+::value, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\void \mbox{\hyperlink{namespacerobin__hood_a84aa76f1199fa2a1022690fecb833c18}{swap}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \&a, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \&b) noexcept(noexcept(std\+::declval$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \& $>$().swap(std\+::declval$<$ \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \& $>$())))
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a2a78a42d33eb1c473d3cbbe09573f208}{operator==}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a71133eeee48508b3a42b8657dbc84432}{operator!=}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a8a682f778bdb014574df48e4d9285209}{operator$<$}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y) noexcept(noexcept(std\+::declval$<$ A const \& $>$()$<$ std\+::declval$<$ A const \& $>$()) \&\&noexcept(std\+::declval$<$ B const \& $>$()$<$ std\+::declval$<$ B const \& $>$()))
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a51d08a153ffa0da2444d339b66c88d16}{operator$>$}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a38aa473383984a1038f2aacedaea97dd}{operator$<$=}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y)
+\item 
+{\footnotesize template$<$typename A , typename B $>$ }\\constexpr bool \mbox{\hyperlink{namespacerobin__hood_a9907a58febe26021d47242e87a5e7d34}{operator$>$=}} (\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&x, \mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&y)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespacerobin__hood_a9143ab7145837bb8f82e2c697081317e}{hash\+\_\+int}} (uint64\+\_\+t obj) noexcept
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a8698e90b9403f4fd340999f4b2ad9772}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (bool)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a55a6e2f34e9f0cf7de1741440d5ed16d}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a08a44bce1957585b712d2d04c51c1e82}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (signed char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a1012235ee515c95e56041f52373c28d5}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned char)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aeaf2be4b8f979016641ca3dcdb25cde0}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char16\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a0efe84247846fd5f49c1a1bc06867166}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (char32\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a089bbc6d1848fa1c2e14156f380aef4f}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (wchar\+\_\+t)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a95fdaeb5854a81468e5d4882da0f1b84}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (short)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a593e70c7f7b80ede6e5c7395cc1044c5}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned short)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aec7788bbffc4b1a550123b1492ab22e4}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (int)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a349c07840aec9e57835659a893c79e29}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned int)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_aa4c9e5e8451cb45f5b0ebfba3c2c609b}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a86d83182e8f3d868037cc267a2e74795}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (long long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a638e3cf50f3ab4de3b0ff1848358c738}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned long)
+\item 
+\mbox{\hyperlink{namespacerobin__hood_a435e7e694fca7935f6425844b4eb7bc9}{R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT}} (unsigned long long)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacerobin__hood_a20afd1ea1998a2159eefa6cff3b03e8e}\label{namespacerobin__hood_a20afd1ea1998a2159eefa6cff3b03e8e}} 
+\index{robin\_hood@{robin\_hood}!unordered\_flat\_map@{unordered\_flat\_map}}
+\index{unordered\_flat\_map@{unordered\_flat\_map}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_flat\_map}{unordered\_flat\_map}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_a20afd1ea1998a2159eefa6cff3b03e8e}{robin\+\_\+hood\+::unordered\+\_\+flat\+\_\+map}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$true, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2252 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_aac4395339dbabb838c8d5fc27baa96e6}\label{namespacerobin__hood_aac4395339dbabb838c8d5fc27baa96e6}} 
+\index{robin\_hood@{robin\_hood}!unordered\_flat\_set@{unordered\_flat\_set}}
+\index{unordered\_flat\_set@{unordered\_flat\_set}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_flat\_set}{unordered\_flat\_set}}
+{\footnotesize\ttfamily template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_aac4395339dbabb838c8d5fc27baa96e6}{robin\+\_\+hood\+::unordered\+\_\+flat\+\_\+set}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$true, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2270 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a4a18aa3f4d6a9d2590779cd0d954dbb6}\label{namespacerobin__hood_a4a18aa3f4d6a9d2590779cd0d954dbb6}} 
+\index{robin\_hood@{robin\_hood}!unordered\_map@{unordered\_map}}
+\index{unordered\_map@{unordered\_map}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_map}{unordered\_map}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_a4a18aa3f4d6a9d2590779cd0d954dbb6}{robin\+\_\+hood\+::unordered\+\_\+map}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$sizeof(\mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$Key, T$>$) $<$= sizeof(size\+\_\+t) $\ast$ 6 \&\& std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$\mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$Key, T$>$ $>$\+::value \&\& std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$\mbox{\hyperlink{structrobin__hood_1_1pair}{robin\+\_\+hood\+::pair}}$<$Key, T$>$ $>$\+::value, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2264 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a2e2271031a2b264cc9d03efbd341480d}\label{namespacerobin__hood_a2e2271031a2b264cc9d03efbd341480d}} 
+\index{robin\_hood@{robin\_hood}!unordered\_node\_map@{unordered\_node\_map}}
+\index{unordered\_node\_map@{unordered\_node\_map}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_node\_map}{unordered\_node\_map}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_a2e2271031a2b264cc9d03efbd341480d}{robin\+\_\+hood\+::unordered\+\_\+node\+\_\+map}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$false, Max\+Load\+Factor100, Key, T, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2256 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a35ac3809f46870e89ce60ed13602961b}\label{namespacerobin__hood_a35ac3809f46870e89ce60ed13602961b}} 
+\index{robin\_hood@{robin\_hood}!unordered\_node\_set@{unordered\_node\_set}}
+\index{unordered\_node\_set@{unordered\_node\_set}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_node\_set}{unordered\_node\_set}}
+{\footnotesize\ttfamily template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_a35ac3809f46870e89ce60ed13602961b}{robin\+\_\+hood\+::unordered\+\_\+node\+\_\+set}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$false, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2274 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_abf796922444376d6bca38c81bfe18fdc}\label{namespacerobin__hood_abf796922444376d6bca38c81bfe18fdc}} 
+\index{robin\_hood@{robin\_hood}!unordered\_set@{unordered\_set}}
+\index{unordered\_set@{unordered\_set}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{unordered\_set}{unordered\_set}}
+{\footnotesize\ttfamily template$<$typename Key , typename Hash  = hash$<$\+Key$>$, typename Key\+Equal  = std\+::equal\+\_\+to$<$\+Key$>$, size\+\_\+t Max\+Load\+Factor100 = 80$>$ \\
+using \mbox{\hyperlink{namespacerobin__hood_abf796922444376d6bca38c81bfe18fdc}{robin\+\_\+hood\+::unordered\+\_\+set}} = typedef \mbox{\hyperlink{classrobin__hood_1_1detail_1_1_table}{detail\+::\+Table}}$<$sizeof(Key) $<$= sizeof(size\+\_\+t) $\ast$ 6 \&\& std\+::is\+\_\+nothrow\+\_\+move\+\_\+constructible$<$Key$>$\+::value \&\& std\+::is\+\_\+nothrow\+\_\+move\+\_\+assignable$<$Key$>$\+::value, Max\+Load\+Factor100, Key, void, Hash, Key\+Equal$>$}
+
+
+
+Definition at line 2281 of file robin\+\_\+hood.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacerobin__hood_a9143ab7145837bb8f82e2c697081317e}\label{namespacerobin__hood_a9143ab7145837bb8f82e2c697081317e}} 
+\index{robin\_hood@{robin\_hood}!hash\_int@{hash\_int}}
+\index{hash\_int@{hash\_int}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{hash\_int()}{hash\_int()}}
+{\footnotesize\ttfamily size\+\_\+t robin\+\_\+hood\+::hash\+\_\+int (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 745 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a71133eeee48508b3a42b8657dbc84432}\label{namespacerobin__hood_a71133eeee48508b3a42b8657dbc84432}} 
+\index{robin\_hood@{robin\_hood}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 667 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a8a682f778bdb014574df48e4d9285209}\label{namespacerobin__hood_a8a682f778bdb014574df48e4d9285209}} 
+\index{robin\_hood@{robin\_hood}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 671 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a38aa473383984a1038f2aacedaea97dd}\label{namespacerobin__hood_a38aa473383984a1038f2aacedaea97dd}} 
+\index{robin\_hood@{robin\_hood}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 681 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a2a78a42d33eb1c473d3cbbe09573f208}\label{namespacerobin__hood_a2a78a42d33eb1c473d3cbbe09573f208}} 
+\index{robin\_hood@{robin\_hood}!operator==@{operator==}}
+\index{operator==@{operator==}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 663 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a51d08a153ffa0da2444d339b66c88d16}\label{namespacerobin__hood_a51d08a153ffa0da2444d339b66c88d16}} 
+\index{robin\_hood@{robin\_hood}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 677 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a9907a58febe26021d47242e87a5e7d34}\label{namespacerobin__hood_a9907a58febe26021d47242e87a5e7d34}} 
+\index{robin\_hood@{robin\_hood}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+constexpr bool robin\+\_\+hood\+::operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{x,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ const \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line 685 of file robin\+\_\+hood.\+h.
+
+\mbox{\Hypertarget{namespacerobin__hood_a8698e90b9403f4fd340999f4b2ad9772}\label{namespacerobin__hood_a8698e90b9403f4fd340999f4b2ad9772}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a55a6e2f34e9f0cf7de1741440d5ed16d}\label{namespacerobin__hood_a55a6e2f34e9f0cf7de1741440d5ed16d}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{char}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_aeaf2be4b8f979016641ca3dcdb25cde0}\label{namespacerobin__hood_aeaf2be4b8f979016641ca3dcdb25cde0}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{char16\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a0efe84247846fd5f49c1a1bc06867166}\label{namespacerobin__hood_a0efe84247846fd5f49c1a1bc06867166}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{char32\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_aec7788bbffc4b1a550123b1492ab22e4}\label{namespacerobin__hood_aec7788bbffc4b1a550123b1492ab22e4}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a86d83182e8f3d868037cc267a2e74795}\label{namespacerobin__hood_a86d83182e8f3d868037cc267a2e74795}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{long long}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_aa4c9e5e8451cb45f5b0ebfba3c2c609b}\label{namespacerobin__hood_aa4c9e5e8451cb45f5b0ebfba3c2c609b}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{long}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a95fdaeb5854a81468e5d4882da0f1b84}\label{namespacerobin__hood_a95fdaeb5854a81468e5d4882da0f1b84}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{short}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a08a44bce1957585b712d2d04c51c1e82}\label{namespacerobin__hood_a08a44bce1957585b712d2d04c51c1e82}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{signed char}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a1012235ee515c95e56041f52373c28d5}\label{namespacerobin__hood_a1012235ee515c95e56041f52373c28d5}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{unsigned char}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a349c07840aec9e57835659a893c79e29}\label{namespacerobin__hood_a349c07840aec9e57835659a893c79e29}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{unsigned int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a435e7e694fca7935f6425844b4eb7bc9}\label{namespacerobin__hood_a435e7e694fca7935f6425844b4eb7bc9}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{unsigned long long}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a638e3cf50f3ab4de3b0ff1848358c738}\label{namespacerobin__hood_a638e3cf50f3ab4de3b0ff1848358c738}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{unsigned long}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a593e70c7f7b80ede6e5c7395cc1044c5}\label{namespacerobin__hood_a593e70c7f7b80ede6e5c7395cc1044c5}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{unsigned short}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a089bbc6d1848fa1c2e14156f380aef4f}\label{namespacerobin__hood_a089bbc6d1848fa1c2e14156f380aef4f}} 
+\index{robin\_hood@{robin\_hood}!ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}}
+\index{ROBIN\_HOOD\_HASH\_INT@{ROBIN\_HOOD\_HASH\_INT}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{ROBIN\_HOOD\_HASH\_INT()}{ROBIN\_HOOD\_HASH\_INT()}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily robin\+\_\+hood\+::\+R\+O\+B\+I\+N\+\_\+\+H\+O\+O\+D\+\_\+\+H\+A\+S\+H\+\_\+\+I\+NT (\begin{DoxyParamCaption}\item[{wchar\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacerobin__hood_a84aa76f1199fa2a1022690fecb833c18}\label{namespacerobin__hood_a84aa76f1199fa2a1022690fecb833c18}} 
+\index{robin\_hood@{robin\_hood}!swap@{swap}}
+\index{swap@{swap}!robin\_hood@{robin\_hood}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename A , typename B $>$ \\
+void robin\+\_\+hood\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \&}]{a,  }\item[{\mbox{\hyperlink{structrobin__hood_1_1pair}{pair}}$<$ A, B $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 657 of file robin\+\_\+hood.\+h.
+

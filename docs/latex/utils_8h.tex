@@ -1,0 +1,211 @@
+\hypertarget{utils_8h}{}\doxysection{includoc/utils.h File Reference}
+\label{utils_8h}\index{includoc/utils.h@{includoc/utils.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}api/\+Bam\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api/\+Bam\+Index.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}api/\+Bam\+Aux.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}robin\+\_\+hood.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utils_8h_a9994e8dd0f10652d78ad1b0dab8bece9}{B\+A\+R\+C\+O\+D\+E\+\_\+\+S\+I\+ZE}}~16
+\item 
+\#define \mbox{\hyperlink{utils_8h_aa59ce259e8f38b4f241362815a7bbe35}{B\+X\+T\+AG}}~\char`\"{}B\+X\+:Z\char`\"{}
+\item 
+\#define \mbox{\hyperlink{utils_8h_a9d2074a4a0085f7e5c80916b907a3f1b}{R\+X\+T\+AG}}~\char`\"{}R\+X\+:Z\char`\"{}
+\item 
+\#define \mbox{\hyperlink{utils_8h_a3bc1d5f667b5b4ca4b4abb685dc874ce}{no\+\_\+argument}}~0
+\item 
+\#define \mbox{\hyperlink{utils_8h_a6ece8d8dfa8378778f7290fdaba5b8bc}{required\+\_\+argument}}~1
+\item 
+\#define \mbox{\hyperlink{utils_8h_acca06c0a947656bd8b395bf1084ffb72}{optional\+\_\+argument}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef string \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utils_8h_a862aaf73322e397e38ac9ebb6ec5f72e}{only\+Contains\+Nucleotides}} (string \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}})
+\item 
+\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} \mbox{\hyperlink{utils_8h_a34f469e4f9489ee6c39cbe755b08f572}{string\+To\+Barcode}} (const string \&str)
+\item 
+string \mbox{\hyperlink{utils_8h_a77e2d17e7d8036180bd6773cf64a6148}{barcode\+To\+String}} (\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} b)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{utils_8h_ae6a96271f011e701d6adb92c82bc247f}{split\+String}} (string s, string delimiter)
+\item 
+Bam\+Region \mbox{\hyperlink{utils_8h_a89579e58839713d54ee6eeed19f9017f}{string\+To\+Bam\+Region}} (Bam\+Reader \&reader, string s)
+\item 
+string \mbox{\hyperlink{utils_8h_a1cd3b2d441081670ab24f2ca0a34a248}{convert\+To\+Sam}} (const Bam\+Alignment \&a, Ref\+Vector m\+\_\+references)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utils_8h_a7f869f4b333a9d6acaf72553973418c1}{C\+O\+N\+S\+I\+D\+E\+R\+\_\+\+RX}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utils_8h_a9994e8dd0f10652d78ad1b0dab8bece9}\label{utils_8h_a9994e8dd0f10652d78ad1b0dab8bece9}} 
+\index{utils.h@{utils.h}!BARCODE\_SIZE@{BARCODE\_SIZE}}
+\index{BARCODE\_SIZE@{BARCODE\_SIZE}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{BARCODE\_SIZE}{BARCODE\_SIZE}}
+{\footnotesize\ttfamily \#define B\+A\+R\+C\+O\+D\+E\+\_\+\+S\+I\+ZE~16}
+
+\mbox{\Hypertarget{utils_8h_aa59ce259e8f38b4f241362815a7bbe35}\label{utils_8h_aa59ce259e8f38b4f241362815a7bbe35}} 
+\index{utils.h@{utils.h}!BXTAG@{BXTAG}}
+\index{BXTAG@{BXTAG}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{BXTAG}{BXTAG}}
+{\footnotesize\ttfamily \#define B\+X\+T\+AG~\char`\"{}B\+X\+:Z\char`\"{}}
+
+\mbox{\Hypertarget{utils_8h_a3bc1d5f667b5b4ca4b4abb685dc874ce}\label{utils_8h_a3bc1d5f667b5b4ca4b4abb685dc874ce}} 
+\index{utils.h@{utils.h}!no\_argument@{no\_argument}}
+\index{no\_argument@{no\_argument}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{no\_argument}{no\_argument}}
+{\footnotesize\ttfamily \#define no\+\_\+argument~0}
+
+\mbox{\Hypertarget{utils_8h_acca06c0a947656bd8b395bf1084ffb72}\label{utils_8h_acca06c0a947656bd8b395bf1084ffb72}} 
+\index{utils.h@{utils.h}!optional\_argument@{optional\_argument}}
+\index{optional\_argument@{optional\_argument}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{optional\_argument}{optional\_argument}}
+{\footnotesize\ttfamily \#define optional\+\_\+argument~2}
+
+\mbox{\Hypertarget{utils_8h_a6ece8d8dfa8378778f7290fdaba5b8bc}\label{utils_8h_a6ece8d8dfa8378778f7290fdaba5b8bc}} 
+\index{utils.h@{utils.h}!required\_argument@{required\_argument}}
+\index{required\_argument@{required\_argument}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{required\_argument}{required\_argument}}
+{\footnotesize\ttfamily \#define required\+\_\+argument~1}
+
+\mbox{\Hypertarget{utils_8h_a9d2074a4a0085f7e5c80916b907a3f1b}\label{utils_8h_a9d2074a4a0085f7e5c80916b907a3f1b}} 
+\index{utils.h@{utils.h}!RXTAG@{RXTAG}}
+\index{RXTAG@{RXTAG}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{RXTAG}{RXTAG}}
+{\footnotesize\ttfamily \#define R\+X\+T\+AG~\char`\"{}R\+X\+:Z\char`\"{}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}\label{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}} 
+\index{utils.h@{utils.h}!barcode@{barcode}}
+\index{barcode@{barcode}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{barcode}{barcode}}
+{\footnotesize\ttfamily typedef string \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a77e2d17e7d8036180bd6773cf64a6148}\label{utils_8h_a77e2d17e7d8036180bd6773cf64a6148}} 
+\index{utils.h@{utils.h}!barcodeToString@{barcodeToString}}
+\index{barcodeToString@{barcodeToString}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{barcodeToString()}{barcodeToString()}}
+{\footnotesize\ttfamily string barcode\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}}}]{b }\end{DoxyParamCaption})}
+
+Translate a barcode to a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & barcode to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode in string representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a1cd3b2d441081670ab24f2ca0a34a248}\label{utils_8h_a1cd3b2d441081670ab24f2ca0a34a248}} 
+\index{utils.h@{utils.h}!convertToSam@{convertToSam}}
+\index{convertToSam@{convertToSam}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{convertToSam()}{convertToSam()}}
+{\footnotesize\ttfamily string convert\+To\+Sam (\begin{DoxyParamCaption}\item[{const Bam\+Alignment \&}]{a,  }\item[{Ref\+Vector}]{m\+\_\+references }\end{DoxyParamCaption})}
+
+Translate a Bam\+Alignment to a S\+A\+M-\/like string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Bam\+Alignment to translate \\
+\hline
+{\em m\+\_\+references} & vector containing the information (name and length) about reference sequences \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a S\+A\+M-\/like string summarizing the information of a 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a862aaf73322e397e38ac9ebb6ec5f72e}\label{utils_8h_a862aaf73322e397e38ac9ebb6ec5f72e}} 
+\index{utils.h@{utils.h}!onlyContainsNucleotides@{onlyContainsNucleotides}}
+\index{onlyContainsNucleotides@{onlyContainsNucleotides}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{onlyContainsNucleotides()}{onlyContainsNucleotides()}}
+{\footnotesize\ttfamily bool only\+Contains\+Nucleotides (\begin{DoxyParamCaption}\item[{string}]{barcode }\end{DoxyParamCaption})}
+
+Verify if a barcode is only made up of nucleotides.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & barcode to analyse, in string representation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the barcode only contains nucleotides, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_ae6a96271f011e701d6adb92c82bc247f}\label{utils_8h_ae6a96271f011e701d6adb92c82bc247f}} 
+\index{utils.h@{utils.h}!splitString@{splitString}}
+\index{splitString@{splitString}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{splitString()}{splitString()}}
+{\footnotesize\ttfamily vector$<$string$>$ split\+String (\begin{DoxyParamCaption}\item[{string}]{s,  }\item[{string}]{delimiter }\end{DoxyParamCaption})}
+
+Split a string according to a delimiter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to split \\
+\hline
+{\em delimiter} & delimiter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the splits of the string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a89579e58839713d54ee6eeed19f9017f}\label{utils_8h_a89579e58839713d54ee6eeed19f9017f}} 
+\index{utils.h@{utils.h}!stringToBamRegion@{stringToBamRegion}}
+\index{stringToBamRegion@{stringToBamRegion}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{stringToBamRegion()}{stringToBamRegion()}}
+{\footnotesize\ttfamily Bam\+Region string\+To\+Bam\+Region (\begin{DoxyParamCaption}\item[{Bam\+Reader \&}]{reader,  }\item[{string}]{s }\end{DoxyParamCaption})}
+
+Translate a string to a Bam\+Region.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Bam\+Reader open on the desired B\+AM file \\
+\hline
+{\em s} & string to translate, formatted as chromosome\+:start\+Position-\/end\+Position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Bam\+Region coressponding to the string s 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a34f469e4f9489ee6c39cbe755b08f572}\label{utils_8h_a34f469e4f9489ee6c39cbe755b08f572}} 
+\index{utils.h@{utils.h}!stringToBarcode@{stringToBarcode}}
+\index{stringToBarcode@{stringToBarcode}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{stringToBarcode()}{stringToBarcode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_af00adfdf73ad3ebb8306768846b0fc5d}{barcode}} string\+To\+Barcode (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+Translate a string to a barcode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the barcode in binary representation 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{utils_8h_a7f869f4b333a9d6acaf72553973418c1}\label{utils_8h_a7f869f4b333a9d6acaf72553973418c1}} 
+\index{utils.h@{utils.h}!CONSIDER\_RX@{CONSIDER\_RX}}
+\index{CONSIDER\_RX@{CONSIDER\_RX}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{CONSIDER\_RX}{CONSIDER\_RX}}
+{\footnotesize\ttfamily bool C\+O\+N\+S\+I\+D\+E\+R\+\_\+\+RX}
+

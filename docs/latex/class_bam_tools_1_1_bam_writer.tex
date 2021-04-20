@@ -1,0 +1,46 @@
+\hypertarget{class_bam_tools_1_1_bam_writer}{}\doxysection{Bam\+Tools\+::Bam\+Writer Class Reference}
+\label{class_bam_tools_1_1_bam_writer}\index{BamTools::BamWriter@{BamTools::BamWriter}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_af602e9ed717a9fb8288c46a55a6cff8a}\label{class_bam_tools_1_1_bam_writer_af602e9ed717a9fb8288c46a55a6cff8a}} 
+enum {\bfseries Compression\+Mode} \{ {\bfseries Compressed} = 0, 
+{\bfseries Uncompressed}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_ac3a5b59af37c3e25717d69864f96b2cb}\label{class_bam_tools_1_1_bam_writer_ac3a5b59af37c3e25717d69864f96b2cb}} 
+void {\bfseries Close} ()
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a44a4e07f89e344eb4a3b949e8e1d3cd8}\label{class_bam_tools_1_1_bam_writer_a44a4e07f89e344eb4a3b949e8e1d3cd8}} 
+std\+::string {\bfseries Get\+Error\+String} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a6d33664db6736914ffaad3754e36e244}\label{class_bam_tools_1_1_bam_writer_a6d33664db6736914ffaad3754e36e244}} 
+bool {\bfseries Is\+Open} () const
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a437d56d26a9d10a18c365888f7dbbfff}\label{class_bam_tools_1_1_bam_writer_a437d56d26a9d10a18c365888f7dbbfff}} 
+bool {\bfseries Open} (const std\+::string \&filename, const std\+::string \&sam\+Header\+Text, const \mbox{\hyperlink{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}{Ref\+Vector}} \&reference\+Sequences)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a76bc87c296f11f57e833edd4778d7b5e}\label{class_bam_tools_1_1_bam_writer_a76bc87c296f11f57e833edd4778d7b5e}} 
+bool {\bfseries Open} (const std\+::string \&filename, const \mbox{\hyperlink{struct_bam_tools_1_1_sam_header}{Sam\+Header}} \&sam\+Header, const \mbox{\hyperlink{namespace_bam_tools_abf3564b867a24092bf6575fdda87d573}{Ref\+Vector}} \&reference\+Sequences)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a7706be2b1fe7d7c43dad819000e7282d}\label{class_bam_tools_1_1_bam_writer_a7706be2b1fe7d7c43dad819000e7282d}} 
+bool {\bfseries Save\+Alignment} (const \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Alignment}} \&alignment)
+\item 
+\mbox{\Hypertarget{class_bam_tools_1_1_bam_writer_a3ff91ed3960b697d2f40fc60a31394b8}\label{class_bam_tools_1_1_bam_writer_a3ff91ed3960b697d2f40fc60a31394b8}} 
+void {\bfseries Set\+Compression\+Mode} (const Bam\+Writer\+::\+Compression\+Mode \&compression\+Mode)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 28 of file Bam\+Writer.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/Bam\+Writer.\+h\end{DoxyCompactItemize}

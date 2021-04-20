@@ -1,0 +1,169 @@
+.TH "src/alignmentsRetrieval.cpp" 3 "Tue Apr 20 2021" "Version 2.0" "LRez" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/alignmentsRetrieval.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'alignmentsRetrieval\&.h'\fP
+.br
+\fC#include 'reverseComplement\&.h'\fP
+.br
+\fC#include <chrono>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "BamAlignment \fBretrieveAlignmentWithBarcode\fP (BamReader &reader, int64_t position, \fBbarcode\fP b)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcodeBits_BamReader\fP (BamReader &reader, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, \fBbarcode\fP b)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcode_BamReader\fP (BamReader &reader, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, string bc)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcodeBits\fP (string bamFile, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, \fBbarcode\fP bc)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcode\fP (string bamFile, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, string bc)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcodes_BamReader\fP (BamReader &reader, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, string barcodesList)"
+.br
+.ti -1c
+.RI "vector< BamAlignment > \fBretrieveAlignmentsWithBarcodes\fP (string bamFile, \fBBarcodesOffsetsIndex\fP &\fBBarcodesOffsetsIndex\fP, string barcodesList)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcode (string bamFile, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, string bc)"
+Retrieve all the alignments that share a given barcode, in a given BAM file\&. A barcode index of the BAM must be available\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIbamFile\fP BAM file to extract alignments from 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIbc\fP barcode of interest 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments sharing the barcode of interest 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file alignmentsRetrieval\&.cpp\&.
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcode_BamReader (BamReader & reader, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, string bc)"
+Retrieve all the alignments that share a given barcode, in a given BAM file\&. A barcode index of the BAM must be available\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIreader\fP BamReader open on the desired BAM file 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIbc\fP barcode of interest 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments sharing the barcode of interest 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file alignmentsRetrieval\&.cpp\&.
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcodeBits (string bamFile, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, \fBbarcode\fP bc)"
+Retrieve all the alignments that share a given barcode, in a given BAM file\&. A barcode index of the BAM must be available\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIbamFile\fP BAM file to extract alignments from 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIbc\fP barcode of interest, in binary representation 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments sharing the barcode of interest 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file alignmentsRetrieval\&.cpp\&.
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcodeBits_BamReader (BamReader & reader, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, \fBbarcode\fP b)"
+Retrieve all the alignments that share a given barcode, in a given BAM file\&. A barcode index of the BAM must be available\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIreader\fP BamReader open on the desired BAM file 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIb\fP barcode of interest, in binary representation 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments sharing the barcode of interest 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file alignmentsRetrieval\&.cpp\&.
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcodes (string bamFile, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, string barcodesList)"
+Retrieve all the alignments that share a barcode appearing in the list of a given file
+.PP
+\fBParameters\fP
+.RS 4
+\fIbamFile\fP BAM file to extract alignments from 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIbarcodesList\fP file containing the list of barcodes of interest, with one barcode per line 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments with the barcodes of interest 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file alignmentsRetrieval\&.cpp\&.
+.SS "vector<BamAlignment> retrieveAlignmentsWithBarcodes_BamReader (BamReader & reader, \fBBarcodesOffsetsIndex\fP & BarcodesOffsetsIndex, string barcodesList)"
+Retrieve all the alignments that share a barcode appearing in the list of a given file
+.PP
+\fBParameters\fP
+.RS 4
+\fIin\fP stream open on the BAM fastq file 
+.br
+\fIBarcodesOffsetsIndex\fP barcode offsets index of the BAM file 
+.br
+\fIbarcodesList\fP file containing the list of barcodes of interest, with one barcode per line 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a vector containing all the alignments with the barcodes of interest 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file alignmentsRetrieval\&.cpp\&.
+.SS "BamAlignment retrieveAlignmentWithBarcode (BamReader & reader, int64_t position, \fBbarcode\fP b)"
+
+.PP
+Definition at line 8 of file alignmentsRetrieval\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for LRez from the source code\&.

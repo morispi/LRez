@@ -1,0 +1,60 @@
+\hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag}{}\doxysection{Bam\+Tools\+::Algorithms\+::Sort\+::By\+Tag$<$ T $>$ Struct Template Reference}
+\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag}\index{BamTools::Algorithms::Sort::ByTag$<$ T $>$@{BamTools::Algorithms::Sort::ByTag$<$ T $>$}}
+
+
+Function object for comparing alignments by tag value.  
+
+
+
+
+{\ttfamily \#include $<$Sort.\+h$>$}
+
+
+
+Inherits Alignment\+Sort\+Base.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_aaca046c10c1fb4cf52dbbca81872ec94}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_aaca046c10c1fb4cf52dbbca81872ec94}} 
+{\bfseries By\+Tag} (const std\+::string \&tag, const \mbox{\hyperlink{struct_bam_tools_1_1_algorithms_1_1_sort_ab00bd07c176b33933717ca362b716f61}{Sort\+::\+Order}} \&order=Sort\+::\+Ascending\+Order)
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_aedef8bc62361b028dceb0f1938f2fdc2}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_aedef8bc62361b028dceb0f1938f2fdc2}} 
+bool {\bfseries operator()} (const \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Tools\+::\+Bam\+Alignment}} \&lhs, const \mbox{\hyperlink{class_bam_tools_1_1_bam_alignment}{Bam\+Tools\+::\+Bam\+Alignment}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_a33109c1c66d5fc8eeb3f4ea0a42e25a6}\label{struct_bam_tools_1_1_algorithms_1_1_sort_1_1_by_tag_a33109c1c66d5fc8eeb3f4ea0a42e25a6}} 
+static bool {\bfseries Uses\+Char\+Data} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Bam\+Tools\+::\+Algorithms\+::\+Sort\+::\+By\+Tag$<$ T $>$}
+
+Function object for comparing alignments by tag value. 
+
+Default sort order is Sort\+::\+Ascending\+Order.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<BamAlignment> a;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// sort by edit distance, in ascending order (the following two lines are equivalent):}}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByTag<int>(\textcolor{stringliteral}{"NM"}) );}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByTag<int>(\textcolor{stringliteral}{"NM"}, Sort::AscendingOrder) );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// OR sort in descending order}}
+\DoxyCodeLine{std::sort( a.begin(), a.end(), Sort::ByTag<int>(\textcolor{stringliteral}{"NM"}, Sort::DescendingOrder) );}
+\end{DoxyCode}
+ 
+
+Definition at line 174 of file Sort.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bamtools/api/algorithms/Sort.\+h\end{DoxyCompactItemize}
