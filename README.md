@@ -117,10 +117,12 @@ LRez query fastq allows to query a barcodes index and a fastq file to retrieve a
       --userx, -u:                  Consider barcodes that only appear in the RX tag (optional, default: false)
 
 
-Documentation
+Using the API
 --------------
 
-Complete documentation of the different functions is provided in the `.h` files of the `include/` and `include/subcommands/` folders. Proper documentation will be provided on this page later.
+Complete documentation of the different API functions is provided at https://morispi.github.io/LRez/files.html. Additionnal information and usage examples are provided on the Wiki page https://github.com/morispi/LRez/wiki.
+
+
 
 Notes
 --------------
