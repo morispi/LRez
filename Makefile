@@ -7,6 +7,12 @@ ifeq ($(SHLIB_EXT),)
 	endif
 endif
 
+ifeq ($(findstring dylib,$(SHLIB_EXT)),)
+        LIBLREZ_LDFLAGS = -shared
+else
+        LIBLREZ_LDFLAGS = -dynamiclib -install_name liblrez.dylib
+endif
+
 PREFIX ?= /usr/local
 BINDIR = $(PREFIX)/bin
 LIBDIR = $(PREFIX)/lib
@@ -58,7 +64,7 @@ $(BAMTOOLS_LIB):
 		cmake -P src/api/cmake_install.cmake
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(BAMTOOLS_LIB) directories
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBLREZ_LDFLAGS) -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
 
 $(EXEC): $(MAIN) $(LIB) directories
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $(EXEC) $(MAIN) $(LIBS_LREZ) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
