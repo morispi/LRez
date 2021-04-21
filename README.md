@@ -31,7 +31,7 @@ Then run the install.sh script:
 
 The installation script will build dependencies, the binary standalone in the `bin` folder, as well as the library, allowing to use LRez in other projects, in the `lib` folder.
 
-Installation with conda
+Installation from conda
 --------------
 
 Alternatively, LRez is also distributed as a bioconda package, which can be installed with:
