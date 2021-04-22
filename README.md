@@ -14,7 +14,7 @@ Requirements
   - zlib, minimum version 1.2.11.
   - The Boost C++ library (https://www.boost.org/).
   
-Installation
+Installation from source
 --------------
 
 Clone the LRez repository, along with its submodules with:
@@ -30,6 +30,15 @@ Then run the install.sh script:
   ```
 
 The installation script will build dependencies, the binary standalone in the `bin` folder, as well as the library, allowing to use LRez in other projects, in the `lib` folder.
+
+Installation from conda
+--------------
+
+Alternatively, LRez is also distributed as a bioconda package, which can be installed with:
+
+```bash
+conda install -c bioconda lrez
+```
   
 Using the toolkit
 --------------
