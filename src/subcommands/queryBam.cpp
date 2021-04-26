@@ -11,7 +11,6 @@ void subcommandQueryBam(int argc, char* argv[]) {
 	string list;
 	string outputFile;
 	BarcodesOffsetsIndex BarcodesOffsetsIndex;
-	BamReader reader;
 	ofstream out;
 
 	const struct option longopts[] = {
@@ -74,14 +73,26 @@ void subcommandQueryBam(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
+	BamReader reader;
+	if (!reader.Open(bamFile)) {
+		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+	if (!reader.LocateIndex()) {
+		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+
 
 	BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
 	vector<BamAlignment> alignments;
 	if (!query.empty()) {
-		alignments = retrieveAlignmentsWithBarcode(bamFile, BarcodesOffsetsIndex, query);
+		alignments = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, query);
 	} else {
-		alignments = retrieveAlignmentsWithBarcodes(bamFile, BarcodesOffsetsIndex, list);
+		alignments = retrieveAlignmentsWithBarcodes_BamReader(reader, BarcodesOffsetsIndex, list);
 	}
+
+
 
 	if (!outputFile.empty()) {
 		out.open(outputFile, ios::out);
