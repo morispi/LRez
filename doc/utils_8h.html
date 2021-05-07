@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LRez: includoc/utils.h File Reference</title>
+<title>LRez: src/include/utils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
-   &#160;<span id="projectnumber">2.0</span>
    </div>
-   <div id="projectbrief">Standalone tool and library allowing to work with barcoded linked-reads</div>
   </td>
  </tr>
  </tbody>
@@ -63,13 +61,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c4b46f5ec6a22ca70231840bd30e9bb5.html">includoc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -81,19 +80,17 @@ $(function() {
 <code>#include &quot;api/BamReader.h&quot;</code><br />
 <code>#include &quot;api/BamIndex.h&quot;</code><br />
 <code>#include &quot;api/BamAux.h&quot;</code><br />
-<code>#include &quot;robin_hood.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>&quot;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;regex&gt;</code><br />
+<code>#include &quot;<a class="el" href="barcodes_loading_8h_source.html">barcodesLoading.h</a>&quot;</code><br />
 </div>
 <p><a href="utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9994e8dd0f10652d78ad1b0dab8bece9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a9994e8dd0f10652d78ad1b0dab8bece9">BARCODE_SIZE</a>&#160;&#160;&#160;16</td></tr>
-<tr class="separator:a9994e8dd0f10652d78ad1b0dab8bece9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59ce259e8f38b4f241362815a7bbe35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#aa59ce259e8f38b4f241362815a7bbe35">BXTAG</a>&#160;&#160;&#160;&quot;BX:Z&quot;</td></tr>
 <tr class="separator:aa59ce259e8f38b4f241362815a7bbe35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2074a4a0085f7e5c80916b907a3f1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a9d2074a4a0085f7e5c80916b907a3f1b">RXTAG</a>&#160;&#160;&#160;&quot;RX:Z&quot;</td></tr>
-<tr class="separator:a9d2074a4a0085f7e5c80916b907a3f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bc1d5f667b5b4ca4b4abb685dc874ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a3bc1d5f667b5b4ca4b4abb685dc874ce">no_argument</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a3bc1d5f667b5b4ca4b4abb685dc874ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ece8d8dfa8378778f7290fdaba5b8bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a6ece8d8dfa8378778f7290fdaba5b8bc">required_argument</a>&#160;&#160;&#160;1</td></tr>
@@ -103,17 +100,32 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af00adfdf73ad3ebb8306768846b0fc5d"><td class="memItemLeft" align="right" valign="top">typedef string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a></td></tr>
-<tr class="separator:af00adfdf73ad3ebb8306768846b0fc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefcdfa17e7a80638f1ba583b2c77a34"><td class="memItemLeft" align="right" valign="top">typedef vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a></td></tr>
+<tr class="separator:adefcdfa17e7a80638f1ba583b2c77a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a4ac6db06df8c217cf43bd14902524b83"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> { <br />
+&#160;&#160;<a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83a18f893264a00711081b62de694f99db4">Undefined</a> = 0, 
+<a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83a6ad90f6357173b77c6cf657261f220a4">TenX</a>, 
+<a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83ab1415e02071c04cc3df72d86be3d80db">Haplotagging</a>, 
+<a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83a2676b3158a37ad1f0d1e49cd16b98212">TELLSeq</a>, 
+<br />
+&#160;&#160;<a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83a6be6af0fb03935831e77ec854c135205">stLFR</a>
+<br />
+ }</td></tr>
+<tr class="separator:a4ac6db06df8c217cf43bd14902524b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a862aaf73322e397e38ac9ebb6ec5f72e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a862aaf73322e397e38ac9ebb6ec5f72e">onlyContainsNucleotides</a> (string <a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>)</td></tr>
-<tr class="separator:a862aaf73322e397e38ac9ebb6ec5f72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f469e4f9489ee6c39cbe755b08f572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a34f469e4f9489ee6c39cbe755b08f572">stringToBarcode</a> (const string &amp;str)</td></tr>
+<tr class="memitem:a39be2a7b56dbcced25ed24782ffddb7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a39be2a7b56dbcced25ed24782ffddb7c">determineSequencingTechnology</a> (const string &amp;<a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>)</td></tr>
+<tr class="separator:a39be2a7b56dbcced25ed24782ffddb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2160162953d0b90426792c8978dd7dd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#af2160162953d0b90426792c8978dd7dd">retrieveNucleotidesContent</a> (const string &amp;<a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>)</td></tr>
+<tr class="separator:af2160162953d0b90426792c8978dd7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375189835d16da34bb53fc8f0d548426"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a375189835d16da34bb53fc8f0d548426">isValidBarcode</a> (const string &amp;<a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>)</td></tr>
+<tr class="separator:a375189835d16da34bb53fc8f0d548426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f469e4f9489ee6c39cbe755b08f572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a34f469e4f9489ee6c39cbe755b08f572">stringToBarcode</a> (const string &amp;str)</td></tr>
 <tr class="separator:a34f469e4f9489ee6c39cbe755b08f572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e2d17e7d8036180bd6773cf64a6148"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a77e2d17e7d8036180bd6773cf64a6148">barcodeToString</a> (<a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a> b)</td></tr>
-<tr class="separator:a77e2d17e7d8036180bd6773cf64a6148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a96271f011e701d6adb92c82bc247f"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ae6a96271f011e701d6adb92c82bc247f">splitString</a> (string s, string delimiter)</td></tr>
 <tr class="separator:ae6a96271f011e701d6adb92c82bc247f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89579e58839713d54ee6eeed19f9017f"><td class="memItemLeft" align="right" valign="top">BamRegion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a89579e58839713d54ee6eeed19f9017f">stringToBamRegion</a> (BamReader &amp;reader, string s)</td></tr>
@@ -123,24 +135,20 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f869f4b333a9d6acaf72553973418c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a7f869f4b333a9d6acaf72553973418c1">CONSIDER_RX</a></td></tr>
-<tr class="separator:a7f869f4b333a9d6acaf72553973418c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0fefe0c94e16972b9965043340d418a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ae0fefe0c94e16972b9965043340d418a">techno</a></td></tr>
+<tr class="separator:ae0fefe0c94e16972b9965043340d418a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd14a1786518c44bec07e79676cb182"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a1fd14a1786518c44bec07e79676cb182">Haplotagging_A</a></td></tr>
+<tr class="separator:a1fd14a1786518c44bec07e79676cb182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd85576524bc8c25c887952a4354a60"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a2fd85576524bc8c25c887952a4354a60">Haplotagging_B</a></td></tr>
+<tr class="separator:a2fd85576524bc8c25c887952a4354a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9103ab0f25ee4ee9b1d4a9c3622001d9"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a9103ab0f25ee4ee9b1d4a9c3622001d9">Haplotagging_C</a></td></tr>
+<tr class="separator:a9103ab0f25ee4ee9b1d4a9c3622001d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c98e807ba00cfc0c3fdd80850dd9bec"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a4c98e807ba00cfc0c3fdd80850dd9bec">Haplotagging_D</a></td></tr>
+<tr class="separator:a4c98e807ba00cfc0c3fdd80850dd9bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7dab8dd529d63c145bc4fde7ec395fd"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ab7dab8dd529d63c145bc4fde7ec395fd">barcodes_stLFR</a></td></tr>
+<tr class="separator:ab7dab8dd529d63c145bc4fde7ec395fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a9994e8dd0f10652d78ad1b0dab8bece9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9994e8dd0f10652d78ad1b0dab8bece9">&#9670;&nbsp;</a></span>BARCODE_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BARCODE_SIZE&#160;&#160;&#160;16</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa59ce259e8f38b4f241362815a7bbe35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa59ce259e8f38b4f241362815a7bbe35">&#9670;&nbsp;</a></span>BXTAG</h2>
 
@@ -152,6 +160,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00014">14</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
 
 </div>
 </div>
@@ -167,6 +177,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00016">16</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
+
 </div>
 </div>
 <a id="acca06c0a947656bd8b395bf1084ffb72"></a>
@@ -180,6 +192,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00018">18</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
 
 </div>
 </div>
@@ -195,64 +209,53 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a9d2074a4a0085f7e5c80916b907a3f1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d2074a4a0085f7e5c80916b907a3f1b">&#9670;&nbsp;</a></span>RXTAG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RXTAG&#160;&#160;&#160;&quot;RX:Z&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00017">17</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="af00adfdf73ad3ebb8306768846b0fc5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00adfdf73ad3ebb8306768846b0fc5d">&#9670;&nbsp;</a></span>barcode</h2>
+<a id="adefcdfa17e7a80638f1ba583b2c77a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefcdfa17e7a80638f1ba583b2c77a34">&#9670;&nbsp;</a></span>barcode</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef string <a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a></td>
+          <td class="memname">typedef vector&lt;bool&gt; <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00023">23</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4ac6db06df8c217cf43bd14902524b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac6db06df8c217cf43bd14902524b83">&#9670;&nbsp;</a></span>SequencingTechnology</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Supported sequencing technologies </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4ac6db06df8c217cf43bd14902524b83a18f893264a00711081b62de694f99db4"></a>Undefined&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ac6db06df8c217cf43bd14902524b83a6ad90f6357173b77c6cf657261f220a4"></a>TenX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ac6db06df8c217cf43bd14902524b83ab1415e02071c04cc3df72d86be3d80db"></a>Haplotagging&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ac6db06df8c217cf43bd14902524b83a2676b3158a37ad1f0d1e49cd16b98212"></a>TELLSeq&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ac6db06df8c217cf43bd14902524b83a6be6af0fb03935831e77ec854c135205"></a>stLFR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="utils_8h_source.html#l00028">28</a> of file <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a77e2d17e7d8036180bd6773cf64a6148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77e2d17e7d8036180bd6773cf64a6148">&#9670;&nbsp;</a></span>barcodeToString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string barcodeToString </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Translate a barcode to a string.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">b</td><td>barcode to convert </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the barcode in string representation </dd></dl>
-
-</div>
-</div>
 <a id="a1cd3b2d441081670ab24f2ca0a34a248"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cd3b2d441081670ab24f2ca0a34a248">&#9670;&nbsp;</a></span>convertToSam()</h2>
 
@@ -290,29 +293,81 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a862aaf73322e397e38ac9ebb6ec5f72e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a862aaf73322e397e38ac9ebb6ec5f72e">&#9670;&nbsp;</a></span>onlyContainsNucleotides()</h2>
+<a id="a39be2a7b56dbcced25ed24782ffddb7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39be2a7b56dbcced25ed24782ffddb7c">&#9670;&nbsp;</a></span>determineSequencingTechnology()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool onlyContainsNucleotides </td>
+          <td class="memname"><a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> determineSequencingTechnology </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>barcode</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Verify if a barcode is only made up of nucleotides.</p>
+<p>Determine the sequencing technology the barcode originates from. This function is compatible with 10x Genomics, Haplotagging, TELL-SEq and stLFR. Barcodes that do not come from these technologies and are not represented as a suite of nucleotides will cause the program to exit.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>barcode to analyse, in string representation </td></tr>
+    <tr><td class="paramname">barcode</td><td>the barcode to determine sequencing technology from </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the barcode only contains nucleotides, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The SequencingTechnology enum field corresponding to the sequencing technology </dd></dl>
+
+</div>
+</div>
+<a id="a375189835d16da34bb53fc8f0d548426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375189835d16da34bb53fc8f0d548426">&#9670;&nbsp;</a></span>isValidBarcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isValidBarcode </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>barcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check whether a barcode is valid or not. A barcode is considered as valid if it is not empty, if it does not contain any "N" for 10x and TELL-Seq, if it is not "0_0_0" for stLFR data, and does not contain a "00" substring for Haplotagging data. The function takes care of determining the employed sequencing technoly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">barcode</td><td>the barcode to verify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the barcode is valid, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="af2160162953d0b90426792c8978dd7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2160162953d0b90426792c8978dd7dd">&#9670;&nbsp;</a></span>retrieveNucleotidesContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string retrieveNucleotidesContent </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>barcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retrieve the nucleotides content of the barcode. This function is used to translate barcodes represented as a suite of integers (as in stLFT and Haplotagging) into nucleotides barcodes. The function takes care of determining the employed sequencing technoly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">barcode</td><td>the barcode to retrieve nucleotides for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the barcode in nucleotides representation </dd></dl>
 
 </div>
 </div>
@@ -397,7 +452,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a> stringToBarcode </td>
+          <td class="memname"><a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a> stringToBarcode </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -405,7 +460,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Translate a string to a barcode.</p>
+<p>Translate a string to a barcode in 2 bits per nucleotide format. The function takes care of determining the employed sequencing technoly, and of retrieving the nucleotides contents of barcodes represented as a suite of integers.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to convert </td></tr>
@@ -417,14 +472,84 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a7f869f4b333a9d6acaf72553973418c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f869f4b333a9d6acaf72553973418c1">&#9670;&nbsp;</a></span>CONSIDER_RX</h2>
+<a id="ab7dab8dd529d63c145bc4fde7ec395fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dab8dd529d63c145bc4fde7ec395fd">&#9670;&nbsp;</a></span>barcodes_stLFR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CONSIDER_RX</td>
+          <td class="memname">vector&lt;string&gt; barcodes_stLFR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fd14a1786518c44bec07e79676cb182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd14a1786518c44bec07e79676cb182">&#9670;&nbsp;</a></span>Haplotagging_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; Haplotagging_A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fd85576524bc8c25c887952a4354a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd85576524bc8c25c887952a4354a60">&#9670;&nbsp;</a></span>Haplotagging_B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; Haplotagging_B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9103ab0f25ee4ee9b1d4a9c3622001d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9103ab0f25ee4ee9b1d4a9c3622001d9">&#9670;&nbsp;</a></span>Haplotagging_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; Haplotagging_C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c98e807ba00cfc0c3fdd80850dd9bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c98e807ba00cfc0c3fdd80850dd9bec">&#9670;&nbsp;</a></span>Haplotagging_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; Haplotagging_D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0fefe0c94e16972b9965043340d418a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fefe0c94e16972b9965043340d418a">&#9670;&nbsp;</a></span>techno</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> techno</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['no_5fargument_201',['no_argument',['../utils_8h.html#a3bc1d5f667b5b4ca4b4abb685dc874ce',1,'utils.h']]]
+  ['local_513',['local',['../gz_index_8h.html#a08023ea6765c99d60a6a3840cd07156e',1,'gzIndex.h']]]
 ];

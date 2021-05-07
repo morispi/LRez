@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['winsize_207',['WINSIZE',['../gz_index_8h.html#ae503004492a3af248faa09d61b4ee4b4',1,'gzIndex.h']]]
+  ['version_548',['VERSION',['../help_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf',1,'help.h']]]
 ];

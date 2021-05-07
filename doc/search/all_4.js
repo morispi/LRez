@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['extract_24',['extract',['../gz_index_8h.html#aeaa30c4cca1c1e524d15a4f62ba86ef1',1,'gzIndex.h']]],
-  ['extract_2eh_25',['extract.h',['../extract_8h.html',1,'']]],
-  ['extract_5fstream_26',['extract_Stream',['../gz_index_8h.html#a77170f4028df63a577f1559815a72641',1,'gzIndex.h']]],
-  ['extractbarcodesbitsfrombam_27',['extractBarcodesBitsFromBAM',['../barcodes_extraction_8h.html#aaa0e3cd057a94a410637ee26009306e2',1,'barcodesExtraction.h']]],
-  ['extractbarcodesbitsfromregion_28',['extractBarcodesBitsFromRegion',['../barcodes_extraction_8h.html#a0fa13aef12ffb192b73e3c7b21c1c85e',1,'barcodesExtraction.h']]],
-  ['extractbarcodesbitsfromregion_5fbamreader_29',['extractBarcodesBitsFromRegion_BamReader',['../barcodes_extraction_8h.html#a37e5c83de991a3c5d54c8c307682fc86',1,'barcodesExtraction.h']]],
-  ['extractbarcodesseqsfrombam_30',['extractBarcodesSeqsFromBAM',['../barcodes_extraction_8h.html#a3f13b940526692ef90a9f681b1f67960',1,'barcodesExtraction.h']]],
-  ['extractbarcodesseqsfromregion_31',['extractBarcodesSeqsFromRegion',['../barcodes_extraction_8h.html#ab67b001840dc2ce47fd6f61cc5ecdb6e',1,'barcodesExtraction.h']]],
-  ['extractbarcodesseqsfromregion_5fbamreader_32',['extractBarcodesSeqsFromRegion_BamReader',['../barcodes_extraction_8h.html#abf803ad92f153726b62267d92619c10b',1,'barcodesExtraction.h']]],
-  ['extractfastqreadfromoffset_33',['extractFastqReadFromOffset',['../gz_index_8h.html#adce8a161d359d1a0a6d95d577c1c4b2d',1,'gzIndex.h']]]
+  ['nodeallocator_20',['NodeAllocator',['../structrobin__hood_1_1detail_1_1_node_allocator.html',1,'robin_hood::detail']]],
+  ['nodeallocator_3c_20std_3a_3aconditional_3c_20std_3a_3ais_5fvoid_3c_20t_20_3e_3a_3avalue_2c_20key_2c_20robin_5fhood_3a_3apair_3c_20std_3a_3aconditional_3c_20isflat_2c_20key_2c_20key_20const_20_3e_3a_3atype_2c_20t_20_3e_20_3e_3a_3atype_2c_204_2c_2016384_2c_20isflat_20_3e_21',['NodeAllocator&lt; std::conditional&lt; std::is_void&lt; T &gt;::value, Key, robin_hood::pair&lt; std::conditional&lt; IsFlat, Key, Key const &gt;::type, T &gt; &gt;::type, 4, 16384, IsFlat &gt;',['../structrobin__hood_1_1detail_1_1_node_allocator.html',1,'robin_hood::detail']]],
+  ['nodeallocator_3c_20t_2c_20minsize_2c_20maxsize_2c_20false_20_3e_22',['NodeAllocator&lt; T, MinSize, MaxSize, false &gt;',['../structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01false_01_4.html',1,'robin_hood::detail']]],
+  ['nodeallocator_3c_20t_2c_20minsize_2c_20maxsize_2c_20true_20_3e_23',['NodeAllocator&lt; T, MinSize, MaxSize, true &gt;',['../structrobin__hood_1_1detail_1_1_node_allocator_3_01_t_00_01_min_size_00_01_max_size_00_01true_01_4.html',1,'robin_hood::detail']]],
+  ['nothrow_24',['nothrow',['../structrobin__hood_1_1detail_1_1swappable_1_1nothrow.html',1,'robin_hood::detail::swappable']]]
 ];

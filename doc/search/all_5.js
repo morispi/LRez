@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['freegzindex_34',['freeGzIndex',['../gz_index_8h.html#a8de004d9175398ffcb4dc436adcbb401',1,'gzIndex.h']]]
+  ['pair_25',['pair',['../structrobin__hood_1_1pair.html',1,'robin_hood']]],
+  ['point_26',['point',['../structpoint.html',1,'']]]
 ];

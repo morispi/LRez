@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['order_124',['Order',['../struct_bam_tools_1_1_algorithms_1_1_sort.html#ab00bd07c176b33933717ca362b716f61',1,'BamTools::Algorithms::Sort']]]
+  ['sequencingtechnology_504',['SequencingTechnology',['../utils_8h.html#a4ac6db06df8c217cf43bd14902524b83',1,'utils.h']]]
 ];

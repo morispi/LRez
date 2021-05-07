@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['chunk_14',['CHUNK',['../gz_index_8h.html#a25022864dfc8ec428e7128282e57b136',1,'gzIndex.h']]],
-  ['compare_2eh_15',['compare.h',['../compare_8h.html',1,'']]],
-  ['comparecontig_16',['compareContig',['../barcodes_comparison_8h.html#a97cc22b8281359966203008671a64668',1,'barcodesComparison.h']]],
-  ['compareregions_17',['compareRegions',['../barcodes_comparison_8h.html#abd3631e4f70fe3b062de13ac83f23844',1,'barcodesComparison.h']]],
-  ['computecommonbarcodescounts_18',['computeCommonBarcodesCounts',['../barcodes_comparison_8h.html#a9fb451672fe2c0976d39faf8a15f03ee',1,'barcodesComparison.h']]],
-  ['computepairwisecommonbarcounts_19',['computePairwiseCommonBarcounts',['../barcodes_comparison_8h.html#aeef21c6a232d7c03ec8d15b5d40d9e46',1,'barcodesComparison.h']]],
-  ['consider_5frx_20',['CONSIDER_RX',['../utils_8h.html#a7f869f4b333a9d6acaf72553973418c1',1,'utils.h']]],
-  ['converttosam_21',['convertToSam',['../utils_8h.html#a1cd3b2d441081670ab24f2ca0a34a248',1,'utils.h']]],
-  ['countcommonbarcodes_22',['countCommonBarcodes',['../barcodes_comparison_8h.html#acc2545f311a0ddf9799fc869664eff82',1,'barcodesComparison.h']]]
+  ['has_5fis_5ftransparent_4',['has_is_transparent',['../structrobin__hood_1_1detail_1_1has__is__transparent.html',1,'robin_hood::detail']]],
+  ['has_5fis_5ftransparent_3c_20t_2c_20typename_20void_5ftype_3c_20typename_20t_3a_3ais_5ftransparent_20_3e_3a_3atype_20_3e_5',['has_is_transparent&lt; T, typename void_type&lt; typename T::is_transparent &gt;::type &gt;',['../structrobin__hood_1_1detail_1_1has__is__transparent_3_01_t_00_01typename_01void__type_3_01typena776fbc8482ae2cd30a8c04c21df0b948.html',1,'robin_hood::detail']]],
+  ['hash_6',['hash',['../structrobin__hood_1_1hash.html',1,'robin_hood']]],
+  ['hash_3c_20enum_2c_20typename_20std_3a_3aenable_5fif_3c_20std_3a_3ais_5fenum_3c_20enum_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e_7',['hash&lt; Enum, typename std::enable_if&lt; std::is_enum&lt; Enum &gt;::value &gt;::type &gt;',['../structrobin__hood_1_1hash_3_01_enum_00_01typename_01std_1_1enable__if_3_01std_1_1is__enum_3_01_e8fac26365d6cc745ced6f78d82c293f3.html',1,'robin_hood']]],
+  ['hash_3c_20std_3a_3abasic_5fstring_3c_20chart_20_3e_20_3e_8',['hash&lt; std::basic_string&lt; CharT &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1basic__string_3_01_char_t_01_4_01_4.html',1,'robin_hood']]],
+  ['hash_3c_20std_3a_3ashared_5fptr_3c_20t_20_3e_20_3e_9',['hash&lt; std::shared_ptr&lt; T &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1shared__ptr_3_01_t_01_4_01_4.html',1,'robin_hood']]],
+  ['hash_3c_20std_3a_3aunique_5fptr_3c_20t_20_3e_20_3e_10',['hash&lt; std::unique_ptr&lt; T &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1unique__ptr_3_01_t_01_4_01_4.html',1,'robin_hood']]],
+  ['hash_3c_20t_20_2a_20_3e_11',['hash&lt; T * &gt;',['../structrobin__hood_1_1hash_3_01_t_01_5_01_4.html',1,'robin_hood']]],
+  ['hashpairs_12',['hashPairs',['../structhash_pairs.html',1,'']]]
 ];

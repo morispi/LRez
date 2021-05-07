@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['loadbarcodesindex_147',['loadBarcodesIndex',['../index_management_fastq_8h.html#ae8289e454127654cd59f02dc89d045b6',1,'indexManagementFastq.h']]],
-  ['loadbarcodesoffsetsindex_148',['loadBarcodesOffsetsIndex',['../index_management_bam_8h.html#a70c22a640153db058f6b861a02d96510',1,'indexManagementBam.h']]],
-  ['loadbarcodespositionsindex_149',['loadBarcodesPositionsIndex',['../index_management_bam_8h.html#a1633b99a3d3da4a8ce7afade54b39967',1,'indexManagementBam.h']]]
+  ['hash_5fbytes_373',['hash_bytes',['../namespacerobin__hood.html#a85874e55e418994892c7bb5ca0aafc71',1,'robin_hood']]],
+  ['hash_5fint_374',['hash_int',['../namespacerobin__hood.html#a7c715b1dd44acf6bcb7981d74fbba3d1',1,'robin_hood']]]
 ];

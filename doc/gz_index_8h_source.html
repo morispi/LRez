@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LRez: includoc/gzIndex.h Source File</title>
+<title>LRez: src/include/gzIndex.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
-   &#160;<span id="projectnumber">2.0</span>
    </div>
-   <div id="projectbrief">Standalone tool and library allowing to work with barcoded linked-reads</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c4b46f5ec6a22ca70231840bd30e9bb5.html">includoc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,7 +69,7 @@ $(function() {
 <div class="title">gzIndex.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="gz_index_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// gzindex is built above zran, as provided by Mark Adler.</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// gzindex is built above zran, as provided by Mark Adler.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Full license follow.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/* zran.c -- example of zlib/gzip stream indexing and random access</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2005, 2012 Mark Adler</span></div>
@@ -136,60 +134,45 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="gz_index_8h.html#a08023ea6765c99d60a6a3840cd07156e">   66</a></span>&#160;<span class="preprocessor">#define local static</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define local static</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="gz_index_8h.html#af99e64b08af1fcb2e8edfeb54290eed3">   68</a></span>&#160;<span class="preprocessor">#define SPAN 1048576L       </span><span class="comment">/* desired distance between access points */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="gz_index_8h.html#ae503004492a3af248faa09d61b4ee4b4">   69</a></span>&#160;<span class="preprocessor">#define WINSIZE 32768U      </span><span class="comment">/* sliding window size */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="gz_index_8h.html#a25022864dfc8ec428e7128282e57b136">   70</a></span>&#160;<span class="preprocessor">#define CHUNK 16384         </span><span class="comment">/* file input buffer size */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define SPAN 1048576L       </span><span class="comment">/* desired distance between access points */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define WINSIZE 32768U      </span><span class="comment">/* sliding window size */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define CHUNK 16384         </span><span class="comment">/* file input buffer size */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/* access point entry */</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structpoint.html">   73</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structpoint.html#abcfd4d3772b23166cd062d3d266c136d">   74</a></span>&#160;    off_t <a class="code" href="structpoint.html#abcfd4d3772b23166cd062d3d266c136d">out</a>;          <span class="comment">/* corresponding offset in uncompressed data */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structpoint.html#a16081c689cb453c89d844ffc88a7a211">   75</a></span>&#160;    off_t <a class="code" href="structpoint.html#a16081c689cb453c89d844ffc88a7a211">in</a>;           <span class="comment">/* offset in input file of first full byte */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structpoint.html#ab8eed5134882b57585186317509c108d">   76</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structpoint.html#ab8eed5134882b57585186317509c108d">bits</a>;           <span class="comment">/* number of bits (1-7) from byte at in - 1, or 0 */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structpoint.html#aa1c1ccf66b12d06cde6a14510ed2e6d6">   77</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> window[<a class="code" href="gz_index_8h.html#ae503004492a3af248faa09d61b4ee4b4">WINSIZE</a>];  <span class="comment">/* preceding 32K of uncompressed data */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    off_t out;          <span class="comment">/* corresponding offset in uncompressed data */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    off_t in;           <span class="comment">/* offset in input file of first full byte */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> bits;           <span class="comment">/* number of bits (1-7) from byte at in - 1, or 0 */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> window[WINSIZE];  <span class="comment">/* preceding 32K of uncompressed data */</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/* access point list */</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structaccess.html">   81</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structaccess.html">access</a> {</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structaccess.html#a6068bfaf03188c5bbcaa977a792636a9">   82</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structaccess.html#a6068bfaf03188c5bbcaa977a792636a9">have</a>;           <span class="comment">/* number of list entries filled in */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structaccess.html#aea01a7415e1faa507157b9301a58a052">   83</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structaccess.html#aea01a7415e1faa507157b9301a58a052">size</a>;           <span class="comment">/* number of list entries allocated */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structaccess.html#aaaa3e08be3caace6a028782e61dfea41">   84</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> *<a class="code" href="structaccess.html#aaaa3e08be3caace6a028782e61dfea41">list</a>; <span class="comment">/* allocated list */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> have;           <span class="comment">/* number of list entries filled in */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> size;           <span class="comment">/* number of list entries allocated */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">struct </span><a class="code" href="structpoint.html">point</a> *list; <span class="comment">/* allocated list */</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> <a class="code" href="gz_index_8h.html#a8de004d9175398ffcb4dc436adcbb401">freeGzIndex</a>(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> freeGzIndex(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> <a class="code" href="gz_index_8h.html#ab49917269d91ff445d8a03954e11b3de">serializeGzIndex</a>(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, <span class="keywordtype">string</span> outputFile);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span> serializeGzIndex(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, <span class="keywordtype">string</span> outputFile);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">struct </span><a class="code" href="structaccess.html">access</a>* <a class="code" href="gz_index_8h.html#a490ef441c6abb4969f9929b46b962b8d">deserializeGzIndex</a>(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, <span class="keywordtype">string</span> inputFile);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">struct </span><a class="code" href="structaccess.html">access</a>* deserializeGzIndex(<span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, <span class="keywordtype">string</span> inputFile);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="gz_index_8h.html#a08e4ff6f36f3ee1e11562891124ac32f">buildGzIndex</a>(<span class="keywordtype">string</span>, off_t span, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> **built);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> buildGzIndex(<span class="keywordtype">string</span>, off_t span, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> **built);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">int</span> <a class="code" href="gz_index_8h.html#a46c7774320278b9bf264652c62c6882e">buildGzIndex_Stream</a>(FILE *in, off_t span, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> **built);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">int</span> buildGzIndex_Stream(FILE *in, off_t span, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> **built);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">int</span> <a class="code" href="gz_index_8h.html#aeaa30c4cca1c1e524d15a4f62ba86ef1">extract</a>(<span class="keywordtype">string</span> gzFile, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index, off_t offset, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">int</span> extract(<span class="keywordtype">string</span> gzFile, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index, off_t offset, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">int</span> <a class="code" href="gz_index_8h.html#a77170f4028df63a577f1559815a72641">extract_Stream</a>(FILE *in, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index, off_t offset, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">int</span> extract_Stream(FILE *in, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a> *index, off_t offset, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf, <span class="keywordtype">int</span> len);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordtype">string</span> <a class="code" href="gz_index_8h.html#adce8a161d359d1a0a6d95d577c1c4b2d">extractFastqReadFromOffset</a>(FILE* in, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, off_t offset);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keywordtype">string</span> extractFastqReadFromOffset(FILE* in, <span class="keyword">struct</span> <a class="code" href="structaccess.html">access</a>* index, off_t offset);</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructaccess_html_a6068bfaf03188c5bbcaa977a792636a9"><div class="ttname"><a href="structaccess.html#a6068bfaf03188c5bbcaa977a792636a9">access::have</a></div><div class="ttdeci">int have</div><div class="ttdef"><b>Definition:</b> gzIndex.h:82</div></div>
-<div class="ttc" id="astructaccess_html_aea01a7415e1faa507157b9301a58a052"><div class="ttname"><a href="structaccess.html#aea01a7415e1faa507157b9301a58a052">access::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> gzIndex.h:83</div></div>
-<div class="ttc" id="agz_index_8h_html_ae503004492a3af248faa09d61b4ee4b4"><div class="ttname"><a href="gz_index_8h.html#ae503004492a3af248faa09d61b4ee4b4">WINSIZE</a></div><div class="ttdeci">#define WINSIZE</div><div class="ttdef"><b>Definition:</b> gzIndex.h:69</div></div>
-<div class="ttc" id="agz_index_8h_html_a8de004d9175398ffcb4dc436adcbb401"><div class="ttname"><a href="gz_index_8h.html#a8de004d9175398ffcb4dc436adcbb401">freeGzIndex</a></div><div class="ttdeci">void freeGzIndex(struct access *index)</div></div>
-<div class="ttc" id="astructaccess_html_aaaa3e08be3caace6a028782e61dfea41"><div class="ttname"><a href="structaccess.html#aaaa3e08be3caace6a028782e61dfea41">access::list</a></div><div class="ttdeci">struct point * list</div><div class="ttdef"><b>Definition:</b> gzIndex.h:84</div></div>
-<div class="ttc" id="agz_index_8h_html_adce8a161d359d1a0a6d95d577c1c4b2d"><div class="ttname"><a href="gz_index_8h.html#adce8a161d359d1a0a6d95d577c1c4b2d">extractFastqReadFromOffset</a></div><div class="ttdeci">string extractFastqReadFromOffset(FILE *in, struct access *index, off_t offset)</div></div>
-<div class="ttc" id="agz_index_8h_html_a08e4ff6f36f3ee1e11562891124ac32f"><div class="ttname"><a href="gz_index_8h.html#a08e4ff6f36f3ee1e11562891124ac32f">buildGzIndex</a></div><div class="ttdeci">int buildGzIndex(string, off_t span, struct access **built)</div></div>
-<div class="ttc" id="astructpoint_html_a16081c689cb453c89d844ffc88a7a211"><div class="ttname"><a href="structpoint.html#a16081c689cb453c89d844ffc88a7a211">point::in</a></div><div class="ttdeci">off_t in</div><div class="ttdef"><b>Definition:</b> gzIndex.h:75</div></div>
-<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="structpoint.html">point</a></div><div class="ttdef"><b>Definition:</b> gzIndex.h:73</div></div>
-<div class="ttc" id="agz_index_8h_html_ab49917269d91ff445d8a03954e11b3de"><div class="ttname"><a href="gz_index_8h.html#ab49917269d91ff445d8a03954e11b3de">serializeGzIndex</a></div><div class="ttdeci">void serializeGzIndex(struct access *index, string outputFile)</div></div>
-<div class="ttc" id="agz_index_8h_html_a46c7774320278b9bf264652c62c6882e"><div class="ttname"><a href="gz_index_8h.html#a46c7774320278b9bf264652c62c6882e">buildGzIndex_Stream</a></div><div class="ttdeci">int buildGzIndex_Stream(FILE *in, off_t span, struct access **built)</div></div>
-<div class="ttc" id="astructpoint_html_abcfd4d3772b23166cd062d3d266c136d"><div class="ttname"><a href="structpoint.html#abcfd4d3772b23166cd062d3d266c136d">point::out</a></div><div class="ttdeci">off_t out</div><div class="ttdef"><b>Definition:</b> gzIndex.h:74</div></div>
-<div class="ttc" id="astructpoint_html_ab8eed5134882b57585186317509c108d"><div class="ttname"><a href="structpoint.html#ab8eed5134882b57585186317509c108d">point::bits</a></div><div class="ttdeci">int bits</div><div class="ttdef"><b>Definition:</b> gzIndex.h:76</div></div>
-<div class="ttc" id="astructaccess_html"><div class="ttname"><a href="structaccess.html">access</a></div><div class="ttdef"><b>Definition:</b> gzIndex.h:81</div></div>
-<div class="ttc" id="agz_index_8h_html_aeaa30c4cca1c1e524d15a4f62ba86ef1"><div class="ttname"><a href="gz_index_8h.html#aeaa30c4cca1c1e524d15a4f62ba86ef1">extract</a></div><div class="ttdeci">int extract(string gzFile, struct access *index, off_t offset, unsigned char *buf, int len)</div></div>
-<div class="ttc" id="agz_index_8h_html_a490ef441c6abb4969f9929b46b962b8d"><div class="ttname"><a href="gz_index_8h.html#a490ef441c6abb4969f9929b46b962b8d">deserializeGzIndex</a></div><div class="ttdeci">struct access * deserializeGzIndex(struct access *index, string inputFile)</div></div>
-<div class="ttc" id="agz_index_8h_html_a77170f4028df63a577f1559815a72641"><div class="ttname"><a href="gz_index_8h.html#a77170f4028df63a577f1559815a72641">extract_Stream</a></div><div class="ttdeci">int extract_Stream(FILE *in, struct access *index, off_t offset, unsigned char *buf, int len)</div></div>
+<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="structpoint.html">point</a></div><div class="ttdef"><b>Definition:</b> <a href="gz_index_8h_source.html#l00073">gzIndex.h:73</a></div></div>
+<div class="ttc" id="astructaccess_html"><div class="ttname"><a href="structaccess.html">access</a></div><div class="ttdef"><b>Definition:</b> <a href="gz_index_8h_source.html#l00081">gzIndex.h:81</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

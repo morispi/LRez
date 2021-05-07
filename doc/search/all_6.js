@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gzindex_2eh_35',['gzIndex.h',['../gz_index_8h.html',1,'']]]
+  ['rev_5fcomp_27',['rev_comp',['../classrev__comp.html',1,'']]]
 ];

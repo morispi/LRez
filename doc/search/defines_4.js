@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optional_5fargument_202',['optional_argument',['../utils_8h.html#acca06c0a947656bd8b395bf1084ffb72',1,'utils.h']]]
+  ['no_5fargument_514',['no_argument',['../utils_8h.html#a3bc1d5f667b5b4ca4b4abb685dc874ce',1,'utils.h']]]
 ];

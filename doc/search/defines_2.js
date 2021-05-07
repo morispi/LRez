@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['local_200',['local',['../gz_index_8h.html#a08023ea6765c99d60a6a3840cd07156e',1,'gzIndex.h']]]
+  ['chunk_512',['CHUNK',['../gz_index_8h.html#a25022864dfc8ec428e7128282e57b136',1,'gzIndex.h']]]
 ];

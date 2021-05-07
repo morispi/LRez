@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_192',['window',['../structpoint.html#aa1c1ccf66b12d06cde6a14510ed2e6d6',1,'point']]]
+  ['path_469',['path',['../barcodes_loading_8h.html#a46c20eb2a26abeb1e934cd66e1dd6484',1,'barcodesLoading.h']]]
 ];

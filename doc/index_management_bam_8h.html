@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LRez: includoc/indexManagementBam.h File Reference</title>
+<title>LRez: src/include/indexManagementBam.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
-   &#160;<span id="projectnumber">2.0</span>
    </div>
-   <div id="projectbrief">Standalone tool and library allowing to work with barcoded linked-reads</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c4b46f5ec6a22ca70231840bd30e9bb5.html">includoc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;robin_hood.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>&quot;</code><br />
 <code>#include &quot;api/BamAux.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 </div>
@@ -83,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a1c56dd269f15d27ac14f1a7a76acd89a"><td class="memItemLeft" align="right" valign="top">typedef robin_hood::unordered_map&lt; <a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>, vector&lt; int64_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a></td></tr>
+<tr class="memitem:a1c56dd269f15d27ac14f1a7a76acd89a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespacerobin__hood.html#a4a18aa3f4d6a9d2590779cd0d954dbb6">robin_hood::unordered_map</a>&lt; <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>, vector&lt; int64_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a></td></tr>
 <tr class="separator:a1c56dd269f15d27ac14f1a7a76acd89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f21460b7974d9414e597138bd9c1b6"><td class="memItemLeft" align="right" valign="top">typedef robin_hood::unordered_map&lt; <a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>, vector&lt; pair&lt; int32_t, int32_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a></td></tr>
+<tr class="memitem:ac4f21460b7974d9414e597138bd9c1b6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespacerobin__hood.html#a4a18aa3f4d6a9d2590779cd0d954dbb6">robin_hood::unordered_map</a>&lt; <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>, vector&lt; pair&lt; int32_t, int32_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a></td></tr>
 <tr class="separator:ac4f21460b7974d9414e597138bd9c1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -111,10 +109,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef robin_hood::unordered_map&lt;<a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>, vector&lt;int64_t&gt; &gt; <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a></td>
+          <td class="memname">typedef <a class="el" href="namespacerobin__hood.html#a4a18aa3f4d6a9d2590779cd0d954dbb6">robin_hood::unordered_map</a>&lt;<a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>, vector&lt;int64_t&gt; &gt; <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="index_management_bam_8h_source.html#l00012">12</a> of file <a class="el" href="index_management_bam_8h_source.html">indexManagementBam.h</a>.</p>
 
 </div>
 </div>
@@ -125,10 +125,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef robin_hood::unordered_map&lt;<a class="el" href="utils_8h.html#af00adfdf73ad3ebb8306768846b0fc5d">barcode</a>, vector&lt;pair&lt;int32_t, int32_t&gt; &gt; &gt; <a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a></td>
+          <td class="memname">typedef <a class="el" href="namespacerobin__hood.html#a4a18aa3f4d6a9d2590779cd0d954dbb6">robin_hood::unordered_map</a>&lt;<a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>, vector&lt;pair&lt;int32_t, int32_t&gt; &gt; &gt; <a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="index_management_bam_8h_source.html#l00014">14</a> of file <a class="el" href="index_management_bam_8h_source.html">indexManagementBam.h</a>.</p>
 
 </div>
 </div>
