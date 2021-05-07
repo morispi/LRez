@@ -48,8 +48,6 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& barcodesOffsetsIndex, string
 	unsigned bitsPerBarcode = barcodesOffsetsIndex.begin()->first.size();
 	out << bitsPerBarcode << endl;
 
-	cerr << "size : " << barcodesOffsetsIndex.size() << endl;
-
 	for (auto i : barcodesOffsetsIndex) {
 		// Convert bool vector to int value, and write barcode
 		uint64_t barcode = 0ULL;
