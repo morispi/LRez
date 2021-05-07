@@ -73,8 +73,6 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 		vector<BamAlignment> alignments = retrieveAlignmentsWithBarcodeBits_BamReader(reader, BarcodesOffsetsIndex, b);
 		consideredRegions.clear();
 		for (auto al : alignments) {
-			// TODO : peut être une erreur ici ? ne comparerait qu'une des extrémities d'un contig cible si un même barcode est présent aux deux extrémités
-			// Plutôt faire un set de visited avec les tRegion ?
 			if (rv[al.RefID].RefLength < size) {
 				tRegion = rv[al.RefID].RefName + ":0-" + rv[al.RefID].RefName + ":" + to_string(rv[al.RefID].RefLength);
 				if (!consideredRegions.count(tRegion)) {
