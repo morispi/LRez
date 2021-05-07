@@ -1,34 +1,129 @@
 #include "utils.h"
+#include <regex.h>
 
-bool CONSIDER_RX = false;
+SequencingTechnology techno = Undefined;
 
-barcode stringToBarcode(const string& str) {
-	barcode res(0);
-	for(uint i(0);i<str.size();i++){
-		res<<=2;
-		switch (str[i]){
-			case 'A':res+=0;break;
-			case 'C':res+=1;break;
-			case 'G':res+=2;break;
-			default:res+=3;break;
-		}
-	}
-	return res;
+SequencingTechnology determineSequencingTechnology(const string& barcode) {
+    SequencingTechnology res;
+
+    regex_t HaplotaggingReg;
+    const char* HaplotaggingPattern = "^A[0-9][0-9]C[0-9][0-9]B[0-9][0-9]D[0-9][0-9]$";
+    regex_t stLFRReg;
+    const char* stLFRPattern = "^[0-9]+_[0-9]+_[0-9]+$";
+    regex_t TELLSeqReg;
+    const char* TELLSeqPattern = "^[ACGT]+$";
+
+    int rc;
+    size_t nmatch = 1;
+    regmatch_t pmatch[1];
+
+    if (0 != (rc = regcomp(&HaplotaggingReg, HaplotaggingPattern, REG_EXTENDED))) {
+	fprintf(stderr, "regcomp() error.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (0 != (rc = regcomp(&stLFRReg, stLFRPattern, REG_EXTENDED))) {
+        fprintf(stderr, "regcomp() error.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (0 != (rc = regcomp(&TELLSeqReg, TELLSeqPattern, REG_EXTENDED))) {
+        fprintf(stderr, "regcomp() error.");
+        exit(EXIT_FAILURE);
+    }
+
+    if (0 == (rc = regexec(&TELLSeqReg, barcode.c_str(), nmatch, pmatch, 0))) {
+        res = TELLSeq;
+    } else if (barcode.substr(barcode.length() - 2) == "-1") {
+        res = TenX;
+    } else if (0 == (rc = regexec(&HaplotaggingReg, barcode.c_str(), nmatch, pmatch, 0))) {
+        res = Haplotagging;
+        loadHaplotaggingBarcodes();
+    } else if (0 == (rc = regexec(&stLFRReg, barcode.c_str(), nmatch, pmatch, 0))) {
+        res = stLFR;
+        loadstLFRBarcodes();
+    } else {
+        fprintf(stderr, "Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    return res;
 }
 
-string barcodeToString(barcode b) {
-	string result;
-	for(uint32_t i(0); i < BARCODE_SIZE; ++i){
-		switch(b%4){
-			case 0:  result.push_back('A');break;
-			case 1:  result.push_back('C');break;
-			case 2:  result.push_back('G');break;
-			case 3:  result.push_back('T');break;
-		}
-		b>>=2;
-	}
-	reverse(result.begin(),result.end());
-	return result;
+string retrieveNucleotidesContent(const string& barcode) {
+    // Determine the sequencing technology according to the barcode, and exit if the technology cannot be determined.
+    if (techno == Undefined) {
+        techno = determineSequencingTechnology(barcode);
+    }
+
+    string res;
+    switch (techno) {
+        case TenX:
+            res = barcode.substr(0, barcode.length() - 2);
+            break;
+        case TELLSeq:
+            res = barcode;
+            break;
+        case Haplotagging:
+            res = Haplotagging_A[stoi(barcode.substr(1,2)) - 1] + Haplotagging_C[stoi(barcode.substr(4,2)) - 1] + Haplotagging_B[stoi(barcode.substr(7,2)) - 1] + Haplotagging_D[stoi(barcode.substr(10,2)) - 1];
+            break;
+        case stLFR:
+            {
+            vector<string> v = splitString(barcode, "_");
+            res = barcodes_stLFR[stoi(v[0]) - 1] + barcodes_stLFR[stoi(v[1]) - 1] + barcodes_stLFR[stoi(v[2]) - 1];
+            break;
+            }
+        default:
+            fprintf(stderr, "Unexpected error. Please make sure your data is valid and attempt running LRez again.");
+            exit(EXIT_FAILURE); 
+    }
+
+    return res;
+}
+
+bool isValidBarcode(const string& barcode) {
+    if (techno == Undefined) {
+        techno = determineSequencingTechnology(barcode);
+    }
+
+    if (barcode.empty()) {
+        return false;
+    }
+
+    bool res;
+    switch (techno) {
+        case TenX:
+            res = (barcode.find("N") == string::npos);
+            break;
+        case TELLSeq:
+            res = (barcode.find("N") == string::npos);
+            break;
+        case Haplotagging:
+            res = (barcode.find("00") == string::npos);
+            break;
+        case stLFR:
+            res = (barcode != "0_0_0");
+            break;
+        default:
+            fprintf(stderr, "Unexpected error. Please make sure your data is valid and attempt running LRez again.");
+            exit(EXIT_FAILURE); 
+    }
+
+    return res;
+}
+
+barcode stringToBarcode(const string& s) {
+    string str = retrieveNucleotidesContent(s);
+    vector<bool> res;
+    for(uint i(0);i<str.size();i++){
+        switch (str[i]){
+            case 'A':res.push_back(false);res.push_back(false);break;
+            case 'C':res.push_back(false);res.push_back(true);break;
+            case 'G':res.push_back(true);res.push_back(false);break;
+            default:res.push_back(true);res.push_back(true);break;
+        }
+    }
+  return res;
 }
 
 vector<string> splitString(string s, string delimiter) {

@@ -19,13 +19,12 @@ void subcommandQueryBam(int argc, char* argv[]) {
 		{"query",			required_argument,	0, 'q'},
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
-		{"userx",			no_argument,		0, 'u'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:i:q:l:o:u", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:i:q:l:o:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query bam");
 	}
@@ -46,14 +45,11 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			case 'o':
 				outputFile = optarg;
 				break;
-			case 'u':
-				CONSIDER_RX = true;
-				break;
 			default:
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:i:q:l:o:u", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:i:q:l:o:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -84,7 +80,7 @@ void subcommandQueryBam(int argc, char* argv[]) {
 	}
 
 
-	BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
+    BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
 	vector<BamAlignment> alignments;
 	if (!query.empty()) {
 		alignments = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, query);
@@ -109,4 +105,6 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			cout << convertToSam(al, reader.GetReferenceData()) << endl;
 		}
 	}
+
+	reader.Close();
 }

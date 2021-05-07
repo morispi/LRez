@@ -38,7 +38,7 @@ LIBS_BAMTOOLS = -l$(BAMTOOLS_LIB_PREFIX)bamtools
 
 MAIN = src/main.o
 REVCOMP = src/reverseComplement.o
-SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o src/gzIndex.o
+SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o src/gzIndex.o src/barcodesLoading.o
 SUBCOMMANDS = src/subcommands/compare.o src/subcommands/extract.o src/subcommands/help.o src/subcommands/indexBam.o src/subcommands/queryBam.o src/subcommands/indexFastq.o src/subcommands/queryFastq.o
 
 EXEC = $(BUILD_BINDIR)/LRez

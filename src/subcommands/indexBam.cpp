@@ -2,10 +2,6 @@
 #include "subcommands/help.h"
 #include "indexManagementBam.h"
 #include <getopt.h>
-#include <chrono>
-
-
-using namespace std::chrono;
 
 void subcommandIndexBam(int argc, char* argv[]) {
 	string bamFile;
@@ -18,7 +14,6 @@ void subcommandIndexBam(int argc, char* argv[]) {
 	const struct option longopts[] = {
 		{"bam",				required_argument,	0, 'b'},
 		{"output",			required_argument,	0, 'o'},
-		{"userx",			no_argument,		0, 'u'},
 		{"offsets",			no_argument,		0, 'f'},
 		{"positions",		no_argument,		0, 'p'},
 		{"primary",			no_argument,		0, 'r'},
@@ -28,7 +23,7 @@ void subcommandIndexBam(int argc, char* argv[]) {
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:o:fpurq:", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:o:fprq:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("index bam");
 	}
@@ -39,9 +34,6 @@ void subcommandIndexBam(int argc, char* argv[]) {
 				break;
 			case 'o':
 				output = optarg;
-				break;
-			case 'u':
-				CONSIDER_RX = true;
 				break;
 			case 'f':
 				indexOffsets = true;
@@ -59,7 +51,7 @@ void subcommandIndexBam(int argc, char* argv[]) {
 				subcommandHelp("index bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:o:fpurq:", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:o:fprq:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {

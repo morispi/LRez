@@ -1,6 +1,5 @@
 #include "readsRetrieval.h"
 #include "reverseComplement.h"
-#include <chrono>
 
 vector<string> retrieveReadsWithBarcodeBits_Stream(ifstream& in, BarcodesIndex& BarcodesIndex, barcode bc) {
 	vector<string> res;
