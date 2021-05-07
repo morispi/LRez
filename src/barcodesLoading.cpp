@@ -13,7 +13,6 @@ vector<string> barcodes_stLFR;
 void loadHaplotaggingBarcodes() {
     ifstream f;
     string line;
-    cerr << path + "Haplotagging_A" << endl;
 	f.open(path + "Haplotagging_A");
 	if (!f.is_open()) {
 		fprintf(stderr, "Unable to open barcodes list file barcodes/Haplotagging_A. Please provide an existing and valid file.\n");
