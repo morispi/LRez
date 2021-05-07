@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['has_5fis_5ftransparent_4',['has_is_transparent',['../structrobin__hood_1_1detail_1_1has__is__transparent.html',1,'robin_hood::detail']]],
-  ['has_5fis_5ftransparent_3c_20t_2c_20typename_20void_5ftype_3c_20typename_20t_3a_3ais_5ftransparent_20_3e_3a_3atype_20_3e_5',['has_is_transparent&lt; T, typename void_type&lt; typename T::is_transparent &gt;::type &gt;',['../structrobin__hood_1_1detail_1_1has__is__transparent_3_01_t_00_01typename_01void__type_3_01typena776fbc8482ae2cd30a8c04c21df0b948.html',1,'robin_hood::detail']]],
-  ['hash_6',['hash',['../structrobin__hood_1_1hash.html',1,'robin_hood']]],
-  ['hash_3c_20enum_2c_20typename_20std_3a_3aenable_5fif_3c_20std_3a_3ais_5fenum_3c_20enum_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e_7',['hash&lt; Enum, typename std::enable_if&lt; std::is_enum&lt; Enum &gt;::value &gt;::type &gt;',['../structrobin__hood_1_1hash_3_01_enum_00_01typename_01std_1_1enable__if_3_01std_1_1is__enum_3_01_e8fac26365d6cc745ced6f78d82c293f3.html',1,'robin_hood']]],
-  ['hash_3c_20std_3a_3abasic_5fstring_3c_20chart_20_3e_20_3e_8',['hash&lt; std::basic_string&lt; CharT &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1basic__string_3_01_char_t_01_4_01_4.html',1,'robin_hood']]],
-  ['hash_3c_20std_3a_3ashared_5fptr_3c_20t_20_3e_20_3e_9',['hash&lt; std::shared_ptr&lt; T &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1shared__ptr_3_01_t_01_4_01_4.html',1,'robin_hood']]],
-  ['hash_3c_20std_3a_3aunique_5fptr_3c_20t_20_3e_20_3e_10',['hash&lt; std::unique_ptr&lt; T &gt; &gt;',['../structrobin__hood_1_1hash_3_01std_1_1unique__ptr_3_01_t_01_4_01_4.html',1,'robin_hood']]],
-  ['hash_3c_20t_20_2a_20_3e_11',['hash&lt; T * &gt;',['../structrobin__hood_1_1hash_3_01_t_01_5_01_4.html',1,'robin_hood']]],
-  ['hashpairs_12',['hashPairs',['../structhash_pairs.html',1,'']]]
+  ['barcode_9',['barcode',['../utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34',1,'utils.h']]],
+  ['barcodes_5fstlfr_10',['barcodes_stLFR',['../utils_8h.html#ab7dab8dd529d63c145bc4fde7ec395fd',1,'utils.h']]],
+  ['barcodescomparison_2eh_11',['barcodesComparison.h',['../barcodes_comparison_8h.html',1,'']]],
+  ['barcodesextraction_2eh_12',['barcodesExtraction.h',['../barcodes_extraction_8h.html',1,'']]],
+  ['barcodesindex_13',['BarcodesIndex',['../index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4',1,'indexManagementFastq.h']]],
+  ['barcodesloading_2eh_14',['barcodesLoading.h',['../barcodes_loading_8h.html',1,'']]],
+  ['barcodesoffsetsindex_15',['BarcodesOffsetsIndex',['../index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a',1,'indexManagementBam.h']]],
+  ['barcodespositionsindex_16',['BarcodesPositionsIndex',['../index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6',1,'indexManagementBam.h']]],
+  ['begin_17',['begin',['../classrobin__hood_1_1detail_1_1_table.html#add7d28059e51e869700275a52f10f792',1,'robin_hood::detail::Table::begin()'],['../classrobin__hood_1_1detail_1_1_table.html#a9177e8678fba060701f8f14cfc79addb',1,'robin_hood::detail::Table::begin() const']]],
+  ['bits_18',['bits',['../structpoint.html#ab8eed5134882b57585186317509c108d',1,'point']]],
+  ['build_5finstance_19',['build_instance',['../classrev__comp.html#a19222c115d07c818141cad0ffba9d9b4',1,'rev_comp']]],
+  ['buildgzindex_20',['buildGzIndex',['../gz_index_8h.html#a08e4ff6f36f3ee1e11562891124ac32f',1,'gzIndex.h']]],
+  ['buildgzindex_5fstream_21',['buildGzIndex_Stream',['../gz_index_8h.html#a46c7774320278b9bf264652c62c6882e',1,'gzIndex.h']]],
+  ['bulkpoolallocator_22',['BulkPoolAllocator',['../classrobin__hood_1_1detail_1_1_bulk_pool_allocator.html',1,'robin_hood::detail::BulkPoolAllocator&lt; T, MinNumAllocs, MaxNumAllocs &gt;'],['../classrobin__hood_1_1detail_1_1_bulk_pool_allocator.html#a6e80635d45b4f146f3b8df9703659508',1,'robin_hood::detail::BulkPoolAllocator::BulkPoolAllocator() noexcept=default'],['../classrobin__hood_1_1detail_1_1_bulk_pool_allocator.html#a6065f77105ffa5296132f5422444d4a6',1,'robin_hood::detail::BulkPoolAllocator::BulkPoolAllocator(const BulkPoolAllocator &amp;ROBIN_HOOD_UNUSED(o)) noexcept'],['../classrobin__hood_1_1detail_1_1_bulk_pool_allocator.html#aabb8a20e6aedfa5fc0b804614dc1aeb4',1,'robin_hood::detail::BulkPoolAllocator::BulkPoolAllocator(BulkPoolAllocator &amp;&amp;o) noexcept']]],
+  ['bulkpoolallocator_3c_20t_2c_20minsize_2c_20maxsize_20_3e_23',['BulkPoolAllocator&lt; T, MinSize, MaxSize &gt;',['../classrobin__hood_1_1detail_1_1_bulk_pool_allocator.html',1,'robin_hood::detail']]],
+  ['bxtag_24',['BXTAG',['../utils_8h.html#aa59ce259e8f38b4f241362815a7bbe35',1,'utils.h']]]
 ];

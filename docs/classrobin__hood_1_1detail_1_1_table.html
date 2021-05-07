@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
+   &#160;<span id="projectnumber">2.1</span>
    </div>
   </td>
  </tr>
@@ -61,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>robin_hood</b></li><li class="navelem"><b>detail</b></li><li class="navelem"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacerobin__hood.html">robin_hood</a></li><li class="navelem"><a class="el" href="namespacerobin__hood_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -76,262 +77,198 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><code>#include &lt;<a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>&gt;</code></p>
+
 <p>Inherits <a class="el" href="structrobin__hood_1_1detail_1_1_wrap_hash.html">robin_hood::detail::WrapHash&lt; Hash &gt;</a>, <a class="el" href="structrobin__hood_1_1detail_1_1_wrap_key_equal.html">robin_hood::detail::WrapKeyEqual&lt; KeyEqual &gt;</a>, and <a class="el" href="structrobin__hood_1_1detail_1_1_node_allocator.html">robin_hood::detail::NodeAllocator&lt; std::conditional&lt; std::is_void&lt; T &gt;::value, Key, robin_hood::pair&lt; std::conditional&lt; IsFlat, Key, Key const &gt;::type, T &gt; &gt;::type, 4, 16384, IsFlat &gt;</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a71358990733e9f0af7d2a2cb82f883d4"><td class="memItemLeft" align="right" valign="top"><a id="a71358990733e9f0af7d2a2cb82f883d4"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>key_type</b> = Key</td></tr>
+<tr class="memitem:a71358990733e9f0af7d2a2cb82f883d4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> = Key</td></tr>
 <tr class="separator:a71358990733e9f0af7d2a2cb82f883d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad57e98927ed028ee462aeaa6352f435e"><td class="memItemLeft" align="right" valign="top"><a id="ad57e98927ed028ee462aeaa6352f435e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>mapped_type</b> = T</td></tr>
+<tr class="memitem:ad57e98927ed028ee462aeaa6352f435e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad57e98927ed028ee462aeaa6352f435e">mapped_type</a> = T</td></tr>
 <tr class="separator:ad57e98927ed028ee462aeaa6352f435e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa96e437f425b19604f49d654d54d7ce"><td class="memItemLeft" align="right" valign="top"><a id="aaa96e437f425b19604f49d654d54d7ce"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b> = typename std::conditional&lt; is_set, Key, <a class="el" href="structrobin__hood_1_1pair.html">robin_hood::pair</a>&lt; typename std::conditional&lt; is_flat, Key, Key const  &gt;::type, T &gt; &gt;::type</td></tr>
+<tr class="memitem:aaa96e437f425b19604f49d654d54d7ce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> = typename std::conditional&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af0a05809764dcc1f5601019d9a1f7905">is_set</a>, Key, <a class="el" href="structrobin__hood_1_1pair.html">robin_hood::pair</a>&lt; typename std::conditional&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#acbc8a6be27e6b6acb68601cc9b43374e">is_flat</a>, Key, Key const  &gt;::type, T &gt; &gt;::type</td></tr>
 <tr class="separator:aaa96e437f425b19604f49d654d54d7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f1df95c74de5245e0dff74db3c7cfce"><td class="memItemLeft" align="right" valign="top"><a id="a7f1df95c74de5245e0dff74db3c7cfce"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>size_type</b> = size_t</td></tr>
+<tr class="memitem:a7f1df95c74de5245e0dff74db3c7cfce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a> = size_t</td></tr>
 <tr class="separator:a7f1df95c74de5245e0dff74db3c7cfce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13180b774f5da55e353d0343dbeb8c86"><td class="memItemLeft" align="right" valign="top"><a id="a13180b774f5da55e353d0343dbeb8c86"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>hasher</b> = Hash</td></tr>
+<tr class="memitem:a13180b774f5da55e353d0343dbeb8c86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a13180b774f5da55e353d0343dbeb8c86">hasher</a> = Hash</td></tr>
 <tr class="separator:a13180b774f5da55e353d0343dbeb8c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68503d58c08320ebfe5cf78185cc575"><td class="memItemLeft" align="right" valign="top"><a id="aa68503d58c08320ebfe5cf78185cc575"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>key_equal</b> = KeyEqual</td></tr>
+<tr class="memitem:aa68503d58c08320ebfe5cf78185cc575"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa68503d58c08320ebfe5cf78185cc575">key_equal</a> = KeyEqual</td></tr>
 <tr class="separator:aa68503d58c08320ebfe5cf78185cc575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad933544cfb52d2729a6a6f200e59b666"><td class="memItemLeft" align="right" valign="top"><a id="ad933544cfb52d2729a6a6f200e59b666"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Self</b> = <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, key_type, mapped_type, hasher, key_equal &gt;</td></tr>
+<tr class="memitem:ad933544cfb52d2729a6a6f200e59b666"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad933544cfb52d2729a6a6f200e59b666">Self</a> = <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad57e98927ed028ee462aeaa6352f435e">mapped_type</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a13180b774f5da55e353d0343dbeb8c86">hasher</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa68503d58c08320ebfe5cf78185cc575">key_equal</a> &gt;</td></tr>
 <tr class="separator:ad933544cfb52d2729a6a6f200e59b666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46c9f030f2bfd8e463660db58d3a0f14"><td class="memItemLeft" align="right" valign="top"><a id="a46c9f030f2bfd8e463660db58d3a0f14"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b> = Iter&lt; false &gt;</td></tr>
+<tr class="memitem:a46c9f030f2bfd8e463660db58d3a0f14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> = Iter&lt; false &gt;</td></tr>
 <tr class="separator:a46c9f030f2bfd8e463660db58d3a0f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2876c055bf6f25ab7e2a14b3075bd7ec"><td class="memItemLeft" align="right" valign="top"><a id="a2876c055bf6f25ab7e2a14b3075bd7ec"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> = Iter&lt; true &gt;</td></tr>
+<tr class="memitem:a2876c055bf6f25ab7e2a14b3075bd7ec"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> = Iter&lt; true &gt;</td></tr>
 <tr class="separator:a2876c055bf6f25ab7e2a14b3075bd7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2a2fe9160a460041b6bd4d9aeeaab781"><td class="memItemLeft" align="right" valign="top"><a id="a2a2fe9160a460041b6bd4d9aeeaab781"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Table</b> (size_t ROBIN_HOOD_UNUSED(bucket_count), const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{}) noexcept(noexcept(Hash(h)) &amp;&amp;noexcept(KeyEqual(equal)))</td></tr>
+<tr class="memitem:ad70deade1915f62d3d9a4409eb7b229b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad70deade1915f62d3d9a4409eb7b229b">Table</a> () noexcept(noexcept(Hash()) &amp;&amp;noexcept(KeyEqual()))</td></tr>
+<tr class="separator:ad70deade1915f62d3d9a4409eb7b229b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a2fe9160a460041b6bd4d9aeeaab781"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2a2fe9160a460041b6bd4d9aeeaab781">Table</a> (size_t <a class="el" href="robin__hood_8h.html#a6399383994de7b3a999f5f61a87cb527">ROBIN_HOOD_UNUSED</a>(bucket_count), const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{}) noexcept(noexcept(Hash(h)) &amp;&amp;noexcept(KeyEqual(equal)))</td></tr>
 <tr class="separator:a2a2fe9160a460041b6bd4d9aeeaab781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a367b27209a9e61ec825ab1c0fb6a7225"><td class="memTemplParams" colspan="2"><a id="a367b27209a9e61ec825ab1c0fb6a7225"></a>
-template&lt;typename Iter &gt; </td></tr>
-<tr class="memitem:a367b27209a9e61ec825ab1c0fb6a7225"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Table</b> (Iter first, Iter last, size_t ROBIN_HOOD_UNUSED(bucket_count)=0, const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{})</td></tr>
+<tr class="memitem:a367b27209a9e61ec825ab1c0fb6a7225"><td class="memTemplParams" colspan="2">template&lt;typename Iter &gt; </td></tr>
+<tr class="memitem:a367b27209a9e61ec825ab1c0fb6a7225"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a367b27209a9e61ec825ab1c0fb6a7225">Table</a> (Iter first, Iter last, size_t <a class="el" href="robin__hood_8h.html#a6399383994de7b3a999f5f61a87cb527">ROBIN_HOOD_UNUSED</a>(bucket_count)=0, const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{})</td></tr>
 <tr class="separator:a367b27209a9e61ec825ab1c0fb6a7225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2c227765ba6707e003ce5f46f57f3a1"><td class="memItemLeft" align="right" valign="top"><a id="af2c227765ba6707e003ce5f46f57f3a1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Table</b> (std::initializer_list&lt; value_type &gt; initlist, size_t ROBIN_HOOD_UNUSED(bucket_count)=0, const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{})</td></tr>
+<tr class="memitem:af2c227765ba6707e003ce5f46f57f3a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af2c227765ba6707e003ce5f46f57f3a1">Table</a> (std::initializer_list&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &gt; initlist, size_t <a class="el" href="robin__hood_8h.html#a6399383994de7b3a999f5f61a87cb527">ROBIN_HOOD_UNUSED</a>(bucket_count)=0, const Hash &amp;h=Hash{}, const KeyEqual &amp;equal=KeyEqual{})</td></tr>
 <tr class="separator:af2c227765ba6707e003ce5f46f57f3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bd8bf8273183d4657def8a5efae42f9"><td class="memItemLeft" align="right" valign="top"><a id="a4bd8bf8273183d4657def8a5efae42f9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Table</b> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&amp;o) noexcept</td></tr>
+<tr class="memitem:a4bd8bf8273183d4657def8a5efae42f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a4bd8bf8273183d4657def8a5efae42f9">Table</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&amp;o) noexcept</td></tr>
 <tr class="separator:a4bd8bf8273183d4657def8a5efae42f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adccf7c9573573c92794471275ee764a1"><td class="memItemLeft" align="right" valign="top"><a id="adccf7c9573573c92794471275ee764a1"></a>
-<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&amp;o) noexcept</td></tr>
+<tr class="memitem:adccf7c9573573c92794471275ee764a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#adccf7c9573573c92794471275ee764a1">operator=</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&amp;o) noexcept</td></tr>
 <tr class="separator:adccf7c9573573c92794471275ee764a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb88d60adc8d4bed347fa4e3daa98531"><td class="memItemLeft" align="right" valign="top"><a id="aeb88d60adc8d4bed347fa4e3daa98531"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Table</b> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;o)</td></tr>
+<tr class="memitem:aeb88d60adc8d4bed347fa4e3daa98531"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aeb88d60adc8d4bed347fa4e3daa98531">Table</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;o)</td></tr>
 <tr class="separator:aeb88d60adc8d4bed347fa4e3daa98531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dfa81768d98c8dfd23e50e716632801"><td class="memItemLeft" align="right" valign="top"><a id="a6dfa81768d98c8dfd23e50e716632801"></a>
-<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> const &amp;o)</td></tr>
+<tr class="memitem:a6dfa81768d98c8dfd23e50e716632801"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a6dfa81768d98c8dfd23e50e716632801">operator=</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> const &amp;o)</td></tr>
 <tr class="separator:a6dfa81768d98c8dfd23e50e716632801"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35659bfc4c799a774d5c2e60f2b19dff"><td class="memItemLeft" align="right" valign="top"><a id="a35659bfc4c799a774d5c2e60f2b19dff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>swap</b> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;o)</td></tr>
+<tr class="memitem:a35659bfc4c799a774d5c2e60f2b19dff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a35659bfc4c799a774d5c2e60f2b19dff">swap</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;o)</td></tr>
 <tr class="separator:a35659bfc4c799a774d5c2e60f2b19dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63f44cedc183bf0e0c51c1ef0343897a"><td class="memItemLeft" align="right" valign="top"><a id="a63f44cedc183bf0e0c51c1ef0343897a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:a63f44cedc183bf0e0c51c1ef0343897a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a63f44cedc183bf0e0c51c1ef0343897a">clear</a> ()</td></tr>
 <tr class="separator:a63f44cedc183bf0e0c51c1ef0343897a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b063819c28f1800f35e6ef0033a334a"><td class="memItemLeft" align="right" valign="top"><a id="a4b063819c28f1800f35e6ef0033a334a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;other) const</td></tr>
+<tr class="memitem:a9f58ad180fed399cee94426c8fc1099d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a9f58ad180fed399cee94426c8fc1099d">~Table</a> ()</td></tr>
+<tr class="separator:a9f58ad180fed399cee94426c8fc1099d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b063819c28f1800f35e6ef0033a334a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a4b063819c28f1800f35e6ef0033a334a">operator==</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;other) const</td></tr>
 <tr class="separator:a4b063819c28f1800f35e6ef0033a334a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c3d7f130f32a133aa7cd90034a6e35"><td class="memItemLeft" align="right" valign="top"><a id="a70c3d7f130f32a133aa7cd90034a6e35"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;other) const</td></tr>
+<tr class="memitem:a70c3d7f130f32a133aa7cd90034a6e35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a70c3d7f130f32a133aa7cd90034a6e35">operator!=</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> &amp;other) const</td></tr>
 <tr class="separator:a70c3d7f130f32a133aa7cd90034a6e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad844ebcf70743e94a39eb75f69876533"><td class="memTemplParams" colspan="2"><a id="ad844ebcf70743e94a39eb75f69876533"></a>
-template&lt;typename Q  = mapped_type&gt; </td></tr>
-<tr class="memitem:ad844ebcf70743e94a39eb75f69876533"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator[]</b> (const key_type &amp;key)</td></tr>
+<tr class="memitem:ad844ebcf70743e94a39eb75f69876533"><td class="memTemplParams" colspan="2">template&lt;typename Q  = mapped_type&gt; </td></tr>
+<tr class="memitem:ad844ebcf70743e94a39eb75f69876533"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad844ebcf70743e94a39eb75f69876533">operator[]</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key)</td></tr>
 <tr class="separator:ad844ebcf70743e94a39eb75f69876533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1927a4d896dd259ef031aaa8fb2575"><td class="memTemplParams" colspan="2"><a id="adc1927a4d896dd259ef031aaa8fb2575"></a>
-template&lt;typename Q  = mapped_type&gt; </td></tr>
-<tr class="memitem:adc1927a4d896dd259ef031aaa8fb2575"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator[]</b> (key_type &amp;&amp;key)</td></tr>
+<tr class="memitem:adc1927a4d896dd259ef031aaa8fb2575"><td class="memTemplParams" colspan="2">template&lt;typename Q  = mapped_type&gt; </td></tr>
+<tr class="memitem:adc1927a4d896dd259ef031aaa8fb2575"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#adc1927a4d896dd259ef031aaa8fb2575">operator[]</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;key)</td></tr>
 <tr class="separator:adc1927a4d896dd259ef031aaa8fb2575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf52ac516fda1480f9fe83af37dbc1d"><td class="memTemplParams" colspan="2"><a id="afaf52ac516fda1480f9fe83af37dbc1d"></a>
-template&lt;typename Iter &gt; </td></tr>
-<tr class="memitem:afaf52ac516fda1480f9fe83af37dbc1d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert</b> (Iter first, Iter last)</td></tr>
+<tr class="memitem:afaf52ac516fda1480f9fe83af37dbc1d"><td class="memTemplParams" colspan="2">template&lt;typename Iter &gt; </td></tr>
+<tr class="memitem:afaf52ac516fda1480f9fe83af37dbc1d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#afaf52ac516fda1480f9fe83af37dbc1d">insert</a> (Iter first, Iter last)</td></tr>
 <tr class="separator:afaf52ac516fda1480f9fe83af37dbc1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9208d5701485d0bec9211d5f1c99f97"><td class="memItemLeft" align="right" valign="top"><a id="aa9208d5701485d0bec9211d5f1c99f97"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (std::initializer_list&lt; value_type &gt; ilist)</td></tr>
+<tr class="memitem:aa9208d5701485d0bec9211d5f1c99f97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa9208d5701485d0bec9211d5f1c99f97">insert</a> (std::initializer_list&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &gt; ilist)</td></tr>
 <tr class="separator:aa9208d5701485d0bec9211d5f1c99f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6364cae0784d401af7cec792f69b2d"><td class="memTemplParams" colspan="2"><a id="a1a6364cae0784d401af7cec792f69b2d"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a1a6364cae0784d401af7cec792f69b2d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>emplace</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:a1a6364cae0784d401af7cec792f69b2d"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a1a6364cae0784d401af7cec792f69b2d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a1a6364cae0784d401af7cec792f69b2d">emplace</a> (Args &amp;&amp;... args)</td></tr>
 <tr class="separator:a1a6364cae0784d401af7cec792f69b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc93414b0ebafa2dbcaaf7095f00da44"><td class="memTemplParams" colspan="2"><a id="acc93414b0ebafa2dbcaaf7095f00da44"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:acc93414b0ebafa2dbcaaf7095f00da44"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>try_emplace</b> (const key_type &amp;key, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:acc93414b0ebafa2dbcaaf7095f00da44"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:acc93414b0ebafa2dbcaaf7095f00da44"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#acc93414b0ebafa2dbcaaf7095f00da44">try_emplace</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:acc93414b0ebafa2dbcaaf7095f00da44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af50253b285645da4c6952d87200061d3"><td class="memTemplParams" colspan="2"><a id="af50253b285645da4c6952d87200061d3"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:af50253b285645da4c6952d87200061d3"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>try_emplace</b> (key_type &amp;&amp;key, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:af50253b285645da4c6952d87200061d3"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:af50253b285645da4c6952d87200061d3"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af50253b285645da4c6952d87200061d3">try_emplace</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;key, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:af50253b285645da4c6952d87200061d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a560563a61f670c3193632664a5d37485"><td class="memTemplParams" colspan="2"><a id="a560563a61f670c3193632664a5d37485"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a560563a61f670c3193632664a5d37485"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>try_emplace</b> (const_iterator hint, const key_type &amp;key, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:a560563a61f670c3193632664a5d37485"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a560563a61f670c3193632664a5d37485"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a560563a61f670c3193632664a5d37485">try_emplace</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> hint, const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:a560563a61f670c3193632664a5d37485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73d14eacffaa05a0fd2bdcb1e9e277c3"><td class="memTemplParams" colspan="2"><a id="a73d14eacffaa05a0fd2bdcb1e9e277c3"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a73d14eacffaa05a0fd2bdcb1e9e277c3"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>try_emplace</b> (const_iterator hint, key_type &amp;&amp;key, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:a73d14eacffaa05a0fd2bdcb1e9e277c3"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a73d14eacffaa05a0fd2bdcb1e9e277c3"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a73d14eacffaa05a0fd2bdcb1e9e277c3">try_emplace</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> hint, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;key, Args &amp;&amp;... args)</td></tr>
 <tr class="separator:a73d14eacffaa05a0fd2bdcb1e9e277c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a950170921b778149a3484744821a352a"><td class="memTemplParams" colspan="2"><a id="a950170921b778149a3484744821a352a"></a>
-template&lt;typename Mapped &gt; </td></tr>
-<tr class="memitem:a950170921b778149a3484744821a352a"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert_or_assign</b> (const key_type &amp;key, Mapped &amp;&amp;obj)</td></tr>
+<tr class="memitem:a950170921b778149a3484744821a352a"><td class="memTemplParams" colspan="2">template&lt;typename Mapped &gt; </td></tr>
+<tr class="memitem:a950170921b778149a3484744821a352a"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a950170921b778149a3484744821a352a">insert_or_assign</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key, Mapped &amp;&amp;obj)</td></tr>
 <tr class="separator:a950170921b778149a3484744821a352a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a334b766430187a1ded42b54650ee1479"><td class="memTemplParams" colspan="2"><a id="a334b766430187a1ded42b54650ee1479"></a>
-template&lt;typename Mapped &gt; </td></tr>
-<tr class="memitem:a334b766430187a1ded42b54650ee1479"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert_or_assign</b> (key_type &amp;&amp;key, Mapped &amp;&amp;obj)</td></tr>
+<tr class="memitem:a334b766430187a1ded42b54650ee1479"><td class="memTemplParams" colspan="2">template&lt;typename Mapped &gt; </td></tr>
+<tr class="memitem:a334b766430187a1ded42b54650ee1479"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a334b766430187a1ded42b54650ee1479">insert_or_assign</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;key, Mapped &amp;&amp;obj)</td></tr>
 <tr class="separator:a334b766430187a1ded42b54650ee1479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0653cf9f09d02a76a8ba8cc468fc3a9f"><td class="memTemplParams" colspan="2"><a id="a0653cf9f09d02a76a8ba8cc468fc3a9f"></a>
-template&lt;typename Mapped &gt; </td></tr>
-<tr class="memitem:a0653cf9f09d02a76a8ba8cc468fc3a9f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert_or_assign</b> (const_iterator hint, const key_type &amp;key, Mapped &amp;&amp;obj)</td></tr>
+<tr class="memitem:a0653cf9f09d02a76a8ba8cc468fc3a9f"><td class="memTemplParams" colspan="2">template&lt;typename Mapped &gt; </td></tr>
+<tr class="memitem:a0653cf9f09d02a76a8ba8cc468fc3a9f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0653cf9f09d02a76a8ba8cc468fc3a9f">insert_or_assign</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> hint, const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key, Mapped &amp;&amp;obj)</td></tr>
 <tr class="separator:a0653cf9f09d02a76a8ba8cc468fc3a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0792385a6961c06e7e38925af45ae1a4"><td class="memTemplParams" colspan="2"><a id="a0792385a6961c06e7e38925af45ae1a4"></a>
-template&lt;typename Mapped &gt; </td></tr>
-<tr class="memitem:a0792385a6961c06e7e38925af45ae1a4"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; iterator, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert_or_assign</b> (const_iterator hint, key_type &amp;&amp;key, Mapped &amp;&amp;obj)</td></tr>
+<tr class="memitem:a0792385a6961c06e7e38925af45ae1a4"><td class="memTemplParams" colspan="2">template&lt;typename Mapped &gt; </td></tr>
+<tr class="memitem:a0792385a6961c06e7e38925af45ae1a4"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0792385a6961c06e7e38925af45ae1a4">insert_or_assign</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> hint, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;key, Mapped &amp;&amp;obj)</td></tr>
 <tr class="separator:a0792385a6961c06e7e38925af45ae1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4686cb83428318f86560bb2d40cc1811"><td class="memItemLeft" align="right" valign="top"><a id="a4686cb83428318f86560bb2d40cc1811"></a>
-std::pair&lt; iterator, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const value_type &amp;keyval)</td></tr>
+<tr class="memitem:a4686cb83428318f86560bb2d40cc1811"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a4686cb83428318f86560bb2d40cc1811">insert</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &amp;keyval)</td></tr>
 <tr class="separator:a4686cb83428318f86560bb2d40cc1811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3614f574e1f1d567028cf7032681c020"><td class="memItemLeft" align="right" valign="top"><a id="a3614f574e1f1d567028cf7032681c020"></a>
-std::pair&lt; iterator, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (value_type &amp;&amp;keyval)</td></tr>
+<tr class="memitem:a3614f574e1f1d567028cf7032681c020"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a3614f574e1f1d567028cf7032681c020">insert</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &amp;&amp;keyval)</td></tr>
 <tr class="separator:a3614f574e1f1d567028cf7032681c020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a73a7b295dc5cb50304068fbd811bd"><td class="memItemLeft" align="right" valign="top"><a id="a98a73a7b295dc5cb50304068fbd811bd"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> (const key_type &amp;key) const</td></tr>
+<tr class="memitem:a98a73a7b295dc5cb50304068fbd811bd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a98a73a7b295dc5cb50304068fbd811bd">count</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key) const</td></tr>
 <tr class="separator:a98a73a7b295dc5cb50304068fbd811bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb32389eb41a797c91f5cb1319ed6fc0"><td class="memTemplParams" colspan="2"><a id="afb32389eb41a797c91f5cb1319ed6fc0"></a>
-template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
-<tr class="memitem:afb32389eb41a797c91f5cb1319ed6fc0"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, size_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>count</b> (const OtherKey &amp;key) const</td></tr>
+<tr class="memitem:afb32389eb41a797c91f5cb1319ed6fc0"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
+<tr class="memitem:afb32389eb41a797c91f5cb1319ed6fc0"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, size_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#afb32389eb41a797c91f5cb1319ed6fc0">count</a> (const OtherKey &amp;key) const</td></tr>
 <tr class="separator:afb32389eb41a797c91f5cb1319ed6fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79fdf3ba7034cb3eb36bbda40ec2d3c7"><td class="memItemLeft" align="right" valign="top"><a id="a79fdf3ba7034cb3eb36bbda40ec2d3c7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const key_type &amp;key) const</td></tr>
+<tr class="memitem:a79fdf3ba7034cb3eb36bbda40ec2d3c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a79fdf3ba7034cb3eb36bbda40ec2d3c7">contains</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key) const</td></tr>
 <tr class="separator:a79fdf3ba7034cb3eb36bbda40ec2d3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a595fe17eb846e867e89bd8deaf78a9e8"><td class="memTemplParams" colspan="2"><a id="a595fe17eb846e867e89bd8deaf78a9e8"></a>
-template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
-<tr class="memitem:a595fe17eb846e867e89bd8deaf78a9e8"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, bool &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>contains</b> (const OtherKey &amp;key) const</td></tr>
+<tr class="memitem:a595fe17eb846e867e89bd8deaf78a9e8"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
+<tr class="memitem:a595fe17eb846e867e89bd8deaf78a9e8"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, bool &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a595fe17eb846e867e89bd8deaf78a9e8">contains</a> (const OtherKey &amp;key) const</td></tr>
 <tr class="separator:a595fe17eb846e867e89bd8deaf78a9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d466b8ba45024362193eac9a75ac58d"><td class="memTemplParams" colspan="2"><a id="a0d466b8ba45024362193eac9a75ac58d"></a>
-template&lt;typename Q  = mapped_type&gt; </td></tr>
-<tr class="memitem:a0d466b8ba45024362193eac9a75ac58d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>at</b> (key_type const &amp;key)</td></tr>
+<tr class="memitem:a0d466b8ba45024362193eac9a75ac58d"><td class="memTemplParams" colspan="2">template&lt;typename Q  = mapped_type&gt; </td></tr>
+<tr class="memitem:a0d466b8ba45024362193eac9a75ac58d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0d466b8ba45024362193eac9a75ac58d">at</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> const &amp;key)</td></tr>
 <tr class="separator:a0d466b8ba45024362193eac9a75ac58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0147f0e06d0eadf94bca6dcf921ad2"><td class="memTemplParams" colspan="2"><a id="a9c0147f0e06d0eadf94bca6dcf921ad2"></a>
-template&lt;typename Q  = mapped_type&gt; </td></tr>
-<tr class="memitem:a9c0147f0e06d0eadf94bca6dcf921ad2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q const  &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>at</b> (key_type const &amp;key) const</td></tr>
+<tr class="memitem:a9c0147f0e06d0eadf94bca6dcf921ad2"><td class="memTemplParams" colspan="2">template&lt;typename Q  = mapped_type&gt; </td></tr>
+<tr class="memitem:a9c0147f0e06d0eadf94bca6dcf921ad2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_void&lt; Q &gt;::value, Q const  &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a9c0147f0e06d0eadf94bca6dcf921ad2">at</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> const &amp;key) const</td></tr>
 <tr class="separator:a9c0147f0e06d0eadf94bca6dcf921ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a751521706e7da7240a271f9833116892"><td class="memItemLeft" align="right" valign="top"><a id="a751521706e7da7240a271f9833116892"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const key_type &amp;key) const</td></tr>
+<tr class="memitem:a751521706e7da7240a271f9833116892"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a751521706e7da7240a271f9833116892">find</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key) const</td></tr>
 <tr class="separator:a751521706e7da7240a271f9833116892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf60460a9051e969a3284fa14bd3c74a"><td class="memTemplParams" colspan="2"><a id="adf60460a9051e969a3284fa14bd3c74a"></a>
-template&lt;typename OtherKey &gt; </td></tr>
-<tr class="memitem:adf60460a9051e969a3284fa14bd3c74a"><td class="memTemplItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (const OtherKey &amp;key, <a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>) const</td></tr>
+<tr class="memitem:adf60460a9051e969a3284fa14bd3c74a"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey &gt; </td></tr>
+<tr class="memitem:adf60460a9051e969a3284fa14bd3c74a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#adf60460a9051e969a3284fa14bd3c74a">find</a> (const OtherKey &amp;key, <a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>) const</td></tr>
 <tr class="separator:adf60460a9051e969a3284fa14bd3c74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf3c7c0450e96a9bdad483e4ae02ae14"><td class="memTemplParams" colspan="2"><a id="adf3c7c0450e96a9bdad483e4ae02ae14"></a>
-template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
-<tr class="memitem:adf3c7c0450e96a9bdad483e4ae02ae14"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, const_iterator &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (const OtherKey &amp;key) const</td></tr>
+<tr class="memitem:adf3c7c0450e96a9bdad483e4ae02ae14"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
+<tr class="memitem:adf3c7c0450e96a9bdad483e4ae02ae14"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#adf3c7c0450e96a9bdad483e4ae02ae14">find</a> (const OtherKey &amp;key) const</td></tr>
 <tr class="separator:adf3c7c0450e96a9bdad483e4ae02ae14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0316a19c00f4502bea3158bf7b610c49"><td class="memItemLeft" align="right" valign="top"><a id="a0316a19c00f4502bea3158bf7b610c49"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const key_type &amp;key)</td></tr>
+<tr class="memitem:a0316a19c00f4502bea3158bf7b610c49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0316a19c00f4502bea3158bf7b610c49">find</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key)</td></tr>
 <tr class="separator:a0316a19c00f4502bea3158bf7b610c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c095537d9ce4bc041cab7a21caf3c3f"><td class="memTemplParams" colspan="2"><a id="a7c095537d9ce4bc041cab7a21caf3c3f"></a>
-template&lt;typename OtherKey &gt; </td></tr>
-<tr class="memitem:a7c095537d9ce4bc041cab7a21caf3c3f"><td class="memTemplItemLeft" align="right" valign="top">iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (const OtherKey &amp;key, <a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>)</td></tr>
+<tr class="memitem:a7c095537d9ce4bc041cab7a21caf3c3f"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey &gt; </td></tr>
+<tr class="memitem:a7c095537d9ce4bc041cab7a21caf3c3f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7c095537d9ce4bc041cab7a21caf3c3f">find</a> (const OtherKey &amp;key, <a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>)</td></tr>
 <tr class="separator:a7c095537d9ce4bc041cab7a21caf3c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d29c8d5499bff58299341d7b9af9c9"><td class="memTemplParams" colspan="2"><a id="aa8d29c8d5499bff58299341d7b9af9c9"></a>
-template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
-<tr class="memitem:aa8d29c8d5499bff58299341d7b9af9c9"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, iterator &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>find</b> (const OtherKey &amp;key)</td></tr>
+<tr class="memitem:aa8d29c8d5499bff58299341d7b9af9c9"><td class="memTemplParams" colspan="2">template&lt;typename OtherKey , typename Self_  = Self&gt; </td></tr>
+<tr class="memitem:aa8d29c8d5499bff58299341d7b9af9c9"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; Self_::is_transparent, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa8d29c8d5499bff58299341d7b9af9c9">find</a> (const OtherKey &amp;key)</td></tr>
 <tr class="separator:aa8d29c8d5499bff58299341d7b9af9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7d28059e51e869700275a52f10f792"><td class="memItemLeft" align="right" valign="top"><a id="add7d28059e51e869700275a52f10f792"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:add7d28059e51e869700275a52f10f792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#add7d28059e51e869700275a52f10f792">begin</a> ()</td></tr>
 <tr class="separator:add7d28059e51e869700275a52f10f792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9177e8678fba060701f8f14cfc79addb"><td class="memItemLeft" align="right" valign="top"><a id="a9177e8678fba060701f8f14cfc79addb"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
+<tr class="memitem:a9177e8678fba060701f8f14cfc79addb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a9177e8678fba060701f8f14cfc79addb">begin</a> () const</td></tr>
 <tr class="separator:a9177e8678fba060701f8f14cfc79addb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b30089c2562da0e517af454139d12ed"><td class="memItemLeft" align="right" valign="top"><a id="a9b30089c2562da0e517af454139d12ed"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const</td></tr>
+<tr class="memitem:a9b30089c2562da0e517af454139d12ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a9b30089c2562da0e517af454139d12ed">cbegin</a> () const</td></tr>
 <tr class="separator:a9b30089c2562da0e517af454139d12ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7617a36eda977a6a088a25e69e42b53f"><td class="memItemLeft" align="right" valign="top"><a id="a7617a36eda977a6a088a25e69e42b53f"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:a7617a36eda977a6a088a25e69e42b53f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7617a36eda977a6a088a25e69e42b53f">end</a> ()</td></tr>
 <tr class="separator:a7617a36eda977a6a088a25e69e42b53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a362e4bdcd6170fea20823e988aac353d"><td class="memItemLeft" align="right" valign="top"><a id="a362e4bdcd6170fea20823e988aac353d"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
+<tr class="memitem:a362e4bdcd6170fea20823e988aac353d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a362e4bdcd6170fea20823e988aac353d">end</a> () const</td></tr>
 <tr class="separator:a362e4bdcd6170fea20823e988aac353d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bdce506f7cf81f095ab6ee9d31caa78"><td class="memItemLeft" align="right" valign="top"><a id="a0bdce506f7cf81f095ab6ee9d31caa78"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const</td></tr>
+<tr class="memitem:a0bdce506f7cf81f095ab6ee9d31caa78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0bdce506f7cf81f095ab6ee9d31caa78">cend</a> () const</td></tr>
 <tr class="separator:a0bdce506f7cf81f095ab6ee9d31caa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0539538ef39c9c19c00253a705890919"><td class="memItemLeft" align="right" valign="top"><a id="a0539538ef39c9c19c00253a705890919"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (const_iterator pos)</td></tr>
+<tr class="memitem:a0539538ef39c9c19c00253a705890919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0539538ef39c9c19c00253a705890919">erase</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> pos)</td></tr>
 <tr class="separator:a0539538ef39c9c19c00253a705890919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2f4e3e5aa89a5807d2f772f29ccd42c"><td class="memItemLeft" align="right" valign="top"><a id="af2f4e3e5aa89a5807d2f772f29ccd42c"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (iterator pos)</td></tr>
+<tr class="memitem:af2f4e3e5aa89a5807d2f772f29ccd42c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af2f4e3e5aa89a5807d2f772f29ccd42c">erase</a> (<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> pos)</td></tr>
 <tr class="separator:af2f4e3e5aa89a5807d2f772f29ccd42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84476a4555d16f32431d3c7bf30ad6e4"><td class="memItemLeft" align="right" valign="top"><a id="a84476a4555d16f32431d3c7bf30ad6e4"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (const key_type &amp;key)</td></tr>
+<tr class="memitem:a84476a4555d16f32431d3c7bf30ad6e4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a84476a4555d16f32431d3c7bf30ad6e4">erase</a> (const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;key)</td></tr>
 <tr class="separator:a84476a4555d16f32431d3c7bf30ad6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0038ca0e91a80ac87330d7ce4ec9b3c4"><td class="memItemLeft" align="right" valign="top"><a id="a0038ca0e91a80ac87330d7ce4ec9b3c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rehash</b> (size_t c)</td></tr>
+<tr class="memitem:a0038ca0e91a80ac87330d7ce4ec9b3c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0038ca0e91a80ac87330d7ce4ec9b3c4">rehash</a> (size_t c)</td></tr>
 <tr class="separator:a0038ca0e91a80ac87330d7ce4ec9b3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c2d436df6800ac290cc26da5961a331"><td class="memItemLeft" align="right" valign="top"><a id="a6c2d436df6800ac290cc26da5961a331"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reserve</b> (size_t c)</td></tr>
+<tr class="memitem:a6c2d436df6800ac290cc26da5961a331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a6c2d436df6800ac290cc26da5961a331">reserve</a> (size_t c)</td></tr>
 <tr class="separator:a6c2d436df6800ac290cc26da5961a331"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3800a7d774d67a516acbd77b26649ab4"><td class="memItemLeft" align="right" valign="top"><a id="a3800a7d774d67a516acbd77b26649ab4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>compact</b> ()</td></tr>
+<tr class="memitem:a3800a7d774d67a516acbd77b26649ab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a3800a7d774d67a516acbd77b26649ab4">compact</a> ()</td></tr>
 <tr class="separator:a3800a7d774d67a516acbd77b26649ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa181b46b39e30eed42fa5efa3938909b"><td class="memItemLeft" align="right" valign="top"><a id="aa181b46b39e30eed42fa5efa3938909b"></a>
-size_type&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const noexcept</td></tr>
+<tr class="memitem:aa181b46b39e30eed42fa5efa3938909b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa181b46b39e30eed42fa5efa3938909b">size</a> () const noexcept</td></tr>
 <tr class="separator:aa181b46b39e30eed42fa5efa3938909b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe7368300bb9911dc370cfab2204b091"><td class="memItemLeft" align="right" valign="top"><a id="abe7368300bb9911dc370cfab2204b091"></a>
-size_type&#160;</td><td class="memItemRight" valign="bottom"><b>max_size</b> () const noexcept</td></tr>
+<tr class="memitem:abe7368300bb9911dc370cfab2204b091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#abe7368300bb9911dc370cfab2204b091">max_size</a> () const noexcept</td></tr>
 <tr class="separator:abe7368300bb9911dc370cfab2204b091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a634a4835bd928f2ae474b9d4c11dbfae"><td class="memItemLeft" align="right" valign="top"><a id="a634a4835bd928f2ae474b9d4c11dbfae"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ROBIN_HOOD</b> (NODISCARD) bool empty() const noexcept</td></tr>
+<tr class="memitem:a634a4835bd928f2ae474b9d4c11dbfae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a634a4835bd928f2ae474b9d4c11dbfae">ROBIN_HOOD</a> (NODISCARD) bool empty() const noexcept</td></tr>
 <tr class="separator:a634a4835bd928f2ae474b9d4c11dbfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf30acd1126007598469f9f251854b3"><td class="memItemLeft" align="right" valign="top"><a id="aadf30acd1126007598469f9f251854b3"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>max_load_factor</b> () const noexcept</td></tr>
+<tr class="memitem:aadf30acd1126007598469f9f251854b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aadf30acd1126007598469f9f251854b3">max_load_factor</a> () const noexcept</td></tr>
 <tr class="separator:aadf30acd1126007598469f9f251854b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab67bd7d78e3d520175471b18537e53d"><td class="memItemLeft" align="right" valign="top"><a id="aab67bd7d78e3d520175471b18537e53d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>load_factor</b> () const noexcept</td></tr>
+<tr class="memitem:aab67bd7d78e3d520175471b18537e53d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aab67bd7d78e3d520175471b18537e53d">load_factor</a> () const noexcept</td></tr>
 <tr class="separator:aab67bd7d78e3d520175471b18537e53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab57f691567c67c78db7af1a46353ba55"><td class="memItemLeft" align="right" valign="top"><a id="ab57f691567c67c78db7af1a46353ba55"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ROBIN_HOOD</b> (NODISCARD) size_t mask() const noexcept</td></tr>
+<tr class="memitem:ab57f691567c67c78db7af1a46353ba55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ab57f691567c67c78db7af1a46353ba55">ROBIN_HOOD</a> (NODISCARD) size_t mask() const noexcept</td></tr>
 <tr class="separator:ab57f691567c67c78db7af1a46353ba55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3da8028bb22366a69ef29646833473"><td class="memItemLeft" align="right" valign="top"><a id="a3a3da8028bb22366a69ef29646833473"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ROBIN_HOOD</b> (NODISCARD) size_t calcMaxNumElementsAllowed(size_t maxElements) const noexcept</td></tr>
+<tr class="memitem:a3a3da8028bb22366a69ef29646833473"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a3a3da8028bb22366a69ef29646833473">ROBIN_HOOD</a> (NODISCARD) size_t calcMaxNumElementsAllowed(size_t maxElements) const noexcept</td></tr>
 <tr class="separator:a3a3da8028bb22366a69ef29646833473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68ff7b9d2b41b77f1865470e652e3c2b"><td class="memItemLeft" align="right" valign="top"><a id="a68ff7b9d2b41b77f1865470e652e3c2b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ROBIN_HOOD</b> (NODISCARD) size_t calcNumBytesInfo(size_t numElements) const noexcept</td></tr>
+<tr class="memitem:a68ff7b9d2b41b77f1865470e652e3c2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a68ff7b9d2b41b77f1865470e652e3c2b">ROBIN_HOOD</a> (NODISCARD) size_t calcNumBytesInfo(size_t numElements) const noexcept</td></tr>
 <tr class="separator:a68ff7b9d2b41b77f1865470e652e3c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa208de708a56c35b077807c0d6302d22"><td class="memItemLeft" align="right" valign="top"><a id="aa208de708a56c35b077807c0d6302d22"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>calcNumElementsWithBuffer</b> (size_t numElements) const noexcept</td></tr>
+<tr class="memitem:aa208de708a56c35b077807c0d6302d22"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa208de708a56c35b077807c0d6302d22">calcNumElementsWithBuffer</a> (size_t numElements) const noexcept</td></tr>
 <tr class="separator:aa208de708a56c35b077807c0d6302d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2dab1133a8ea888d9a40a09f243bd8b"><td class="memItemLeft" align="right" valign="top"><a id="ab2dab1133a8ea888d9a40a09f243bd8b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ROBIN_HOOD</b> (NODISCARD) size_t calcNumBytesTotal(size_t numElements) const</td></tr>
+<tr class="memitem:ab2dab1133a8ea888d9a40a09f243bd8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ab2dab1133a8ea888d9a40a09f243bd8b">ROBIN_HOOD</a> (NODISCARD) size_t calcNumBytesTotal(size_t numElements) const</td></tr>
 <tr class="separator:ab2dab1133a8ea888d9a40a09f243bd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structrobin__hood_1_1detail_1_1_wrap_hash.html">robin_hood::detail::WrapHash&lt; Hash &gt;</a></td></tr>
-<tr class="memitem:ac92db51e480e335e45d163ba56eb40aa inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td class="memItemLeft" align="right" valign="top"><a id="ac92db51e480e335e45d163ba56eb40aa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WrapHash</b> (Hash const &amp;o) noexcept(noexcept(Hash(std::declval&lt; Hash const &amp; &gt;())))</td></tr>
+<tr class="memitem:ae77e58e8805b193c382bbefaf9d900b1 inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobin__hood_1_1detail_1_1_wrap_hash.html#ae77e58e8805b193c382bbefaf9d900b1">WrapHash</a> ()=default</td></tr>
+<tr class="separator:ae77e58e8805b193c382bbefaf9d900b1 inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac92db51e480e335e45d163ba56eb40aa inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobin__hood_1_1detail_1_1_wrap_hash.html#ac92db51e480e335e45d163ba56eb40aa">WrapHash</a> (Hash const &amp;o) noexcept(noexcept(Hash(std::declval&lt; Hash const &amp; &gt;())))</td></tr>
 <tr class="separator:ac92db51e480e335e45d163ba56eb40aa inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_hash"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structrobin__hood_1_1detail_1_1_wrap_key_equal.html">robin_hood::detail::WrapKeyEqual&lt; KeyEqual &gt;</a></td></tr>
-<tr class="memitem:a10b7c6e5946b86659452f657707f20f8 inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td class="memItemLeft" align="right" valign="top"><a id="a10b7c6e5946b86659452f657707f20f8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WrapKeyEqual</b> (KeyEqual const &amp;o) noexcept(noexcept(KeyEqual(std::declval&lt; KeyEqual const &amp; &gt;())))</td></tr>
+<tr class="memitem:a75147d169d4aa8f1fbe8ac469adbc18f inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobin__hood_1_1detail_1_1_wrap_key_equal.html#a75147d169d4aa8f1fbe8ac469adbc18f">WrapKeyEqual</a> ()=default</td></tr>
+<tr class="separator:a75147d169d4aa8f1fbe8ac469adbc18f inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b7c6e5946b86659452f657707f20f8 inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobin__hood_1_1detail_1_1_wrap_key_equal.html#a10b7c6e5946b86659452f657707f20f8">WrapKeyEqual</a> (KeyEqual const &amp;o) noexcept(noexcept(KeyEqual(std::declval&lt; KeyEqual const &amp; &gt;())))</td></tr>
 <tr class="separator:a10b7c6e5946b86659452f657707f20f8 inherit pub_methods_structrobin__hood_1_1detail_1_1_wrap_key_equal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:acbc8a6be27e6b6acb68601cc9b43374e"><td class="memItemLeft" align="right" valign="top"><a id="acbc8a6be27e6b6acb68601cc9b43374e"></a>
-static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_flat</b> = IsFlat</td></tr>
+<tr class="memitem:acbc8a6be27e6b6acb68601cc9b43374e"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#acbc8a6be27e6b6acb68601cc9b43374e">is_flat</a> = IsFlat</td></tr>
 <tr class="separator:acbc8a6be27e6b6acb68601cc9b43374e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c2d258850afd0923b137fef79235bd6"><td class="memItemLeft" align="right" valign="top"><a id="a0c2d258850afd0923b137fef79235bd6"></a>
-static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_map</b> = !std::is_void&lt;T&gt;::value</td></tr>
+<tr class="memitem:a0c2d258850afd0923b137fef79235bd6"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0c2d258850afd0923b137fef79235bd6">is_map</a> = !std::is_void&lt;T&gt;::value</td></tr>
 <tr class="separator:a0c2d258850afd0923b137fef79235bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0a05809764dcc1f5601019d9a1f7905"><td class="memItemLeft" align="right" valign="top"><a id="af0a05809764dcc1f5601019d9a1f7905"></a>
-static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_set</b> = !is_map</td></tr>
+<tr class="memitem:af0a05809764dcc1f5601019d9a1f7905"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af0a05809764dcc1f5601019d9a1f7905">is_set</a> = !<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0c2d258850afd0923b137fef79235bd6">is_map</a></td></tr>
 <tr class="separator:af0a05809764dcc1f5601019d9a1f7905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd4c2c18703cec7e07d846fae64e2a9"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_transparent</b></td></tr>
+<tr class="memitem:aefd4c2c18703cec7e07d846fae64e2a9"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aefd4c2c18703cec7e07d846fae64e2a9">is_transparent</a></td></tr>
 <tr class="separator:aefd4c2c18703cec7e07d846fae64e2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -340,7 +277,2338 @@ class robin_hood::detail::Table&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyE
 
 
 <p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00908">908</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a2876c055bf6f25ab7e2a14b3075bd7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2876c055bf6f25ab7e2a14b3075bd7ec">&#9670;&nbsp;</a></span>const_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> =  Iter&lt;true&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01494">1494</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a13180b774f5da55e353d0343dbeb8c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13180b774f5da55e353d0343dbeb8c86">&#9670;&nbsp;</a></span>hasher</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a13180b774f5da55e353d0343dbeb8c86">hasher</a> =  Hash</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00929">929</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a46c9f030f2bfd8e463660db58d3a0f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c9f030f2bfd8e463660db58d3a0f14">&#9670;&nbsp;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> =  Iter&lt;false&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01493">1493</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aa68503d58c08320ebfe5cf78185cc575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68503d58c08320ebfe5cf78185cc575">&#9670;&nbsp;</a></span>key_equal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa68503d58c08320ebfe5cf78185cc575">key_equal</a> =  KeyEqual</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00930">930</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a71358990733e9f0af7d2a2cb82f883d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71358990733e9f0af7d2a2cb82f883d4">&#9670;&nbsp;</a></span>key_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> =  Key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00923">923</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="ad57e98927ed028ee462aeaa6352f435e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57e98927ed028ee462aeaa6352f435e">&#9670;&nbsp;</a></span>mapped_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad57e98927ed028ee462aeaa6352f435e">mapped_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00924">924</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="ad933544cfb52d2729a6a6f200e59b666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad933544cfb52d2729a6a6f200e59b666">&#9670;&nbsp;</a></span>Self</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad933544cfb52d2729a6a6f200e59b666">Self</a> =  <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt;IsFlat, MaxLoadFactor100, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#ad57e98927ed028ee462aeaa6352f435e">mapped_type</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a13180b774f5da55e353d0343dbeb8c86">hasher</a>, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aa68503d58c08320ebfe5cf78185cc575">key_equal</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00931">931</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f1df95c74de5245e0dff74db3c7cfce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1df95c74de5245e0dff74db3c7cfce">&#9670;&nbsp;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a> =  size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00928">928</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa96e437f425b19604f49d654d54d7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa96e437f425b19604f49d654d54d7ce">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> =  typename std::conditional&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#af0a05809764dcc1f5601019d9a1f7905">is_set</a>, Key, <a class="el" href="structrobin__hood_1_1pair.html">robin_hood::pair</a>&lt;typename std::conditional&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#acbc8a6be27e6b6acb68601cc9b43374e">is_flat</a>, Key, Key const&gt;::type, T&gt; &gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00927">927</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad70deade1915f62d3d9a4409eb7b229b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70deade1915f62d3d9a4409eb7b229b">&#9670;&nbsp;</a></span>Table() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01496">1496</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a2fe9160a460041b6bd4d9aeeaab781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2fe9160a460041b6bd4d9aeeaab781">&#9670;&nbsp;</a></span>Table() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t &#160;</td>
+          <td class="paramname"><em>ROBIN_HOOD_UNUSED</em>bucket_count, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>h</em> = <code>Hash{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyEqual &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code>KeyEqual{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01507">1507</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a367b27209a9e61ec825ab1c0fb6a7225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367b27209a9e61ec825ab1c0fb6a7225">&#9670;&nbsp;</a></span>Table() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iter &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &#160;</td>
+          <td class="paramname"><em>ROBIN_HOOD_UNUSED</em>bucket_count = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>h</em> = <code>Hash{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyEqual &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code>KeyEqual{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01516">1516</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="af2c227765ba6707e003ce5f46f57f3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c227765ba6707e003ce5f46f57f3a1">&#9670;&nbsp;</a></span>Table() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &gt;&#160;</td>
+          <td class="paramname"><em>initlist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &#160;</td>
+          <td class="paramname"><em>ROBIN_HOOD_UNUSED</em>bucket_count = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Hash &amp;&#160;</td>
+          <td class="paramname"><em>h</em> = <code>Hash{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyEqual &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code>KeyEqual{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01524">1524</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a4bd8bf8273183d4657def8a5efae42f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd8bf8273183d4657def8a5efae42f9">&#9670;&nbsp;</a></span>Table() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01533">1533</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb88d60adc8d4bed347fa4e3daa98531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb88d60adc8d4bed347fa4e3daa98531">&#9670;&nbsp;</a></span>Table() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01580">1580</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a9f58ad180fed399cee94426c8fc1099d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f58ad180fed399cee94426c8fc1099d">&#9670;&nbsp;</a></span>~Table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::~<a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01702">1702</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0d466b8ba45024362193eac9a75ac58d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d466b8ba45024362193eac9a75ac58d">&#9670;&nbsp;</a></span>at() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Q  = mapped_type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!std::is_void&lt;Q&gt;::value, Q&amp;&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01912">1912</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c0147f0e06d0eadf94bca6dcf921ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0147f0e06d0eadf94bca6dcf921ad2">&#9670;&nbsp;</a></span>at() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Q  = mapped_type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!std::is_void&lt;Q&gt;::value, Q const&amp;&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01925">1925</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="add7d28059e51e869700275a52f10f792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7d28059e51e869700275a52f10f792">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01976">1976</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a9177e8678fba060701f8f14cfc79addb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9177e8678fba060701f8f14cfc79addb">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01983">1983</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aa208de708a56c35b077807c0d6302d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa208de708a56c35b077807c0d6302d22">&#9670;&nbsp;</a></span>calcNumElementsWithBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::calcNumElementsWithBuffer </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numElements</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02137">2137</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b30089c2562da0e517af454139d12ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b30089c2562da0e517af454139d12ed">&#9670;&nbsp;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01987">1987</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0bdce506f7cf81f095ab6ee9d31caa78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdce506f7cf81f095ab6ee9d31caa78">&#9670;&nbsp;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02005">2005</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a63f44cedc183bf0e0c51c1ef0343897a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f44cedc183bf0e0c51c1ef0343897a">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01681">1681</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a3800a7d774d67a516acbd77b26649ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3800a7d774d67a516acbd77b26649ab4">&#9670;&nbsp;</a></span>compact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::compact </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02071">2071</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a79fdf3ba7034cb3eb36bbda40ec2d3c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79fdf3ba7034cb3eb36bbda40ec2d3c7">&#9670;&nbsp;</a></span>contains() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01898">1898</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a595fe17eb846e867e89bd8deaf78a9e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595fe17eb846e867e89bd8deaf78a9e8">&#9670;&nbsp;</a></span>contains() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey , typename Self_  = Self&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;Self_::is_transparent, bool&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01904">1904</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a98a73a7b295dc5cb50304068fbd811bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a73a7b295dc5cb50304068fbd811bd">&#9670;&nbsp;</a></span>count() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01878">1878</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="afb32389eb41a797c91f5cb1319ed6fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb32389eb41a797c91f5cb1319ed6fc0">&#9670;&nbsp;</a></span>count() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey , typename Self_  = Self&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;Self_::is_transparent, size_t&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01889">1889</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a6364cae0784d401af7cec792f69b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6364cae0784d401af7cec792f69b2d">&#9670;&nbsp;</a></span>emplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::emplace </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01795">1795</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a7617a36eda977a6a088a25e69e42b53f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7617a36eda977a6a088a25e69e42b53f">&#9670;&nbsp;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01995">1995</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a362e4bdcd6170fea20823e988aac353d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362e4bdcd6170fea20823e988aac353d">&#9670;&nbsp;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02001">2001</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a84476a4555d16f32431d3c7bf30ad6e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84476a4555d16f32431d3c7bf30ad6e4">&#9670;&nbsp;</a></span>erase() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02035">2035</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0539538ef39c9c19c00253a705890919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0539538ef39c9c19c00253a705890919">&#9670;&nbsp;</a></span>erase() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02010">2010</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="af2f4e3e5aa89a5807d2f772f29ccd42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f4e3e5aa89a5807d2f772f29ccd42c">&#9670;&nbsp;</a></span>erase() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02018">2018</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0316a19c00f4502bea3158bf7b610c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0316a19c00f4502bea3158bf7b610c49">&#9670;&nbsp;</a></span>find() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01956">1956</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a751521706e7da7240a271f9833116892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a751521706e7da7240a271f9833116892">&#9670;&nbsp;</a></span>find() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01934">1934</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8d29c8d5499bff58299341d7b9af9c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d29c8d5499bff58299341d7b9af9c9">&#9670;&nbsp;</a></span>find() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey , typename Self_  = Self&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;Self_::is_transparent, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01970">1970</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="adf3c7c0450e96a9bdad483e4ae02ae14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3c7c0450e96a9bdad483e4ae02ae14">&#9670;&nbsp;</a></span>find() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey , typename Self_  = Self&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;Self_::is_transparent, <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01950">1950</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a7c095537d9ce4bc041cab7a21caf3c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c095537d9ce4bc041cab7a21caf3c3f">&#9670;&nbsp;</a></span>find() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01963">1963</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="adf60460a9051e969a3284fa14bd3c74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf60460a9051e969a3284fa14bd3c74a">&#9670;&nbsp;</a></span>find() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename OtherKey &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const OtherKey &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrobin__hood_1_1is__transparent__tag.html">is_transparent_tag</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01941">1941</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a4686cb83428318f86560bb2d40cc1811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4686cb83428318f86560bb2d40cc1811">&#9670;&nbsp;</a></span>insert() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>keyval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01868">1868</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="afaf52ac516fda1480f9fe83af37dbc1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf52ac516fda1480f9fe83af37dbc1d">&#9670;&nbsp;</a></span>insert() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iter &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01781">1781</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9208d5701485d0bec9211d5f1c99f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9208d5701485d0bec9211d5f1c99f97">&#9670;&nbsp;</a></span>insert() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &gt;&#160;</td>
+          <td class="paramname"><em>ilist</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01788">1788</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a3614f574e1f1d567028cf7032681c020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3614f574e1f1d567028cf7032681c020">&#9670;&nbsp;</a></span>insert() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#aaa96e437f425b19604f49d654d54d7ce">value_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>keyval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01873">1873</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a950170921b778149a3484744821a352a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a950170921b778149a3484744821a352a">&#9670;&nbsp;</a></span>insert_or_assign() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Mapped &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert_or_assign </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Mapped &amp;&amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01846">1846</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0653cf9f09d02a76a8ba8cc468fc3a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0653cf9f09d02a76a8ba8cc468fc3a9f">&#9670;&nbsp;</a></span>insert_or_assign() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Mapped &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert_or_assign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Mapped &amp;&amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01856">1856</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0792385a6961c06e7e38925af45ae1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0792385a6961c06e7e38925af45ae1a4">&#9670;&nbsp;</a></span>insert_or_assign() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Mapped &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert_or_assign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Mapped &amp;&amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01863">1863</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a334b766430187a1ded42b54650ee1479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334b766430187a1ded42b54650ee1479">&#9670;&nbsp;</a></span>insert_or_assign() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Mapped &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::insert_or_assign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Mapped &amp;&amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01851">1851</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aab67bd7d78e3d520175471b18537e53d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab67bd7d78e3d520175471b18537e53d">&#9670;&nbsp;</a></span>load_factor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::load_factor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02111">2111</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aadf30acd1126007598469f9f251854b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadf30acd1126007598469f9f251854b3">&#9670;&nbsp;</a></span>max_load_factor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::max_load_factor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02105">2105</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="abe7368300bb9911dc370cfab2204b091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7368300bb9911dc370cfab2204b091">&#9670;&nbsp;</a></span>max_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::max_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02095">2095</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a70c3d7f130f32a133aa7cd90034a6e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c3d7f130f32a133aa7cd90034a6e35">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01722">1722</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="adccf7c9573573c92794471275ee764a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adccf7c9573573c92794471275ee764a1">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&amp; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01552">1552</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a6dfa81768d98c8dfd23e50e716632801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dfa81768d98c8dfd23e50e716632801">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&amp; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01611">1611</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b063819c28f1800f35e6ef0033a334a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b063819c28f1800f35e6ef0033a334a">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01708">1708</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="ad844ebcf70743e94a39eb75f69876533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad844ebcf70743e94a39eb75f69876533">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Q  = mapped_type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!std::is_void&lt;Q&gt;::value, Q&amp;&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01728">1728</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="adc1927a4d896dd259ef031aaa8fb2575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1927a4d896dd259ef031aaa8fb2575">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename Q  = mapped_type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!std::is_void&lt;Q&gt;::value, Q&amp;&gt;::type <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01754">1754</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0038ca0e91a80ac87330d7ce4ec9b3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0038ca0e91a80ac87330d7ce4ec9b3c4">&#9670;&nbsp;</a></span>rehash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::rehash </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02057">2057</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c2d436df6800ac290cc26da5961a331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c2d436df6800ac290cc26da5961a331">&#9670;&nbsp;</a></span>reserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::reserve </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02064">2064</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a634a4835bd928f2ae474b9d4c11dbfae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634a4835bd928f2ae474b9d4c11dbfae">&#9670;&nbsp;</a></span>ROBIN_HOOD() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::ROBIN_HOOD </td>
+          <td>(</td>
+          <td class="paramtype">NODISCARD&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02100">2100</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a3da8028bb22366a69ef29646833473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3da8028bb22366a69ef29646833473">&#9670;&nbsp;</a></span>ROBIN_HOOD() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::ROBIN_HOOD </td>
+          <td>(</td>
+          <td class="paramtype">NODISCARD&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02121">2121</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a68ff7b9d2b41b77f1865470e652e3c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ff7b9d2b41b77f1865470e652e3c2b">&#9670;&nbsp;</a></span>ROBIN_HOOD() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::ROBIN_HOOD </td>
+          <td>(</td>
+          <td class="paramtype">NODISCARD&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02130">2130</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2dab1133a8ea888d9a40a09f243bd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2dab1133a8ea888d9a40a09f243bd8b">&#9670;&nbsp;</a></span>ROBIN_HOOD() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::ROBIN_HOOD </td>
+          <td>(</td>
+          <td class="paramtype">NODISCARD&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02143">2143</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="ab57f691567c67c78db7af1a46353ba55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57f691567c67c78db7af1a46353ba55">&#9670;&nbsp;</a></span>ROBIN_HOOD() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::ROBIN_HOOD </td>
+          <td>(</td>
+          <td class="paramtype">NODISCARD&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02116">2116</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="aa181b46b39e30eed42fa5efa3938909b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa181b46b39e30eed42fa5efa3938909b">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a7f1df95c74de5245e0dff74db3c7cfce">size_type</a> <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l02090">2090</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a35659bfc4c799a774d5c2e60f2b19dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35659bfc4c799a774d5c2e60f2b19dff">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html">Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01674">1674</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="acc93414b0ebafa2dbcaaf7095f00da44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc93414b0ebafa2dbcaaf7095f00da44">&#9670;&nbsp;</a></span>try_emplace() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::try_emplace </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01823">1823</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a560563a61f670c3193632664a5d37485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560563a61f670c3193632664a5d37485">&#9670;&nbsp;</a></span>try_emplace() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::try_emplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01833">1833</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a73d14eacffaa05a0fd2bdcb1e9e277c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d14eacffaa05a0fd2bdcb1e9e277c3">&#9670;&nbsp;</a></span>try_emplace() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::try_emplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a2876c055bf6f25ab7e2a14b3075bd7ec">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01840">1840</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="af50253b285645da4c6952d87200061d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50253b285645da4c6952d87200061d3">&#9670;&nbsp;</a></span>try_emplace() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14">iterator</a>, bool&gt; <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::try_emplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a71358990733e9f0af7d2a2cb82f883d4">key_type</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l01828">1828</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="acbc8a6be27e6b6acb68601cc9b43374e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc8a6be27e6b6acb68601cc9b43374e">&#9670;&nbsp;</a></span>is_flat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::is_flat = IsFlat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00917">917</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c2d258850afd0923b137fef79235bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2d258850afd0923b137fef79235bd6">&#9670;&nbsp;</a></span>is_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::is_map = !std::is_void&lt;T&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00918">918</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
+<a id="af0a05809764dcc1f5601019d9a1f7905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a05809764dcc1f5601019d9a1f7905">&#9670;&nbsp;</a></span>is_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool IsFlat, size_t MaxLoadFactor100, typename Key , typename T , typename Hash , typename KeyEqual &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a>&lt; IsFlat, MaxLoadFactor100, Key, T, Hash, KeyEqual &gt;::is_set = !<a class="el" href="classrobin__hood_1_1detail_1_1_table.html#a0c2d258850afd0923b137fef79235bd6">is_map</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="robin__hood_8h_source.html#l00919">919</a> of file <a class="el" href="robin__hood_8h_source.html">robin_hood.h</a>.</p>
+
+</div>
+</div>
 <a id="aefd4c2c18703cec7e07d846fae64e2a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefd4c2c18703cec7e07d846fae64e2a9">&#9670;&nbsp;</a></span>is_transparent</h2>
 

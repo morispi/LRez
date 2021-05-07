@@ -1,7 +1,29 @@
 var searchData=
 [
-  ['wraphash_30',['WrapHash',['../structrobin__hood_1_1detail_1_1_wrap_hash.html',1,'robin_hood::detail']]],
-  ['wraphash_3c_20hash_20_3e_31',['WrapHash&lt; Hash &gt;',['../structrobin__hood_1_1detail_1_1_wrap_hash.html',1,'robin_hood::detail']]],
-  ['wrapkeyequal_32',['WrapKeyEqual',['../structrobin__hood_1_1detail_1_1_wrap_key_equal.html',1,'robin_hood::detail']]],
-  ['wrapkeyequal_3c_20keyequal_20_3e_33',['WrapKeyEqual&lt; KeyEqual &gt;',['../structrobin__hood_1_1detail_1_1_wrap_key_equal.html',1,'robin_hood::detail']]]
+  ['in_87',['in',['../structpoint.html#a16081c689cb453c89d844ffc88a7a211',1,'point']]],
+  ['index_5fsequence_88',['index_sequence',['../namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d.html#ad79958c91646c10e491239d566585fea',1,'robin_hood::ROBIN_HOOD_STD']]],
+  ['index_5fsequence_5ffor_89',['index_sequence_for',['../namespacerobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d.html#a3a3ba91d75757b070db6b27a85bbad1e',1,'robin_hood::ROBIN_HOOD_STD']]],
+  ['indexbam_2eh_90',['indexBam.h',['../index_bam_8h.html',1,'']]],
+  ['indexbarcodesfromfastq_91',['indexBarcodesFromFastq',['../index_management_fastq_8h.html#af00f52b2e09b8ed681408b0914f9b157',1,'indexManagementFastq.h']]],
+  ['indexbarcodesfromfastqgz_92',['indexBarcodesFromFastqGz',['../index_management_fastq_8h.html#ae7ac3e5bf60d4317815b9b7048d0de64',1,'indexManagementFastq.h']]],
+  ['indexbarcodesoffsetsfrombam_93',['indexBarcodesOffsetsFromBam',['../index_management_bam_8h.html#a705f58cf76488887fabcbed11b22b3c7',1,'indexManagementBam.h']]],
+  ['indexbarcodespositionsfrombam_94',['indexBarcodesPositionsFromBam',['../index_management_bam_8h.html#a34546ccadd5f2d778f3ff5cd57ee81ee',1,'indexManagementBam.h']]],
+  ['indexfastq_2eh_95',['indexFastq.h',['../index_fastq_8h.html',1,'']]],
+  ['indexmanagementbam_2eh_96',['indexManagementBam.h',['../index_management_bam_8h.html',1,'']]],
+  ['indexmanagementfastq_2eh_97',['indexManagementFastq.h',['../index_management_fastq_8h.html',1,'']]],
+  ['insert_98',['insert',['../classrobin__hood_1_1detail_1_1_table.html#afaf52ac516fda1480f9fe83af37dbc1d',1,'robin_hood::detail::Table::insert(Iter first, Iter last)'],['../classrobin__hood_1_1detail_1_1_table.html#aa9208d5701485d0bec9211d5f1c99f97',1,'robin_hood::detail::Table::insert(std::initializer_list&lt; value_type &gt; ilist)'],['../classrobin__hood_1_1detail_1_1_table.html#a4686cb83428318f86560bb2d40cc1811',1,'robin_hood::detail::Table::insert(const value_type &amp;keyval)'],['../classrobin__hood_1_1detail_1_1_table.html#a3614f574e1f1d567028cf7032681c020',1,'robin_hood::detail::Table::insert(value_type &amp;&amp;keyval)']]],
+  ['insert_5for_5fassign_99',['insert_or_assign',['../classrobin__hood_1_1detail_1_1_table.html#a950170921b778149a3484744821a352a',1,'robin_hood::detail::Table::insert_or_assign(const key_type &amp;key, Mapped &amp;&amp;obj)'],['../classrobin__hood_1_1detail_1_1_table.html#a334b766430187a1ded42b54650ee1479',1,'robin_hood::detail::Table::insert_or_assign(key_type &amp;&amp;key, Mapped &amp;&amp;obj)'],['../classrobin__hood_1_1detail_1_1_table.html#a0653cf9f09d02a76a8ba8cc468fc3a9f',1,'robin_hood::detail::Table::insert_or_assign(const_iterator hint, const key_type &amp;key, Mapped &amp;&amp;obj)'],['../classrobin__hood_1_1detail_1_1_table.html#a0792385a6961c06e7e38925af45ae1a4',1,'robin_hood::detail::Table::insert_or_assign(const_iterator hint, key_type &amp;&amp;key, Mapped &amp;&amp;obj)']]],
+  ['integer_5fsequence_100',['integer_sequence',['../classrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1integer__sequence.html',1,'robin_hood::ROBIN_HOOD_STD']]],
+  ['intseqcombiner_101',['IntSeqCombiner',['../structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_1_1_int_seq_combiner.html',1,'robin_hood::ROBIN_HOOD_STD::detail_::IntSeqImpl']]],
+  ['intseqcombiner_3c_20integer_5fsequence_3c_20tvalue_2c_20inds0_2e_2e_2e_20_3e_2c_20integer_5fsequence_3c_20tvalue_2c_20inds1_2e_2e_2e_20_3e_20_3e_102',['IntSeqCombiner&lt; integer_sequence&lt; TValue, Inds0... &gt;, integer_sequence&lt; TValue, Inds1... &gt; &gt;',['../structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_1_1_int_seq_combi33ef6a3dff719931d18d63456a795256.html',1,'robin_hood::ROBIN_HOOD_STD::detail_::IntSeqImpl']]],
+  ['intseqimpl_103',['IntSeqImpl',['../structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl.html',1,'robin_hood::ROBIN_HOOD_STD::detail_']]],
+  ['intseqimpl_3c_20t_2c_20begin_2c_20begin_2c_20false_20_3e_104',['IntSeqImpl&lt; T, Begin, Begin, false &gt;',['../structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_3_01_t_00_01_begin_00_01_begin_00_01false_01_4.html',1,'robin_hood::ROBIN_HOOD_STD::detail_']]],
+  ['intseqimpl_3c_20t_2c_20begin_2c_20end_2c_20true_20_3e_105',['IntSeqImpl&lt; T, Begin, End, true &gt;',['../structrobin__hood_1_1_r_o_b_i_n___h_o_o_d___s_t_d_1_1detail___1_1_int_seq_impl_3_01_t_00_01_begin_00_01_end_00_01true_01_4.html',1,'robin_hood::ROBIN_HOOD_STD::detail_']]],
+  ['is_5fflat_106',['is_flat',['../classrobin__hood_1_1detail_1_1_table.html#acbc8a6be27e6b6acb68601cc9b43374e',1,'robin_hood::detail::Table']]],
+  ['is_5fmap_107',['is_map',['../classrobin__hood_1_1detail_1_1_table.html#a0c2d258850afd0923b137fef79235bd6',1,'robin_hood::detail::Table']]],
+  ['is_5fset_108',['is_set',['../classrobin__hood_1_1detail_1_1_table.html#af0a05809764dcc1f5601019d9a1f7905',1,'robin_hood::detail::Table']]],
+  ['is_5ftransparent_109',['is_transparent',['../classrobin__hood_1_1detail_1_1_table.html#aefd4c2c18703cec7e07d846fae64e2a9',1,'robin_hood::detail::Table']]],
+  ['is_5ftransparent_5ftag_110',['is_transparent_tag',['../structrobin__hood_1_1is__transparent__tag.html',1,'robin_hood']]],
+  ['isvalidbarcode_111',['isValidBarcode',['../utils_8h.html#a375189835d16da34bb53fc8f0d548426',1,'utils.h']]],
+  ['iterator_112',['iterator',['../classrobin__hood_1_1detail_1_1_table.html#a46c9f030f2bfd8e463660db58d3a0f14',1,'robin_hood::detail::Table']]]
 ];

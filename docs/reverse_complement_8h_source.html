@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
+   &#160;<span id="projectnumber">2.1</span>
    </div>
   </td>
  </tr>
@@ -69,23 +70,23 @@ $(function() {
 <div class="title">reverseComplement.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __REVCOMP__</span></div>
+<a href="reverse_complement_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __REVCOMP__</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __REVCOMP__</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classrev__comp.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrev__comp.html">rev_comp</a> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keyword">static</span> std::string run(std::string seq);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="classrev__comp.html#a43e8955ae2817c66e27d8b73baea6792">run</a>(std::string seq);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">static</span> <a class="code" href="classrev__comp.html">rev_comp</a>* _instance;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classrev__comp.html#a4b0413e946f14c56c44c5a4424d9c685">   11</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classrev__comp.html">rev_comp</a>* <a class="code" href="classrev__comp.html#a4b0413e946f14c56c44c5a4424d9c685">_instance</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> build_instance();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classrev__comp.html#a19222c115d07c818141cad0ffba9d9b4">build_instance</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classrev__comp.html">rev_comp</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classrev__comp.html#a9318af7c84e258444c8179c7d732c49d">rev_comp</a>();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        ~<a class="code" href="classrev__comp.html">rev_comp</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classrev__comp.html#a3bde183db81b699a5099f2e51cf54ad3">~rev_comp</a>();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> complement[int(<span class="charliteral">&#39;t&#39;</span>) + 1];</div>
@@ -93,7 +94,12 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassrev__comp_html_a3bde183db81b699a5099f2e51cf54ad3"><div class="ttname"><a href="classrev__comp.html#a3bde183db81b699a5099f2e51cf54ad3">rev_comp::~rev_comp</a></div><div class="ttdeci">~rev_comp()</div></div>
+<div class="ttc" id="aclassrev__comp_html_a4b0413e946f14c56c44c5a4424d9c685"><div class="ttname"><a href="classrev__comp.html#a4b0413e946f14c56c44c5a4424d9c685">rev_comp::_instance</a></div><div class="ttdeci">static rev_comp * _instance</div><div class="ttdef"><b>Definition:</b> <a href="reverse_complement_8h_source.html#l00011">reverseComplement.h:11</a></div></div>
 <div class="ttc" id="aclassrev__comp_html"><div class="ttname"><a href="classrev__comp.html">rev_comp</a></div><div class="ttdef"><b>Definition:</b> <a href="reverse_complement_8h_source.html#l00006">reverseComplement.h:6</a></div></div>
+<div class="ttc" id="aclassrev__comp_html_a43e8955ae2817c66e27d8b73baea6792"><div class="ttname"><a href="classrev__comp.html#a43e8955ae2817c66e27d8b73baea6792">rev_comp::run</a></div><div class="ttdeci">static std::string run(std::string seq)</div></div>
+<div class="ttc" id="aclassrev__comp_html_a9318af7c84e258444c8179c7d732c49d"><div class="ttname"><a href="classrev__comp.html#a9318af7c84e258444c8179c7d732c49d">rev_comp::rev_comp</a></div><div class="ttdeci">rev_comp()</div></div>
+<div class="ttc" id="aclassrev__comp_html_a19222c115d07c818141cad0ffba9d9b4"><div class="ttname"><a href="classrev__comp.html#a19222c115d07c818141cad0ffba9d9b4">rev_comp::build_instance</a></div><div class="ttdeci">static void build_instance()</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

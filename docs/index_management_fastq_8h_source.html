@@ -22,6 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">LRez
+   &#160;<span id="projectnumber">2.1</span>
    </div>
   </td>
  </tr>
@@ -69,29 +70,36 @@ $(function() {
 <div class="title">indexManagementFastq.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __LREZ_INDEX_MANAGEMENT_FASTQ__</span></div>
+<a href="index_management_fastq_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __LREZ_INDEX_MANAGEMENT_FASTQ__</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __LREZ_INDEX_MANAGEMENT_FASTQ__</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;robin_hood.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;utils.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="robin__hood_8h.html">robin_hood.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">typedef</span> <a class="code" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::unordered_map&lt;barcode, vector&lt;int64_t&gt;</a>&gt; <a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">   10</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::unordered_map&lt;barcode, vector&lt;int64_t&gt;</a>&gt; <a class="code" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> indexBarcodesFromFastq(<span class="keywordtype">string</span> fastqFile);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> <a class="code" href="index_management_fastq_8h.html#af00f52b2e09b8ed681408b0914f9b157">indexBarcodesFromFastq</a>(<span class="keywordtype">string</span> fastqFile);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> indexBarcodesFromFastqGz(<span class="keywordtype">string</span> fastqFile);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> <a class="code" href="index_management_fastq_8h.html#ae7ac3e5bf60d4317815b9b7048d0de64">indexBarcodesFromFastqGz</a>(<span class="keywordtype">string</span> fastqFile);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> saveBarcodesIndex(<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a>&amp; index, <span class="keywordtype">string</span> file);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="index_management_fastq_8h.html#a89e172c556e90e191ffbd5e44e63b85c">saveBarcodesIndex</a>(<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a>&amp; index, <span class="keywordtype">string</span> file);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> loadBarcodesIndex(<span class="keywordtype">string</span> file);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="classrobin__hood_1_1detail_1_1_table.html">BarcodesIndex</a> <a class="code" href="index_management_fastq_8h.html#ae8289e454127654cd59f02dc89d045b6">loadBarcodesIndex</a>(<span class="keywordtype">string</span> file);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aindex_management_fastq_8h_html_af00f52b2e09b8ed681408b0914f9b157"><div class="ttname"><a href="index_management_fastq_8h.html#af00f52b2e09b8ed681408b0914f9b157">indexBarcodesFromFastq</a></div><div class="ttdeci">BarcodesIndex indexBarcodesFromFastq(string fastqFile)</div></div>
+<div class="ttc" id="arobin__hood_8h_html"><div class="ttname"><a href="robin__hood_8h.html">robin_hood.h</a></div></div>
+<div class="ttc" id="aindex_management_fastq_8h_html_a480a946ba38728216e3c2dc9e05046b4"><div class="ttname"><a href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a></div><div class="ttdeci">robin_hood::unordered_map&lt; barcode, vector&lt; int64_t &gt; &gt; BarcodesIndex</div><div class="ttdef"><b>Definition:</b> <a href="index_management_fastq_8h_source.html#l00010">indexManagementFastq.h:10</a></div></div>
+<div class="ttc" id="aindex_management_fastq_8h_html_a89e172c556e90e191ffbd5e44e63b85c"><div class="ttname"><a href="index_management_fastq_8h.html#a89e172c556e90e191ffbd5e44e63b85c">saveBarcodesIndex</a></div><div class="ttdeci">void saveBarcodesIndex(BarcodesIndex &amp;index, string file)</div></div>
+<div class="ttc" id="aindex_management_fastq_8h_html_ae8289e454127654cd59f02dc89d045b6"><div class="ttname"><a href="index_management_fastq_8h.html#ae8289e454127654cd59f02dc89d045b6">loadBarcodesIndex</a></div><div class="ttdeci">BarcodesIndex loadBarcodesIndex(string file)</div></div>
+<div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="aindex_management_fastq_8h_html_ae7ac3e5bf60d4317815b9b7048d0de64"><div class="ttname"><a href="index_management_fastq_8h.html#ae7ac3e5bf60d4317815b9b7048d0de64">indexBarcodesFromFastqGz</a></div><div class="ttdeci">BarcodesIndex indexBarcodesFromFastqGz(string fastqFile)</div></div>
 <div class="ttc" id="aclassrobin__hood_1_1detail_1_1_table_html"><div class="ttname"><a href="classrobin__hood_1_1detail_1_1_table.html">robin_hood::detail::Table</a></div><div class="ttdef"><b>Definition:</b> <a href="robin__hood_8h_source.html#l00908">robin_hood.h:908</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
