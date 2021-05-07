@@ -13,7 +13,6 @@
 	@param b barcode of interest, in binary representation
 	@return the alignment of interest
 */
-// TODO : find another way to check wether alignment was found or not
 BamAlignment retrieveAlignmentWithBarcode(BamAlignment* alignment, BamReader& reader, int64_t position, barcode b);
 
 

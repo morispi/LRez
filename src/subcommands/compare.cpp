@@ -21,13 +21,12 @@ void subcommandCompare(int argc, char* argv[]) {
 		{"index",		required_argument,	0, 'i'},
 		{"size",		required_argument,	0, 's'},
 		{"output",		required_argument,	0, 'o'},
-		{"userx",			no_argument,	0, 'u'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:r:c:i:s:o:u", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:r:c:i:s:o:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("compare");
 	}
@@ -51,14 +50,12 @@ void subcommandCompare(int argc, char* argv[]) {
 			case 'o':
 				outputFile = optarg;
 				break;
-			case 'u':
-				CONSIDER_RX = true;
 				break;
 			default:
 				subcommandHelp("extract");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:r:c:i:s:o:u", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:r:c:i:s:o:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -66,7 +63,7 @@ void subcommandCompare(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 	if (regionsFile.empty() and contig.empty()) {
-		fprintf(stderr, "Please specify a file containg a list of regions with option --region/-r, specify a contig of interest with option --contig/-c.\n");
+		fprintf(stderr, "Please specify a file containing a list of regions with option --region/-r, or specify a contig of interest with option --contig/-c.\n");
 		exit(EXIT_FAILURE);
 	}
 	if (!regionsFile.empty() and !contig.empty()) {

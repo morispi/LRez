@@ -1,9 +1,5 @@
 #include "alignmentsRetrieval.h"
 #include "reverseComplement.h"
-#include <chrono>
-
-
-using namespace std::chrono;
 
 BamAlignment retrieveAlignmentWithBarcode(BamReader& reader, int64_t position, barcode b) {
 	BamAlignment al;
@@ -66,11 +62,11 @@ vector<BamAlignment> retrieveAlignmentsWithBarcodes_BamReader(BamReader& reader,
 	}
 
 	while (getline(bc, line)) {
-		tmp = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, line);
-		for (BamAlignment al : tmp) {
-			res.push_back(al);
-		}
-	}
+            tmp = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, line);
+            for (BamAlignment al : tmp) {
+                    res.push_back(al);
+            }
+    }
 
 	bc.close();
 

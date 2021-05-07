@@ -9,8 +9,8 @@ void subcommandExtract(int argc, char* argv[]) {
 	string bamFile;
 	string region;
 	bool extractAll = false;
+	bool duplicates = false;
 	string outputFile;
-	robin_hood::unordered_set<barcode> barcodes;
 	BamReader reader;
 	ofstream out;
 	BamRegion r;
@@ -20,13 +20,12 @@ void subcommandExtract(int argc, char* argv[]) {
 		{"region",	required_argument,	0, 'r'},
 		{"all",		no_argument,		0, 'a'},
 		{"output",	required_argument,	0, 'o'},
-		{"userx",			no_argument,	0, 'u'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:r:o:au", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:r:o:ad", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("extract");
 	}
@@ -44,14 +43,13 @@ void subcommandExtract(int argc, char* argv[]) {
 			case 'o':
 				outputFile = optarg;
 				break;
-			case 'u':
-				CONSIDER_RX = true;
-				break;
+			case 'd':
+				duplicates = true;
 			default:
 				subcommandHelp("extract");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:r:o:au", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:r:o:ad", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -67,25 +65,54 @@ void subcommandExtract(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	if (extractAll) {
-		barcodes = extractBarcodesBitsFromBAM(bamFile);
-	} else {
-		barcodes = extractBarcodesBitsFromRegion(bamFile, region);
-	}
+	if (!duplicates) {
+		robin_hood::unordered_set<string> barcodes;
 
-	if (!outputFile.empty()) {
-		out.open(outputFile, ios::out);
-		if (!out.is_open()) {
-			fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
-			exit(EXIT_FAILURE);
+		if (extractAll) {
+			barcodes = extractBarcodesSeqsFromBAM(bamFile);
+		} else {
+			barcodes = extractBarcodesSeqsFromRegion(bamFile, region);
 		}
-		for (barcode b : barcodes) {
-			out << barcodeToString(b) << endl;
-		}
-		out.close();
+
+		if (!outputFile.empty()) {
+			out.open(outputFile, ios::out);
+			if (!out.is_open()) {
+				fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
+				exit(EXIT_FAILURE);
+			}
+			for (string b : barcodes) {
+				out << b << endl;
+			}
+			out.close();
+		} else {
+			for (string b : barcodes) {
+				cout << b << endl;
+			}
+		}		
 	} else {
-		for (barcode b : barcodes) {
-			cout << barcodeToString(b) << endl;
+		vector<string> barcodes;
+
+		if (extractAll) {
+			barcodes = extractBarcodesSeqsFromBAMWithDuplicates(bamFile);
+		} else {
+			barcodes = extractBarcodesSeqsFromRegionWithDuplicates(bamFile, region);
+		}
+
+		if (!outputFile.empty()) {
+			out.open(outputFile, ios::out);
+			if (!out.is_open()) {
+				fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
+				exit(EXIT_FAILURE);
+			}
+			for (string b : barcodes) {
+				out << b << endl;
+			}
+			out.close();
+		} else {
+			for (string b : barcodes) {
+				cout << b << endl;
+			}
 		}
 	}
+	
 }

@@ -1,49 +1,24 @@
 #include "utils.h"
-#include <regex.h>
+
+bool CONSIDER_RX = false;
 
 SequencingTechnology techno = Undefined;
 
 SequencingTechnology determineSequencingTechnology(const string& barcode) {
     SequencingTechnology res;
 
-    regex_t HaplotaggingReg;
-    const char* HaplotaggingPattern = "^A[0-9][0-9]C[0-9][0-9]B[0-9][0-9]D[0-9][0-9]$";
-    regex_t stLFRReg;
-    const char* stLFRPattern = "^[0-9]+_[0-9]+_[0-9]+$";
-    regex_t TELLSeqReg;
-    const char* TELLSeqPattern = "^[ACGT]+$";
-
-    int rc;
-    size_t nmatch = 1;
-    regmatch_t pmatch[1];
-
-    if (0 != (rc = regcomp(&HaplotaggingReg, HaplotaggingPattern, REG_EXTENDED))) {
-	fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
-    }
-
-    if (0 != (rc = regcomp(&stLFRReg, stLFRPattern, REG_EXTENDED))) {
-        fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
-    }
-
-    if (0 != (rc = regcomp(&TELLSeqReg, TELLSeqPattern, REG_EXTENDED))) {
-        fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
-    }
-
-    if (0 == (rc = regexec(&TELLSeqReg, barcode.c_str(), nmatch, pmatch, 0))) {
+    if (std::regex_match (barcode, std::regex("^[ACGT]+$"))) {
         res = TELLSeq;
     } else if (barcode.substr(barcode.length() - 2) == "-1") {
         res = TenX;
-    } else if (0 == (rc = regexec(&HaplotaggingReg, barcode.c_str(), nmatch, pmatch, 0))) {
+    } else if (std::regex_match (barcode, std::regex("^A[0-9][0-9]C[0-9][0-9]B[0-9][0-9]D[0-9][0-9]$"))) {
         res = Haplotagging;
         loadHaplotaggingBarcodes();
-    } else if (0 == (rc = regexec(&stLFRReg, barcode.c_str(), nmatch, pmatch, 0))) {
+    } else if (std::regex_match (barcode, std::regex("^[0-9]+_[0-9]+_[0-9]+$"))) {
         res = stLFR;
         loadstLFRBarcodes();
     } else {
-        fprintf(stderr, "Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.\n");
+        fprintf(stderr, "Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.");
         exit(EXIT_FAILURE);
     }
 
@@ -93,16 +68,16 @@ bool isValidBarcode(const string& barcode) {
     bool res;
     switch (techno) {
         case TenX:
-            res = (barcode.find("N") == string::npos);
+            res = barcode.find("N") == string::npos;
             break;
         case TELLSeq:
-            res = (barcode.find("N") == string::npos);
+            res = barcode.find("N") == string::npos;
             break;
         case Haplotagging:
-            res = (barcode.find("00") == string::npos);
+            res = barcode.find("00") == string::npos;
             break;
         case stLFR:
-            res = (barcode != "0_0_0");
+            res = barcode != "0_0_0";
             break;
         default:
             fprintf(stderr, "Unexpected error. Please make sure your data is valid and attempt running LRez again.");

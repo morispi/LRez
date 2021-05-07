@@ -17,13 +17,12 @@ void subcommandIndexFastq(int argc, char* argv[]) {
 		{"fastq",				required_argument,	0, 'f'},
 		{"output",				required_argument,	0, 'o'},
 		{"gzip",				no_argument,		0, 'g'},
-		{"userx",				no_argument,		0, 'u'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "f:o:gu", longopts, &index);
+	iarg = getopt_long(argc, argv, "f:o:g", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("index fastq");
 	}
@@ -38,14 +37,11 @@ void subcommandIndexFastq(int argc, char* argv[]) {
 			case 'g':
 				gzipped = true;
 				break;
-			case 'u':
-				CONSIDER_RX = true;
-				break;
 			default:
 				subcommandHelp("index fastq");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "f:o:gu", longopts, &index);
+		iarg = getopt_long(argc, argv, "f:o:g", longopts, &index);
 	}
 
 	if (fastqFile.empty()) {

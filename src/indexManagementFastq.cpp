@@ -12,19 +12,7 @@ string getBXTag(string header) {
 	t = splitString(t[0], " ");
 
 	if (t.size() == 1 and t[0].length() != 0) {
-		return splitString(t[0], "-1")[0];
-	} else {
-		return "";
-	}
-}
-
-string getRXTag(string header) {
-	vector<string> t = splitString(header, "RX:Z:");
-	t = splitString(t[1], "\t");
-	t = splitString(t[0], " ");
-
-	if (t.size() == 1 and t[0].length() != 0) {
-		return splitString(t[0], "-1")[0];
+		return t[0];
 	} else {
 		return "";
 	}
@@ -38,28 +26,25 @@ BarcodesIndex indexBarcodesFromFastq(string fastqFile) {
 		exit(EXIT_FAILURE);
 	}
 
-	BarcodesIndex BarcodesIndex;
+	BarcodesIndex barcodesIndex;
 	barcode b;
 	string barcode, line;
 
 	int64_t pos = in.tellg();
 	while (getline(in, line)) {
 		barcode = getBXTag(line);
-		if (barcode.empty() and CONSIDER_RX) {
-			barcode = getRXTag(line);
-		}
 		getline(in, line);
 		getline(in, line);
 		getline(in, line);
-		if (!barcode.empty()) {
+		if (isValidBarcode(barcode)) {
 			b = stringToBarcode(barcode);
-			BarcodesIndex[b].push_back(pos);
+			barcodesIndex[b].push_back(pos);
 		}
 		pos = in.tellg();
 	}
 
 	in.close();
-	return BarcodesIndex;
+	return barcodesIndex;
 }
 
 BarcodesIndex indexBarcodesFromFastqGz(string fastqFile) {
@@ -74,39 +59,35 @@ BarcodesIndex indexBarcodesFromFastqGz(string fastqFile) {
     inbuf.push(file);
     istream in(&inbuf);
 
-    BarcodesIndex BarcodesIndex;
+    BarcodesIndex barcodesIndex;
 	barcode b;
 	string barcode, line;
 
-	// int64_t pos = in.tellg();
 	int64_t pos = 0;
 	int64_t oldPos = 0;
 
 	while (getline(in, line)) {
 		barcode = getBXTag(line);
 		pos += line.length() + 1;
-		if (barcode.empty() and CONSIDER_RX) {
-			barcode = getRXTag(line);
-		}
 		getline(in, line);
 		pos += line.length()  + 1;
 		getline(in, line);
 		pos += line.length()  + 1;
 		getline(in, line);
 		pos += line.length()  + 1;
-		if (!barcode.empty()) {
+		if (isValidBarcode(barcode)) {
 			b = stringToBarcode(barcode);
-			BarcodesIndex[b].push_back(oldPos);
+			barcodesIndex[b].push_back(oldPos);
 		}
 		oldPos = pos;
 	}
 
 	file.close();
-	return BarcodesIndex;
+	return barcodesIndex;
 }
 
 
-void saveBarcodesIndex(BarcodesIndex& BarcodesIndex, string file) {
+void saveBarcodesIndex(BarcodesIndex& barcodesIndex, string file) {
 	ofstream out;
 	out.open(file, ios::out | ios::binary);
 	if (!out.is_open()) {
@@ -114,15 +95,19 @@ void saveBarcodesIndex(BarcodesIndex& BarcodesIndex, string file) {
 		exit(EXIT_FAILURE);
 	}
 
-	for (auto i : BarcodesIndex) {
-		// Write barcode
-		// out << barcodeToString(i.first, BARCODE_SIZE) << ";";
-		// out << i.first << ";";
-		// for (bool b : i.first) {
-		// 	out << b;
-		// }
-		// out << ";";
-		out << i.first << ";";
+	// Write number of bits per barcode
+	unsigned bitsPerBarcode = barcodesIndex.begin()->first.size();
+	out << bitsPerBarcode << endl;
+
+	for (auto i : barcodesIndex) {
+		// Convert bool vector to int value, and write barcode
+		uint64_t barcode = 0ULL;
+		uint64_t tmp;
+		for (unsigned j = 0; j < bitsPerBarcode; j++) {
+			tmp = i.first[j];
+			barcode |= tmp << (bitsPerBarcode - j - 1);
+		}
+		out << barcode << ";";
 
 		// Write BamRegion vector
 		for (unsigned j = 0; j < i.second.size() - 1; j++) {
@@ -147,19 +132,20 @@ BarcodesIndex loadBarcodesIndex(string file) {
 	vector<string> v, w, r;
 	barcode barcode;
 
+	// Get number of bits per barcode
+	getline(in, line);
+	unsigned bitsPerBarcode = stoul(line);
+
 	while (getline(in, line)) {
+		// Get barcode
 		v = splitString(line, ";");
-		// barcode = stringToBarcode(v[0]);
-		// barcode = stol(v[0]);
-		// barcode.clear();
-		// for (char c : v[0]) {
-		// 	if (c == '0') {
-		// 		barcode.push_back(false);
-		// 	} else {
-		// 		barcode.push_back(true);
-		// 	}
-		// }
-		barcode = v[0];
+		uint64_t b = stoull(v[0]);
+		barcode.clear();
+		for (unsigned i = 0; i < bitsPerBarcode; i++) {
+			barcode.push_back(b & (1ULL << (bitsPerBarcode - i - 1)));
+		}
+
+		// Get offsets
 		w = splitString(v[1], ",");
 		vector<int64_t> regions;
 		for (string ww : w) {

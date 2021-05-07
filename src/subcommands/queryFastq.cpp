@@ -3,6 +3,9 @@
 #include "readsRetrieval.h"
 #include "indexManagementFastq.h"
 #include <getopt.h>
+#include <chrono>
+
+using namespace std::chrono; 
 
 void subcommandQueryFastq(int argc, char* argv[]) {
 	string fastqFile;
@@ -21,14 +24,13 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		{"query",			required_argument,	0, 'q'},
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
-		{"userx",			no_argument,		0, 'u'},
 		{"gzipped",			no_argument,		0, 'g'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "f:i:q:l:o:ug", longopts, &index);
+	iarg = getopt_long(argc, argv, "f:i:q:l:o:g", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query fastq");
 	}
@@ -49,9 +51,6 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 			case 'o':
 				outputFile = optarg;
 				break;
-			case 'u':
-				CONSIDER_RX = true;
-				break;
 			case 'g':
 				gzipped = true;
 				break;
@@ -59,7 +58,7 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "f:i:q:l:o:ug", longopts, &index);
+		iarg = getopt_long(argc, argv, "f:i:q:l:o:g", longopts, &index);
 	}
 
 	if (fastqFile.empty()) {
@@ -79,7 +78,11 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
+	auto start = high_resolution_clock::now();
 	BarcodesIndex = loadBarcodesIndex(indexFile);
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(stop - start);
+    cerr << "Load index : " << duration.count() << endl;
 	vector<string> reads;
 	if (!query.empty()) {
 		if (!gzipped) {

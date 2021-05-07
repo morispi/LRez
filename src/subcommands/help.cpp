@@ -35,7 +35,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-c, --contig\t Contig of interest\n");
 		printf("\t-s, --size\t Size of contigs' extremities to consider (optional, default: 1000)\n");
 		printf("\t-o, --output\t File where to output the results (optional, default: stdout)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "extract") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
@@ -47,11 +46,11 @@ void subcommandHelp(std::string subcommand) {
 		printf("\n");
 
 		printf("ARGS:\n");
-		printf("\t-b, --bam\t BAM file to extract barcodes from\n");
-		printf("\t-r, --region\t Region of interest in format chromosome:startPosition-endPosition\n");
-		printf("\t-a, --all\t Extract all barcodes\n");
-		printf("\t-o, --output\t File where to output the extracted barcodes (optional, default: stdout)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
+		printf("\t-b, --bam\t\t BAM file to extract barcodes from\n");
+		printf("\t-r, --region\t\t Region of interest in format chromosome:startPosition-endPosition\n");
+		printf("\t-a, --all\t\t Extract all barcodes\n");
+		printf("\t-o, --output\t\t File where to output the extracted barcodes (optional, default: stdout)\n");
+		printf("\t-d, --duplicates\t Include duplicate barcodes (optional, default: false)\n");
 	} else if (subcommand == "index bam") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
@@ -69,7 +68,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-p, --positions\t Index the (chromosome, begPosition) occurrences positions of the barcodes\n");
 		printf("\t-r, --primary\t Only index barcodes that appear in a primary alignment (optional, default: false)\n");
 		printf("\t-q, --quality\t Only index barcodes that appear in an alignment of quality higher than this number (optional, default: 0)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "query bam") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
@@ -87,8 +85,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-q, --query\t Query barcode to search in the BAM / index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the BAM / index\n");
 		printf("\t-o, --output\t File where to output the extracted alignments (optional, default: stdout)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
-		// TODO ajouter la possibilité de le faire avec un fichier
 	} else if (subcommand == "index fastq") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
@@ -103,7 +99,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-f, --fastq\t Fastq file to index\n");
 		printf("\t-o, --output\t File where to store the index\n");
 		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	} else if (subcommand == "query fastq") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");
@@ -122,7 +117,6 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-l, --list\t File containing a list of barcodes to search in the fastq file and the index\n");
 		printf("\t-o, --output\t File where to output the extracted reads (optional, default: stdout)\n");
 		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
-		printf("\t-u, --userx\t Consider barcodes that only appear in the RX tag (optional, default: false)\n");
 	}
 
 	exit(EXIT_FAILURE);
