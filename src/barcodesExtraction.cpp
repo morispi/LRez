@@ -8,7 +8,7 @@ robin_hood::unordered_set<barcode> extractBarcodesBitsFromRegion_BamReader(BamRe
 		exit(EXIT_FAILURE);
 	}
 	if (!reader.SetRegion(r)) {
-		fprintf(stderr, "Error while attempting to jump to region %s", region);
+		fprintf(stderr, "Error while attempting to jump to region %s", region.c_str());
 		exit(EXIT_FAILURE);
 	}
 	
@@ -37,7 +37,7 @@ robin_hood::unordered_set<string> extractBarcodesSeqsFromRegion_BamReader(BamRea
 		exit(EXIT_FAILURE);
 	}
 	if (!reader.SetRegion(r)) {
-		fprintf(stderr, "Error while attempting to jump to region %s", region);
+		fprintf(stderr, "Error while attempting to jump to region %s", region.c_str());
 		exit(EXIT_FAILURE);
 	}
 	
@@ -146,7 +146,7 @@ vector<barcode> extractBarcodesBitsFromRegionWithDuplicates_BamReader(BamReader&
 		exit(EXIT_FAILURE);
 	}
 	if (!reader.SetRegion(r)) {
-		fprintf(stderr, "Error while attempting to jump to region %s", region);
+		fprintf(stderr, "Error while attempting to jump to region %s", region.c_str());
 		exit(EXIT_FAILURE);
 	}
 	
@@ -175,7 +175,7 @@ vector<string> extractBarcodesSeqsFromRegionWithDuplicates_BamReader(BamReader& 
 		exit(EXIT_FAILURE);
 	}
 	if (!reader.SetRegion(r)) {
-		fprintf(stderr, "Error while attempting to jump to region %s", region);
+		fprintf(stderr, "Error while attempting to jump to region %s", region.c_str());
 		exit(EXIT_FAILURE);
 	}
 	
