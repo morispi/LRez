@@ -3,9 +3,6 @@
 #include "readsRetrieval.h"
 #include "indexManagementFastq.h"
 #include <getopt.h>
-#include <chrono>
-
-using namespace std::chrono; 
 
 void subcommandQueryFastq(int argc, char* argv[]) {
 	string fastqFile;
@@ -78,11 +75,7 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	auto start = high_resolution_clock::now();
 	BarcodesIndex = loadBarcodesIndex(indexFile);
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(stop - start);
-    cerr << "Load index : " << duration.count() << endl;
 	vector<string> reads;
 	if (!query.empty()) {
 		if (!gzipped) {

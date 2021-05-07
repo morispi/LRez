@@ -2,10 +2,6 @@
 #include "subcommands/help.h"
 #include "indexManagementBam.h"
 #include <getopt.h>
-#include <chrono>
-
-
-using namespace std::chrono;
 
 void subcommandIndexBam(int argc, char* argv[]) {
 	string bamFile;

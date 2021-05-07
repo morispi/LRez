@@ -3,10 +3,6 @@
 #include "indexManagementFastq.h"
 #include "gzIndex.h"
 #include <getopt.h>
-#include <chrono>
-
-
-using namespace std::chrono;
 
 void subcommandIndexFastq(int argc, char* argv[]) {
 	string fastqFile;
