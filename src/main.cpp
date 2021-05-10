@@ -5,7 +5,7 @@
 #include "subcommands/queryBam.h"
 #include "subcommands/indexFastq.h"
 #include "subcommands/queryFastq.h"
-#include "barcodesLoading.h"
+#include "barcodesList.h"
 #include <set>
 #include <string.h>
 
