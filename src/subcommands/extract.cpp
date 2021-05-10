@@ -16,10 +16,11 @@ void subcommandExtract(int argc, char* argv[]) {
 	BamRegion r;
 
 	const struct option longopts[] = {
-		{"bam",		required_argument,	0, 'b'},
-		{"region",	required_argument,	0, 'r'},
-		{"all",		no_argument,		0, 'a'},
-		{"output",	required_argument,	0, 'o'},
+		{"bam",			required_argument,	0, 'b'},
+		{"region",		required_argument,	0, 'r'},
+		{"all",			no_argument,		0, 'a'},
+		{"duplicates",	no_argument,		0, 'd'},
+		{"output",		required_argument,	0, 'o'},
 		{0, 0, 0, 0},
 	};
 	int index;
