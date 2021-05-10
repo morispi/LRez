@@ -11,15 +11,8 @@
 
 using namespace std;
 
-// Path were the barcodes files are stored
-string path;
-
 
 int main(int argc, char* argv[]) {
-	// Retrieve path to the barcodes folder
-	string tmp(argv[0]);
-	path = tmp.substr(0, tmp.length() - 4) + "../barcodes/";
-
 	set<string> subcommands {"index", "query", "extract", "compare"};
 	if (argc < 2 or !subcommands.count(argv[1])) {
 		subcommandHelp("global");
