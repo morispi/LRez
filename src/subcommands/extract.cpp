@@ -46,6 +46,7 @@ void subcommandExtract(int argc, char* argv[]) {
 				break;
 			case 'd':
 				duplicates = true;
+				break;
 			default:
 				subcommandHelp("extract");
 				break;
