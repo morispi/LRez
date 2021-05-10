@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+	List of barcodes corresponding to the "A" subpart of Haplotagging barcodes
+*/
 const string barcodes_Haplotagging_A[] = {
 	"ACGGAA", "CCAACA", "AGATCG", "TTCTCC", "TTCCTG", "TTCGGT", "TTGTGG", "TTGCCT", "TTGGTC", "TTACGC", 
 	"TTAGCG", "TCTTCG", "TCTCTC", "TCTGGA", "TCCACT", "TCGTAC", "TCGATG", "TCACAG", "TGTTGC", "TGTCCA", 
@@ -18,6 +21,9 @@ const string barcodes_Haplotagging_A[] = {
 	"CTGACT", "CTAGTC", "CCTAAG", "CCATAG", "CGTAAC", "CAATGC"
 };
 
+/**
+	List of barcodes corresponding to the "B" subpart of Haplotagging barcodes
+*/
 const string barcodes_Haplotagging_B[] = {
 	"AACGGA", "ACCAAC", "GAGATC", "CTTCTC", "GTTCCT", "TTTCGG", "GTTGTG", "TTTGCC", "CTTGGT", "CTTACG", 
 	"GTTAGC", "GTCTTC", "CTCTCT", "ATCTGG", "TTCCAC", "CTCGTA", "GTCGAT", "GTCACA", "CTGTTG", "ATGTCC", 
@@ -31,6 +37,9 @@ const string barcodes_Haplotagging_B[] = {
 	"TCTGAC", "CCTAGT", "GCCTAA", "GCCATA", "CCGTAA", "CCAATG"
 };
 
+/**
+	List of barcodes corresponding to the "C" subpart of Haplotagging barcodes
+*/
 const string barcodes_Haplotagging_C[] = {
 	"GAAACG", "ACACCA", "TCGAGA", "TCCTTC", "CTGTTC", "GGTTTC", "TGGTTG", "CCTTTG", "GTCTTG", "CGCTTA", 
 	"GCGTTA", "TCGTCT", "CTCTCT", "GGATCT", "ACTTCC", "TACTCG", "ATGTCG", "CAGTCA", "TGCTGT", "CCATGT", 
@@ -44,6 +53,9 @@ const string barcodes_Haplotagging_C[] = {
 	"ACTCTG", "GTCCTA", "AAGCCT", "TAGCCA", "AACCGT", "TGCCAA"
 };
 
+/**
+	List of barcodes corresponding to the "D" subpart of Haplotagging barcodes
+*/
 const string barcodes_Haplotagging_D[] = {
 	"GGAAAC", "AACACC", "ATCGAG", "CTCCTT", "CCTGTT", "CGGTTT", "GTGGTT", "GCCTTT", "GGTCTT", "ACGCTT", 
 	"AGCGTT", "TTCGTC", "TCTCTC", "TGGATC", "CACTTC", "GTACTC", "GATGTC", "ACAGTC", "TTGCTG", "TCCATG", 
@@ -57,6 +69,9 @@ const string barcodes_Haplotagging_D[] = {
 	"GACTCT", "AGTCCT", "TAAGCC", "ATAGCC", "TAACCG", "ATGCCA"
 };
 
+/**
+	List of barcodes corresponding to the stLFR barcodes
+*/
 const string barcodes_stLFR[] {
 	"TAACAGCCAA", "CTAAGAGTCC", "TTACTGCCTT", "CGCTGAATTC", "TGACGTCCTT", "TGTGTGTAAC", "AGATTGAGAG", "GATAATGATG", "TTGAAGAAGC", "CTGATACTTC", 
 	"GGCTCCAAGC", "AATCTACAAG", "TGAGGTGGTT", "TAGAAGACTC", "CACCGAGCAT", "CGAATATAGG", "CGACGGACGA", "TACGCCGATT", "AAGATTAACC", "GTCGGACCTC", 
