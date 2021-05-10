@@ -9,7 +9,7 @@
 #include "robin_hood.h"
 #include <sstream>
 #include <regex>
-#include "barcodesLoading.h"
+#include "barcodesList.h"
 
 #define BXTAG "BX:Z"
 
@@ -28,15 +28,6 @@ typedef vector<bool> barcode;
 enum SequencingTechnology {Undefined = 0, TenX, Haplotagging, TELLSeq, stLFR};
 
 extern SequencingTechnology techno;
-
-// Vectors used to translate Haplotagging barcodes to string
-extern vector<string> Haplotagging_A;
-extern vector<string> Haplotagging_B;
-extern vector<string> Haplotagging_C;
-extern vector<string> Haplotagging_D;
-
-// Vector used to translate stLFR barcodes to string
-extern vector<string> barcodes_stLFR;
 
 /**
 	Determine the sequencing technology the barcode originates from.
