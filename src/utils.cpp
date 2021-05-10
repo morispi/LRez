@@ -38,10 +38,8 @@ SequencingTechnology determineSequencingTechnology(const string& barcode) {
         res = TenX;
     } else if (0 == (rc = regexec(&HaplotaggingReg, barcode.c_str(), nmatch, pmatch, 0))) {
         res = Haplotagging;
-        loadHaplotaggingBarcodes();
     } else if (0 == (rc = regexec(&stLFRReg, barcode.c_str(), nmatch, pmatch, 0))) {
         res = stLFR;
-        loadstLFRBarcodes();
     } else {
         fprintf(stderr, "Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.\n");
         exit(EXIT_FAILURE);
@@ -65,7 +63,7 @@ string retrieveNucleotidesContent(const string& barcode) {
             res = barcode;
             break;
         case Haplotagging:
-            res = Haplotagging_A[stoi(barcode.substr(1,2)) - 1] + Haplotagging_C[stoi(barcode.substr(4,2)) - 1] + Haplotagging_B[stoi(barcode.substr(7,2)) - 1] + Haplotagging_D[stoi(barcode.substr(10,2)) - 1];
+            res = barcodes_Haplotagging_A[stoi(barcode.substr(1,2)) - 1] + barcodes_Haplotagging_C[stoi(barcode.substr(4,2)) - 1] + barcodes_Haplotagging_B[stoi(barcode.substr(7,2)) - 1] + barcodes_Haplotagging_D[stoi(barcode.substr(10,2)) - 1];
             break;
         case stLFR:
             {
