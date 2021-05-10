@@ -80,12 +80,12 @@ string retrieveNucleotidesContent(const string& barcode) {
 }
 
 bool isValidBarcode(const string& barcode) {
-    if (techno == Undefined) {
-        techno = determineSequencingTechnology(barcode);
-    }
-
     if (barcode.empty()) {
         return false;
+    }
+
+    if (techno == Undefined) {
+        techno = determineSequencingTechnology(barcode);
     }
 
     bool res;

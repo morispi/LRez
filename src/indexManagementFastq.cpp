@@ -8,6 +8,10 @@
 
 string getBXTag(string header) {
 	vector<string> t = splitString(header, "BX:Z:");
+	if (t.size() != 2) {
+		return "";
+	}
+
 	t = splitString(t[1], "\t");
 	t = splitString(t[0], " ");
 
