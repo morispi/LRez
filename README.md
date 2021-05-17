@@ -15,7 +15,7 @@ In can thus be used in different applications, such as variant calling or scaffo
 Requirements
 --------------
 
-  - A Linux based operating system.
+  - A Unix based operating system.
   - g++, minimum version 5.5.0.
   - CMake, minimum version 2.8.2.
   - zlib, minimum version 1.2.11.
