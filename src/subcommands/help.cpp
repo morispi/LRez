@@ -85,6 +85,7 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-q, --query\t Query barcode to search in the BAM / index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the BAM / index\n");
 		printf("\t-o, --output\t File where to output the extracted alignments (optional, default: stdout)\n");
+		printf("\t-H, --header\t Output SAM header (optional, default: false)\n");
 	} else if (subcommand == "index fastq") {
 		printf("%s\n", VERSION);
 		printf("Pierre Morisse <pierre.morisse@inria.fr>\n");

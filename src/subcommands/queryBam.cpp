@@ -12,6 +12,7 @@ void subcommandQueryBam(int argc, char* argv[]) {
 	string outputFile;
 	BarcodesOffsetsIndex BarcodesOffsetsIndex;
 	ofstream out;
+	bool outputHeader = false;
 
 	const struct option longopts[] = {
 		{"bam",				required_argument,	0, 'b'},
@@ -19,12 +20,13 @@ void subcommandQueryBam(int argc, char* argv[]) {
 		{"query",			required_argument,	0, 'q'},
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
+		{"header",			no_argument,		0, 'H'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:i:q:l:o:", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:i:q:l:o:H", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query bam");
 	}
@@ -45,11 +47,14 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			case 'o':
 				outputFile = optarg;
 				break;
+			case 'H':
+				outputHeader = true;
+				break;
 			default:
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:i:q:l:o:", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:i:q:l:o:H", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -96,11 +101,17 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
 			exit(EXIT_FAILURE);
 		}
+		if (outputHeader) {
+			out << reader.GetHeaderText() << endl;
+		}
 		for (BamAlignment al : alignments) {
 			out << convertToSam(al, reader.GetReferenceData()) << endl;
 		}
 		out.close();
 	} else {
+		if (outputHeader) {
+			cout << reader.GetHeaderText() << endl;
+		}
 		for (BamAlignment al : alignments) {
 			cout << convertToSam(al, reader.GetReferenceData()) << endl;
 		}
