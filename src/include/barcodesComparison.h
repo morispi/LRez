@@ -69,6 +69,17 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 /**
 	Compare the barcodes of a given contig's extremities to the barcodes of other contigs' extremities.
 
+	@param reader BamReader open on the desired BAM file
+	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
+	@param contig name of the contig of interest
+	@param size size of the contigs extremities to consider
+	@return a map associating pairs of contigs' extremities to their number of common barcodes
+*/
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig_BamReader(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size);
+
+/**
+	Compare the barcodes of a given contig's extremities to the barcodes of other contigs' extremities.
+
 	@param bamFile BAM file to compare contigs' extremities barcodes from
 	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
 	@param contig name of the contig of interest
@@ -76,5 +87,16 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 	@return a map associating pairs of contigs' extremities to their number of common barcodes
 */
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size);
+
+/**
+	Compare the barcodes of a given list of contigs' extremities to the barcodes of other contigs' extremities.
+
+	@param bamFile BAM file to compare contigs' extremities barcodes from
+	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
+	@param contigs file containing a list of contigs of interest
+	@param size size of the contigs extremities to consider
+	@return a map associating pairs of contigs' extremities to their number of common barcodes
+*/
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size);
 
 #endif

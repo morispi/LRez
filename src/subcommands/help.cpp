@@ -31,8 +31,9 @@ void subcommandHelp(std::string subcommand) {
 		printf("ARGS:\n");
 		printf("\t-b, --bam\t BAM file containing the alignments\n");
 		printf("\t-i, --index\t Barcodes offsets index built with the index bam subcommand\n");
-		printf("\t-r, --region\t File containing regions of interest in format chromosome:startPosition-endPosition\n");
+		printf("\t-r, --regions\t File containing regions of interest in format chromosome:startPosition-endPosition\n");
 		printf("\t-c, --contig\t Contig of interest\n");
+		printf("\t-C, --contigs\t File containing a list of contigs of interest\n");
 		printf("\t-s, --size\t Size of contigs' extremities to consider (optional, default: 1000)\n");
 		printf("\t-o, --output\t File where to output the results (optional, default: stdout)\n");
 	} else if (subcommand == "extract") {

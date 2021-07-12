@@ -10,6 +10,7 @@ void subcommandCompare(int argc, char* argv[]) {
 	string regionsFile;
 	string outputFile;
 	string contig;
+	string contigsFile;
 	unsigned size = 1000;
 	ofstream out;
 	BamRegion r;
@@ -18,6 +19,7 @@ void subcommandCompare(int argc, char* argv[]) {
 		{"bam",			required_argument,	0, 'b'},
 		{"regions",		required_argument,	0, 'r'},
 		{"contig",		required_argument,	0, 'c'},
+		{"contigs",		required_argument,	0, 'C'},
 		{"index",		required_argument,	0, 'i'},
 		{"size",		required_argument,	0, 's'},
 		{"output",		required_argument,	0, 'o'},
@@ -26,7 +28,7 @@ void subcommandCompare(int argc, char* argv[]) {
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:r:c:i:s:o:", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:r:c:i:s:o:C:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("compare");
 	}
@@ -40,6 +42,9 @@ void subcommandCompare(int argc, char* argv[]) {
 				break;
 			case 'c':
 				contig = optarg;
+				break;
+			case 'C':
+				contigsFile = optarg;
 				break;
 			case 'i':
 				indexFile = optarg;
@@ -55,22 +60,30 @@ void subcommandCompare(int argc, char* argv[]) {
 				subcommandHelp("extract");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:r:c:i:s:o:", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:r:c:i:s:o:C:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
 		fprintf(stderr, "Please specify a BAM file with option --bam/-b.\n");
 		exit(EXIT_FAILURE);
 	}
-	if (regionsFile.empty() and contig.empty()) {
-		fprintf(stderr, "Please specify a file containing a list of regions with option --region/-r, or specify a contig of interest with option --contig/-c.\n");
+	if (regionsFile.empty() and contig.empty() and contigsFile.empty()) {
+		fprintf(stderr, "Please specify a file containing a list of regions with option --region/-r, contig of interest with option --contig/-c, or a list of contigs of interest with option --contigs/-C.\n");
 		exit(EXIT_FAILURE);
 	}
 	if (!regionsFile.empty() and !contig.empty()) {
 		fprintf(stderr, "Options --regions/-r and --contig/-c cannot be used at the same time.\n");
 		exit(EXIT_FAILURE);
 	}
-	if (!contig.empty() and indexFile.empty()) {
+	if (!regionsFile.empty() and !contigsFile.empty()) {
+		fprintf(stderr, "Options --regions/-r and --contigs/-C cannot be used at the same time.\n");
+		exit(EXIT_FAILURE);
+	}
+	if (!contig.empty() and !contigsFile.empty()) {
+		fprintf(stderr, "Options --contig/-c and --contigs/-C cannot be used at the same time.\n");
+		exit(EXIT_FAILURE);
+	}
+	if ((!contig.empty() or !contigsFile.empty()) and indexFile.empty()) {
 		fprintf(stderr, "Please specify an index file with option --index/-i.\n");
 		exit(EXIT_FAILURE);
 	}
@@ -79,11 +92,16 @@ void subcommandCompare(int argc, char* argv[]) {
 	// Compare the barcodes of all regions provided in the file with each other and output the result "matrix"
 	if (!regionsFile.empty()) {
 		commonBarcodes = compareRegions(bamFile, regionsFile);
-	} else {
+	} else if (!contig.empty()) {
 		// Compare the barcodes contained in the extremities of the provided contig with the barcodes contained in the extremities of other contigs
 		BarcodesOffsetsIndex BarcodesOffsetsIndex;
 		BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
 		commonBarcodes = compareContig(bamFile, BarcodesOffsetsIndex, contig, size);
+	} else {
+		// Compare the barcodes contained in the extremities of the provided contigs list with the barcodes contained in the extremities of other contigs
+		BarcodesOffsetsIndex BarcodesOffsetsIndex;
+		BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
+		commonBarcodes = compareContigs(bamFile, BarcodesOffsetsIndex, contigsFile, size);
 	}
 
 	if (!outputFile.empty()) {

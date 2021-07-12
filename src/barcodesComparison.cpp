@@ -43,7 +43,7 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareRegi
 	ifstream in;
 	in.open(regions);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open barcodes index file %s. Please provide an existing and valid file.\n", regions.c_str());
+		fprintf(stderr, "Unable to open regions file %s. Please provide an existing and valid file.\n", regions.c_str());
 		exit(EXIT_FAILURE);
 	}
 
@@ -96,17 +96,7 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 	}
 }
 
-robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size) {
-	BamReader reader;
-	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig_BamReader(BamReader& reader, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size) {
 	int id = reader.GetReferenceID(contig);
 	if (id == -1) {
 		fprintf(stderr, "Cannot find refence with ID %s.\n", contig.c_str());
@@ -132,7 +122,55 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 		computeCommonBarcodesCounts(counts, BarcodesOffsetsIndex, reader, rv, size, qRegion);
 	}
 
-	reader.Close();
 	return counts;
+}
 
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size) {
+	BamReader reader;
+	if (!reader.Open(bamFile)) {
+		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+	if (!reader.LocateIndex()) {
+		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+
+	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> res = compareContig_BamReader(reader, BarcodesOffsetsIndex, contig, size);
+	reader.Close();
+	
+	return res;
+}
+
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size) {
+	BamReader reader;
+	if (!reader.Open(bamFile)) {
+		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+	if (!reader.LocateIndex()) {
+		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
+		exit(EXIT_FAILURE);
+	}
+
+	ifstream in;
+	in.open(contigs);
+	if (!in.is_open()) {
+		fprintf(stderr, "Unable to open contigs file %s. Please provide an existing and valid file.\n", contigs.c_str());
+		exit(EXIT_FAILURE);
+	}
+
+	// Process each contig
+	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> res;
+	string contig;
+	while (getline(in, contig)) {
+		robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> tmp = compareContig_BamReader(reader, BarcodesOffsetsIndex, contig, size);
+		for (auto r : tmp) {
+			res[r.first] += r.second;
+		}
+	}
+
+	reader.Close();
+
+	return res;
 }
