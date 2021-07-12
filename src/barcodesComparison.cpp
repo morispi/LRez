@@ -73,19 +73,19 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 		vector<BamAlignment> alignments = retrieveAlignmentsWithBarcodeBits_BamReader(reader, BarcodesOffsetsIndex, b);
 		consideredRegions.clear();
 		for (auto al : alignments) {
-			if (rv[al.RefID].RefLength < size) {
+			if (al.IsMapped() and rv[al.RefID].RefLength < size) {
 				tRegion = rv[al.RefID].RefName + ":0-" + rv[al.RefID].RefName + ":" + to_string(rv[al.RefID].RefLength);
 				if (!consideredRegions.count(tRegion)) {
 					counts[make_pair(qRegion, tRegion)]++;
 					consideredRegions.insert(tRegion);
 				}
-			} else if (al.Position < size) {
+			} else if (al.IsMapped() and al.Position < size) {
 				tRegion = rv[al.RefID].RefName + ":0-" + rv[al.RefID].RefName + ":" + to_string(size);
 				if (!consideredRegions.count(tRegion)) {
 					counts[make_pair(qRegion, tRegion)]++;
 					consideredRegions.insert(tRegion);
 				}
-			} else if (rv[al.RefID].RefLength - size < al.Position) {
+			} else if (al.IsMapped() and rv[al.RefID].RefLength - size < al.Position) {
 				tRegion = rv[al.RefID].RefName + ":" + to_string(rv[al.RefID].RefLength - size) + "-" + rv[al.RefID].RefName + ":" + to_string(rv[al.RefID].RefLength);
 				if (!consideredRegions.count(tRegion)) {
 					counts[make_pair(qRegion, tRegion)]++;
