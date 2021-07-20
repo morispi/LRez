@@ -74,7 +74,8 @@ A description of each subcommand as well as its options is given below.
       --bam STRING, -b STRING:      BAM file containing the alignments
       --index STRING, -i SRING:     Barcodes offsets index built with the index bam subcommand
       --region STRING, -r STRING:   File containing regions of interest in format chromosome:startPosition-endPosition
-      --contig STRING, -c:          Contig of interest
+      --contig STRING, -c STRING:   Contig of interest
+      --contigs STRING, -c STRING:  File containing a list of contigs of interest
       --size INT, -s INT:           Size of contigs' extremities to consider (optional, default: 1000) 
       --output STRING, -o STRING:   File where to output the results (optional, default: stdout)
 
