@@ -135,8 +135,6 @@ Using the API
 
 Complete documentation of the different API functions is provided at https://morispi.github.io/LRez/files.html. Additionnal information and usage examples are provided on the Wiki page https://github.com/morispi/LRez/wiki.
 
-
-
 Notes
 --------------
 
