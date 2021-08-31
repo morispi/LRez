@@ -98,21 +98,25 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <a class="code" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> <a class="code" href="utils_8h.html#ae0fefe0c94e16972b9965043340d418a">techno</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> <a class="code" href="utils_8h.html#a39be2a7b56dbcced25ed24782ffddb7c">determineSequencingTechnology</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">string</span> <a class="code" href="utils_8h.html#af2160162953d0b90426792c8978dd7dd">retrieveNucleotidesContent</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="utils_8h.html#a375189835d16da34bb53fc8f0d548426">isValidBarcode</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a> <a class="code" href="utils_8h.html#a34f469e4f9489ee6c39cbe755b08f572">stringToBarcode</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;vector&lt;string&gt; <a class="code" href="utils_8h.html#ae6a96271f011e701d6adb92c82bc247f">splitString</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">string</span> delimiter);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;BamRegion <a class="code" href="utils_8h.html#a89579e58839713d54ee6eeed19f9017f">stringToBamRegion</a>(BamReader&amp; reader, <span class="keywordtype">string</span> s);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">string</span> <a class="code" href="utils_8h.html#a1cd3b2d441081670ab24f2ca0a34a248">convertToSam</a>(<span class="keyword">const</span> BamAlignment&amp; a, RefVector m_references);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83">SequencingTechnology</a> <a class="code" href="utils_8h.html#a39be2a7b56dbcced25ed24782ffddb7c">determineSequencingTechnology</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">string</span> <a class="code" href="utils_8h.html#af2160162953d0b90426792c8978dd7dd">retrieveNucleotidesContent</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="utils_8h.html#a375189835d16da34bb53fc8f0d548426">isValidBarcode</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a> <a class="code" href="utils_8h.html#a34f469e4f9489ee6c39cbe755b08f572">stringToBarcode</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;vector&lt;string&gt; <a class="code" href="utils_8h.html#ae6a96271f011e701d6adb92c82bc247f">splitString</a>(<span class="keywordtype">string</span> s, <span class="keywordtype">string</span> delimiter);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;BamRegion <a class="code" href="utils_8h.html#a89579e58839713d54ee6eeed19f9017f">stringToBamRegion</a>(BamReader&amp; reader, <span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;vector&lt;string&gt; <a class="code" href="utils_8h.html#ab12cf2dba56f9ac19b0322a5ad34a7a1">extractRegions</a>(<span class="keywordtype">string</span> chromosome, int32_t chromosomeSize, <span class="keywordtype">unsigned</span> regionSize);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;vector&lt;string&gt; <a class="code" href="utils_8h.html#a593470912250cf1ebb6ab1bed18b83c4">extractRegionsList</a>(BamReader&amp; reader, <span class="keywordtype">unsigned</span> regionSize);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">string</span> <a class="code" href="utils_8h.html#a1cd3b2d441081670ab24f2ca0a34a248">convertToSam</a>(<span class="keyword">const</span> BamAlignment&amp; a, RefVector m_references);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="autils_8h_html_a1cd3b2d441081670ab24f2ca0a34a248"><div class="ttname"><a href="utils_8h.html#a1cd3b2d441081670ab24f2ca0a34a248">convertToSam</a></div><div class="ttdeci">string convertToSam(const BamAlignment &amp;a, RefVector m_references)</div></div>
 <div class="ttc" id="autils_8h_html_af2160162953d0b90426792c8978dd7dd"><div class="ttname"><a href="utils_8h.html#af2160162953d0b90426792c8978dd7dd">retrieveNucleotidesContent</a></div><div class="ttdeci">string retrieveNucleotidesContent(const string &amp;barcode)</div></div>
@@ -131,6 +135,8 @@ $(function() {
 <div class="ttc" id="autils_8h_html_adefcdfa17e7a80638f1ba583b2c77a34"><div class="ttname"><a href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a></div><div class="ttdeci">vector&lt; bool &gt; barcode</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00023">utils.h:23</a></div></div>
 <div class="ttc" id="autils_8h_html_a4ac6db06df8c217cf43bd14902524b83a18f893264a00711081b62de694f99db4"><div class="ttname"><a href="utils_8h.html#a4ac6db06df8c217cf43bd14902524b83a18f893264a00711081b62de694f99db4">Undefined</a></div><div class="ttdeci">@ Undefined</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00028">utils.h:28</a></div></div>
 <div class="ttc" id="autils_8h_html_a89579e58839713d54ee6eeed19f9017f"><div class="ttname"><a href="utils_8h.html#a89579e58839713d54ee6eeed19f9017f">stringToBamRegion</a></div><div class="ttdeci">BamRegion stringToBamRegion(BamReader &amp;reader, string s)</div></div>
+<div class="ttc" id="autils_8h_html_ab12cf2dba56f9ac19b0322a5ad34a7a1"><div class="ttname"><a href="utils_8h.html#ab12cf2dba56f9ac19b0322a5ad34a7a1">extractRegions</a></div><div class="ttdeci">vector&lt; string &gt; extractRegions(string chromosome, int32_t chromosomeSize, unsigned regionSize)</div></div>
+<div class="ttc" id="autils_8h_html_a593470912250cf1ebb6ab1bed18b83c4"><div class="ttname"><a href="utils_8h.html#a593470912250cf1ebb6ab1bed18b83c4">extractRegionsList</a></div><div class="ttdeci">vector&lt; string &gt; extractRegionsList(BamReader &amp;reader, unsigned regionSize)</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

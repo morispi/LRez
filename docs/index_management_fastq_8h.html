@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -114,6 +115,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="index_management_fastq_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aeca034f67218340ecb2261a22c2f3dcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#aeca034f67218340ecb2261a22c2f3dcd">BUFSIZE</a>&#160;&#160;&#160;134217728</td></tr>
+<tr class="separator:aeca034f67218340ecb2261a22c2f3dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a480a946ba38728216e3c2dc9e05046b4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespacerobin__hood.html#a4a18aa3f4d6a9d2590779cd0d954dbb6">robin_hood::unordered_map</a>&lt; <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>, vector&lt; int64_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a></td></tr>
@@ -121,15 +127,32 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af00f52b2e09b8ed681408b0914f9b157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#af00f52b2e09b8ed681408b0914f9b157">indexBarcodesFromFastq</a> (string fastqFile)</td></tr>
-<tr class="separator:af00f52b2e09b8ed681408b0914f9b157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7ac3e5bf60d4317815b9b7048d0de64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#ae7ac3e5bf60d4317815b9b7048d0de64">indexBarcodesFromFastqGz</a> (string fastqFile)</td></tr>
-<tr class="separator:ae7ac3e5bf60d4317815b9b7048d0de64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe9496bbf47d23387debb7fcabf915d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#abbe9496bbf47d23387debb7fcabf915d">indexBarcodesFromFastq</a> (string fastqFile, unsigned nbThreads=1)</td></tr>
+<tr class="separator:abbe9496bbf47d23387debb7fcabf915d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f74247a36b87c5763d2d947c96c8de1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#a3f74247a36b87c5763d2d947c96c8de1">indexBarcodesFromFastqGz</a> (string fastqFile, unsigned nbThreads=1)</td></tr>
+<tr class="separator:a3f74247a36b87c5763d2d947c96c8de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e172c556e90e191ffbd5e44e63b85c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#a89e172c556e90e191ffbd5e44e63b85c">saveBarcodesIndex</a> (<a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a> &amp;index, string file)</td></tr>
 <tr class="separator:a89e172c556e90e191ffbd5e44e63b85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8289e454127654cd59f02dc89d045b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_fastq_8h.html#ae8289e454127654cd59f02dc89d045b6">loadBarcodesIndex</a> (string file)</td></tr>
 <tr class="separator:ae8289e454127654cd59f02dc89d045b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aeca034f67218340ecb2261a22c2f3dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca034f67218340ecb2261a22c2f3dcd">&#9670;&nbsp;</a></span>BUFSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFSIZE&#160;&#160;&#160;134217728</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="index_management_fastq_8h_source.html#l00010">10</a> of file <a class="el" href="index_management_fastq_8h_source.html">indexManagementFastq.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a480a946ba38728216e3c2dc9e05046b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a480a946ba38728216e3c2dc9e05046b4">&#9670;&nbsp;</a></span>BarcodesIndex</h2>
@@ -143,13 +166,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="index_management_fastq_8h_source.html#l00010">10</a> of file <a class="el" href="index_management_fastq_8h_source.html">indexManagementFastq.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="index_management_fastq_8h_source.html#l00012">12</a> of file <a class="el" href="index_management_fastq_8h_source.html">indexManagementFastq.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af00f52b2e09b8ed681408b0914f9b157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00f52b2e09b8ed681408b0914f9b157">&#9670;&nbsp;</a></span>indexBarcodesFromFastq()</h2>
+<a id="abbe9496bbf47d23387debb7fcabf915d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe9496bbf47d23387debb7fcabf915d">&#9670;&nbsp;</a></span>indexBarcodesFromFastq()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,8 +181,18 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a> indexBarcodesFromFastq </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>fastqFile</em></td><td>)</td>
+          <td class="paramname"><em>fastqFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nbThreads</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -167,6 +200,13 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fastqFile</td><td>fastq file to build the index from </td></tr>
+    <tr><td class="paramname">nbThreads</td><td>number of threads to use, set to 1 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if fastqFile could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,8 +214,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae7ac3e5bf60d4317815b9b7048d0de64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7ac3e5bf60d4317815b9b7048d0de64">&#9670;&nbsp;</a></span>indexBarcodesFromFastqGz()</h2>
+<a id="a3f74247a36b87c5763d2d947c96c8de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f74247a36b87c5763d2d947c96c8de1">&#9670;&nbsp;</a></span>indexBarcodesFromFastqGz()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,8 +224,18 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="index_management_fastq_8h.html#a480a946ba38728216e3c2dc9e05046b4">BarcodesIndex</a> indexBarcodesFromFastqGz </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>fastqFile</em></td><td>)</td>
+          <td class="paramname"><em>fastqFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nbThreads</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,6 +243,13 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fastqFile</td><td>gzipped fastq file to build the index from </td></tr>
+    <tr><td class="paramname">nbThreads</td><td>number of threads to use, set to 1 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if fastqFile could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,6 +276,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>file where the barcode index is stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -255,6 +318,17 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>barcode offsets index to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">file</td><td>file where to store the index </td></tr>
   </table>
   </dd>

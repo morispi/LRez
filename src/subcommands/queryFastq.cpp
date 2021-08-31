@@ -14,6 +14,7 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 	BamReader reader;
 	ofstream out;
 	bool gzipped = false;
+	unsigned nbThreads = 1;
 
 	const struct option longopts[] = {
 		{"fastq",			required_argument,	0, 'f'},
@@ -21,13 +22,14 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		{"query",			required_argument,	0, 'q'},
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
+		{"threads",			required_argument,	0, 't'},
 		{"gzipped",			no_argument,		0, 'g'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "f:i:q:l:o:g", longopts, &index);
+	iarg = getopt_long(argc, argv, "f:i:q:l:o:gt:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query fastq");
 	}
@@ -51,11 +53,14 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 			case 'g':
 				gzipped = true;
 				break;
+			case 't':
+				nbThreads = static_cast<uint32_t>(stoul(optarg));
+				break;
 			default:
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "f:i:q:l:o:g", longopts, &index);
+		iarg = getopt_long(argc, argv, "f:i:q:l:o:gt:", longopts, &index);
 	}
 
 	if (fastqFile.empty()) {
@@ -75,35 +80,40 @@ void subcommandQueryFastq(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	BarcodesIndex = loadBarcodesIndex(indexFile);
-	vector<string> reads;
-	if (!query.empty()) {
-		if (!gzipped) {
-			reads = retrieveReadsWithBarcode(fastqFile, BarcodesIndex, query);
+	try {
+		BarcodesIndex = loadBarcodesIndex(indexFile);
+		vector<string> reads;
+		if (!query.empty()) {
+			if (!gzipped) {
+				reads = retrieveReadsWithBarcode(fastqFile, BarcodesIndex, query);
+			} else {
+				reads = retrieveReadsWithBarcode_Gzip(fastqFile, BarcodesIndex, query);
+			}
 		} else {
-			reads = retrieveReadsWithBarcode_Gzip(fastqFile, BarcodesIndex, query);
+			if (!gzipped) {
+				reads = retrieveReadsWithBarcodes(fastqFile, BarcodesIndex, list, nbThreads);
+			} else {
+				reads = retrieveReadsWithBarcodes_Gzip(fastqFile, BarcodesIndex, list, nbThreads);
+			}
 		}
-	} else {
-		if (!gzipped) {
-			reads = retrieveReadsWithBarcodes(fastqFile, BarcodesIndex, list);
-		} else {
-			reads = retrieveReadsWithBarcodes_Gzip(fastqFile, BarcodesIndex, list);
-		}
-	}
 
-	if (!outputFile.empty()) {
-		out.open(outputFile, ios::out);
-		if (!out.is_open()) {
-			fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
-			exit(EXIT_FAILURE);
+		if (!outputFile.empty()) {
+			out.open(outputFile, ios::out);
+			if (!out.is_open()) {
+				fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
+				exit(EXIT_FAILURE);
+			}
+			for (string r : reads) {
+				out << r << endl;
+			}
+			out.close();
+		} else {
+			for (string r : reads) {
+				cout << r << endl;
+			}
 		}
-		for (string r : reads) {
-			out << r << endl;
-		}
-		out.close();
-	} else {
-		for (string r : reads) {
-			cout << r << endl;
-		}
+	} catch (exception const& e) {
+		cerr << e.what() << endl;
+		exit(EXIT_FAILURE);
 	}
 }

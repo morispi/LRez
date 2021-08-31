@@ -5,6 +5,7 @@
 #include "subcommands/queryBam.h"
 #include "subcommands/indexFastq.h"
 #include "subcommands/queryFastq.h"
+#include "subcommands/stats.h"
 #include <set>
 #include <string.h>
 
@@ -12,13 +13,15 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
-	set<string> subcommands {"index", "query", "extract", "compare"};
+	set<string> subcommands {"index", "query", "extract", "compare", "stats"};
 	if (argc < 2 or !subcommands.count(argv[1])) {
 		subcommandHelp("global");
 	} else if (!strcmp(argv[1], "compare")) {
 		subcommandCompare(argc, argv);
 	} else if (!strcmp(argv[1], "extract")) {
 		subcommandExtract(argc, argv);
+	} else if (!strcmp(argv[1], "stats")) {
+		subcommandStats(argc, argv);
 	} else if (!strcmp(argv[1], "index")) {
 		if (argc < 3) {
 			subcommandHelp("global");

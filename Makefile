@@ -33,13 +33,13 @@ BAMTOOLS_INC = $(BUILD_INCLUDEDIR)/bamtools/
 LREZ_INC = ./src/include/
 
 LIBS_LREZ = -llrez
-LIBS_BOOST_LZ_LM = -lboost_iostreams -lz -lm -lc
+LIBS_LZ_LM = -lz -lm -lc -lpthread
 LIBS_BAMTOOLS = -l$(BAMTOOLS_LIB_PREFIX)bamtools
 
 MAIN = src/main.o
 REVCOMP = src/reverseComplement.o
-SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o src/gzIndex.o
-SUBCOMMANDS = src/subcommands/compare.o src/subcommands/extract.o src/subcommands/help.o src/subcommands/indexBam.o src/subcommands/queryBam.o src/subcommands/indexFastq.o src/subcommands/queryFastq.o
+SOURCE = src/alignmentsRetrieval.o src/barcodesComparison.o src/barcodesExtraction.o src/indexManagementBam.o src/utils.o src/indexManagementFastq.o src/readsRetrieval.o src/gzIndex.o src/computeStats.o
+SUBCOMMANDS = src/subcommands/compare.o src/subcommands/extract.o src/subcommands/help.o src/subcommands/indexBam.o src/subcommands/queryBam.o src/subcommands/indexFastq.o src/subcommands/queryFastq.o src/subcommands/stats.o
 
 EXEC = $(BUILD_BINDIR)/LRez
 LIB = $(BUILD_LIBDIR)/liblrez${SHLIB_EXT}
@@ -64,10 +64,10 @@ $(BAMTOOLS_LIB):
 		cmake -P src/api/cmake_install.cmake
 
 $(LIB): $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(BAMTOOLS_LIB) directories
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBLREZ_LDFLAGS) -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBLREZ_LDFLAGS) -o $(LIB) $(SUBCOMMANDS) $(SOURCE) $(REVCOMP) $(LIBS_BAMTOOLS) $(LIBS_LZ_LM)
 
 $(EXEC): $(MAIN) $(LIB) directories
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $(EXEC) $(MAIN) $(LIBS_LREZ) $(LIBS_BAMTOOLS) $(LIBS_BOOST_LZ_LM)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $(EXEC) $(MAIN) $(LIBS_LREZ) $(LIBS_BAMTOOLS) $(LIBS_LZ_LM)
 
 src/%.o: src/%.cpp $(BAMTOOLS_LIB)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -I$(BAMTOOLS_INC) -I$(LREZ_INC) -o $@ -c $<

@@ -13,6 +13,7 @@ void subcommandQueryBam(int argc, char* argv[]) {
 	BarcodesOffsetsIndex BarcodesOffsetsIndex;
 	ofstream out;
 	bool outputHeader = false;
+	unsigned nbThreads = 1;
 
 	const struct option longopts[] = {
 		{"bam",				required_argument,	0, 'b'},
@@ -20,13 +21,14 @@ void subcommandQueryBam(int argc, char* argv[]) {
 		{"query",			required_argument,	0, 'q'},
 		{"list",			required_argument,	0, 'l'},
 		{"output",			required_argument,	0, 'o'},
+		{"threads",			required_argument,	0, 't'},
 		{"header",			no_argument,		0, 'H'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:i:q:l:o:H", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:i:q:l:o:Ht:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("query bam");
 	}
@@ -50,11 +52,14 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			case 'H':
 				outputHeader = true;
 				break;
+			case 't':
+				nbThreads = static_cast<uint32_t>(stoul(optarg));
+				break;
 			default:
 				subcommandHelp("query bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:i:q:l:o:H", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:i:q:l:o:Ht:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -84,38 +89,40 @@ void subcommandQueryBam(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
+	try {
+	    BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
+		vector<BamAlignment> alignments;
+		if (!query.empty()) {
+			alignments = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, query);
+		} else {
+			alignments = retrieveAlignmentsWithBarcodes(bamFile, BarcodesOffsetsIndex, list, nbThreads);
+		}
 
-    BarcodesOffsetsIndex = loadBarcodesOffsetsIndex(indexFile);
-	vector<BamAlignment> alignments;
-	if (!query.empty()) {
-		alignments = retrieveAlignmentsWithBarcode_BamReader(reader, BarcodesOffsetsIndex, query);
-	} else {
-		alignments = retrieveAlignmentsWithBarcodes_BamReader(reader, BarcodesOffsetsIndex, list);
+		if (!outputFile.empty()) {
+			out.open(outputFile, ios::out);
+			if (!out.is_open()) {
+				fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
+				exit(EXIT_FAILURE);
+			}
+			if (outputHeader) {
+				out << reader.GetHeaderText() << endl;
+			}
+			for (BamAlignment al : alignments) {
+				out << convertToSam(al, reader.GetReferenceData()) << endl;
+			}
+			out.close();
+		} else {
+			if (outputHeader) {
+				cout << reader.GetHeaderText() << endl;
+			}
+			for (BamAlignment al : alignments) {
+				cout << convertToSam(al, reader.GetReferenceData()) << endl;
+			}
+		}
+
+	} catch (exception const& e) {
+		cerr << e.what() << endl;
+		exit(EXIT_FAILURE);
 	}
-
-
-
-	if (!outputFile.empty()) {
-		out.open(outputFile, ios::out);
-		if (!out.is_open()) {
-			fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
-			exit(EXIT_FAILURE);
-		}
-		if (outputHeader) {
-			out << reader.GetHeaderText() << endl;
-		}
-		for (BamAlignment al : alignments) {
-			out << convertToSam(al, reader.GetReferenceData()) << endl;
-		}
-		out.close();
-	} else {
-		if (outputHeader) {
-			cout << reader.GetHeaderText() << endl;
-		}
-		for (BamAlignment al : alignments) {
-			cout << convertToSam(al, reader.GetReferenceData()) << endl;
-		}
-	}
-
 	reader.Close();
 }

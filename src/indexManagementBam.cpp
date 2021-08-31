@@ -1,26 +1,31 @@
 #include "indexManagementBam.h"
 #include "reverseComplement.h"
+#include "../CTPL/ctpl_stl.h"
 
-BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality) {
-	BamReader reader;
-	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-
+/**
+	Index the portion of the BAM file located between begRegion and endRegion.
+	tilEnd has to be set to one for the thread processing the end of the BAM file, so it can process unmapped reads.
+*/
+BarcodesOffsetsIndex indexBarcodesOffsetsFromBamRegions(int id, BamReader& reader, bool primary, unsigned quality, string begRegion, string endRegion, bool tilEnd = 0) {
 	BarcodesOffsetsIndex barcodesOffsetsIndex;
 	BamAlignment al;
 	barcode b;
 	string bc, barcode;
-	BamRegion r;
 
+	// Transform the two regions into a single bam region, and jump to this region of the BAM file
+	vector<string> t1 = splitString(begRegion, ":");
+	vector<string> tt1 = splitString(t1[1], "-");
+	vector<string> t2 = splitString(endRegion, ":");
+	vector<string> tt2 = splitString(t2[1], "-");
+	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
+	reader.SetRegion(r);
+
+	// Process and store alignments located between the two regions of interest
 	int64_t pos = reader.FTell();
 	while (reader.GetNextAlignment(al)) {
-		if ((!primary or (primary and al.IsMapped() and al.IsPrimaryAlignment())) and (quality == 0 or (al.IsMapped() and al.MapQuality >= quality))) {
+		bool processAlignment = (al.RefID > reader.GetReferenceID(t1[0]) or (al.RefID == reader.GetReferenceID(t1[0]) and al.Position >= stoi(tt1[0])))
+		and ( (al.RefID < reader.GetReferenceID(t2[0]) or (al.RefID == reader.GetReferenceID(t2[0]) and (al.Position < stoi(tt2[0]) or tilEnd))));
+		if (processAlignment and (!primary or (primary and al.IsMapped() and al.IsPrimaryAlignment())) and (quality == 0 or (al.IsMapped() and al.MapQuality >= quality))) {
 			barcode.clear();
 			al.GetTag(BXTAG, barcode);
 			if (isValidBarcode(barcode)) {
@@ -31,7 +36,69 @@ BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, u
 		pos = reader.FTell();
 	}
 
-	reader.Close();
+	// Treat unmapped reads if we're at the end of the file
+	if (tilEnd) {
+		reader.Rewind();
+		if (!reader.FSeek(pos)) {
+			throw runtime_error("Fseek: Error while attempting to jump to offset " + to_string(pos) + ".");
+		}
+		while (reader.GetNextAlignment(al)) {
+			if ((!primary or (primary and al.IsMapped() and al.IsPrimaryAlignment())) and (quality == 0 or (al.IsMapped() and al.MapQuality >= quality))) {
+				barcode.clear();
+				al.GetTag(BXTAG, barcode);
+				if (isValidBarcode(barcode)) {
+					b = stringToBarcode(barcode);
+					barcodesOffsetsIndex[b].push_back(pos);
+				}
+			}
+			pos = reader.FTell();
+		}
+	}
+
+	return barcodesOffsetsIndex;
+}
+
+BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality, unsigned nbThreads) {
+	// Open the necessary number of BamReaders
+	vector<BamReader> readers(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		if (!readers[i].Open(bamFile)) {
+			throw ios_base::failure("Open: Unable to open BAM file " + bamFile + ". Please make sure the file exists.");
+		}
+		if (!readers[i].LocateIndex()) {
+			throw ios_base::failure("LocateIndex: Unable to find a BAM index for file " + bamFile + ". Please build the BAM index or provide a BAM file for which the BAM index is built.");
+		}
+		readers[i].Rewind();
+	}
+
+	// Split the reference genome into regions of size 10000
+	vector<string> regions = extractRegionsList(readers[0], 10000);
+	readers[0].Rewind();
+
+	// Split the processing of the BAM file into separate threads
+	ctpl::thread_pool myPool(nbThreads);
+	vector<std::future<BarcodesOffsetsIndex>> results(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		results[i] = myPool.push(indexBarcodesOffsetsFromBamRegions, ref(readers[i]), ref(primary), ref(quality), ref(regions[i * regions.size() / nbThreads]), ref(regions[min((i + 1) * regions.size() / nbThreads, regions.size() - 1)]), i == nbThreads - 1);
+	}
+
+	// Retrieve threads subresults and build global index
+	BarcodesOffsetsIndex barcodesOffsetsIndex;
+	BarcodesOffsetsIndex curRes;
+	for (unsigned i = 0; i < nbThreads; i++) {
+		curRes = results[i].get();
+		for (auto p : curRes) {
+			for (auto v : p.second) {
+				barcodesOffsetsIndex[p.first].push_back(v);
+			}
+		}
+	}
+
+	// Close BamReaders
+	for (unsigned i = 0; i < nbThreads; i++) {
+		readers[i].Close();
+	}
+
 	return barcodesOffsetsIndex;
 }
 
@@ -40,8 +107,7 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& barcodesOffsetsIndex, string
 	ofstream out;
 	out.open(file, ios::out | ios::binary);
 	if (!out.is_open()) {
-		fprintf(stderr, "Unable to open file %s.", file.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open file " + file + ". Please make sure the files exists.");
 	}
 
 	// Write number of bits per barcode
@@ -72,8 +138,7 @@ BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 	ifstream in;
 	in.open(file);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open barcodes index file %s. Please provide an existing and valid file.\n", file.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to barcodes index file " + file + ". Please provide an existing and valid file.");
 	}
 
 	BarcodesOffsetsIndex index;
@@ -107,25 +172,29 @@ BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file) {
 	return index;
 }
 
-BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality) {
-	BamReader reader;
-	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-
+/**
+	Index the portion of the BAM file located between begRegion and endRegion.
+	tilEnd has to be set to one for the thread processing the end of the BAM file, so it can process unmapped reads.
+*/
+BarcodesPositionsIndex indexBarcodesPositionsFromBamRegions(int id, BamReader& reader, bool primary, unsigned quality, string begRegion, string endRegion, bool tilEnd = 0) {
 	BarcodesPositionsIndex barcodesPositionsIndex;
 	BamAlignment al;
 	barcode b;
 	string bc, barcode;
-	BamRegion r;
 
+	// Transform the two regions into a single bam region, and jump to this region of the BAM file
+	vector<string> t1 = splitString(begRegion, ":");
+	vector<string> tt1 = splitString(t1[1], "-");
+	vector<string> t2 = splitString(endRegion, ":");
+	vector<string> tt2 = splitString(t2[1], "-");
+	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
+	reader.SetRegion(r);
+
+	// Process and store alignments located between the two regions of interest
 	while (reader.GetNextAlignment(al)) {
-		if (al.IsMapped() and (!primary or (primary and al.IsPrimaryAlignment())) and al.MapQuality >= quality) {
+		bool processAlignment = al.IsMapped() and (al.RefID > reader.GetReferenceID(t1[0]) or (al.RefID == reader.GetReferenceID(t1[0]) and al.Position >= stoi(tt1[0])))
+		and ( (al.RefID < reader.GetReferenceID(t2[0]) or (al.RefID == reader.GetReferenceID(t2[0]) and (al.Position < stoi(tt2[0]) or tilEnd))));
+		if (processAlignment and (!primary or (primary and al.IsMapped() and al.IsPrimaryAlignment())) and (quality == 0 or (al.IsMapped() and al.MapQuality >= quality))) {
 			barcode.clear();
 			al.GetTag(BXTAG, barcode);
 			if (isValidBarcode(barcode)) {
@@ -135,7 +204,51 @@ BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primar
 		}
 	}
 
-	reader.Close();
+	return barcodesPositionsIndex;
+}
+
+
+BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality, unsigned nbThreads) {
+	// Open the necessary number of BamReaders
+	vector<BamReader> readers(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		if (!readers[i].Open(bamFile)) {
+			throw ios_base::failure("Open: Unable to open BAM file " + bamFile + ". Please make sure the file exists.");
+		}
+		if (!readers[i].LocateIndex()) {
+			throw ios_base::failure("LocateIndex: Unable to find a BAM index for file " + bamFile + ". Please build the BAM index or provide a BAM file for which the BAM index is built.");
+		}
+		readers[i].Rewind();
+	}
+
+	// Split the reference genome into regions of size 10000
+	vector<string> regions = extractRegionsList(readers[0], 10000);
+	readers[0].Rewind();
+
+	// Split the processing of the BAM files into separate threads
+	ctpl::thread_pool myPool(nbThreads);
+	vector<std::future<BarcodesPositionsIndex>> results(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		results[i] = myPool.push(indexBarcodesPositionsFromBamRegions, ref(readers[i]), ref(primary), ref(quality), ref(regions[i * regions.size() / nbThreads]), ref(regions[min((i + 1) * regions.size() / nbThreads, regions.size() - 1)]), i == nbThreads - 1);
+	}
+
+	// Retrieve threads subresults and build global index
+	BarcodesPositionsIndex barcodesPositionsIndex;
+	BarcodesPositionsIndex curRes;
+	for (unsigned i = 0; i < nbThreads; i++) {
+		curRes = results[i].get();
+		for (auto p : curRes) {
+			for (auto v : p.second) {
+				barcodesPositionsIndex[p.first].push_back(v);
+			}
+		}
+	}
+
+	// Close BamReaders
+	for (unsigned i = 0; i < nbThreads; i++) {
+		readers[i].Close();
+	}
+
 	return barcodesPositionsIndex;
 }
 
@@ -143,8 +256,7 @@ void saveBarcodesPositionsIndex(BarcodesPositionsIndex& barcodesPositionsIndex, 
 	ofstream out;
 	out.open(file, ios::out | ios::binary);
 	if (!out.is_open()) {
-		fprintf(stderr, "Unable to open file %s.", file.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open file " + file + ". Please make sure the files exists.");
 	}
 
 	// Write number of bits per barcode
@@ -175,8 +287,7 @@ BarcodesPositionsIndex loadBarcodesPositionsIndex(string file) {
 	ifstream in;
 	in.open(file);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open barcodes index file %s. Please provide an existing and valid file.\n", file.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to barcodes index file " + file + ". Please provide an existing and valid file.");
 	}
 
 	BarcodesPositionsIndex index;

@@ -10,6 +10,7 @@ void subcommandIndexBam(int argc, char* argv[]) {
 	bool indexPositions = false;
 	bool primary = false;
 	unsigned quality = 0;
+	unsigned nbThreads = 1;
 
 	const struct option longopts[] = {
 		{"bam",				required_argument,	0, 'b'},
@@ -18,12 +19,13 @@ void subcommandIndexBam(int argc, char* argv[]) {
 		{"positions",		no_argument,		0, 'p'},
 		{"primary",			no_argument,		0, 'r'},
 		{"quality",			required_argument,	0, 'q'},
+		{"threads",			required_argument,	0, 't'},
 		{0, 0, 0, 0},
 	};
 	int index;
 	int iarg = 0;
 
-	iarg = getopt_long(argc, argv, "b:o:fprq:", longopts, &index);
+	iarg = getopt_long(argc, argv, "b:o:fprq:t:", longopts, &index);
 	if (iarg == -1) {
 		subcommandHelp("index bam");
 	}
@@ -47,11 +49,14 @@ void subcommandIndexBam(int argc, char* argv[]) {
 			case 'q':
 				quality = static_cast<uint32_t>(stoul(optarg));
 				break;
+			case 't':
+				nbThreads = static_cast<uint32_t>(stoul(optarg));
+				break;
 			default:
 				subcommandHelp("index bam");
 				break;
 		}
-		iarg = getopt_long(argc, argv, "b:o:fprq:", longopts, &index);
+		iarg = getopt_long(argc, argv, "b:o:fprq:t:", longopts, &index);
 	}
 
 	if (bamFile.empty()) {
@@ -73,16 +78,21 @@ void subcommandIndexBam(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	if (indexOffsets) {
-		BarcodesOffsetsIndex barcodesOffsetsIndex;
-		barcodesOffsetsIndex = indexBarcodesOffsetsFromBam(bamFile, primary, quality);
-		saveBarcodesOffsetsIndex(barcodesOffsetsIndex, output);
-	} else if (indexPositions) {
-		BarcodesPositionsIndex barcodesPositionsIndex;
-		barcodesPositionsIndex = indexBarcodesPositionsFromBam(bamFile, primary, quality);
-		saveBarcodesPositionsIndex(barcodesPositionsIndex, output);
-	} else {
-		fprintf(stderr, "An unexpected error has occurred. Please try running again.\n");
+	try {
+		if (indexOffsets) {
+			BarcodesOffsetsIndex barcodesOffsetsIndex;
+			barcodesOffsetsIndex = indexBarcodesOffsetsFromBam(bamFile, primary, quality, nbThreads);
+			saveBarcodesOffsetsIndex(barcodesOffsetsIndex, output);
+		} else if (indexPositions) {
+			BarcodesPositionsIndex barcodesPositionsIndex;
+			barcodesPositionsIndex = indexBarcodesPositionsFromBam(bamFile, primary, quality, nbThreads);
+			saveBarcodesPositionsIndex(barcodesPositionsIndex, output);
+		} else {
+			fprintf(stderr, "An unexpected error has occurred. Please try running again.\n");
+			exit(EXIT_FAILURE);
+		}
+	} catch (exception const& e) {
+		cerr << e.what() << endl;
 		exit(EXIT_FAILURE);
 	}
 }

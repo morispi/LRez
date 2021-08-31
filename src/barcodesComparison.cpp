@@ -1,6 +1,7 @@
 #include "barcodesComparison.h"
 #include "barcodesExtraction.h"
 #include "alignmentsRetrieval.h"
+#include "../CTPL/ctpl_stl.h"
 
 unsigned countCommonBarcodes(robin_hood::unordered_set<barcode> barcodes1, robin_hood::unordered_set<barcode> barcodes2) {
 	unsigned res = 0;
@@ -32,19 +33,16 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> computePair
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareRegions(string bamFile, string regions) {
 	BamReader reader;
 	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("Open: Unable to open BAM file " + bamFile + ". Please make sure the file exists.");
 	}
 	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("LocateIndex: Unable to find a BAM index for file " + bamFile + ". Please build the BAM index or provide a BAM file for which the BAM index is built.");
 	}
 
 	ifstream in;
 	in.open(regions);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open regions file %s. Please provide an existing and valid file.\n", regions.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open regions file " + regions + ". Please provide an existing and valid file.");
 	}
 
 	// Fill map with barcodes of each region
@@ -99,8 +97,7 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig_BamReader(BamReader& reader, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size) {
 	int id = reader.GetReferenceID(contig);
 	if (id == -1) {
-		fprintf(stderr, "Cannot find refence with ID %s.\n", contig.c_str());
-		exit(EXIT_FAILURE);
+		throw runtime_error("GetReferenceID: Cannot find reference with ID " + contig + ".");
 	}
 
 	robin_hood::unordered_set<barcode> barcodes;
@@ -128,12 +125,11 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size) {
 	BamReader reader;
 	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("Open: Unable to open BAM file " + bamFile + ". Please make sure the file exists.");
+
 	}
 	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("LocateIndex: Unable to find a BAM index for file " + bamFile + ". Please build the BAM index or provide a BAM file for which the BAM index is built.");
 	}
 
 	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> res = compareContig_BamReader(reader, BarcodesOffsetsIndex, contig, size);
@@ -142,35 +138,73 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 	return res;
 }
 
-robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size) {
-	BamReader reader;
-	if (!reader.Open(bamFile)) {
-		fprintf(stderr, "Unable open BAM file %s. Please make sure the file exists.\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-	if (!reader.LocateIndex()) {
-		fprintf(stderr, "Unable to find a BAM index for file %s. Please build the BAM index or provide a BAM file for which the BAM index is built\n", bamFile.c_str());
-		exit(EXIT_FAILURE);
-	}
-
-	ifstream in;
-	in.open(contigs);
-	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open contigs file %s. Please provide an existing and valid file.\n", contigs.c_str());
-		exit(EXIT_FAILURE);
-	}
-
-	// Process each contig
+/**
+	Compare the extremities of a given list of contigs to all other contigs' extremities
+*/
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigsList(int id, BamReader& reader, BarcodesOffsetsIndex& BarcodesOffsetsIndex, int size, vector<string>& queries) {
 	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> res;
-	string contig;
-	while (getline(in, contig)) {
-		robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> tmp = compareContig_BamReader(reader, BarcodesOffsetsIndex, contig, size);
-		for (auto r : tmp) {
+	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> tmpRes;
+	for (string q : queries) {
+		tmpRes = compareContig_BamReader(reader, BarcodesOffsetsIndex, q, size);
+		for (auto r : tmpRes) {
 			res[r.first] += r.second;
 		}
 	}
 
-	reader.Close();
+	return res;
+}
+
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size, unsigned nbThreads) {
+	// Open the necessary number of BamReaders
+	vector<BamReader> readers(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		if (!readers[i].Open(bamFile)) {
+			throw ios_base::failure("Open: Unable to open BAM file " + bamFile + ". Please make sure the file exists.");
+		}
+		if (!readers[i].LocateIndex()) {
+			throw ios_base::failure("LocateIndex: Unable to find a BAM index for file " + bamFile + ". Please build the BAM index or provide a BAM file for which the BAM index is built.");
+		}
+		readers[i].Rewind();
+	}
+
+	// Fill vectors with the query barcodes
+	ifstream bc;
+	bc.open(contigs);
+	if (!bc.is_open()) {
+		throw ios_base::failure("open: Unable to open contigs list file " + contigs + ". Please provide an existing and valid file.");
+	}
+
+	vector<vector<string>> queries(nbThreads);
+	unsigned curThread = 0;
+	string line;
+	while (getline(bc, line)) {
+		queries[curThread].push_back(line);
+		curThread = (curThread + 1) % nbThreads;
+    }
+
+    bc.close();
+
+	// Split the querying into separate threads
+	ctpl::thread_pool myPool(nbThreads);
+	vector<std::future<robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs>>> results(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		results[i] = myPool.push(compareContigsList, ref(readers[i]), ref(BarcodesOffsetsIndex), size, ref(queries[i]));
+	}
+
+	// Retrieve threads subresults and build global result
+	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> res;
+	robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> curRes;
+	for (unsigned i = 0; i < nbThreads; i++) {
+		curRes = results[i].get();
+		for (auto r : curRes) {
+			res[r.first] += r.second;
+		}
+	}
+
+	// Close BamReaders
+	for (unsigned i = 0; i < nbThreads; i++) {
+		readers[i].Close();
+	}
 
 	return res;
 }

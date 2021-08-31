@@ -19,7 +19,6 @@ Requirements
   - g++, minimum version 5.5.0.
   - CMake, minimum version 2.8.2.
   - zlib, minimum version 1.2.11.
-  - The Boost C++ library (https://www.boost.org/), minimum version 1.74.0.
   
 Installation from source
 --------------
@@ -58,6 +57,7 @@ where [SUBCOMMAND] can be one of the following:
 
   - compare:     Compute the number of common barcodes between pairs of regions, or between pairs of contigs' extremities
   - extract:     Extract the barcodes from a given region of a BAM file
+  - stats        Retrieve general stats from a BAM file
   - index bam:   Index the offsets or occurrences positions of the barcodes contained in a BAM file
   - query bam:   Query the barcodes index to retrieve alignments in a BAM file, given a barcode or list of barcodes
   - index fastq: Index the offsets of the barcodes contained in a fastq file
@@ -78,6 +78,7 @@ A description of each subcommand as well as its options is given below.
       --contigs STRING, -c STRING:  File containing a list of contigs of interest
       --size INT, -s INT:           Size of contigs' extremities to consider (optional, default: 1000) 
       --output STRING, -o STRING:   File where to output the results (optional, default: stdout)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 #### Extract
 
@@ -88,6 +89,17 @@ A description of each subcommand as well as its options is given below.
       --all, -a:                    Extract all barcodes
       --output STRING, -o STRING:   File where to output the extracted barcodes (optional, default: stdout)
       --duplicates, -d:             Include duplicate barcodes (optional, default: false)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
+
+#### Stats
+
+`LRez stats` allows to retrieve general stats from the BAM file.
+
+      --bam STRING, -b STRING:      BAM file to extract barcodes from
+      --regions INT, -r INT:        Number of regions to consider to define stats (optional, default: 1000)
+      --size INT, -s INT:           Size of the regions to consider (optional, default: 1000)
+      --output STRING, -o STRING:   File where to output the extracted barcodes (optional, default: stdout)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 #### Index BAM
 
@@ -99,6 +111,7 @@ A description of each subcommand as well as its options is given below.
       --positions, -p:              Index the (chromosome, begPosition) occurrences positions of the barcodes
       --primary, -r:                Only index barcodes that appear in a primary alignment (optional, default: false)
       --quality INT, -q INT:        Only index barcodes that appear in an alignment of quality higher than this number (optional, default: 0)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 #### Query BAM
 
@@ -109,6 +122,7 @@ A description of each subcommand as well as its options is given below.
       ---query STRING, -q STRING:   Query barcode to search in the BAM / index
       --list STRING, -l STRING:     File containing a list of barcodes to search in the BAM / index
       --output STRING, -o STRING:   File where to output the extracted alignments (optional, default: stdout)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 #### Index fastq
 
@@ -117,6 +131,7 @@ A description of each subcommand as well as its options is given below.
       --fastq STRING, -f STRING:    Fastq file to index
       --output STRING, -o STRING:   File where to store the index
       --gzip, -g:                   Fastq file is gzipped (optional, default: false)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 #### Query fastq
 
@@ -128,6 +143,7 @@ A description of each subcommand as well as its options is given below.
       --list STRING, -l STRING:     File containing a list of barcodes to search in the fastq file and the index
       --output STRING, -o STRING:   File where to output the extracted reads (optional, default: stdout)
       --gzip, -g:                   Fastq file is gzipped (optional, default: false)
+      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
 
 
 Using the API

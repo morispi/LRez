@@ -18,18 +18,15 @@ SequencingTechnology determineSequencingTechnology(const string& barcode) {
     regmatch_t pmatch[1];
 
     if (0 != (rc = regcomp(&HaplotaggingReg, HaplotaggingPattern, REG_EXTENDED))) {
-	fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
+        throw runtime_error("regcomp: An error occured with pattern " + string(HaplotaggingPattern) + ".");
     }
 
     if (0 != (rc = regcomp(&stLFRReg, stLFRPattern, REG_EXTENDED))) {
-        fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
+        throw runtime_error("regcomp: An error occured with pattern " + string(stLFRPattern) + ".");
     }
 
     if (0 != (rc = regcomp(&TELLSeqReg, TELLSeqPattern, REG_EXTENDED))) {
-        fprintf(stderr, "regcomp() error.");
-        exit(EXIT_FAILURE);
+        throw runtime_error("regcomp: An error occured with pattern " + string(TELLSeqPattern) + ".");
     }
 
     if (0 == (rc = regexec(&TELLSeqReg, barcode.c_str(), nmatch, pmatch, 0))) {
@@ -41,15 +38,14 @@ SequencingTechnology determineSequencingTechnology(const string& barcode) {
     } else if (0 == (rc = regexec(&stLFRReg, barcode.c_str(), nmatch, pmatch, 0))) {
         res = stLFR;
     } else {
-        fprintf(stderr, "Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.\n");
-        exit(EXIT_FAILURE);
+        throw runtime_error("determineSequencingTechnology: Unrecognized sequencing technology. Please make sure your barcodes originate from a compatible technology or are reported as nucleotides in the BX:Z tag.");
     }
 
     return res;
 }
 
 string retrieveNucleotidesContent(const string& barcode) {
-    // Determine the sequencing technology according to the barcode, and exit if the technology cannot be determined.
+    // Determine the sequencing technology according to the barcode, and throw an exception if the technology cannot be determined.
     if (techno == Undefined) {
         techno = determineSequencingTechnology(barcode);
     }
@@ -72,8 +68,7 @@ string retrieveNucleotidesContent(const string& barcode) {
             break;
             }
         default:
-            fprintf(stderr, "Unexpected error. Please make sure your data is valid and attempt running LRez again.");
-            exit(EXIT_FAILURE); 
+            throw runtime_error("retrieveNucleotidesContent: Unexpected error. Please make sure your data is valid and attempt running LRez again.");
     }
 
     return res;
@@ -103,8 +98,7 @@ bool isValidBarcode(const string& barcode) {
             res = (barcode != "0_0_0");
             break;
         default:
-            fprintf(stderr, "Unexpected error. Please make sure your data is valid and attempt running LRez again.");
-            exit(EXIT_FAILURE); 
+            throw runtime_error("isValidBarcode: Unexpected error. Please make sure your data is valid and attempt running LRez again.");
     }
 
     return res;
@@ -139,25 +133,57 @@ vector<string> splitString(string s, string delimiter) {
     return res;
 }
 
+vector<string> extractRegions(string contig, int32_t contigSize, unsigned regionSize) {
+    vector<string> res;
+    for (int32_t i = 0; i < contigSize; i += regionSize) {
+        res.push_back(contig + ":" + to_string(i) + "-" + to_string(i + regionSize - 1));
+    }
+    res.push_back(contig + ":" + to_string(contigSize - regionSize + 1) + "-" + to_string(contigSize));
+
+    return res;
+}
+
+vector<string> extractRegionsList(BamReader& reader, unsigned regionSize) {
+    vector<string> regionsList;
+
+     // Get a vector containing reference sequences data
+    RefVector rv = reader.GetReferenceData();
+
+    for (RefData d : rv) {
+        int id = reader.GetReferenceID(d.RefName);
+        BamAlignment al;
+        if (id == -1) {
+            throw runtime_error("GetReferenceID: Cannot find reference with ID " + d.RefName + ".");
+        }   
+
+        // Only process the chromosome if it has alignments
+        if (reader.SetRegion(id, 0, id, d.RefLength - 1) and reader.GetNextAlignment(al)) {
+            vector<string> w = extractRegions(d.RefName, d.RefLength, regionSize);
+            for (string ww : w) {
+                regionsList.push_back(ww);
+            }
+        }
+    }
+
+    return regionsList;
+}
+
 BamRegion stringToBamRegion(BamReader& reader, string s) {
 	BamRegion r;
 
 	vector<string> t = splitString(s, ":");
     if (t.size() != 2) {
-		fprintf(stderr, "Error when attempting to convert %s to a BamRegion.\n", s.c_str());
-        exit(EXIT_FAILURE);
+        throw runtime_error("stringToBamRegion: Error when attempting to convert " + s + " to a BamRegion.");
 	}
 
     vector<string> p = splitString(t[1], "-");
     if (p.size() != 2) {
-        fprintf(stderr, "Error when attempting to convert %s to a BamRegion.\n", s.c_str());
-        exit(EXIT_FAILURE);
+        throw runtime_error("stringToBamRegion: Error when attempting to convert " + s + " to a BamRegion.");
     }
 
 	int leftID = reader.GetReferenceID(t[0]);
 	if (leftID == -1) {
-		fprintf(stderr, "Cannot find refence with ID %s.\n", t[0].c_str());
-		exit(EXIT_FAILURE);
+        throw runtime_error("GetReferenceID: Cannot find reference with ID " + t[0] + ".");
 	}
 
 	BamRegion res(leftID, stoi(p[0]), leftID, stoi(p[1]));

@@ -54,6 +54,9 @@
    index in a file.
  */
 
+#ifndef __LREZ_GZ_INDEX__
+#define __LREZ_GZ_INDEX__
+
 using namespace std;
 
 #include <stdio.h>
@@ -81,6 +84,7 @@ struct point {
 struct access {
     int have;           /* number of list entries filled in */
     int size;           /* number of list entries allocated */
+    long maxOffset; /* Last offset of the uncompressed file */
     struct point *list; /* allocated list */
 };
 
@@ -95,6 +99,7 @@ void freeGzIndex(struct access *index);
 
   @param index index to serialize
   @param outputFile file where to store the index
+  @throws ios_base::failure thrown if outputFile could not be open
 */
 void serializeGzIndex(struct access* index, string outputFile);
 
@@ -103,6 +108,7 @@ void serializeGzIndex(struct access* index, string outputFile);
 
   @param index index to fill
   @param inputFile file where the index is stored
+  @throws ios_base::failure thrown if inputFile could not be open
   @return the index populated with the contents of the file
 */
 struct access* deserializeGzIndex(struct access* index, string inputFile);
@@ -113,11 +119,12 @@ struct access* deserializeGzIndex(struct access* index, string inputFile);
   @param gzFile gzip file to build the index for
   @param span build access points every span bits of uncompressed output
   @param built structure where to store the index
+  @throws ios_base::failure thrown if gzFile could not be open
   @return the number of access points on success (>=1), Z_MEM_ERROR for out of memory, 
   Z_DATA_ERROR for an error in the input file, or Z_ERRNO for a file read error.
   On success, *built points to the resulting index.
 */
-int buildGzIndex(string, off_t span, struct access **built);
+int buildGzIndex(string gzFile, off_t span, struct access **built);
 
 /**
   Index a given gzip file.
@@ -139,6 +146,7 @@ int buildGzIndex_Stream(FILE *in, off_t span, struct access **built);
   @param offset offset to start extracting data from
   @param buf buffer where to store the extracted data
   @param len number of bytes to extract
+  @throws ios_base::failure thrown if gzFile could not be open
   @return bytes read or negative for error (Z_DATA_ERROR or Z_MEM_ERROR)
 */
 int extract(string gzFile, struct access *index, off_t offset, unsigned char *buf, int len);
@@ -164,3 +172,5 @@ int extract_Stream(FILE *in, struct access *index, off_t offset, unsigned char *
   @return the extracted read in fastq format
 */
 string extractFastqReadFromOffset(FILE* in, struct access* index, off_t offset);
+
+#endif

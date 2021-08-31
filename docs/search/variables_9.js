@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_467',['value',['../structrobin__hood_1_1detail_1_1swappable_1_1nothrow.html#ad0f9d2944cc7a6e6d9e0ed206c86bd63',1,'robin_hood::detail::swappable::nothrow']]]
+  ['readsperbarcode_494',['readsPerBarcode',['../struct_stats.html#ab2b836670e63d27ab1a85f05515d0d9f',1,'Stats']]]
 ];

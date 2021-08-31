@@ -60,14 +60,14 @@ void serializeGzIndex(struct access* index, string outputFile) {
   ofstream out;
   out.open(outputFile, ios::out | ios::binary);
   if (!out.is_open()) {
-    fprintf(stderr, "Unable to open file %s.", outputFile.c_str());
-    exit(EXIT_FAILURE);
+    throw ios_base::failure("gzIndex: Unable to open file " + outputFile + ".");
   }
 
   unsigned char compData[WINSIZE];
 
   out.write((const char*) &index->have, sizeof(index->have));
   out.write((const char*) &index->size, sizeof(index->size));
+  out.write((const char*) &index->maxOffset, sizeof(index->maxOffset));
 
   
   for (int i = 0; i < index->have; i++) {
@@ -105,12 +105,12 @@ struct access* deserializeGzIndex(struct access* index, string inputFile) {
   ifstream in;
   in.open(inputFile, ios::in | ios::binary);
   if (!in.is_open()) {
-    fprintf(stderr, "Unable to open gzip index for file %s. Please make sure the gzip index file exists.\n", inputFile.c_str());
-    exit(EXIT_FAILURE);
+    throw ios_base::failure("gzIndex: Untable to open gzip index for file " + inputFile + " for reading. Please make sure the gzip index file exists.");
   }
 
   in.read((char*) &index->have, sizeof(index->have));
   in.read((char*) &index->size, sizeof(index->size));
+  in.read((char*) &index->maxOffset, sizeof(index->maxOffset));
   index->list = (struct point*) malloc(index->size * sizeof(struct point));
 
   for (int i = 0; i < index->have; i++) {
@@ -326,10 +326,14 @@ int buildGzIndex_Stream(FILE *in, off_t span, struct access **built)
         } while (strm.avail_in != 0);
     } while (ret != Z_STREAM_END);
 
+
+
     /* clean up and return index (release unused entries in list) */
     (void)inflateEnd(&strm);
     index->list = (struct point*) realloc(index->list, sizeof(struct point) * index->have);
     index->size = index->have;
+    // index->maxOffset = ftell(in);
+    index->maxOffset = totout;
     *built = index;
     return index->size;
 
@@ -345,8 +349,8 @@ int buildGzIndex(string gzFile, off_t span, struct access **built) {
   FILE *in;
   in = fopen(gzFile.c_str(), "rb");
   if (in == NULL) {
-      fprintf(stderr, "zran: could not open %s for reading\n", gzFile.c_str());
-      exit(EXIT_FAILURE);
+      throw ios_base::failure("gzIndex: could not open " + gzFile + " for reading. Please make sure the file exists.");
+
   }
 
   int res = buildGzIndex_Stream(in, span, built);
@@ -468,8 +472,7 @@ int extract(string gzFile, struct access *index, off_t offset, unsigned char *bu
   FILE *in;
   in = fopen(gzFile.c_str(), "rb");
   if (in == NULL) {
-      fprintf(stderr, "zran: could not open %s for reading\n", gzFile.c_str());
-      exit(EXIT_FAILURE);
+      throw ios_base::failure("gzIndex: could not open " + gzFile + " for reading. Please make sure the file exists.");
   }
 
   int res = extract_Stream(in, index, offset, buf, len);

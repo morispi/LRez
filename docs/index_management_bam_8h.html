@@ -125,14 +125,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a34546ccadd5f2d778f3ff5cd57ee81ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a34546ccadd5f2d778f3ff5cd57ee81ee">indexBarcodesPositionsFromBam</a> (string bamFile, bool primary, unsigned quality)</td></tr>
-<tr class="separator:a34546ccadd5f2d778f3ff5cd57ee81ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08f302c7c86162fe9762ebfcdb46271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#ae08f302c7c86162fe9762ebfcdb46271">indexBarcodesPositionsFromBam</a> (string bamFile, bool primary, unsigned quality, unsigned nbThreads=1)</td></tr>
+<tr class="separator:ae08f302c7c86162fe9762ebfcdb46271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a387016834fe8eb14fbdaa7ec408a07e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a387016834fe8eb14fbdaa7ec408a07e1">saveBarcodesPositionsIndex</a> (<a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a> &amp;index, string file)</td></tr>
 <tr class="separator:a387016834fe8eb14fbdaa7ec408a07e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1633b99a3d3da4a8ce7afade54b39967"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#ac4f21460b7974d9414e597138bd9c1b6">BarcodesPositionsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a1633b99a3d3da4a8ce7afade54b39967">loadBarcodesPositionsIndex</a> (string file)</td></tr>
 <tr class="separator:a1633b99a3d3da4a8ce7afade54b39967"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a705f58cf76488887fabcbed11b22b3c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a705f58cf76488887fabcbed11b22b3c7">indexBarcodesOffsetsFromBam</a> (string bamFile, bool primary, unsigned quality)</td></tr>
-<tr class="separator:a705f58cf76488887fabcbed11b22b3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638c641351f5794cdc886f2ee9647c74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a638c641351f5794cdc886f2ee9647c74">indexBarcodesOffsetsFromBam</a> (string bamFile, bool primary, unsigned quality, unsigned nbThreads=1)</td></tr>
+<tr class="separator:a638c641351f5794cdc886f2ee9647c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01881f6529ec8478f607a4ffa8b0e58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a01881f6529ec8478f607a4ffa8b0e58f">saveBarcodesOffsetsIndex</a> (<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;index, string file)</td></tr>
 <tr class="separator:a01881f6529ec8478f607a4ffa8b0e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70c22a640153db058f6b861a02d96510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="index_management_bam_8h.html#a70c22a640153db058f6b861a02d96510">loadBarcodesOffsetsIndex</a> (string file)</td></tr>
@@ -172,8 +172,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a705f58cf76488887fabcbed11b22b3c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a705f58cf76488887fabcbed11b22b3c7">&#9670;&nbsp;</a></span>indexBarcodesOffsetsFromBam()</h2>
+<a id="a638c641351f5794cdc886f2ee9647c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a638c641351f5794cdc886f2ee9647c74">&#9670;&nbsp;</a></span>indexBarcodesOffsetsFromBam()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +194,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>quality</em>&#160;</td>
+          <td class="paramname"><em>quality</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nbThreads</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,6 +215,14 @@ Functions</h2></td></tr>
     <tr><td class="paramname">reader</td><td>bamFile BAM file to build the index from </td></tr>
     <tr><td class="paramname">primary</td><td>whether to only index primary alignments or not </td></tr>
     <tr><td class="paramname">quality</td><td>minimum quality to index an alignment </td></tr>
+    <tr><td class="paramname">nbThreads</td><td>number of threads to use, set to 1 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">runtime_error</td><td>thrown if bamFile could not be seeked </td></tr>
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if bamFile or its associated index could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -216,8 +230,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a34546ccadd5f2d778f3ff5cd57ee81ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34546ccadd5f2d778f3ff5cd57ee81ee">&#9670;&nbsp;</a></span>indexBarcodesPositionsFromBam()</h2>
+<a id="ae08f302c7c86162fe9762ebfcdb46271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08f302c7c86162fe9762ebfcdb46271">&#9670;&nbsp;</a></span>indexBarcodesPositionsFromBam()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +252,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>quality</em>&#160;</td>
+          <td class="paramname"><em>quality</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nbThreads</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -253,6 +273,13 @@ Functions</h2></td></tr>
     <tr><td class="paramname">reader</td><td>bamFile BAM file to build the index from </td></tr>
     <tr><td class="paramname">primary</td><td>whether to only index primary alignments or not </td></tr>
     <tr><td class="paramname">quality</td><td>minimum quality to index an alignment </td></tr>
+    <tr><td class="paramname">nbThreads</td><td>number of threads to use, set to 1 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if bamFile or its associated index could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -282,6 +309,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>the barcode offsets index filled with the data contained in the file </dd></dl>
 
 </div>
@@ -305,6 +338,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>file where the barcode positions index is stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -341,6 +380,17 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">BarcodesOffsetsIndex</td><td>barcode offsets index to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">file</td><td>file where to store the index </td></tr>
   </table>
   </dd>
@@ -377,6 +427,17 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">BarcodesPositionsIndex</td><td>barcode positions index to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if file could not be open </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">file</td><td>file where to store the index </td></tr>
   </table>
   </dd>

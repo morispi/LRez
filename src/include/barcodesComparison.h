@@ -18,16 +18,6 @@ struct hashPairs {
     } 
 };
 
-// struct hashPairsPairs { 
-//     template <class T1, class T2> 
-//     size_t operator()(const pair<T1, T2>& p) const
-//     { 
-//         auto hash1 = p.first.first ^ p.first.second; 
-//         auto hash2 = p.second.first ^ p.second.second; 
-//         return hash1 ^ hash2; 
-//     } 
-// }; 
-
 /**
 	Count the number of common barcodes between two sets of barcodes.
 
@@ -50,6 +40,7 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> computePair
 
 	@param reader bamFile BAM file to compute common barcodes from
 	@param regions file containing a list of regions formatted as chromosome:startPosition-endPosition
+	@throws ios_base::failure thrown if bamFile or its associated index, or if regions could not be open
 	@return a map associating all possible pairs of regions to their number of common barcodes 
 */
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareRegions(string bamFile, string regions);
@@ -73,6 +64,7 @@ void computeCommonBarcodesCounts(robin_hood::unordered_map<pair<string, string>,
 	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
 	@param contig name of the contig of interest
 	@param size size of the contigs extremities to consider
+	@throw runtime_error is trown if the ID of contig could not be found
 	@return a map associating pairs of contigs' extremities to their number of common barcodes
 */
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig_BamReader(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size);
@@ -84,6 +76,7 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
 	@param contig name of the contig of interest
 	@param size size of the contigs extremities to consider
+	@throws ios_base::failure thrown if bamFile or its associated index could not be open,
 	@return a map associating pairs of contigs' extremities to their number of common barcodes
 */
 robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContig(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contig, int size);
@@ -95,8 +88,10 @@ robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareCont
 	@param BarcodesOffsetsIndex barcode index associating barcodes to the set of BamRegion they appear in
 	@param contigs file containing a list of contigs of interest
 	@param size size of the contigs extremities to consider
+	@param nbThreads number of threads to use, set to 1 by default
+	@throws ios_base::failure thrown if bamFile or its associated index, or if regions could not be open
 	@return a map associating pairs of contigs' extremities to their number of common barcodes
 */
-robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size);
+robin_hood::unordered_map<pair<string, string>, unsigned, hashPairs> compareContigs(string bamFile, BarcodesOffsetsIndex& BarcodesOffsetsIndex, string contigs, int size, unsigned nbThreads = 1);
 
 #endif

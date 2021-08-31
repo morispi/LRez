@@ -106,8 +106,6 @@ Include dependency graph for alignmentsRetrieval.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac630124a08dd2c8f4f31445e85cc8c89"><td class="memItemLeft" align="right" valign="top">BamAlignment&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#ac630124a08dd2c8f4f31445e85cc8c89">retrieveAlignmentWithBarcode</a> (BamAlignment *alignment, BamReader &amp;reader, int64_t position, <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a> b)</td></tr>
-<tr class="separator:ac630124a08dd2c8f4f31445e85cc8c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18de1edd511cbe727c6e9b336eaf4ec3"><td class="memItemLeft" align="right" valign="top">vector&lt; BamAlignment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#a18de1edd511cbe727c6e9b336eaf4ec3">retrieveAlignmentsWithBarcodeBits_BamReader</a> (BamReader &amp;reader, <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>, <a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a> b)</td></tr>
 <tr class="separator:a18de1edd511cbe727c6e9b336eaf4ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09227c1fc79f7b1b2a227007b615a5dc"><td class="memItemLeft" align="right" valign="top">vector&lt; BamAlignment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#a09227c1fc79f7b1b2a227007b615a5dc">retrieveAlignmentsWithBarcode_BamReader</a> (BamReader &amp;reader, <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>, string bc)</td></tr>
@@ -118,8 +116,8 @@ Functions</h2></td></tr>
 <tr class="separator:a6d153922e4f6bb60e751b26d858bbf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade6d8ab301171346a84397320f2a18fd"><td class="memItemLeft" align="right" valign="top">vector&lt; BamAlignment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#ade6d8ab301171346a84397320f2a18fd">retrieveAlignmentsWithBarcodes_BamReader</a> (BamReader &amp;reader, <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>, string barcodesList)</td></tr>
 <tr class="separator:ade6d8ab301171346a84397320f2a18fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a528d7731794c241d0862b8efc42c9494"><td class="memItemLeft" align="right" valign="top">vector&lt; BamAlignment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#a528d7731794c241d0862b8efc42c9494">retrieveAlignmentsWithBarcodes</a> (string bamFile, <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>, string barcodesList)</td></tr>
-<tr class="separator:a528d7731794c241d0862b8efc42c9494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a00f604115f122cacd072d5fb586cf"><td class="memItemLeft" align="right" valign="top">vector&lt; BamAlignment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alignments_retrieval_8h.html#a95a00f604115f122cacd072d5fb586cf">retrieveAlignmentsWithBarcodes</a> (string bamFile, <a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a> &amp;<a class="el" href="index_management_bam_8h.html#a1c56dd269f15d27ac14f1a7a76acd89a">BarcodesOffsetsIndex</a>, string barcodesList, unsigned nbThreads=1)</td></tr>
+<tr class="separator:a95a00f604115f122cacd072d5fb586cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0d0cf37cec8414b29e2ad6bc142df3ce"></a>
@@ -250,6 +248,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if bamFile or its associated index could not be open </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector containing all the alignments sharing the barcode of interest </dd></dl>
 
 </div>
@@ -294,12 +298,18 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">runtime_error</td><td>thrown if a given offset of the file where the barcode appears could not be seeked </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector containing all the alignments sharing the barcode of interest </dd></dl>
 
 </div>
 </div>
-<a id="a528d7731794c241d0862b8efc42c9494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a528d7731794c241d0862b8efc42c9494">&#9670;&nbsp;</a></span>retrieveAlignmentsWithBarcodes()</h2>
+<a id="a95a00f604115f122cacd072d5fb586cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a00f604115f122cacd072d5fb586cf">&#9670;&nbsp;</a></span>retrieveAlignmentsWithBarcodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +330,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>barcodesList</em>&#160;</td>
+          <td class="paramname"><em>barcodesList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nbThreads</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -335,6 +351,13 @@ Functions</h2></td></tr>
     <tr><td class="paramname">bamFile</td><td>BAM file to extract alignments from </td></tr>
     <tr><td class="paramname">BarcodesOffsetsIndex</td><td>barcode offsets index of the BAM file </td></tr>
     <tr><td class="paramname">barcodesList</td><td>file containing the list of barcodes of interest, with one barcode per line </td></tr>
+    <tr><td class="paramname">nbThreads</td><td>number of threads to use, set to 1 by default </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if bamFile or its associated index, or if barcodesList could not be open </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,58 +405,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing all the alignments with the barcodes of interest </dd></dl>
-
-</div>
-</div>
-<a id="ac630124a08dd2c8f4f31445e85cc8c89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac630124a08dd2c8f4f31445e85cc8c89">&#9670;&nbsp;</a></span>retrieveAlignmentWithBarcode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BamAlignment retrieveAlignmentWithBarcode </td>
-          <td>(</td>
-          <td class="paramtype">BamAlignment *&#160;</td>
-          <td class="paramname"><em>alignment</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BamReader &amp;&#160;</td>
-          <td class="paramname"><em>reader</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="utils_8h.html#adefcdfa17e7a80638f1ba583b2c77a34">barcode</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Retrieve the alignment starting at the given position and containing the given barcode.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">alignment</td><td>pointer to the variable where to store the alignment if it is found </td></tr>
-    <tr><td class="paramname">reader</td><td>BamReader open on the desired BAM file </td></tr>
-    <tr><td class="paramname">position</td><td>position at which the alignment must start </td></tr>
-    <tr><td class="paramname">b</td><td>barcode of interest, in binary representation </td></tr>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ios_base::failure</td><td>thrown if barcodesList could not be open </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the alignment of interest </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing all the alignments with the barcodes of interest </dd></dl>
 
 </div>
 </div>

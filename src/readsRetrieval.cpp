@@ -1,5 +1,6 @@
 #include "readsRetrieval.h"
 #include "reverseComplement.h"
+#include "../CTPL/ctpl_stl.h"
 
 vector<string> retrieveReadsWithBarcodeBits_Stream(ifstream& in, BarcodesIndex& BarcodesIndex, barcode bc) {
 	vector<string> res;
@@ -7,8 +8,7 @@ vector<string> retrieveReadsWithBarcodeBits_Stream(ifstream& in, BarcodesIndex& 
 
 	for (int64_t r : BarcodesIndex[bc]) {
 		if (!in.seekg(r, in.beg)) {
-			fprintf(stderr, "Error while attempting to jump to offset %ld\n", r);
-			exit(EXIT_FAILURE);
+			throw runtime_error("Fseek: Error while attempting to jump to offset " + to_string(r) + ".");
 		}
 		
 		getline(in, line);
@@ -30,8 +30,7 @@ vector<string> retrieveReadsWithBarcodeBits(string fastqFile, BarcodesIndex& Bar
 	ifstream in;
 	in.open(fastqFile);
 	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open barcodes index file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open fastq file " + fastqFile + ". Please provide an existing and valid file.");
 	}
 	
 	vector<string> res = retrieveReadsWithBarcodeBits_Stream(in, BarcodesIndex, bc);
@@ -56,8 +55,7 @@ vector<string> retrieveReadsWithBarcodes_Stream(ifstream& in, BarcodesIndex& Bar
 	ifstream bc;
 	bc.open(barcodesList);
 	if (!bc.is_open()) {
-		fprintf(stderr, "Unable to open barcodes list file %s. Please provide an existing and valid file.\n", barcodesList.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open barcodes list file " + barcodesList + ". Please provide an existing and valid file.");
 	}
 
 	while (getline(bc, line)) {
@@ -72,16 +70,66 @@ vector<string> retrieveReadsWithBarcodes_Stream(ifstream& in, BarcodesIndex& Bar
 	return res;
 }
 
-vector<string> retrieveReadsWithBarcodes(string fastqFile, BarcodesIndex& BarcodesIndex, string barcodesList) {
-	ifstream in;
-	in.open(fastqFile);
-	if (!in.is_open()) {
-		fprintf(stderr, "Unable to open fastq file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
-		exit(EXIT_FAILURE);
+/**
+	Query the index to retrieve alignments that have their barcodes in the specified list.
+*/
+vector<string> retrieveReadsWithBarcodesList(int id, ifstream& in, BarcodesIndex& BarcodesIndex, vector<string> queries) {
+	vector<string> res;
+	vector<string> tmpRes;
+	for (string q : queries) {
+		tmpRes = retrieveReadsWithBarcode_Stream(in, BarcodesIndex, q);
+		res.insert(res.end(), tmpRes.begin(), tmpRes.end());
 	}
 
-	vector<string> res = retrieveReadsWithBarcodes_Stream(in, BarcodesIndex, barcodesList);
-	in.close();
+	return res;
+}
+
+vector<string> retrieveReadsWithBarcodes(string fastqFile, BarcodesIndex& BarcodesIndex, string barcodesList, unsigned nbThreads) {
+	// Open the necessary number of streams
+	vector<ifstream> ins(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		ins[i].open(fastqFile);
+		if (!ins[i].is_open()) {
+			throw ios_base::failure("open: Unable to open fastq file " + fastqFile + ". Please provide an existing and valid file.");
+		}
+	}
+
+	// Fill vectors with the query barcodes
+	ifstream bc;
+	bc.open(barcodesList);
+	if (!bc.is_open()) {
+		throw ios_base::failure("open: Unable to open barcodes list file " + barcodesList + ". Please provide an existing and valid file.");
+	}
+
+	vector<vector<string>> queries(nbThreads);
+	unsigned curThread = 0;
+	string line;
+	while (getline(bc, line)) {
+		queries[curThread].push_back(line);
+		curThread = (curThread + 1) % nbThreads;
+    }
+
+    bc.close();
+
+	// Split the querying into separate threads
+	ctpl::thread_pool myPool(nbThreads);
+	vector<std::future<vector<string>>> results(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		results[i] = myPool.push(retrieveReadsWithBarcodesList, ref(ins[i]), ref(BarcodesIndex), ref(queries[i]));
+	}
+
+	// Retrieve threads subresults and build global result
+	vector<string> res;
+	vector<string> curRes;
+	for (unsigned i = 0; i < nbThreads; i++) {
+		curRes = results[i].get();
+		res.insert(res.end(), curRes.begin(), curRes.end());
+	}
+
+	// Close streams
+	for (unsigned i = 0; i < nbThreads; i++) {
+		ins[i].close();
+	}
 
 	return res;
 }
@@ -102,8 +150,7 @@ vector<string> retrieveReadsWithBarcodeBits_Gzip(string fastqFile, BarcodesIndex
 	FILE *in;
 	in = fopen(fastqFile.c_str(), "rb");
 	if (in == NULL) {
-		fprintf(stderr, "Unable to open gzip fastq file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
-	  	exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open gziped fastq file " + fastqFile + ". Please provide an existing and valid file.");
 	}
 
 	struct access* gzIndex = NULL;
@@ -131,8 +178,7 @@ vector<string> retrieveReadsWithBarcodes_Gzip_Stream_Index(FILE* in, struct acce
 	ifstream bc;
 	bc.open(barcodesList);
 	if (!bc.is_open()) {
-		fprintf(stderr, "Unable to open barcodes list file %s. Please provide an existing and valid file.\n", barcodesList.c_str());
-		exit(EXIT_FAILURE);
+		throw ios_base::failure("open: Unable to open barcodes list file " + barcodesList + ". Please provide an existing and valid file.");
 	}
 
 	while (getline(bc, line)) {
@@ -147,20 +193,76 @@ vector<string> retrieveReadsWithBarcodes_Gzip_Stream_Index(FILE* in, struct acce
 	return res;
 }
 
-vector<string> retrieveReadsWithBarcodes_Gzip(string fastqFile, BarcodesIndex& BarcodesIndex, string barcodesList) {
-	FILE *in;
-	in = fopen(fastqFile.c_str(), "rb");
-	if (in == NULL) {
-		fprintf(stderr, "Unable to open gzip fastq file %s. Please provide an existing and valid file.\n", fastqFile.c_str());
-	  	exit(EXIT_FAILURE);
+/**
+	Querie the index to retrieve alignments that have their barcodes in the specified list.
+*/
+vector<string> retrieveReadsWithBarcodesList_Gzip(int id, FILE* in, struct access* gzIndex, BarcodesIndex& BarcodesIndex, vector<string> queries) {
+	vector<string> res;
+	vector<string> tmpRes;
+	for (string q : queries) {
+		tmpRes = retrieveReadsWithBarcode_Gzip_Stream_Index(in, gzIndex, BarcodesIndex, q);
+		res.insert(res.end(), tmpRes.begin(), tmpRes.end());
 	}
 
-	struct access* gzIndex = NULL;
-	gzIndex = deserializeGzIndex(gzIndex, fastqFile + "i");
+	return res;
+}
 
-	vector<string> res = retrieveReadsWithBarcodes_Gzip_Stream_Index(in, gzIndex, BarcodesIndex, barcodesList);
-	fclose(in);
-	freeGzIndex(gzIndex);
+vector<string> retrieveReadsWithBarcodes_Gzip(string fastqFile, BarcodesIndex& BarcodesIndex, string barcodesList, unsigned nbThreads) {
+	// Open the necessary number of streams
+	vector<FILE*> ins(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		ins[i] = fopen(fastqFile.c_str(), "rb");
+		if (ins[i] == NULL) {
+			throw ios_base::failure("open: Unable to open gziped fastq file " + fastqFile + ". Please provide an existing and valid file.");
+		}
+	}
+
+	vector<struct access*> gzIndexes(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		gzIndexes[i] = deserializeGzIndex(gzIndexes[i], fastqFile + "i");
+	}
+
+	// Fill vectors with the query barcodes
+	ifstream bc;
+	bc.open(barcodesList);
+	if (!bc.is_open()) {
+		throw ios_base::failure("open: Unable to open barcodes list file " + barcodesList + ". Please provide an existing and valid file.");
+	}
+
+	vector<vector<string>> queries(nbThreads);
+	unsigned curThread = 0;
+	string line;
+	while (getline(bc, line)) {
+		queries[curThread].push_back(line);
+		curThread = (curThread + 1) % nbThreads;
+    }
+
+    bc.close();
+
+	// Split the querying into separate threads
+	ctpl::thread_pool myPool(nbThreads);
+	vector<std::future<vector<string>>> results(nbThreads);
+	for (unsigned i = 0; i < nbThreads; i++) {
+		results[i] = myPool.push(retrieveReadsWithBarcodesList_Gzip, ins[i], gzIndexes[i], ref(BarcodesIndex), ref(queries[i]));
+	}
+
+	// Retrieve threads subresults and build global result
+	vector<string> res;
+	vector<string> curRes;
+	for (unsigned i = 0; i < nbThreads; i++) {
+		curRes = results[i].get();
+		res.insert(res.end(), curRes.begin(), curRes.end());
+	}
+
+	// Close streams
+	for (unsigned i = 0; i < nbThreads; i++) {
+		fclose(ins[i]);
+	}
+
+	// Free indexes
+	for (unsigned i = 0; i < nbThreads; i++) {
+		freeGzIndex(gzIndexes[i]);
+	}
 
 	return res;
 }

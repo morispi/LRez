@@ -20,14 +20,17 @@ typedef robin_hood::unordered_map<barcode, vector<pair<int32_t, int32_t>>> Barco
 	@param reader bamFile BAM file to build the index from
 	@param primary whether to only index primary alignments or not
 	@param quality minimum quality to index an alignment
+	@param nbThreads number of threads to use, set to 1 by default
+	@throws ios_base::failure thrown if bamFile or its associated index could not be open
 	@return the barcode positions index associating barcodes to the set of (chromosome, begPosition) pairs they occur at
 */
-BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality);
+BarcodesPositionsIndex indexBarcodesPositionsFromBam(string bamFile, bool primary, unsigned quality, unsigned nbThreads = 1);
 
 /**
 	Save the content of the barcode positions index in a given file.
 
 	@param BarcodesPositionsIndex barcode positions index to save
+	@throws ios_base::failure thrown if file could not be open
 	@param file file where to store the index
 */
 void saveBarcodesPositionsIndex(BarcodesPositionsIndex& index, string file);
@@ -36,6 +39,7 @@ void saveBarcodesPositionsIndex(BarcodesPositionsIndex& index, string file);
 	Load the barcode positions index stored in a given file.
 
 	@param file file where the barcode positions index is stored
+	@throws ios_base::failure thrown if file could not be open
 	@return the barcode positions index filled with the data contained in the file
 */
 BarcodesPositionsIndex loadBarcodesPositionsIndex(string file);
@@ -47,14 +51,18 @@ BarcodesPositionsIndex loadBarcodesPositionsIndex(string file);
 	@param reader bamFile BAM file to build the index from
 	@param primary whether to only index primary alignments or not
 	@param quality minimum quality to index an alignment
+	@param nbThreads number of threads to use, set to 1 by default
+	@throws runtime_error thrown if bamFile could not be seeked
+	@throws ios_base::failure thrown if bamFile or its associated index could not be open
 	@return the barcode index associating barcodes to the set of offsets they occur at
 */
-BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality);
+BarcodesOffsetsIndex indexBarcodesOffsetsFromBam(string bamFile, bool primary, unsigned quality, unsigned nbThreads = 1);
 
 /**
 	Save the content of the barcode index in a given file.
 
 	@param BarcodesOffsetsIndex barcode offsets index to save
+	@throws ios_base::failure thrown if file could not be open
 	@param file file where to store the index
 */
 void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& index, string file);
@@ -63,6 +71,7 @@ void saveBarcodesOffsetsIndex(BarcodesOffsetsIndex& index, string file);
 	Load the barcode index stored in a given file.
 
 	@param file file where the barcode offsets index is stored
+	@throws ios_base::failure thrown if file could not be open
 	@return the barcode offsets index filled with the data contained in the file
 */
 BarcodesOffsetsIndex loadBarcodesOffsetsIndex(string file);

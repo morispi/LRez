@@ -35,6 +35,7 @@ extern SequencingTechnology techno;
 	Barcodes that do not come from these technologies and are not represented as a suite of nucleotides will cause the program to exit.
 
 	@param barcode the barcode to determine sequencing technology from
+	@throws runtime_error thrown if a barcode pattern could not be converted to a regexp or if the used sequencing technology was not recognized
 	@return The SequencingTechnology enum field corresponding to the sequencing technology
 */
 SequencingTechnology determineSequencingTechnology(const string& barcode);
@@ -45,6 +46,7 @@ SequencingTechnology determineSequencingTechnology(const string& barcode);
 	The function takes care of determining the employed sequencing technoly.
 
 	@param barcode the barcode to retrieve nucleotides for
+	@throws runtime_error thrown if the sequencing technology could not be recognized
 	@return the barcode in nucleotides representation
 */
 string retrieveNucleotidesContent(const string& barcode);
@@ -56,6 +58,7 @@ string retrieveNucleotidesContent(const string& barcode);
 	The function takes care of determining the employed sequencing technoly.
 
 	@param barcode the barcode to verify
+	@throws runtime_error thrown if the sequencing technology could not be recognized
 	@return true if the barcode is valid, false otherwise
 */
 bool isValidBarcode(const string& barcode);
@@ -83,9 +86,28 @@ vector<string> splitString(string s, string delimiter);
 
 	@param reader BamReader open on the desired BAM file
 	@param s string to translate, formatted as chromosome:startPosition-endPosition
+	@throws runtime_error thrown if a region could not be converted to a BamRegion or if a contig name could not be converted to an ID
 	@return the BamRegion coressponding to the string s
 */
 BamRegion stringToBamRegion(BamReader& reader, string s);
+
+/**
+	Extract all regions of a given size from a civen chromosome.
+	@param chromosme chromosome of interest
+	@param chromosomeSize size of the chromosome
+	@param regionSize size of the regions to extract
+	@return a list of all regions of specifed size of the chromosome
+*/
+vector<string> extractRegions(string chromosome, int32_t chromosomeSize, unsigned regionSize);
+
+/**
+	Extract all regions from all chromosomes.
+	@param reader BamReader open on the desired BAM file
+	@param regionSize size of the regions to extract
+	@throws runtime_error thrown if a contig name could not be converted to an ID
+	@return a list of all regions of specified size of all the chromosomes
+*/
+vector<string> extractRegionsList(BamReader& reader, unsigned regionSize);
 
 /**
 	Translate a BamAlignment to a SAM-like string.

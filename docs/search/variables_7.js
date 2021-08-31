@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['second_464',['second',['../structrobin__hood_1_1pair.html#a3703b0d79fb2daa2d39ca48954278326',1,'robin_hood::pair']]],
-  ['size_465',['size',['../structaccess.html#aea01a7415e1faa507157b9301a58a052',1,'access']]]
+  ['nbbarcodes_491',['nbBarcodes',['../struct_stats.html#a90fde33a4dab3bc5c974d3e24af8d1ff',1,'Stats']]],
+  ['nbmappedreads_492',['nbMappedReads',['../struct_stats.html#a84114677229d9864d81606b3bb89555d',1,'Stats']]]
 ];
