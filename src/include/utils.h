@@ -104,7 +104,7 @@ vector<string> extractRegions(string chromosome, int32_t chromosomeSize, unsigne
 	Extract all regions from all chromosomes.
 	@param reader BamReader open on the desired BAM file
 	@param regionSize size of the regions to extract
-	@throws runtime_error thrown if a contig name could not be converted to an ID
+	@throws runtime_error thrown if a contig name could not be converted to an ID or if a region of redaer could not be jumped to
 	@return a list of all regions of specified size of all the chromosomes
 */
 vector<string> extractRegionsList(BamReader& reader, unsigned regionSize);

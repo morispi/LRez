@@ -103,7 +103,9 @@ robin_hood::unordered_set<barcode> extractBarcodesBitsFromBamRegions(int id, Bam
 	vector<string> t2 = splitString(endRegion, ":");
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
-	reader.SetRegion(r);
+	if (!reader.SetRegion(r)) {
+		throw runtime_error("Error while attempting to jump to region" + region + ".");
+	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
 	int64_t pos = reader.FTell();
@@ -199,7 +201,9 @@ robin_hood::unordered_set<string> extractBarcodesSeqsFromBamRegions(int id, BamR
 	vector<string> t2 = splitString(endRegion, ":");
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
-	reader.SetRegion(r);
+	if (!reader.SetRegion(r)) {
+		throw runtime_error("Error while attempting to jump to region" + region + ".");
+	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
 	int64_t pos = reader.FTell();
@@ -378,7 +382,9 @@ vector<barcode> extractBarcodesBitsFromBamRegionsWithDuplicates(int id, BamReade
 	vector<string> t2 = splitString(endRegion, ":");
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
-	reader.SetRegion(r);
+	if (!reader.SetRegion(r)) {
+		throw runtime_error("Error while attempting to jump to region" + region + ".");
+	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
 	int64_t pos = reader.FTell();
@@ -474,7 +480,9 @@ vector<string> extractBarcodesSeqsFromBamRegionsWithDuplicates(int id, BamReader
 	vector<string> t2 = splitString(endRegion, ":");
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
-	reader.SetRegion(r);
+	if (!reader.SetRegion(r)) {
+		throw runtime_error("Error while attempting to jump to region" + region + ".");
+	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
 	int64_t pos = reader.FTell();

@@ -157,7 +157,10 @@ vector<string> extractRegionsList(BamReader& reader, unsigned regionSize) {
         }   
 
         // Only process the chromosome if it has alignments
-        if (reader.SetRegion(id, 0, id, d.RefLength - 1) and reader.GetNextAlignment(al)) {
+        if (!reader.SetRegion(id, 0, id, d.RefLength - 1)) {
+            throw runtime_error("Error while attempting to jump to region" + region + ".");
+        }
+        if (reader.GetNextAlignment(al)) {
             vector<string> w = extractRegions(d.RefName, d.RefLength, regionSize);
             for (string ww : w) {
                 regionsList.push_back(ww);
