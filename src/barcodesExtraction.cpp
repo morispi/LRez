@@ -8,7 +8,7 @@ robin_hood::unordered_set<barcode> extractBarcodesBitsFromRegion_BamReader(BamRe
 		throw runtime_error("stringToBamRegion: Unable to parse region " + region + ". Please ensure the region of interest is in format chromosome:startPosition-endPosition.");
 	}
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + region + ".");
 	}
 	
 
@@ -35,7 +35,7 @@ robin_hood::unordered_set<string> extractBarcodesSeqsFromRegion_BamReader(BamRea
 		throw runtime_error("stringToBamRegion: Unable to parse region " + region + ". Please ensure the region of interest is in format chromosome:startPosition-endPosition.");
 	}
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + region + ".");
 	}
 	
 
@@ -104,7 +104,7 @@ robin_hood::unordered_set<barcode> extractBarcodesBitsFromBamRegions(int id, Bam
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
@@ -202,7 +202,7 @@ robin_hood::unordered_set<string> extractBarcodesSeqsFromBamRegions(int id, BamR
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
@@ -287,7 +287,7 @@ vector<barcode> extractBarcodesBitsFromRegionWithDuplicates_BamReader(BamReader&
 		throw runtime_error("stringToBamRegion: Unable to parse region " + region + ". Please ensure the region of interest is in format chromosome:startPosition-endPosition.");
 	}
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + region + ".");
 	}
 	
 
@@ -314,7 +314,7 @@ vector<string> extractBarcodesSeqsFromRegionWithDuplicates_BamReader(BamReader& 
 		throw runtime_error("stringToBamRegion: Unable to parse region " + region + ". Please ensure the region of interest is in format chromosome:startPosition-endPosition.");
 	}
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + region + ".");
 	}
 	
 
@@ -383,7 +383,7 @@ vector<barcode> extractBarcodesBitsFromBamRegionsWithDuplicates(int id, BamReade
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest
@@ -481,7 +481,7 @@ vector<string> extractBarcodesSeqsFromBamRegionsWithDuplicates(int id, BamReader
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and extract barcodes from alignments located between the two regions of interest

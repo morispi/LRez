@@ -19,7 +19,7 @@ BarcodesOffsetsIndex indexBarcodesOffsetsFromBamRegions(int id, BamReader& reade
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and store alignments located between the two regions of interest
@@ -191,7 +191,7 @@ BarcodesPositionsIndex indexBarcodesPositionsFromBamRegions(int id, BamReader& r
 	vector<string> tt2 = splitString(t2[1], "-");
 	BamRegion r(reader.GetReferenceID(t1[0]), stoi(tt1[0]), reader.GetReferenceID(t2[0]), stoi(tt2[1]));
 	if (!reader.SetRegion(r)) {
-		throw runtime_error("Error while attempting to jump to region" + region + ".");
+		throw runtime_error("Error while attempting to jump to region " + begRegion + " ; " + endRegion + ".");
 	}
 
 	// Process and store alignments located between the two regions of interest
