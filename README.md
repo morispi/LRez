@@ -57,7 +57,7 @@ where [SUBCOMMAND] can be one of the following:
 
   - compare:     Compute the number of common barcodes between pairs of regions, or between pairs of contigs' extremities
   - extract:     Extract the barcodes from a given region of a BAM file
-  - stats        Retrieve general stats from a BAM file
+  - stats:       Retrieve general stats from a BAM file
   - index bam:   Index the offsets or occurrences positions of the barcodes contained in a BAM file
   - query bam:   Query the barcodes index to retrieve alignments in a BAM file, given a barcode or list of barcodes
   - index fastq: Index the offsets of the barcodes contained in a fastq file
