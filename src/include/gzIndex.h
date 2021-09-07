@@ -84,7 +84,7 @@ struct point {
 struct access {
     int have;           /* number of list entries filled in */
     int size;           /* number of list entries allocated */
-    long maxOffset; /* Last offset of the uncompressed file */
+    off_t maxOffset; /* Last offset of the uncompressed file */
     struct point *list; /* allocated list */
 };
 

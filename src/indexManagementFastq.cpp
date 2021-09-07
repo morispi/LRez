@@ -119,7 +119,7 @@ BarcodesIndex indexBarcodesFromFastq(string fastqFile, unsigned nbThreads) {
 	Reads a new chunk of the gzipped file in and stores it in gzIndex if needed.
 	Return the line that was read.
 */
-string nextLine(FILE* in, struct access* gzIndex, unsigned char* buffer, unsigned size, unsigned& pos, unsigned& totalPos) {
+string nextLine(FILE* in, struct access* gzIndex, unsigned char* buffer, unsigned size, off_t& pos, off_t& totalPos) {
 	string line = "";
 
 	while (pos < size and buffer[pos] != '\n') {
@@ -147,17 +147,6 @@ string nextLine(FILE* in, struct access* gzIndex, unsigned char* buffer, unsigne
 }
 
 
-
-/**
-	Extract the substring of length len starting from beg in buf and store in s.
-*/
-char* substring(char* buf, const unsigned char* s, size_t beg, size_t len) {
-	memcpy(buf, s + beg, len);
-	buf[len] = '\0';
-	return (buf);
-}
-
-
 /**
 	Index the portion of the FASTQ file located between begOffset and endOffset.
 	tilEnd has to be set to one for the thread processing the end of the FASTQ file, so it can process it beyond the last window of the index.
@@ -166,9 +155,9 @@ BarcodesIndex indexBarcodesFromFastqGzOffsets(int id, FILE* in, struct access* g
 	BarcodesIndex barcodesIndex;
 	barcode b;
 	string barcode, line;
-	unsigned curPos = 0;
-	unsigned oldPos = 0;
-	unsigned pos = gzIndex->list[firstWindow].out;
+	off_t curPos = 0;
+	off_t oldPos = 0;
+	off_t pos = gzIndex->list[firstWindow].out;
 
 	unsigned char* buf = (unsigned char*) malloc(BUFSIZE);
 	extract_Stream(in, gzIndex, pos, buf, BUFSIZE);
