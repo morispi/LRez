@@ -139,7 +139,7 @@ void subcommandHelp(std::string subcommand) {
 		printf("ARGS:\n");
 		printf("\t-b, --bam\t BAM file to retrieve stats from\n");
 		printf("\t-r, --regions\t Number of regions to consider to define stats (optional, default: 1000)\n");
-		printf("\t-s, --size\t Size of the regions to consider (optional, default: 10000) \n");
+		printf("\t-s, --size\t Size of the regions to consider (optional, default: 1000) \n");
 		printf("\t-o, --output\t File where to output the extracted reads (optional, default: stdout)\n");
 		printf("\t-t, --threads\t Number of threads to use when comparing a list of contigs (optional, default: 1)\n");
 	}

@@ -72,7 +72,7 @@ void subcommandStats(int argc, char* argv[]) {
 
 		reader.Close();
 
-		pair<vector<unsigned>, vector<unsigned>> res = extractBarcodesAndCommonBarcodesCounts(bamFile, regionsList, numberOfRegions, nbThreads);
+		pair<vector<unsigned>, vector<unsigned>> res = extractBarcodesAndCommonBarcodesCounts(bamFile, regionsList, min(numberOfRegions, (unsigned) regionsList.size()), nbThreads);
 		vector<unsigned> barcodesPerRegion = res.first;
 		vector<unsigned> commonBarcodes = res.second;
 
