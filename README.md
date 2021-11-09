@@ -165,9 +165,10 @@ Pierre Morisse, Claire Lemaitre and Fabrice Legeai.
 Reference
 --------------
 
-Pierre Morisse, Claire Lemaitre, Fabrice Legeai. LRez: C++ API and toolkit for analyzing and managing Linked-Reads data. https://arxiv.org/abs/2103.14419
+Pierre Morisse, Claire Lemaitre, Fabrice Legeai. LRez: C++ API and toolkit for analyzing and managing Linked-Reads data.  Bioinformatics Advances, vbab022, https://doi.org/10.1093/bioadv/vbab022
+
 
 Contact
 --------------
 
-You can report problems and bugs to pierre[dot]morisse[at]inria[dot]fr
+You can report problems and bugs as issues on this repository : https://github.com/morispi/LRez/issues
