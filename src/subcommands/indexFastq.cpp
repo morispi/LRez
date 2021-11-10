@@ -80,12 +80,11 @@ void subcommandIndexFastq(int argc, char* argv[]) {
 			}
 			serializeGzIndex(index, fastqFile + "i");
 			freeGzIndex(index);
+			barcodesIndex = indexBarcodesFromFastqGz(fastqFile, nbThreads);
 		}
 
-
-		barcodesIndex = indexBarcodesFromFastqGz(fastqFile, nbThreads);
-
 		saveBarcodesIndex(barcodesIndex, output);
+		
 	} catch (exception const& e) {
 		cerr << e.what() << endl;
 		exit(EXIT_FAILURE);
