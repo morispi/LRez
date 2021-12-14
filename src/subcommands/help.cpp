@@ -123,6 +123,7 @@ void subcommandHelp(std::string subcommand) {
 		printf("\t-i, --index\t Barcodes index, built with the index fastq subcommand\n");
 		printf("\t-q, --query\t Query barcode to search in the fastq file and the index\n");
 		printf("\t-l, --list\t File containing a list of barcodes to search in the fastq file and the index\n");
+		printf("\t-c, --collectionOfLists\t File of files (FOF) e.g. file containing files' names of lists of barcodes to search in the fastq file and the index\n");
 		printf("\t-o, --output\t File where to output the extracted reads (optional, default: stdout)\n");
 		printf("\t-g, --gzip\t Fastq file is gzipped (optional, default: false)\n");
 		printf("\t-t, --threads\t Number of threads to use when querying with a list of barcodes (optional, default: 1)\n");
