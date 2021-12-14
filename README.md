@@ -137,13 +137,14 @@ A description of each subcommand as well as its options is given below.
 
 `LRez query fastq` allows to query a barcodes index and a fastq file to retrieve alignments containing the query barcodes.
 
-      --fastq STRING, -f STRING:    Fastq file to search
-      --index STRING, -i STRING:    Barcodes index, built with the index fastq subcommand
-      --query STRING, -q STRING:    Query barcode to search in the fastq file and the index
-      --list STRING, -l STRING:     File containing a list of barcodes to search in the fastq file and the index
-      --output STRING, -o STRING:   File where to output the extracted reads (optional, default: stdout)
-      --gzip, -g:                   Fastq file is gzipped (optional, default: false)
-      --threads INT, -t INT:        Number of threads to use (optional, default: 1)
+      --fastq STRING, -f STRING:                Fastq file to search
+      --index STRING, -i STRING:                Barcodes index, built with the index fastq subcommand
+      --query STRING, -q STRING:                Query barcode to search in the fastq file and the index
+      --list STRING, -l STRING:                 File containing a list of barcodes to search in the fastq file and the index
+      --collectionOfLists STRING, -c STRING:    File of files (FOF) e.g. file containing files' names of lists of barcodes to search in the fastq file and the index
+      --output STRING, -o STRING:               File where to output the extracted reads (optional, default: stdout)
+      --gzip, -g:                               Fastq file is gzipped (optional, default: false)
+      --threads INT, -t INT:                    Number of threads to use (optional, default: 1)
 
 
 Using the API
