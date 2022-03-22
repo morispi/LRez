@@ -138,7 +138,7 @@ vector<string> extractRegions(string contig, int32_t contigSize, unsigned region
     for (int32_t i = 0; i < contigSize; i += regionSize) {
         res.push_back(contig + ":" + to_string(i) + "-" + to_string(i + regionSize - 1));
     }
-    res.push_back(contig + ":" + to_string(contigSize - regionSize + 1) + "-" + to_string(contigSize));
+    //res.push_back(contig + ":" + to_string(contigSize - regionSize + 1) + "-" + to_string(contigSize));
 
     return res;
 }
