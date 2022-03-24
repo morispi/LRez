@@ -10,8 +10,8 @@ SequencingTechnology determineSequencingTechnology(const string& barcode) {
     const char* HaplotaggingPattern = "^A[0-9][0-9]C[0-9][0-9]B[0-9][0-9]D[0-9][0-9]$";
     regex_t stLFRReg;
     const char* stLFRPattern = "^[0-9]+_[0-9]+_[0-9]+$";
-    regex_t TELLSeqReg;
-    const char* TELLSeqPattern = "^[ACGT]+$";
+    regex_t TenXandTELLSeqReg;
+    const char* TenXandTELLSeqPattern = "^[ACGT]+$";
 
     int rc;
     size_t nmatch = 1;
@@ -25,14 +25,12 @@ SequencingTechnology determineSequencingTechnology(const string& barcode) {
         throw runtime_error("regcomp: An error occured with pattern " + string(stLFRPattern) + ".");
     }
 
-    if (0 != (rc = regcomp(&TELLSeqReg, TELLSeqPattern, REG_EXTENDED))) {
-        throw runtime_error("regcomp: An error occured with pattern " + string(TELLSeqPattern) + ".");
+    if (0 != (rc = regcomp(&TenXandTELLSeqReg, TenXandTELLSeqPattern, REG_EXTENDED))) {
+        throw runtime_error("regcomp: An error occured with pattern " + string(TenXandTELLSeqPattern) + ".");
     }
 
-    if (0 == (rc = regexec(&TELLSeqReg, barcode.c_str(), nmatch, pmatch, 0))) {
-        res = TELLSeq;
-    } else if (barcode.substr(barcode.length() - 2) == "-1") {
-        res = TenX;
+    if (0 == (rc = regexec(&TenXandTELLSeqReg, barcode.c_str(), nmatch, pmatch, 0))) {
+        res = TenXandTELLSeq;
     } else if (0 == (rc = regexec(&HaplotaggingReg, barcode.c_str(), nmatch, pmatch, 0))) {
         res = Haplotagging;
     } else if (0 == (rc = regexec(&stLFRReg, barcode.c_str(), nmatch, pmatch, 0))) {
@@ -52,10 +50,7 @@ string retrieveNucleotidesContent(const string& barcode) {
 
     string res;
     switch (techno) {
-        case TenX:
-            res = barcode.substr(0, barcode.length() - 2);
-            break;
-        case TELLSeq:
+        case TenXandTELLSeq:
             res = barcode;
             break;
         case Haplotagging:
@@ -74,9 +69,14 @@ string retrieveNucleotidesContent(const string& barcode) {
     return res;
 }
 
-bool isValidBarcode(const string& barcode) {
+bool isValidBarcode(string& barcode) {
     if (barcode.empty()) {
         return false;
+    }
+
+    // first remove "-1" at the end of the barcode if exists
+    if (barcode.substr(barcode.length() - 2) == "-1"){
+        barcode = barcode.substr(0, barcode.length() - 2);
     }
 
     if (techno == Undefined) {
@@ -85,10 +85,7 @@ bool isValidBarcode(const string& barcode) {
 
     bool res;
     switch (techno) {
-        case TenX:
-            res = (barcode.find("N") == string::npos);
-            break;
-        case TELLSeq:
+        case TenXandTELLSeq:
             res = (barcode.find("N") == string::npos);
             break;
         case Haplotagging:

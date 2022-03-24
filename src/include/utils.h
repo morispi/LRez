@@ -25,7 +25,7 @@ typedef vector<bool> barcode;
 /**
  Supported sequencing technologies
 */
-enum SequencingTechnology {Undefined = 0, TenX, Haplotagging, TELLSeq, stLFR};
+enum SequencingTechnology {Undefined = 0, TenXandTELLSeq, Haplotagging, stLFR};
 
 extern SequencingTechnology techno;
 
@@ -55,13 +55,14 @@ string retrieveNucleotidesContent(const string& barcode);
 	Check whether a barcode is valid or not.
 	A barcode is considered as valid if it is not empty, if it does not contain any "N" for 10x and TELL-Seq,
 	if it is not "0_0_0" for stLFR data, and does not contain a "00" substring for Haplotagging data.
-	The function takes care of determining the employed sequencing technoly.
+	The function takes care of determining the employed sequencing technology.
+    It also removes the unwanted "-1" if it exsits at the end of the barcode.
 
 	@param barcode the barcode to verify
 	@throws runtime_error thrown if the sequencing technology could not be recognized
 	@return true if the barcode is valid, false otherwise
 */
-bool isValidBarcode(const string& barcode);
+bool isValidBarcode(string& barcode);
 
 /**
 	Translate a string to a barcode in 2 bits per nucleotide format.
