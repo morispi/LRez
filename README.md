@@ -2,7 +2,7 @@
 
 LRez provides a standalone tool allowing to work with barcoded linked-reads such as 10X Genomics data, as well as library allowing to easily use it in other projects.
 
-Presently, it is directly compatible with the following linked-reads technologies, given the barcodes are reported using the `BX:Z` tag:
+Presently, it is directly compatible with the following linked-reads technologies, given the barcodes are reported using the `BX:Z` tag (if this is not the case, pre-processing scripts are given in the [utils/](utils/) directory):
   - 10x Genomics
   - Haplotagging
   - stLFR
