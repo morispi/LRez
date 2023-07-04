@@ -74,7 +74,7 @@ bool isValidBarcode(string& barcode) {
         return false;
     }
 
-    // first remove integer suffing, e.g. "-1", at the end of the barcode if exists
+    // first remove integer suffix, e.g. "-1", at the end of the barcode if exists
     std::size_t found = barcode.find("-");
     if (found != std::string::npos){
         barcode = barcode.substr(0, found);
