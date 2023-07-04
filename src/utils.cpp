@@ -74,9 +74,10 @@ bool isValidBarcode(string& barcode) {
         return false;
     }
 
-    // first remove "-1" at the end of the barcode if exists
-    if (barcode.substr(barcode.length() - 2) == "-1"){
-        barcode = barcode.substr(0, barcode.length() - 2);
+    // first remove integer suffing, e.g. "-1", at the end of the barcode if exists
+    std::size_t found = barcode.find("-");
+    if (found != std::string::npos){
+        barcode = barcode.substr(0, found);
     }
 
     if (techno == Undefined) {
