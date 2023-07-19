@@ -91,23 +91,29 @@ void subcommandStats(int argc, char* argv[]) {
 			out << endl;
 
 			out << "Number of reads per barcode:" << endl;
+			out << "\t min: " << stats.readsPerBarcode[0] << endl;
 			out << "\t 1st quantile: " << stats.readsPerBarcode[0.25 * stats.readsPerBarcode.size()] << endl;
 			out << "\t median: " << stats.readsPerBarcode[0.5 * stats.readsPerBarcode.size()] << endl;
 			out << "\t 3rd quantile: " << stats.readsPerBarcode[0.75 * stats.readsPerBarcode.size()] << endl;
+			out << "\t max: " << stats.readsPerBarcode[stats.readsPerBarcode.size()-1] << endl;
 
 			out << endl;
 
 			out << "Number of barcodes per region of size " << regionSize << ":" << endl;
+			out << "\t min: " << barcodesPerRegion[0] << endl;
 			out << "\t 1st quantile: " << barcodesPerRegion[0.25 * barcodesPerRegion.size()] << endl;
 			out << "\t median: " << barcodesPerRegion[0.5 * barcodesPerRegion.size()] << endl;
 			out << "\t 3rd quantile: " << barcodesPerRegion[0.75 * barcodesPerRegion.size()] << endl;
+			out << "\t max: " << barcodesPerRegion[barcodesPerRegion.size()-1] << endl;
 
 			out << endl;
 
 			out << "Number of common barcodes between adjacent regions of size " << regionSize << ":" << endl;
+			out << "\t min: " << commonBarcodes[0] << endl;
 			out << "\t 1st quantile: " << commonBarcodes[0.25 * commonBarcodes.size()] << endl;
 			out << "\t median: " << commonBarcodes[0.5 * commonBarcodes.size()] << endl;
 			out << "\t 3rd quantile: " << commonBarcodes[0.75 * commonBarcodes.size()] << endl;
+                        out << "\t max: " << commonBarcodes[commonBarcodes.size()-1] << endl;
 
 			out.close();
 		} else {
@@ -117,23 +123,29 @@ void subcommandStats(int argc, char* argv[]) {
 			cout << endl;
 
 			cout << "Number of reads per barcode:" << endl;
+			cout << "\t min: " << stats.readsPerBarcode[0] << endl;
 			cout << "\t 1st quantile: " << stats.readsPerBarcode[0.25 * stats.readsPerBarcode.size()] << endl;
 			cout << "\t median: " << stats.readsPerBarcode[0.5 * stats.readsPerBarcode.size()] << endl;
 			cout << "\t 3rd quantile: " << stats.readsPerBarcode[0.75 * stats.readsPerBarcode.size()] << endl;
-
+			cout << "\t max: " << stats.readsPerBarcode[stats.readsPerBarcode.size()-1] << endl;
 			cout << endl;
 
 			cout << "Number of barcodes per region of size " << regionSize << ":" << endl;
+                        cout << "\t min: " << barcodesPerRegion[0] << endl;
 			cout << "\t 1st quantile: " << barcodesPerRegion[0.25 * barcodesPerRegion.size()] << endl;
 			cout << "\t median: " << barcodesPerRegion[0.5 * barcodesPerRegion.size()] << endl;
 			cout << "\t 3rd quantile: " << barcodesPerRegion[0.75 * barcodesPerRegion.size()] << endl;
+                        cout << "\t max: " << barcodesPerRegion[barcodesPerRegion.size()-1] << endl;
 
 			cout << endl;
 
 			cout << "Number of common barcodes between adjacent regions of size " << regionSize << ":" << endl;
+                        cout << "\t min: " << commonBarcodes[0] << endl;
 			cout << "\t 1st quantile: " << commonBarcodes[0.25 * commonBarcodes.size()] << endl;
 			cout << "\t median: " << commonBarcodes[0.5 * commonBarcodes.size()] << endl;
 			cout << "\t 3rd quantile: " << commonBarcodes[0.75 * commonBarcodes.size()] << endl;
+                        cout << "\t max: " << commonBarcodes[commonBarcodes.size()-1] << endl;
+
 		}
 	} catch (exception const& e) {
 		cerr << e.what() << endl;
