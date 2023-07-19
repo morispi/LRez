@@ -105,7 +105,7 @@ void subcommandQueryBam(int argc, char* argv[]) {
 				exit(EXIT_FAILURE);
 			}
 			if (outputHeader) {
-				out << reader.GetHeaderText() << endl;
+				out << reader.GetHeaderText();
 			}
 			for (BamAlignment al : alignments) {
 				out << convertToSam(al, reader.GetReferenceData()) << endl;
@@ -113,7 +113,7 @@ void subcommandQueryBam(int argc, char* argv[]) {
 			out.close();
 		} else {
 			if (outputHeader) {
-				cout << reader.GetHeaderText() << endl;
+				cout << reader.GetHeaderText();
 			}
 			for (BamAlignment al : alignments) {
 				cout << convertToSam(al, reader.GetReferenceData()) << endl;
