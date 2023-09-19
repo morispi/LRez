@@ -56,7 +56,7 @@ string retrieveNucleotidesContent(const string& barcode);
 	A barcode is considered as valid if it is not empty, if it does not contain any "N" for 10x and TELL-Seq,
 	if it is not "0_0_0" for stLFR data, and does not contain a "00" substring for Haplotagging data.
 	The function takes care of determining the employed sequencing technology.
-    It also removes the unwanted "-1" if it exsits at the end of the barcode.
+    It also removes the integer suffix, e.g. "-1", if it exsits at the end of the barcode.
 
 	@param barcode the barcode to verify
 	@throws runtime_error thrown if the sequencing technology could not be recognized
